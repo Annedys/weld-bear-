@@ -86,6 +86,22 @@
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
         }
+        @media (max-width: 1023px) {
+            body, html { overflow-y: auto !important; overflow-x: hidden !important; height: auto !important; }
+            * { box-sizing: border-box !important; }
+            main { padding-bottom: 120px !important; padding-top: 20px !important; height: auto !important; }
+            .grid { display: flex !important; flex-direction: column !important; gap: 16px !important; }
+            h1 { font-size: 3rem !important; line-height: 1.1 !important; }
+            h2 { font-size: 1.8rem !important; }
+            h3, h4 { font-size: 1.5rem !important; }
+            p { font-size: 1.1rem !important; line-height: 1.4 !important; }
+            .md\:col-span-12, .md\:col-span-4 { width: 100% !important; margin-bottom: 0 !important; }
+            footer { height: auto !important; padding: 10px 0 !important; flex-wrap: wrap !important; position: fixed !important; bottom: 0; width: 100%; z-index: 50; }
+            footer button, footer div { padding: 8px !important; flex: 1 1 20%; min-width: 60px; }
+            footer span.text-xs { font-size: 0.65rem !important; }
+            .flex-col.md\:flex-row { flex-direction: column !important; gap: 1rem !important; }
+            header { position: sticky !important; top: 0 !important; }
+        }
     </style>
 </head>
 <body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container flex flex-col min-h-screen">
@@ -218,17 +234,11 @@
 </footer>
 
 
-\n
 
-\n
 
-\n
 
-\n
 
-\n
 
-\n
 
 
 

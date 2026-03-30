@@ -1,227 +1,244 @@
-<!DOCTYPE html><html class="dark" lang="es"><head>
-<meta charset="utf-8">
-<meta content="width=device-width, initial-scale=1.0" name="viewport">
-<title>WELD-SPEC_PROTOCOL_v4.0 - POSICIÓN 3F</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700;900&amp;family=Space+Grotesk:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
-<script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            colors: {
-              "inverse-on-surface": "#313030",
-              "on-primary": "#003a05",
-              "on-background": "#e5e2e1",
-              "on-secondary-fixed-variant": "#554500",
-              "on-secondary-container": "#6f5c00",
-              "primary-container": "#1bff3c",
-              "inverse-surface": "#e5e2e1",
-              "background": "#131313",
-              "on-primary-container": "#007112",
-              "on-primary-fixed-variant": "#00530a",
-              "surface-variant": "#353534",
-              "primary-fixed-dim": "#00e631",
-              "on-secondary": "#3b2f00",
-              "error": "#ffb4ab",
-              "surface-bright": "#393939",
-              "secondary-container": "#fed400",
-              "outline-variant": "#3b4b37",
-              "surface-container-highest": "#353534",
-              "tertiary-container": "#ffd3cd",
-              "tertiary-fixed": "#ffdad5",
-              "surface": "#131313",
-              "error-container": "#93000a",
-              "on-tertiary-container": "#c5020c",
-              "primary-fixed": "#74ff6d",
-              "on-surface": "#e5e2e1",
-              "on-error-container": "#ffdad6",
-              "surface-tint": "#00e631",
-              "on-surface-variant": "#baccb2",
-              "surface-container-low": "#1c1b1b",
-              "on-tertiary-fixed-variant": "#930005",
-              "surface-dim": "#131313",
-              "secondary-fixed-dim": "#eac300",
-              "primary": "#ecffe3",
-              "surface-container-high": "#2a2a2a",
-              "tertiary": "#fff8f7",
-              "secondary": "#fff3d3",
-              "on-tertiary": "#690003",
-              "on-primary-fixed": "#002202",
-              "tertiary-fixed-dim": "#ffb4aa",
-              "surface-container-lowest": "#0e0e0e",
-              "on-error": "#690005",
-              "surface-container": "#201f1f",
-              "secondary-fixed": "#ffe174",
-              "on-tertiary-fixed": "#410001",
-              "inverse-primary": "#006e11",
-              "outline": "#84967e",
-              "on-secondary-fixed": "#221b00"
+<!DOCTYPE html>
+<html class="dark" lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>WELD-SPEC_PROTOCOL_v4.0 - POSICIÓN 3F</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700;900&amp;family=Space+Grotesk:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;700&amp;display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet">
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "inverse-on-surface": "#313030",
+                        "on-primary": "#003a05",
+                        "on-background": "#e5e2e1",
+                        "on-secondary-fixed-variant": "#554500",
+                        "on-secondary-container": "#6f5c00",
+                        "primary-container": "#1bff3c",
+                        "inverse-surface": "#e5e2e1",
+                        "background": "#131313",
+                        "on-primary-container": "#007112",
+                        "on-primary-fixed-variant": "#00530a",
+                        "surface-variant": "#353534",
+                        "primary-fixed-dim": "#00e631",
+                        "on-secondary": "#3b2f00",
+                        "error": "#ffb4ab",
+                        "surface-bright": "#393939",
+                        "secondary-container": "#fed400",
+                        "outline-variant": "#3b4b37",
+                        "surface-container-highest": "#353534",
+                        "tertiary-container": "#ffd3cd",
+                        "tertiary-fixed": "#ffdad5",
+                        "surface": "#131313",
+                        "error-container": "#93000a",
+                        "on-tertiary-container": "#c5020c",
+                        "primary-fixed": "#74ff6d",
+                        "on-surface": "#e5e2e1",
+                        "on-error-container": "#ffdad6",
+                        "surface-tint": "#00e631",
+                        "on-surface-variant": "#baccb2",
+                        "surface-container-low": "#1c1b1b",
+                        "on-tertiary-fixed-variant": "#930005",
+                        "surface-dim": "#131313",
+                        "secondary-fixed-dim": "#eac300",
+                        "primary": "#ecffe3",
+                        "surface-container-high": "#2a2a2a",
+                        "tertiary": "#fff8f7",
+                        "secondary": "#fff3d3",
+                        "on-tertiary": "#690003",
+                        "on-primary-fixed": "#002202",
+                        "tertiary-fixed-dim": "#ffb4aa",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-error": "#690005",
+                        "surface-container": "#201f1f",
+                        "secondary-fixed": "#ffe174",
+                        "on-tertiary-fixed": "#410001",
+                        "inverse-primary": "#006e11",
+                        "outline": "#84967e",
+                        "on-secondary-fixed": "#221b00"
+                    },
+                    fontFamily: {
+                        "headline": ["Rajdhani"],
+                        "body": ["Space Grotesk"],
+                        "label": ["JetBrains Mono"]
+                    },
+                    borderRadius: { "DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px" },
+                },
             },
-            fontFamily: {
-              "headline": ["Rajdhani"],
-              "body": ["Space Grotesk"],
-              "label": ["JetBrains Mono"]
-            },
-            borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
-          },
-        },
-      }
+        }
     </script>
-<style>
+    <style>
         .blueprint-grid {
-            background-image: 
+            background-image:
                 linear-gradient(to right, rgba(59, 75, 55, 0.1) 1px, transparent 1px),
                 linear-gradient(to bottom, rgba(59, 75, 55, 0.1) 1px, transparent 1px);
             background-size: 40px 40px;
         }
+
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
         }
+
         .glow-primary {
             box-shadow: 0px 0px 15px rgba(27, 255, 60, 0.15);
         }
+
         .glow-primary-strong {
             box-shadow: 0px 0px 20px rgba(27, 255, 60, 0.3);
         }
+        @media (max-width: 1023px) {
+            body, html { overflow-y: auto !important; overflow-x: hidden !important; height: auto !important; min-height: 100vh !important; }
+            * { box-sizing: border-box !important; }
+            main { height: auto !important; overflow: visible !important; display: flex !important; flex-direction: column !important; padding: 100px 16px 140px 16px !important; }
+            h1 { font-size: 2.5rem !important; line-height: 1.1 !important; word-wrap: break-word !important; }
+            p, .text-xl, .text-2xl { font-size: 1.1rem !important; line-height: 1.4 !important; }
+            .grid, .grid-cols-1, .md\:grid-cols-12, .grid-cols-2 { display: flex !important; flex-direction: column !important; gap: 24px !important; }
+            .md\:col-span-7, .md\:col-span-5 { width: 100% !important; }
+            .min-h-\[400px\] { min-height: 250px !important; }
+            header { flex-wrap: wrap !important; height: auto !important; padding: 16px !important; gap: 12px !important; position: relative !important; }
+            footer.fixed { height: auto !important; padding: 12px !important; flex-wrap: wrap !important; justify-content: center !important; gap: 8px !important; position: fixed !important; bottom: 0 !important; width: 100% !important; z-index: 50 !important; }
+            footer.fixed button, footer.fixed div { flex: 1 1 20% !important; min-width: 60px !important; padding: 12px 4px !important; border: 1px solid rgba(27,255,60,0.1) !important; margin: 0 !important; }
+            .fixed.top-0, .fixed.bottom-20 { display: none !important; }
+        }
     </style>
 </head>
-<body class="bg-background text-on-background font-body selection:bg-primary-container selection:text-on-primary min-h-screen flex flex-col blueprint-grid">
-<!-- TopAppBar -->
-<header class="flex justify-between items-center w-full px-6 py-4 bg-[#131313] rounded-none border-b border-[#3B4B37]/30 z-50">
-<div class="flex items-center gap-4">
-<span class="text-[#1BFF3C] text-xl font-black font-['Rajdhani'] tracking-tighter" style=""><span style="font-family: Rajdhani, sans-serif; font-size: 24px; letter-spacing: -1.2px; text-transform: uppercase;" class="">WELD BEAR IEDU</span></span>
-<div class="hidden md:flex gap-6 ml-10">
-<nav class="flex gap-8">
-<a class="font-['Rajdhani'] uppercase tracking-widest font-bold text-[#1BFF3C] border-b-2 border-[#1BFF3C] py-1" href="#" style="">TRAINING_MODULE</a>
-<a class="font-['Rajdhani'] uppercase tracking-widest font-bold text-[#84967E] hover:bg-[#1BFF3C]/10 hover:text-[#1BFF3C] transition-colors duration-150 py-1" href="#" style="">RESOURCES</a>
-<a class="font-['Rajdhani'] uppercase tracking-widest font-bold text-[#84967E] hover:bg-[#1BFF3C]/10 hover:text-[#1BFF3C] transition-colors duration-150 py-1" href="#" style="">CERTIFICATION</a>
-</nav>
-</div>
-</div>
-<div class="flex items-center gap-4 text-[#1BFF3C]">
-<button class="p-2 hover:bg-[#1BFF3C]/10 transition-colors duration-150" style="">
-<span class="material-symbols-outlined" data-icon="info" style="">info</span>
-</button>
-<button class="p-2 hover:bg-[#1BFF3C]/10 transition-colors duration-150" style="">
-<span class="material-symbols-outlined" data-icon="settings" style="">settings</span>
-</button>
-</div>
-</header>
-<!-- Main Content -->
-<main class="max-w-7xl mx-auto h-[calc(100vh-100px)] overflow-hidden flex flex-col p-6 relative">
-<!-- Header Section -->
-<div class="mb-12 border-l-4 border-primary-container pl-6">
-<span class="font-label text-primary-container text-xs tracking-[0.3em] mb-2 block" style=""><br></span>
-<h1 class="font-headline text-6xl md:text-8xl font-black text-primary-container uppercase tracking-tight leading-none" style="">
+
+<body
+    class="bg-background text-on-background font-body selection:bg-primary-container selection:text-on-primary min-h-screen flex flex-col blueprint-grid">
+    <!-- TopAppBar -->
+    <header
+        class="flex justify-between items-center w-full px-6 py-4 bg-[#131313] rounded-none border-b border-[#3B4B37]/30 z-50">
+        <div class="flex items-center gap-4">
+            <span class="text-[#1BFF3C] text-xl font-black font-['Rajdhani'] tracking-tighter" style=""><span
+                    style="font-family: Rajdhani, sans-serif; font-size: 24px; letter-spacing: -1.2px; text-transform: uppercase;"
+                    class="">WELD BEAR IEDU</span></span>
+            <div class="hidden md:flex gap-6 ml-10">
+                <nav class="flex gap-8">
+                    <a class="font-['Rajdhani'] uppercase tracking-widest font-bold text-[#1BFF3C] border-b-2 border-[#1BFF3C] py-1"
+                        href="#" style="">TRAINING_MODULE</a>
+                    <a class="font-['Rajdhani'] uppercase tracking-widest font-bold text-[#84967E] hover:bg-[#1BFF3C]/10 hover:text-[#1BFF3C] transition-colors duration-150 py-1"
+                        href="#" style="">RESOURCES</a>
+                    <a class="font-['Rajdhani'] uppercase tracking-widest font-bold text-[#84967E] hover:bg-[#1BFF3C]/10 hover:text-[#1BFF3C] transition-colors duration-150 py-1"
+                        href="#" style="">CERTIFICATION</a>
+                </nav>
+            </div>
+        </div>
+        <div class="flex items-center gap-4 text-[#1BFF3C]">
+            <button class="p-2 hover:bg-[#1BFF3C]/10 transition-colors duration-150" style="">
+                <span class="material-symbols-outlined" data-icon="info" style="">info</span>
+            </button>
+            <button class="p-2 hover:bg-[#1BFF3C]/10 transition-colors duration-150" style="">
+                <span class="material-symbols-outlined" data-icon="settings" style="">settings</span>
+            </button>
+        </div>
+    </header>
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto h-[calc(100vh-100px)] overflow-hidden flex flex-col p-6 relative">
+        <!-- Header Section -->
+        <div class="mb-4 border-l-4 border-primary-container pl-6">
+            <span class="font-label text-primary-container text-xs tracking-[0.3em] mb-2 block" style=""><br></span>
+            <h1 class="font-headline text-6xl md:text-8xl font-black text-primary-container uppercase tracking-tight leading-none" style="">
                 POSICIÓN 3F
             </h1>
-</div>
-<!-- Content Grid -->
-<div class="grid grid-cols-1 md:grid-cols-12 gap-8 flex-grow">
-<!-- Left Column: Schematic/Visual -->
-<div class="md:col-span-7 relative group">
-<div class="absolute -top-4 -left-4 font-label text-[10px] text-outline opacity-40 uppercase" style="">Schematic_View_03F</div>
-<div class="w-full h-full min-h-[400px] bg-surface-container-low border border-outline-variant/30 relative flex items-center justify-center overflow-hidden bg-[#131313]">
-<img alt="Fillet Welds technical diagram 3F" class="absolute inset-0 w-full h-full object-contain p-12 mix-blend-screen" data-alt="Technical diagram showing 3F fillet weld positions" src="../posicion3.png" style="">
-<!-- Technical Overlay Elements -->
-<div class="absolute inset-0 p-8 flex flex-col justify-between pointer-events-none">
-<div class="flex justify-between items-start">
-<div class="w-24 h-24 border-t border-l border-primary-container/50"></div>
-<div class="text-right">
-<div class="font-label text-primary-container text-sm" style="">Z-AXIS: VERTICAL</div>
-<div class="font-label text-outline text-[10px]" style="">COORDS: 03.44.12.9</div>
-</div>
-</div>
-<!-- Center Indicator -->
-<div class="flex items-center justify-center">
-</div>
-<div class="flex justify-between items-end">
-<div class="font-label text-outline text-[10px]" style="">SCANNING_FLOW_ACTIVE...</div>
-<div class="w-24 h-24 border-b border-r border-primary-container/50"></div>
-</div>
-</div>
-</div>
-</div>
-<!-- Right Column: Technical Details -->
-<div class="md:col-span-5 flex flex-col gap-6">
-<!-- Definition Block -->
-<div class="bg-surface-container-high p-8 border-l-2 border-secondary-container relative overflow-hidden">
-<div class="absolute top-0 right-0 p-2 font-label text-[10px] text-secondary-container/30" style="">DATA_BLOCK_A</div>
-<h3 class="font-headline text-xl text-secondary-container uppercase mb-4 tracking-wider font-bold" style="">Definición de Proceso</h3>
-<p class="font-body text-xl font-bold italic leading-relaxed text-on-surface" style="">
+        </div>
+        <!-- Content Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 flex-grow">
+            <!-- Left Column: Schematic/Visual -->
+            <div class="md:col-span-7 relative group">
+                <div class="w-full h-full min-h-[400px] bg-surface-container-low border border-outline-variant/30 relative flex items-center justify-center overflow-hidden bg-[#131313]">
+                    <img alt="Fillet Welds technical diagram 3F" class="absolute inset-0 w-full h-full object-contain p-12 mix-blend-screen" data-alt="Technical diagram showing 3F fillet weld positions" src="../posicion3.png" style="">
+                </div>
+            </div>
+            <!-- Right Column: Technical Details -->
+            <div class="md:col-span-5 flex flex-col gap-6">
+                <!-- Definition Block -->
+                <div class="bg-surface-container-high p-8 border-l-2 border-secondary-container relative overflow-hidden">
+                    <div class="absolute top-0 right-0 p-2 font-label text-[10px] text-secondary-container/30" style="">DATA_BLOCK_A</div>
+                    <h3 class="font-headline text-xl text-secondary-container uppercase mb-4 tracking-wider font-bold" style="">Definición de Proceso</h3>
+                    <p class="font-body text-xl font-bold italic leading-relaxed text-on-surface" style="">
                         Soldadura filete en posición vertical. La soldadura avanza en sentido vertical.
                     </p>
-</div>
-<!-- Methods Grid -->
-<div class="grid grid-cols-2 gap-4">
-<div class="bg-surface-container-low p-6 border border-outline-variant/20 hover:border-primary-container/50 transition-all group">
-<span class="material-symbols-outlined text-primary-container mb-2 group-hover:scale-110 transition-transform" data-icon="north" style="">north</span>
-<h4 class="font-headline text-sm uppercase text-outline mb-1" style="">Sentido A</h4>
-<div class="text-primary-container font-black text-2xl leading-tight uppercase tracking-tighter" style="">Vertical Ascendente</div>
-</div>
-<div class="bg-surface-container-low p-6 border border-outline-variant/20 hover:border-primary-container/50 transition-all group">
-<span class="material-symbols-outlined text-primary-container mb-2 group-hover:scale-110 transition-transform" data-icon="south" style="">south</span>
-<h4 class="font-headline text-sm uppercase text-outline mb-1" style="">Sentido B</h4>
-<div class="text-primary-container font-black text-2xl leading-tight uppercase tracking-tighter" style="">Vertical Descendente</div>
-</div>
-</div>
-<!-- Critical Factors -->
-<div class="bg-surface-container-lowest border border-outline-variant/30 p-8 flex-grow">
-<div class="flex items-center gap-3 mb-6">
-<span class="material-symbols-outlined text-error" data-icon="warning" style="">warning</span>
-<h3 class="font-headline text-xl uppercase font-bold tracking-widest" style="">Protocolo de Control</h3>
-</div>
-<ul class="space-y-5">
-<li class="flex gap-4" style="">
-<span class="font-label text-primary-container text-base mt-1" style="">[01]</span>
-<p class="text-on-surface-variant text-xl font-medium leading-relaxed" style="">Requiere controlar el <span class="text-primary-container font-bold uppercase" style="">calor</span> crítico para mantener la viscosidad.</p>
-</li>
-<li class="flex gap-4" style="">
-<span class="font-label text-primary-container text-base mt-1" style="">[02]</span>
-<p class="text-on-surface-variant text-xl font-medium leading-relaxed" style="">Sincronización del <span class="text-primary-container font-bold uppercase" style="">movimiento</span> para asegurar la penetración.</p>
-</li>
-<li class="flex gap-4" style="">
-<span class="font-label text-primary-container text-base mt-1" style="">[03]</span>
-<p class="text-on-surface-variant text-xl font-medium leading-relaxed" style="">Evitar que el <span class="text-secondary-container font-bold uppercase" style="">charco se caiga</span> o se deforme por gravedad.</p>
-</li>
-</ul>
-<div class="mt-8 pt-6 border-t border-outline-variant/20">
-<div class="flex justify-between items-center text-[10px] font-label text-outline uppercase tracking-widest">
-<span class="" style="">Stability_Index</span>
-<span class="text-primary-container" style="">88.4%</span>
-</div>
-<div class="w-full h-1 bg-surface-variant mt-2">
-<div class="h-full bg-primary-container glow-primary" style="width: 88.4%"></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</main>
-<!-- BottomNavBar -->
-<footer class="fixed bottom-0 left-0 w-full z-50 flex justify-between items-stretch px-0 bg-[#1C1B1B] border-t border-[#3B4B37]/40 shadow-[0px_-5px_15px_rgba(27,255,60,0.1)]">
-<button class="flex-1 flex items-center justify-center gap-2 font-['JetBrains_Mono'] text-xs font-medium uppercase tracking-tight text-[#1BFF3C] border border-[#1BFF3C]/20 p-4 hover:bg-[#1BFF3C] hover:text-[#003A05] transition-all cursor-crosshair" style="">
-<span class="material-symbols-outlined" data-icon="arrow_back_ios_new" style="">arrow_back_ios_new</span>
-<span class="" style="">PREVIOUS</span>
-</button>
-<div class="flex-[1.5] flex items-center justify-center gap-3 bg-transparent text-[#1BFF3C] border-x border-[#1BFF3C]/20 font-bold p-4"><span class="material-symbols-outlined text-lg" data-icon="analytics" style="font-variation-settings: &quot;FILL&quot; 1;">analytics</span><span class="font-['JetBrains_Mono'] text-sm uppercase tracking-widest" style="">06</span></div>
-<button class="flex-1 flex items-center justify-center gap-2 font-['JetBrains_Mono'] text-xs font-medium uppercase tracking-tight text-[#1BFF3C] border border-[#1BFF3C]/20 p-4 hover:bg-[#1BFF3C] hover:text-[#003A05] transition-all cursor-crosshair" style="">
-<span class="" style="">NEXT</span>
-<span class="material-symbols-outlined" data-icon="arrow_forward_ios" style="">arrow_forward_ios</span>
-</button>
-</footer>
-<!-- Decorative Corner Elements -->
-<div class="fixed top-0 left-0 w-32 h-32 pointer-events-none opacity-20 overflow-hidden">
-<div class="absolute -top-16 -left-16 w-32 h-32 border-4 border-primary-container rotate-45"></div>
-</div>
-<div class="fixed bottom-20 right-6 pointer-events-none flex flex-col items-end gap-2 text-[8px] font-label text-outline/40">
-<div class="" style="">SYS_TEMP: 42°C</div>
-<div class="" style="">BANDWIDTH: 4.2GB/S</div>
-<div class="" style="">ENCRYPTION: AES-256</div>
-</div>
+                </div>
+                <!-- Methods Grid -->
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-surface-container-low p-6 border border-outline-variant/20 hover:border-primary-container/50 transition-all group">
+                        <span class="material-symbols-outlined text-primary-container mb-2 group-hover:scale-110 transition-transform" data-icon="north" style="">north</span>
+                        <h4 class="font-headline text-sm uppercase text-outline mb-1" style="">Sentido A</h4>
+                        <div class="text-primary-container font-black text-2xl leading-tight uppercase tracking-tighter" style="">Vertical Ascendente</div>
+                    </div>
+                    <div class="bg-surface-container-low p-6 border border-outline-variant/20 hover:border-primary-container/50 transition-all group">
+                        <span class="material-symbols-outlined text-primary-container mb-2 group-hover:scale-110 transition-transform" data-icon="south" style="">south</span>
+                        <h4 class="font-headline text-sm uppercase text-outline mb-1" style="">Sentido B</h4>
+                        <div class="text-primary-container font-black text-2xl leading-tight uppercase tracking-tighter" style="">Vertical Descendente</div>
+                    </div>
+                </div>
+                <!-- Critical Factors -->
+                <div class="bg-surface-container-lowest border border-outline-variant/30 p-8 flex-grow">
+                    <div class="flex items-center gap-3 mb-6">
+                        <span class="material-symbols-outlined text-error" data-icon="warning" style="">warning</span>
+                        <h3 class="font-headline text-xl uppercase font-bold tracking-widest" style="">Protocolo de Control</h3>
+                    </div>
+                    <ul class="space-y-5">
+                        <li class="flex gap-4" style="">
+                            <span class="font-label text-primary-container text-base mt-1" style="">[01]</span>
+                            <p class="text-on-surface-variant text-xl font-medium leading-relaxed" style="">Requiere controlar el <span class="text-primary-container font-bold uppercase" style="">calor</span> crítico para mantener la viscosidad.</p>
+                        </li>
+                        <li class="flex gap-4" style="">
+                            <span class="font-label text-primary-container text-base mt-1" style="">[02]</span>
+                            <p class="text-on-surface-variant text-xl font-medium leading-relaxed" style="">Sincronización del <span class="text-primary-container font-bold uppercase" style="">movimiento</span> para asegurar la penetración.</p>
+                        </li>
+                        <li class="flex gap-4" style="">
+                            <span class="font-label text-primary-container text-base mt-1" style="">[03]</span>
+                            <p class="text-on-surface-variant text-xl font-medium leading-relaxed" style="">Evitar que el <span class="text-secondary-container font-bold uppercase" style="">charco se caiga</span> o se deforme por gravedad.</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- BottomNavBar -->
+    <footer
+        class="fixed bottom-0 left-0 w-full z-50 flex justify-between items-stretch px-0 bg-[#1C1B1B] border-t border-[#3B4B37]/40 shadow-[0px_-5px_15px_rgba(27,255,60,0.1)]">
+        <button
+            class="flex-1 flex items-center justify-center gap-2 font-['JetBrains_Mono'] text-xs font-medium uppercase tracking-tight text-[#1BFF3C] border border-[#1BFF3C]/20 p-4 hover:bg-[#1BFF3C] hover:text-[#003A05] transition-all cursor-crosshair"
+            style="">
+            <span class="material-symbols-outlined" data-icon="arrow_back_ios_new" style="">arrow_back_ios_new</span>
+            <span class="" style="">PREVIOUS</span>
+        </button>
+        <div
+            class="flex-[1.5] flex items-center justify-center gap-3 bg-transparent text-[#1BFF3C] border-x border-[#1BFF3C]/20 font-bold p-4">
+            <span class="material-symbols-outlined text-lg" data-icon="analytics"
+                style="font-variation-settings: &quot;FILL&quot; 1;">analytics</span><span
+                class="font-['JetBrains_Mono'] text-sm uppercase tracking-widest" style="">06</span></div>
+        <button
+            class="flex-1 flex items-center justify-center gap-2 font-['JetBrains_Mono'] text-xs font-medium uppercase tracking-tight text-[#1BFF3C] border border-[#1BFF3C]/20 p-4 hover:bg-[#1BFF3C] hover:text-[#003A05] transition-all cursor-crosshair"
+            style="">
+            <span class="" style="">NEXT</span>
+            <span class="material-symbols-outlined" data-icon="arrow_forward_ios" style="">arrow_forward_ios</span>
+        </button>
+    </footer>
+    <!-- Decorative Corner Elements -->
+    <div class="fixed top-0 left-0 w-32 h-32 pointer-events-none opacity-20 overflow-hidden">
+        <div class="absolute -top-16 -left-16 w-32 h-32 border-4 border-primary-container rotate-45"></div>
+    </div>
+    <div
+        class="fixed bottom-20 right-6 pointer-events-none flex flex-col items-end gap-2 text-[8px] font-label text-outline/40">
+        <div class="" style="">SYS_TEMP: 42°C</div>
+        <div class="" style="">BANDWIDTH: 4.2GB/S</div>
+        <div class="" style="">ENCRYPTION: AES-256</div>
+    </div>
 
 
 
@@ -230,41 +247,43 @@
 
 
 
-<script id="weld-bear-sync">
-    setTimeout(() => {
-        const triggers = document.querySelectorAll('button, a');
-        triggers.forEach(el => {
-            const text = el.innerText.toUpperCase();
-            const isPrev = text.includes('PREV') || text.includes('ANTERIOR') || text.includes('BACK_IOS') || text.includes('ARROW_BACK');
-            const isNext = text.includes('NEXT') || text.includes('SIGUIENTE') || text.includes('SIGUE') || text.includes('CONTINUAR') || text.includes('ARROW_FORWARD');
-            const isHome = text.includes('HOME') || text.includes('INICIO');
-            const isFinish = text.includes('FINALIZAR') || text.includes('FINISH');
+    <script id="weld-bear-sync">
+        setTimeout(() => {
+            const triggers = document.querySelectorAll('button, a');
+            triggers.forEach(el => {
+                const text = el.innerText.toUpperCase();
+                const isPrev = text.includes('PREV') || text.includes('ANTERIOR') || text.includes('BACK_IOS') || text.includes('ARROW_BACK');
+                const isNext = text.includes('NEXT') || text.includes('SIGUIENTE') || text.includes('SIGUE') || text.includes('CONTINUAR') || text.includes('ARROW_FORWARD');
+                const isHome = text.includes('HOME') || text.includes('INICIO');
+                const isFinish = text.includes('FINALIZAR') || text.includes('FINISH');
 
-            if (isPrev || isNext || isHome || isFinish) {
-                el.onclick = (e) => {
-                    e.preventDefault();
-                    if (isPrev) window.parent.postMessage('PREV', '*');
-                    if (isNext) window.parent.postMessage('NEXT', '*');
-                    if (isHome) window.parent.postMessage('HOME', '*');
-                    if (isFinish) window.parent.postMessage('FINISH', '*');
-                };
+                if (isPrev || isNext || isHome || isFinish) {
+                    el.onclick = (e) => {
+                        e.preventDefault();
+                        if (isPrev) window.parent.postMessage('PREV', '*');
+                        if (isNext) window.parent.postMessage('NEXT', '*');
+                        if (isHome) window.parent.postMessage('HOME', '*');
+                        if (isFinish) window.parent.postMessage('FINISH', '*');
+                    };
+                }
+            });
+        }, 500);
+
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ') {
+                e.preventDefault();
+                window.parent.postMessage('NEXT', '*');
+            } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+                e.preventDefault();
+                window.parent.postMessage('PREV', '*');
             }
         });
-    }, 500);
 
-    window.addEventListener('keydown', (e) => {
-        if (e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ') {
-            e.preventDefault();
-            window.parent.postMessage('NEXT', '*');
-        } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
-            e.preventDefault();
-            window.parent.postMessage('PREV', '*');
-        }
-    });
+        window.addEventListener('load', () => {
+            window.parent.postMessage('LOADED', '*');
+        });
+    </script>
 
-    window.addEventListener('load', () => {
-        window.parent.postMessage('LOADED', '*');
-    });
-</script>
+</body>
 
-</body></html>
+</html>

@@ -83,6 +83,19 @@
         .neon-glow-text {
             text-shadow: 0 0 10px rgba(27, 255, 60, 0.5), 0 0 20px rgba(27, 255, 60, 0.3);
         }
+        @media (max-width: 1023px) {
+            body, html { overflow-y: auto !important; overflow-x: hidden !important; height: auto !important; min-height: 100vh !important; }
+            * { box-sizing: border-box !important; }
+            main { height: auto !important; overflow: visible !important; display: flex !important; flex-direction: column !important; padding: 100px 16px 140px 16px !important; }
+            h1, .text-5xl, .md\:text-7xl { font-size: 2.5rem !important; line-height: 1.1 !important; word-wrap: break-word !important; }
+            h3, .text-2xl { font-size: 1.5rem !important; line-height: 1.2 !important; }
+            p, .text-xl, .text-lg { font-size: 1.1rem !important; line-height: 1.4 !important; }
+            .grid, .grid-cols-1, .md\:grid-cols-3 { display: flex !important; flex-direction: column !important; gap: 24px !important; }
+            header.fixed { flex-wrap: wrap !important; height: auto !important; padding: 16px !important; gap: 12px !important; position: relative !important; }
+            footer.fixed { height: auto !important; padding: 12px !important; flex-wrap: wrap !important; justify-content: center !important; gap: 8px !important; position: fixed !important; bottom: 0 !important; width: 100% !important; z-index: 50 !important; }
+            footer.fixed button, footer.fixed div { flex: 1 1 40% !important; text-align: center !important; justify-content: center !important; padding: 12px 4px !important; }
+            .absolute.top-1\/2.left-1\/2 { display: none !important; }
+        }
     </style>
 </head>
 <body class="bg-background text-on-background font-body selection:bg-primary-container selection:text-on-primary-container min-h-screen blueprint-grid overflow-hidden">
@@ -167,19 +180,7 @@
 </div>
 </div>
 </div>
-<!-- Annotation Decoration -->
-<div class="w-full max-w-6xl mt-8 flex justify-between items-end opacity-40">
-<div class="font-label text-[10px] uppercase space-y-1">
-<div class="" style="">X-COORD: 40.7128</div>
-<div class="" style="">Y-COORD: 74.0060</div>
-<div class="" style="">STATUS: FINALIZED</div>
-</div>
-<div class="font-label text-[10px] uppercase text-right">
-<div class="" style="">EST. 2026</div>
-<div class="" style="">WELD BEAR INT. EDU</div>
-<div class="" style="">WBE-PR-60</div>
-</div>
-</div>
+<!-- Annotation Decoration Eliminada -->
 </main>
 <!-- Footer / Navigation Shell -->
 <footer class="fixed bottom-0 w-full border-t border-outline-variant/20 bg-[#131313] flex justify-between items-center px-12 py-3 z-50">

@@ -89,6 +89,20 @@
         .glow-text {
             text-shadow: 0 0 10px rgba(27, 255, 60, 0.4);
         }
+        @media (max-width: 1023px) {
+            body, html { overflow-y: auto !important; overflow-x: hidden !important; height: auto !important; min-height: 100vh !important; }
+            * { box-sizing: border-box !important; }
+            main { height: auto !important; overflow: visible !important; display: flex !important; flex-direction: column !important; padding: 100px 16px 140px 16px !important; gap: 32px !important; }
+            .col-span-12, .lg\:col-span-5, .lg\:col-span-7 { width: 100% !important; flex: none !important; }
+            h2 { font-size: 2.2rem !important; line-height: 1.1 !important; word-wrap: break-word !important; }
+            .text-5xl { font-size: 2.2rem !important; }
+            .h-\[60\%\] { min-height: 300px !important; height: 350px !important; }
+            li { font-size: 1rem !important; padding: 16px !important; }
+            li span.text-lg { font-size: 1.1rem !important; }
+            header { flex-wrap: wrap !important; padding: 16px !important; gap: 12px !important; height: auto !important; }
+            nav { height: auto !important; padding: 12px !important; flex-wrap: wrap !important; justify-content: center !important; gap: 8px !important; position: fixed !important; bottom: 0 !important; width: 100% !important; z-index: 50 !important; }
+            nav button, nav div { flex: 1 1 25% !important; min-width: 80px !important; padding: 12px 4px !important; border: 1px solid rgba(27,255,60,0.1) !important; }
+        }
     </style>
 </head>
 <body class="font-body min-h-screen flex flex-col">
@@ -112,7 +126,6 @@
 <!-- Left Column: Safety Protocol -->
 <div class="col-span-12 lg:col-span-5 flex flex-col justify-center space-y-8">
 <div class="border-l-4 border-primary-container pl-6 space-y-2">
-<p class="font-label text-primary-container text-sm tracking-[0.3em] uppercase opacity-70" style="">Protocolo de Operación</p>
 <h2 class="font-headline text-5xl font-bold tracking-tight uppercase leading-none" style="">Seguridad en corte plasma</h2>
 </div>
 <ul class="space-y-4">
@@ -192,15 +205,10 @@
 </div>
 
 
-\n
 
-\n
 
-\n
 
-\n
 
-\n
 <script id="weld-bear-sync">
     setTimeout(() => {
         document.querySelectorAll('button').forEach(btn => {

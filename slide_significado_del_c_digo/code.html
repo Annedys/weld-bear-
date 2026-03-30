@@ -83,6 +83,21 @@
             background: linear-gradient(to bottom, transparent 50%, rgba(27, 255, 60, 0.02) 50%);
             background-size: 100% 4px;
         }
+        @media (max-width: 1023px) {
+            body, html { overflow-y: auto !important; overflow-x: hidden !important; height: auto !important; min-height: 100vh !important; }
+            * { box-sizing: border-box !important; }
+            main { height: auto !important; overflow: visible !important; display: flex !important; flex-direction: column !important; padding: 100px 16px 140px 16px !important; }
+            h1 { font-size: 2.2rem !important; line-height: 1.1 !important; word-wrap: break-word !important; }
+            .text-7xl, .md\:text-9xl { font-size: 3.5rem !important; }
+            p, .text-xl, .text-lg { font-size: 1.05rem !important; line-height: 1.4 !important; }
+            .grid, .grid-cols-1, .lg\:grid-cols-12, .md\:grid-cols-2, .lg\:grid-cols-4 { display: flex !important; flex-direction: column !important; gap: 16px !important; }
+            .lg\:col-span-12 { width: 100% !important; flex: none !important; }
+            .flex-wrap { flex-direction: column; align-items: center; gap: 24px !important; }
+            header.fixed { flex-wrap: wrap !important; height: auto !important; position: relative !important; }
+            nav.fixed { height: auto !important; padding: 12px !important; flex-wrap: wrap !important; justify-content: center !important; gap: 8px !important; position: fixed !important; bottom: 0 !important; width: 100% !important; z-index: 50 !important; }
+            nav.fixed button, nav.fixed div { flex: 1 1 20% !important; min-width: 60px !important; padding: 12px 4px !important; border: 1px solid rgba(27,255,60,0.1) !important; margin: 0 !important; }
+            .fixed.top-24 { display: none !important; }
+        }
     </style>
 </head>
 <body class="bg-background text-on-background font-body selection:bg-primary-container selection:text-on-primary-container min-h-screen blueprint-grid">
@@ -104,13 +119,10 @@
 <!-- Technical Breadcrumb / Metadata -->
 <div class="mb-12 flex justify-between items-end border-b border-outline-variant/30 pb-4">
 <div class="space-y-1">
-<span class="font-mono text-[10px] text-primary-fixed tracking-[0.2em] uppercase" style="">MÓDULO 04 // ESPECIFICACIONES AWS</span>
+
 <h1 class="font-headline font-bold uppercase tracking-widest text-5xl text-on-background leading-none" style="">SIGNIFICADO DEL CÓDIGO</h1>
 </div>
-<div class="text-right font-mono text-xs text-outline space-y-1">
-<p class="" style="">REF_ID: AWS_A5.1</p>
-<p class="" style="">STATUS: ACTIVE_TERMINAL</p>
-</div>
+
 </div>
 <!-- Main Content Area: Technical Breakdown -->
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
@@ -179,15 +191,6 @@
                     <p class="font-body text-lg font-medium text-on-surface leading-relaxed" style="">Tipo de <span class="text-on-surface font-bold" style="">revestimiento potásico</span> y compatible con corriente CA, CC (+) o CC (-).</p>
                 </div>
 </div>
-            <!-- Technical Annotations -->
-            <div class="lg:col-span-12 bg-surface-container-lowest border border-outline-variant/10 p-4 flex items-center gap-4">
-                <div class="bg-secondary-container/10 p-2">
-                    <span class="material-symbols-outlined text-secondary-container" style="">warning</span>
-                </div>
-                <p class="text-base font-bold text-on-surface uppercase tracking-wider" style="">
-                    Nota: Los dos primeros dígitos multiplicados por 1,000 dan la resistencia mínima a la tracción del metal depositado.
-                </p>
-            </div>
 </div>
 </main>
 <!-- BottomNavBar -->
@@ -217,17 +220,11 @@
 </div>
 
 
-\n
 
-\n
 
-\n
 
-\n
 
-\n
 
-\n
 
 
 

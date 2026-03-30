@@ -40,6 +40,21 @@
                               linear-gradient(to bottom, rgba(59, 75, 55, 0.1) 1px, transparent 1px);
             background-size: 40px 40px;
         }
+        @media (max-width: 1023px) {
+            body, html { overflow-y: auto !important; overflow-x: hidden !important; height: auto !important; min-height: 100vh !important; }
+            * { box-sizing: border-box !important; }
+            main { height: auto !important; overflow: visible !important; display: flex !important; flex-direction: column !important; padding: 100px 16px 140px 16px !important; }
+            h1 { font-size: 2.2rem !important; line-height: 1.1 !important; word-wrap: break-word !important; }
+            .text-7xl, .md\:text-7xl, .text-5xl { font-size: 2.2rem !important; }
+            p, .text-xl, .text-2xl { font-size: 1.1rem !important; line-height: 1.4 !important; }
+            .grid, .grid-cols-1, .lg\:grid-cols-12 { display: flex !important; flex-direction: column !important; gap: 24px !important; }
+            .lg\:col-span-9, .lg\:col-span-3 { width: 100% !important; flex: none !important; }
+            .overflow-x-auto { width: 100% !important; overflow-x: auto !important; -webkit-overflow-scrolling: touch !important; padding-bottom: 8px !important; }
+            table { min-width: 600px !important; }
+            header.fixed { flex-wrap: wrap !important; height: auto !important; padding: 16px !important; gap: 12px !important; position: relative !important; }
+            nav.fixed { height: auto !important; padding: 12px !important; flex-wrap: wrap !important; justify-content: center !important; gap: 8px !important; position: fixed !important; bottom: 0 !important; width: 100% !important; z-index: 50 !important; }
+            nav.fixed button, nav.fixed div { flex: 1 1 20% !important; min-width: 60px !important; padding: 12px 4px !important; border: 1px solid rgba(27,255,60,0.1) !important; margin: 0 !important; }
+        }
     </style>
 </head>
 <body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container min-h-screen flex flex-col overflow-hidden">
@@ -56,11 +71,6 @@
 <div class="max-w-7xl mx-auto">
 <!-- Header Section -->
 <div class="mb-12 border-l-4 border-primary-container pl-6 py-2 bg-surface-container-low/50">
-<div class="flex items-center gap-2 mb-1">
-<span class="font-technical text-[10px] text-outline uppercase tracking-widest">Power Management // Volt-Amp Comparison</span>
-<div class="h-[1px] flex-grow bg-outline-variant/30"></div>
-<span class="font-technical text-[10px] text-primary-container">REF_ID: VAMP-110-220</span>
-</div>
 <h1 class="text-5xl md:text-7xl font-headline font-bold text-on-surface tracking-tight uppercase leading-none">
                     TABLA DE AMPERAJES: 110V vs 220V
                 </h1>

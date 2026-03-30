@@ -1,264 +1,297 @@
-<!DOCTYPE html><html class="dark" lang="es"><head>
-<meta charset="utf-8">
-<meta content="width=device-width, initial-scale=1.0" name="viewport">
-<title>WELDING_SYSTEM_v2.0 - Slide 43</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700;800&amp;family=Space+Grotesk:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;700&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
-<script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            colors: {
-              "on-tertiary-container": "#c5020c",
-              "on-primary-fixed": "#002202",
-              "on-secondary-fixed-variant": "#554500",
-              "primary-fixed": "#74ff6d",
-              "surface-tint": "#00e631",
-              "primary": "#ecffe3",
-              "tertiary-fixed-dim": "#ffb4aa",
-              "outline-variant": "#3b4b37",
-              "on-primary-container": "#007112",
-              "surface-container-high": "#2a2a2a",
-              "on-secondary-container": "#6f5c00",
-              "primary-container": "#1bff3c",
-              "surface-container-highest": "#353534",
-              "primary-fixed-dim": "#00e631",
-              "surface-container": "#201f1f",
-              "surface-variant": "#353534",
-              "on-surface": "#e5e2e1",
-              "secondary": "#fff3d3",
-              "on-primary": "#003a05",
-              "surface-container-lowest": "#0e0e0e",
-              "on-tertiary-fixed-variant": "#930005",
-              "on-primary-fixed-variant": "#00530a",
-              "tertiary": "#fff8f7",
-              "on-tertiary": "#690003",
-              "inverse-primary": "#006e11",
-              "secondary-fixed-dim": "#eac300",
-              "on-error": "#690005",
-              "secondary-fixed": "#ffe174",
-              "on-error-container": "#ffdad6",
-              "background": "#131313",
-              "error": "#ffb4ab",
-              "surface-container-low": "#1c1b1b",
-              "surface": "#131313",
-              "outline": "#84967e",
-              "surface-bright": "#393939",
-              "on-tertiary-fixed": "#410001",
-              "on-secondary-fixed": "#221b00",
-              "tertiary-fixed": "#ffdad5",
-              "on-secondary": "#3b2f00",
-              "tertiary-container": "#ffd3cd",
-              "secondary-container": "#fed400",
-              "inverse-on-surface": "#313030",
-              "surface-dim": "#131313",
-              "error-container": "#93000a",
-              "on-surface-variant": "#baccb2",
-              "on-background": "#e5e2e1",
-              "inverse-surface": "#e5e2e1"
+<!DOCTYPE html>
+<html class="dark" lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>WELDING_SYSTEM_v2.0 - Slide 43</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700;800&amp;family=Space+Grotesk:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;700&amp;display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet">
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-tertiary-container": "#c5020c",
+                        "on-primary-fixed": "#002202",
+                        "on-secondary-fixed-variant": "#554500",
+                        "primary-fixed": "#74ff6d",
+                        "surface-tint": "#00e631",
+                        "primary": "#ecffe3",
+                        "tertiary-fixed-dim": "#ffb4aa",
+                        "outline-variant": "#3b4b37",
+                        "on-primary-container": "#007112",
+                        "surface-container-high": "#2a2a2a",
+                        "on-secondary-container": "#6f5c00",
+                        "primary-container": "#1bff3c",
+                        "surface-container-highest": "#353534",
+                        "primary-fixed-dim": "#00e631",
+                        "surface-container": "#201f1f",
+                        "surface-variant": "#353534",
+                        "on-surface": "#e5e2e1",
+                        "secondary": "#fff3d3",
+                        "on-primary": "#003a05",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-tertiary-fixed-variant": "#930005",
+                        "on-primary-fixed-variant": "#00530a",
+                        "tertiary": "#fff8f7",
+                        "on-tertiary": "#690003",
+                        "inverse-primary": "#006e11",
+                        "secondary-fixed-dim": "#eac300",
+                        "on-error": "#690005",
+                        "secondary-fixed": "#ffe174",
+                        "on-error-container": "#ffdad6",
+                        "background": "#131313",
+                        "error": "#ffb4ab",
+                        "surface-container-low": "#1c1b1b",
+                        "surface": "#131313",
+                        "outline": "#84967e",
+                        "surface-bright": "#393939",
+                        "on-tertiary-fixed": "#410001",
+                        "on-secondary-fixed": "#221b00",
+                        "tertiary-fixed": "#ffdad5",
+                        "on-secondary": "#3b2f00",
+                        "tertiary-container": "#ffd3cd",
+                        "secondary-container": "#fed400",
+                        "inverse-on-surface": "#313030",
+                        "surface-dim": "#131313",
+                        "error-container": "#93000a",
+                        "on-surface-variant": "#baccb2",
+                        "on-background": "#e5e2e1",
+                        "inverse-surface": "#e5e2e1"
+                    },
+                    fontFamily: {
+                        "headline": ["Rajdhani", "sans-serif"],
+                        "body": ["Space Grotesk", "sans-serif"],
+                        "technical": ["JetBrains Mono", "monospace"]
+                    },
+                    borderRadius: { "DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px" },
+                },
             },
-            fontFamily: {
-              "headline": ["Rajdhani", "sans-serif"],
-              "body": ["Space Grotesk", "sans-serif"],
-              "technical": ["JetBrains Mono", "monospace"]
-            },
-            borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
-          },
-        },
-      }
+        }
     </script>
-<style>
-      body {
-        background-color: #131313;
-        background-image: 
-          linear-gradient(rgba(59, 75, 55, 0.05) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(59, 75, 55, 0.05) 1px, transparent 1px);
-        background-size: 40px 40px;
-      }
-      .material-symbols-outlined {
-        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-      }
+    <style>
+        body {
+            background-color: #131313;
+            background-image:
+                linear-gradient(rgba(59, 75, 55, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(59, 75, 55, 0.05) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        @media (max-width: 1023px) {
+            body, html { overflow-y: auto !important; overflow-x: hidden !important; height: auto !important; min-height: 100vh !important; }
+            * { box-sizing: border-box !important; }
+            main { height: auto !important; overflow: visible !important; display: flex !important; flex-direction: column !important; padding: 100px 16px 140px 16px !important; }
+            h1 { font-size: 2.2rem !important; line-height: 1.1 !important; word-wrap: break-word !important; }
+            p, .text-xl { font-size: 1.1rem !important; line-height: 1.4 !important; }
+            .flex.flex-wrap, .grid, .grid-cols-1 { display: flex !important; flex-direction: column !important; gap: 24px !important; }
+            .w-full.md\:w-\[calc\(50\%-1rem\)\], .w-full.lg\:w-\[calc\(33\%-1\.33rem\)\] { width: 100% !important; }
+            header.fixed { flex-wrap: wrap !important; height: auto !important; padding: 16px !important; gap: 12px !important; position: relative !important; }
+            footer.fixed { height: auto !important; padding: 12px !important; flex-wrap: wrap !important; justify-content: center !important; gap: 8px !important; position: fixed !important; bottom: 0 !important; width: 100% !important; z-index: 50 !important; }
+            footer.fixed button, footer.fixed div { flex: 1 1 20% !important; min-width: 60px !important; padding: 12px 4px !important; border: 1px solid rgba(27,255,60,0.1) !important; margin: 0 !important; }
+        }
     </style>
 </head>
+
 <body class="min-h-screen text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
-<!-- TopAppBar -->
-<header class="bg-[#131313] dark:bg-[#131313] docked full-width top-0 border-b-0 bg-[#1C1B1B] border-none shadow-[0px_0px_15px_rgba(27,255,60,0.1)] flex justify-between items-center w-full px-6 py-4 fixed z-50">
-<div class="flex items-center gap-4">
-<span class="text-xl font-black text-[#1BFF3C] tracking-tighter font-['Rajdhani'] uppercase tracking-widest font-bold" style=""><span style="font-family: Rajdhani, sans-serif; font-size: 24px; letter-spacing: -1.2px;">WELD BEAR IEDU</span></span>
-<div class="hidden md:block h-4 w-[1px] bg-outline-variant/30"></div>
-<span class="hidden md:block font-technical text-[10px] text-outline tracking-widest" style="">MODULE_IEDU_2026 // SYST_STATUS: ACTIVE</span>
-</div>
-<nav class="flex items-center gap-6">
-<button class="material-symbols-outlined text-[#84967E] hover:text-[#1BFF3C] transition-all duration-150 ease-in-out" data-icon="info" style="">info</button>
-<button class="material-symbols-outlined text-[#84967E] hover:text-[#1BFF3C] transition-all duration-150 ease-in-out" data-icon="settings" style="">settings</button>
-</nav>
-</header>
-<main class="pt-24 pb-32 px-6 max-w-7xl mx-auto">
-<!-- Content Header -->
-<div class="mb-12">
-<div class="flex items-center gap-2 mb-2">
-<span class="w-8 h-[2px] bg-primary-container"></span>
-<span class="font-technical text-[10px] uppercase tracking-[0.3em] text-primary-container" style=""><br></span>
-</div>
-<h1 class="font-headline text-5xl md:text-7xl font-extrabold uppercase tracking-tight text-on-surface leading-none" style="">
+    <!-- TopAppBar -->
+    <header
+        class="bg-[#131313] dark:bg-[#131313] docked full-width top-0 border-b-0 bg-[#1C1B1B] border-none shadow-[0px_0px_15px_rgba(27,255,60,0.1)] flex justify-between items-center w-full px-6 py-4 fixed z-50">
+        <div class="flex items-center gap-4">
+            <span
+                class="text-xl font-black text-[#1BFF3C] tracking-tighter font-['Rajdhani'] uppercase tracking-widest font-bold"
+                style=""><span style="font-family: Rajdhani, sans-serif; font-size: 24px; letter-spacing: -1.2px;">WELD
+                    BEAR IEDU</span></span>
+        </div>
+        <nav class="flex items-center gap-6">
+            <button
+                class="material-symbols-outlined text-[#84967E] hover:text-[#1BFF3C] transition-all duration-150 ease-in-out"
+                data-icon="info" style="">info</button>
+            <button
+                class="material-symbols-outlined text-[#84967E] hover:text-[#1BFF3C] transition-all duration-150 ease-in-out"
+                data-icon="settings" style="">settings</button>
+        </nav>
+    </header>
+    <main class="pt-24 pb-16 px-6 max-w-7xl mx-auto overflow-hidden">
+        <!-- Content Header -->
+        <div class="mb-8">
+            <h1
+                class="font-headline text-5xl md:text-7xl font-extrabold uppercase tracking-tight text-on-surface leading-none mb-4">
                 TIPOS DE JUNTAS
             </h1>
-</div>
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
-<!-- Left Column: Context -->
-<div class="lg:col-span-5 space-y-8">
-<div class="bg-surface-container-low p-8 relative border-l-4 border-primary-container shadow-[0px_0px_20px_rgba(27,255,60,0.05)]">
-<span class="absolute top-2 right-4 font-technical text-[10px] text-outline-variant" style="">REF_BLOCK: A-43</span>
-<p class="text-xl leading-relaxed text-on-surface-variant font-medium" style="">
-                        Las juntas más comunes en procesos de soldadura industrial se clasifican según la disposición geométrica de las piezas a unir.
-                    </p>
-<div class="mt-8 pt-8 border-t border-outline-variant/20">
-<p class="text-sm font-technical text-outline uppercase tracking-wider mb-4" style="">REQUERIMIENTOS TÉCNICOS</p>
-<p class="text-lg text-on-surface" style="">Cada junta requiere <span class="text-primary-container font-bold" style="">preparación, técnica y posición</span> adecuadas para garantizar la integridad estructural del componente.</p>
-</div>
-</div>
-</div>
-<!-- Right Column: Interactive Blueprint List -->
-<div class="lg:col-span-7">
-<div class="grid grid-cols-1 gap-4">
-<!-- Junta 01 -->
-<div class="group bg-surface-container-low hover:bg-surface-container-high transition-colors duration-200 border border-outline-variant/30 flex items-center p-6 relative overflow-hidden">
-<div class="absolute left-0 top-0 bottom-0 w-1 bg-primary-container opacity-0 group-hover:opacity-100 transition-opacity"></div>
-<span class="font-technical text-primary-container text-sm mr-8" style="">01_</span>
-<h3 class="font-headline text-2xl font-bold uppercase tracking-widest text-on-surface" style="">junta a tope</h3>
-<div class="ml-auto opacity-0 group-hover:opacity-100 transition-opacity">
-<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: &quot;FILL&quot; 1;">arrow_right_alt</span>
-</div>
-</div>
-<!-- Junta 02 -->
-<div class="group bg-surface-container-low hover:bg-surface-container-high transition-colors duration-200 border border-outline-variant/30 flex items-center p-6 relative">
-<div class="absolute left-0 top-0 bottom-0 w-1 bg-primary-container opacity-0 group-hover:opacity-100 transition-opacity"></div>
-<span class="font-technical text-primary-container text-sm mr-8" style="">02_</span>
-<h3 class="font-headline text-2xl font-bold uppercase tracking-widest text-on-surface" style="">junta de esquina</h3>
-<div class="ml-auto opacity-0 group-hover:opacity-100 transition-opacity">
-<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: &quot;FILL&quot; 1;">arrow_right_alt</span>
-</div>
-</div>
-<!-- Junta 03 -->
-<div class="group bg-surface-container-low hover:bg-surface-container-high transition-colors duration-200 border border-outline-variant/30 flex items-center p-6 relative">
-<div class="absolute left-0 top-0 bottom-0 w-1 bg-primary-container opacity-0 group-hover:opacity-100 transition-opacity"></div>
-<span class="font-technical text-primary-container text-sm mr-8" style="">03_</span>
-<h3 class="font-headline text-2xl font-bold uppercase tracking-widest text-on-surface" style="">junta de borde</h3>
-<div class="ml-auto opacity-0 group-hover:opacity-100 transition-opacity">
-<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: &quot;FILL&quot; 1;">arrow_right_alt</span>
-</div>
-</div>
-<!-- Junta 04 -->
-<div class="group bg-surface-container-low hover:bg-surface-container-high transition-colors duration-200 border border-outline-variant/30 flex items-center p-6 relative">
-<div class="absolute left-0 top-0 bottom-0 w-1 bg-primary-container opacity-0 group-hover:opacity-100 transition-opacity"></div>
-<span class="font-technical text-primary-container text-sm mr-8" style="">04_</span>
-<h3 class="font-headline text-2xl font-bold uppercase tracking-widest text-on-surface" style="">junta traslapada</h3>
-<div class="ml-auto opacity-0 group-hover:opacity-100 transition-opacity">
-<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: &quot;FILL&quot; 1;">arrow_right_alt</span>
-</div>
-</div>
-<!-- Junta 05 -->
-<div class="group bg-surface-container-low hover:bg-surface-container-high transition-colors duration-200 border border-outline-variant/30 flex items-center p-6 relative">
-<div class="absolute left-0 top-0 bottom-0 w-1 bg-primary-container opacity-0 group-hover:opacity-100 transition-opacity"></div>
-<span class="font-technical text-primary-container text-sm mr-8" style="">05_</span>
-<h3 class="font-headline text-2xl font-bold uppercase tracking-widest text-on-surface" style="">junta en T</h3>
-<div class="ml-auto opacity-0 group-hover:opacity-100 transition-opacity">
-<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: &quot;FILL&quot; 1;">arrow_right_alt</span>
-</div>
-</div>
-</div>
-</div>
-</div>
-<!-- Annotation / Technical Metadata -->
-<div class="mt-20 border-t border-outline-variant/20 pt-4 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-<div class="font-technical text-[10px] text-outline uppercase tracking-widest" style="">
-                System: WELD_BEAR_IEDU_2026 // Kernel: 0.98.2 // User: AUTHORIZED_INSTRUCTOR
+            <p class="text-xl leading-relaxed text-on-surface-variant font-medium max-w-4xl">
+                Las juntas más comunes en procesos de soldadura industrial se clasifican según la disposición geométrica
+                de las piezas a unir, requiriendo preparación y técnicas específicas.
+            </p>
+        </div>
+
+        <!-- Juntas Visual Layout: 2 + 3 centered -->
+        <div class="flex flex-col gap-6">
+            <!-- Row 1: 2 Centered Cards -->
+            <div class="flex flex-wrap justify-center gap-6">
+                <!-- Junta 01: A Tope -->
+                <div
+                    class="group bg-surface-container-low hover:bg-surface-container-high transition-all duration-300 border border-outline-variant/30 flex flex-col relative overflow-hidden w-full md:w-[calc(50%-1rem)] lg:w-[calc(33%-1.33rem)]">
+                    <div
+                        class="p-4 border-b border-outline-variant/20 flex justify-center items-center bg-surface-container-high/50">
+                        <h3 class="font-headline text-xl font-bold uppercase tracking-wider text-on-surface">Junta A
+                            Tope</h3>
+                    </div>
+                    <div class="h-64 bg-surface-container-lowest overflow-hidden flex items-center justify-center p-6">
+                        <img src="../junta tope.png" alt="Junta a tope"
+                            class="max-w-full max-h-full object-contain transition-all duration-500 transform group-hover:scale-110">
+                    </div>
+                </div>
+
+                <!-- Junta 02: Esquina -->
+                <div
+                    class="group bg-surface-container-low hover:bg-surface-container-high transition-all duration-300 border border-outline-variant/30 flex flex-col relative overflow-hidden w-full md:w-[calc(50%-1rem)] lg:w-[calc(33%-1.33rem)]">
+                    <div
+                        class="p-4 border-b border-outline-variant/20 flex justify-center items-center bg-surface-container-high/50">
+                        <h3 class="font-headline text-xl font-bold uppercase tracking-wider text-on-surface">Junta de
+                            Esquina</h3>
+                    </div>
+                    <div class="h-64 bg-surface-container-lowest overflow-hidden flex items-center justify-center p-6">
+                        <img src="../junta esquina.png" alt="Junta de esquina"
+                            class="max-w-full max-h-full object-contain transition-all duration-500 transform group-hover:scale-110">
+                    </div>
+                </div>
             </div>
-<div class="flex gap-4">
-<div class="px-3 py-1 bg-surface-container-highest border border-outline-variant text-[10px] font-technical text-primary-container uppercase" style="">
-                    Safety Check: PASSED
+
+            <!-- Row 2: 3 Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Junta 03: Borde -->
+                <div
+                    class="group bg-surface-container-low hover:bg-surface-container-high transition-all duration-300 border border-outline-variant/30 flex flex-col relative overflow-hidden">
+                    <div
+                        class="p-4 border-b border-outline-variant/20 flex justify-center items-center bg-surface-container-high/50">
+                        <h3 class="font-headline text-xl font-bold uppercase tracking-wider text-on-surface">Junta de
+                            Borde</h3>
+                    </div>
+                    <div class="h-64 bg-surface-container-lowest overflow-hidden flex items-center justify-center p-6">
+                        <img src="../junta borde.png" alt="Junta de borde"
+                            class="max-w-full max-h-full object-contain transition-all duration-500 transform group-hover:scale-110">
+                    </div>
                 </div>
-<div class="px-3 py-1 bg-surface-container-highest border border-outline-variant text-[10px] font-technical text-primary-container uppercase" style="">
-                    Data Integrity: 100%
+
+                <!-- Junta 04: Traslape -->
+                <div
+                    class="group bg-surface-container-low hover:bg-surface-container-high transition-all duration-300 border border-outline-variant/30 flex flex-col relative overflow-hidden">
+                    <div
+                        class="p-4 border-b border-outline-variant/20 flex justify-center items-center bg-surface-container-high/50">
+                        <h3 class="font-headline text-xl font-bold uppercase tracking-wider text-on-surface">Junta de
+                            Traslape</h3>
+                    </div>
+                    <div class="h-64 bg-surface-container-lowest overflow-hidden flex items-center justify-center p-6">
+                        <img src="../junta traslape.png" alt="Junta traslapada"
+                            class="max-w-full max-h-full object-contain transition-all duration-500 transform group-hover:scale-110">
+                    </div>
                 </div>
-</div>
-</div>
-</main>
-<!-- BottomNavBar -->
-<footer class="bg-[#131313] dark:bg-[#131313] fixed bottom-0 left-0 w-full z-50 flex justify-between items-center px-8 font-['JetBrains_Mono'] text-xs font-bold uppercase border-t border-[#3B4B37]/20 tonal-shift-from-surface-to-low">
-<!-- PREVIOUS -->
-<button class="flex flex-col items-center justify-center text-[#84967E] p-4 hover:bg-[#1BFF3C]/10 hover:text-[#1BFF3C] transition-all duration-150 ease-in-out active:scale-95 duration-75" style="">
-<span class="material-symbols-outlined mb-1" data-icon="arrow_back" style="">arrow_back</span>
-<span class="" style="">PREVIOUS</span>
-</button>
-<!-- ACTIVE: 43 / 60 -->
-<div class="flex flex-col items-center justify-center text-[#1BFF3C] bg-[#1C1B1B] p-4 min-w-[120px] border-x border-[#3B4B37]/20">
-<span class="material-symbols-outlined mb-1" data-icon="analytics" style="font-variation-settings: &quot;FILL&quot; 1;">analytics</span>
-<span class="" style="">03</span>
-</div>
-<!-- NEXT -->
-<button class="flex flex-col items-center justify-center text-[#84967E] p-4 hover:bg-[#1BFF3C]/10 hover:text-[#1BFF3C] transition-all duration-150 ease-in-out active:scale-95 duration-75" style="">
-<span class="material-symbols-outlined mb-1" data-icon="arrow_forward" style="">arrow_forward</span>
-<span class="" style="">NEXT</span>
-</button>
-</footer>
+
+                <!-- Junta 05: En T -->
+                <div
+                    class="group bg-surface-container-low hover:bg-surface-container-high transition-all duration-300 border border-outline-variant/30 flex flex-col relative overflow-hidden">
+                    <div
+                        class="p-4 border-b border-outline-variant/20 flex justify-center items-center bg-surface-container-high/50">
+                        <h3 class="font-headline text-xl font-bold uppercase tracking-wider text-on-surface">Junta en T
+                        </h3>
+                    </div>
+                    <div class="h-64 bg-surface-container-lowest overflow-hidden flex items-center justify-center p-6">
+                        <img src="../juntat.png" alt="Junta en T"
+                            class="max-w-full max-h-full object-contain transition-all duration-500 transform group-hover:scale-110">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- BottomNavBar -->
+    <footer
+        class="bg-[#131313] dark:bg-[#131313] fixed bottom-0 left-0 w-full z-50 flex justify-between items-center px-8 font-['JetBrains_Mono'] text-xs font-bold uppercase border-t border-[#3B4B37]/20 tonal-shift-from-surface-to-low">
+        <!-- PREVIOUS -->
+        <button
+            class="flex flex-col items-center justify-center text-[#84967E] p-4 hover:bg-[#1BFF3C]/10 hover:text-[#1BFF3C] transition-all duration-150 ease-in-out active:scale-95 duration-75"
+            style="">
+            <span class="material-symbols-outlined mb-1" data-icon="arrow_back" style="">arrow_back</span>
+            <span class="" style="">PREVIOUS</span>
+        </button>
+        <!-- ACTIVE: 43 / 60 -->
+        <div
+            class="flex flex-col items-center justify-center text-[#1BFF3C] bg-[#1C1B1B] p-4 min-w-[120px] border-x border-[#3B4B37]/20">
+            <span class="material-symbols-outlined mb-1" data-icon="analytics"
+                style="font-variation-settings: &quot;FILL&quot; 1;">analytics</span>
+            <span class="" style="">03</span>
+        </div>
+        <!-- NEXT -->
+        <button
+            class="flex flex-col items-center justify-center text-[#84967E] p-4 hover:bg-[#1BFF3C]/10 hover:text-[#1BFF3C] transition-all duration-150 ease-in-out active:scale-95 duration-75"
+            style="">
+            <span class="material-symbols-outlined mb-1" data-icon="arrow_forward" style="">arrow_forward</span>
+            <span class="" style="">NEXT</span>
+        </button>
+    </footer>
 
 
-\n
-
-\n
-
-\n
-
-\n
-
-\n
-
-\n
 
 
 
 
 
 
-<script id="weld-bear-sync">
-    setTimeout(() => {
-        const triggers = document.querySelectorAll('button, a');
-        triggers.forEach(el => {
-            const text = el.innerText.toUpperCase();
-            const isPrev = text.includes('PREV') || text.includes('ANTERIOR') || text.includes('BACK_IOS') || text.includes('ARROW_BACK');
-            const isNext = text.includes('NEXT') || text.includes('SIGUIENTE') || text.includes('SIGUE') || text.includes('CONTINUAR') || text.includes('ARROW_FORWARD');
-            const isHome = text.includes('HOME') || text.includes('INICIO');
-            const isFinish = text.includes('FINALIZAR') || text.includes('FINISH');
 
-            if (isPrev || isNext || isHome || isFinish) {
-                el.onclick = (e) => {
-                    e.preventDefault();
-                    if (isPrev) window.parent.postMessage('PREV', '*');
-                    if (isNext) window.parent.postMessage('NEXT', '*');
-                    if (isHome) window.parent.postMessage('HOME', '*');
-                    if (isFinish) window.parent.postMessage('FINISH', '*');
-                };
+
+
+
+
+    <script id="weld-bear-sync">
+        setTimeout(() => {
+            const triggers = document.querySelectorAll('button, a');
+            triggers.forEach(el => {
+                const text = el.innerText.toUpperCase();
+                const isPrev = text.includes('PREV') || text.includes('ANTERIOR') || text.includes('BACK_IOS') || text.includes('ARROW_BACK');
+                const isNext = text.includes('NEXT') || text.includes('SIGUIENTE') || text.includes('SIGUE') || text.includes('CONTINUAR') || text.includes('ARROW_FORWARD');
+                const isHome = text.includes('HOME') || text.includes('INICIO');
+                const isFinish = text.includes('FINALIZAR') || text.includes('FINISH');
+
+                if (isPrev || isNext || isHome || isFinish) {
+                    el.onclick = (e) => {
+                        e.preventDefault();
+                        if (isPrev) window.parent.postMessage('PREV', '*');
+                        if (isNext) window.parent.postMessage('NEXT', '*');
+                        if (isHome) window.parent.postMessage('HOME', '*');
+                        if (isFinish) window.parent.postMessage('FINISH', '*');
+                    };
+                }
+            });
+        }, 500);
+
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ') {
+                e.preventDefault();
+                window.parent.postMessage('NEXT', '*');
+            } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+                e.preventDefault();
+                window.parent.postMessage('PREV', '*');
             }
         });
-    }, 500);
 
-    window.addEventListener('keydown', (e) => {
-        if (e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ') {
-            e.preventDefault();
-            window.parent.postMessage('NEXT', '*');
-        } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
-            e.preventDefault();
-            window.parent.postMessage('PREV', '*');
-        }
-    });
+        window.addEventListener('load', () => {
+            window.parent.postMessage('LOADED', '*');
+        });
+    </script>
 
-    window.addEventListener('load', () => {
-        window.parent.postMessage('LOADED', '*');
-    });
-</script>
+</body>
 
-</body></html>
+</html>

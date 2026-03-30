@@ -1,279 +1,327 @@
 <!DOCTYPE html>
 
-<html class="dark" lang="es"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&amp;family=Space+Grotesk:wght@300;400;500;700&amp;family=JetBrains+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            colors: {
-              "primary-fixed-dim": "#00e631",
-              "on-tertiary-fixed": "#410001",
-              "on-background": "#e5e2e1",
-              "tertiary-container": "#ffd3cd",
-              "surface-variant": "#353534",
-              "surface-dim": "#131313",
-              "on-primary-container": "#007112",
-              "background": "#131313",
-              "surface-container-lowest": "#0e0e0e",
-              "on-surface": "#e5e2e1",
-              "on-primary-fixed": "#002202",
-              "surface-bright": "#393939",
-              "error": "#ffb4ab",
-              "surface-container-high": "#2a2a2a",
-              "inverse-on-surface": "#313030",
-              "secondary-fixed": "#ffe174",
-              "secondary-container": "#fed400",
-              "on-tertiary-container": "#c5020c",
-              "secondary": "#fff3d3",
-              "on-error": "#690005",
-              "inverse-surface": "#e5e2e1",
-              "surface-container-highest": "#353534",
-              "tertiary-fixed": "#ffdad5",
-              "on-secondary-fixed-variant": "#554500",
-              "on-secondary-fixed": "#221b00",
-              "surface": "#131313",
-              "on-primary-fixed-variant": "#00530a",
-              "primary-fixed": "#74ff6d",
-              "on-tertiary-fixed-variant": "#930005",
-              "on-error-container": "#ffdad6",
-              "tertiary": "#fff8f7",
-              "on-surface-variant": "#baccb2",
-              "on-secondary-container": "#6f5c00",
-              "surface-container": "#201f1f",
-              "primary-container": "#1bff3c",
-              "tertiary-fixed-dim": "#ffb4aa",
-              "on-tertiary": "#690003",
-              "secondary-fixed-dim": "#eac300",
-              "inverse-primary": "#006e11",
-              "surface-container-low": "#1c1b1b",
-              "outline-variant": "#3b4b37",
-              "surface-tint": "#00e631",
-              "on-primary": "#003a05",
-              "outline": "#84967e",
-              "error-container": "#93000a",
-              "primary": "#ecffe3",
-              "on-secondary": "#3b2f00"
+<html class="dark" lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&amp;family=Space+Grotesk:wght@300;400;500;700&amp;family=JetBrains+Mono:wght@400;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary-fixed-dim": "#00e631",
+                        "on-tertiary-fixed": "#410001",
+                        "on-background": "#e5e2e1",
+                        "tertiary-container": "#ffd3cd",
+                        "surface-variant": "#353534",
+                        "surface-dim": "#131313",
+                        "on-primary-container": "#007112",
+                        "background": "#131313",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-surface": "#e5e2e1",
+                        "on-primary-fixed": "#002202",
+                        "surface-bright": "#393939",
+                        "error": "#ffb4ab",
+                        "surface-container-high": "#2a2a2a",
+                        "inverse-on-surface": "#313030",
+                        "secondary-fixed": "#ffe174",
+                        "secondary-container": "#fed400",
+                        "on-tertiary-container": "#c5020c",
+                        "secondary": "#fff3d3",
+                        "on-error": "#690005",
+                        "inverse-surface": "#e5e2e1",
+                        "surface-container-highest": "#353534",
+                        "tertiary-fixed": "#ffdad5",
+                        "on-secondary-fixed-variant": "#554500",
+                        "on-secondary-fixed": "#221b00",
+                        "surface": "#131313",
+                        "on-primary-fixed-variant": "#00530a",
+                        "primary-fixed": "#74ff6d",
+                        "on-tertiary-fixed-variant": "#930005",
+                        "on-error-container": "#ffdad6",
+                        "tertiary": "#fff8f7",
+                        "on-surface-variant": "#baccb2",
+                        "on-secondary-container": "#6f5c00",
+                        "surface-container": "#201f1f",
+                        "primary-container": "#1bff3c",
+                        "tertiary-fixed-dim": "#ffb4aa",
+                        "on-tertiary": "#690003",
+                        "secondary-fixed-dim": "#eac300",
+                        "inverse-primary": "#006e11",
+                        "surface-container-low": "#1c1b1b",
+                        "outline-variant": "#3b4b37",
+                        "surface-tint": "#00e631",
+                        "on-primary": "#003a05",
+                        "outline": "#84967e",
+                        "error-container": "#93000a",
+                        "primary": "#ecffe3",
+                        "on-secondary": "#3b2f00"
+                    },
+                    fontFamily: {
+                        "headline": ["Rajdhani", "sans-serif"],
+                        "body": ["Space Grotesk", "sans-serif"],
+                        "label": ["JetBrains Mono", "monospace"]
+                    },
+                    borderRadius: { "DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px" },
+                },
             },
-            fontFamily: {
-              "headline": ["Rajdhani", "sans-serif"],
-              "body": ["Space Grotesk", "sans-serif"],
-              "label": ["JetBrains Mono", "monospace"]
-            },
-            borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
-          },
-        },
-      }
+        }
     </script>
-<style>
+    <style>
         body {
             background-color: #131313;
-            background-image: 
+            background-image:
                 linear-gradient(rgba(59, 75, 55, 0.1) 1px, transparent 1px),
                 linear-gradient(90px, rgba(59, 75, 55, 0.1) 1px, transparent 1px);
             background-size: 40px 40px;
         }
+
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
+        @media (max-width: 1023px) {
+            body, html { overflow-y: auto !important; overflow-x: hidden !important; height: auto !important; min-height: 100vh !important; }
+            * { box-sizing: border-box !important; }
+            main { height: auto !important; padding: 80px 16px 140px 16px !important; }
+            .grid-cols-12 { display: flex !important; flex-direction: column !important; gap: 32px !important; }
+            h1 { font-size: 2.5rem !important; line-height: 1.1 !important; word-wrap: break-word !important; }
+            p { font-size: 1.1rem !important; line-height: 1.4 !important; }
+            .text-5xl, .md\:text-7xl { font-size: 2.2rem !important; }
+            .col-span-12, .lg\:col-span-7, .lg\:col-span-5 { width: 100% !important; flex: none !important; }
+            .lg\:col-span-5 { min-height: 300px !important; display: block !important; }
+            img { object-fit: contain !important; max-height: 350px !important; }
+            header { flex-wrap: wrap !important; height: auto !important; padding: 16px !important; gap: 12px !important; }
+            footer { height: auto !important; padding: 12px !important; flex-wrap: wrap !important; justify-content: center !important; gap: 8px !important; position: fixed !important; bottom: 0 !important; width: 100% !important; z-index: 50 !important; }
+            footer button, footer div { flex: 1 1 20% !important; min-width: 60px !important; padding: 12px 4px !important; border: 1px solid rgba(27,255,60,0.1) !important; }
+        }
     </style>
 </head>
+
 <body class="text-on-background font-body min-h-screen flex flex-col">
-<!-- Top Navigation Bar (JSON Mapping) -->
-<header class="bg-[#131313] flex justify-between items-center w-full px-6 h-16 sticky top-0 z-50 border-b-0">
-<div class="flex items-center gap-4">
-<span class="font-['Rajdhani'] uppercase tracking-wider font-bold text-xl text-[#1BFF3C] drop-shadow-[0_0_8px_rgba(27,255,60,0.4)]" style=""><span class="" style="font-family: Rajdhani, sans-serif; font-size: 24px; letter-spacing: -1.2px;">WELD BEAR IEDU</span></span>
-<span class="text-[#84967E] font-label text-xs border-l border-outline-variant/30 pl-4" style="">MOD_PREP_03</span>
-</div>
-<div class="flex items-center gap-6">
-<nav class="hidden md:flex items-center gap-8">
-<a class="text-[#1BFF3C] border-b-2 border-[#1BFF3C] font-['Rajdhani'] uppercase tracking-wider font-bold py-1" href="#" style="">PREPARACIÓN</a>
-<a class="text-[#84967E] hover:bg-[#2A2A2A] hover:text-[#1BFF3C] transition-colors font-['Rajdhani'] uppercase tracking-wider font-bold py-1" href="#" style="">OPERACIÓN</a>
-<a class="text-[#84967E] hover:bg-[#2A2A2A] hover:text-[#1BFF3C] transition-colors font-['Rajdhani'] uppercase tracking-wider font-bold py-1" href="#" style="">SEGURIDAD</a>
-</nav>
-<div class="flex items-center gap-4">
-<span class="material-symbols-outlined text-[#84967E] hover:text-[#1BFF3C] cursor-pointer" style="">settings</span>
-<span class="material-symbols-outlined text-[#84967E] hover:text-[#1BFF3C] cursor-pointer" style="">terminal</span>
-</div>
-</div>
-</header>
-<!-- Main Presentation Content -->
-<main class="flex-grow container mx-auto px-6 py-8 flex flex-col">
-<!-- Slide Header -->
-<div class="mb-10 flex flex-col gap-1">
-<div class="flex items-center gap-2">
-<span class="w-12 h-[2px] bg-primary-container"></span>
-<span class="font-label text-primary-container text-xs tracking-widest" style=""><br/></span>
-</div>
-<h1 class="text-5xl md:text-7xl font-headline font-bold text-on-surface uppercase tracking-tight leading-none" style="">
+    <!-- Top Navigation Bar (JSON Mapping) -->
+    <header class="bg-[#131313] flex justify-between items-center w-full px-6 h-16 sticky top-0 z-50 border-b-0">
+        <div class="flex items-center gap-4">
+            <span
+                class="font-['Rajdhani'] uppercase tracking-wider font-bold text-xl text-[#1BFF3C] drop-shadow-[0_0_8px_rgba(27,255,60,0.4)]"
+                style=""><span class=""
+                    style="font-family: Rajdhani, sans-serif; font-size: 24px; letter-spacing: -1.2px;">WELD BEAR
+                    IEDU</span></span>
+            <span class="text-[#84967E] font-label text-xs border-l border-outline-variant/30 pl-4"
+                style="">MOD_PREP_03</span>
+        </div>
+        <div class="flex items-center gap-6">
+            <nav class="hidden md:flex items-center gap-8">
+                <a class="text-[#1BFF3C] border-b-2 border-[#1BFF3C] font-['Rajdhani'] uppercase tracking-wider font-bold py-1"
+                    href="#" style="">PREPARACIÓN</a>
+                <a class="text-[#84967E] hover:bg-[#2A2A2A] hover:text-[#1BFF3C] transition-colors font-['Rajdhani'] uppercase tracking-wider font-bold py-1"
+                    href="#" style="">OPERACIÓN</a>
+                <a class="text-[#84967E] hover:bg-[#2A2A2A] hover:text-[#1BFF3C] transition-colors font-['Rajdhani'] uppercase tracking-wider font-bold py-1"
+                    href="#" style="">SEGURIDAD</a>
+            </nav>
+            <div class="flex items-center gap-4">
+                <span class="material-symbols-outlined text-[#84967E] hover:text-[#1BFF3C] cursor-pointer"
+                    style="">settings</span>
+                <span class="material-symbols-outlined text-[#84967E] hover:text-[#1BFF3C] cursor-pointer"
+                    style="">terminal</span>
+            </div>
+        </div>
+    </header>
+    <!-- Main Presentation Content -->
+    <main class="flex-grow container mx-auto px-6 py-8 flex flex-col">
+        <!-- Slide Header -->
+        <div class="mb-10 flex flex-col gap-1">
+            <div class="flex items-center gap-2">
+                <span class="w-12 h-[2px] bg-primary-container"></span>
+                <span class="font-label text-primary-container text-xs tracking-widest" style=""><br /></span>
+            </div>
+            <h1 class="text-5xl md:text-7xl font-headline font-bold text-on-surface uppercase tracking-tight leading-none"
+                style="">
                 Preparación del <span class="text-primary-container" style="">equipo plasma</span>
-</h1>
-</div>
-<!-- Content Layout: Bento Grid Style -->
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-<!-- Left: Checklist Section -->
-<div class="lg:col-span-7 flex flex-col gap-4">
-<div class="bg-surface-container-low p-6 border-l-4 border-primary-container relative">
-<div class="absolute top-2 right-4 font-label text-[10px] text-outline opacity-50 uppercase" style="">Checklist A-102</div>
-<ul class="space-y-4">
-<!-- Step 01 -->
-<li class="flex items-start gap-4 group cursor-pointer" style="">
-<span class="font-label text-primary-container font-bold text-lg pt-1" style="">01.</span>
-<div class="flex-grow border-b border-outline-variant/20 pb-4">
-<p class="text-on-surface text-2xl font-medium group-hover:text-primary-container transition-colors" style="">Conectar correctamente la tierra</p>
-<p class="text-on-surface-variant text-sm mt-1" style=""><br/></p>
-</div>
-</li>
-<!-- Step 02 -->
-<li class="flex items-start gap-4 group cursor-pointer" style="">
-<span class="font-label text-primary-container font-bold text-lg pt-1" style="">02.</span>
-<div class="flex-grow border-b border-outline-variant/20 pb-4">
-<p class="text-on-surface text-2xl font-medium group-hover:text-primary-container transition-colors" style="">Verificar que la boquilla y el electrodo estén en buen estado</p>
-<p class="text-on-surface-variant text-sm mt-1" style=""><br/></p>
-</div>
-</li>
-<!-- Step 03 -->
-<li class="flex items-start gap-4 group cursor-pointer" style="">
-<span class="font-label text-primary-container font-bold text-lg pt-1" style="">03.</span>
-<div class="flex-grow border-b border-outline-variant/20 pb-4">
-<p class="text-on-surface text-2xl font-medium group-hover:text-primary-container transition-colors" style="">Revisar la presión del aire</p>
-<p class="text-on-surface-variant text-sm mt-1" style=""><br/></p>
-</div>
-</li>
-<!-- Step 04 -->
-<li class="flex items-start gap-4 group cursor-pointer" style="">
-<span class="font-label text-primary-container font-bold text-lg pt-1" style="">04.</span>
-<div class="flex-grow border-b border-outline-variant/20 pb-4">
-<p class="text-on-surface text-2xl font-medium group-hover:text-primary-container transition-colors" style="">Seleccionar el amperaje correcto</p>
-<p class="text-on-surface-variant text-sm mt-1" style=""><br/></p>
-</div>
-</li>
-<!-- Step 05 -->
-<li class="flex items-start gap-4 group cursor-pointer" style="">
-<span class="font-label text-primary-container font-bold text-lg pt-1" style="">05.</span>
-<div class="flex-grow border-b border-outline-variant/20 pb-4">
-<p class="text-on-surface text-2xl font-medium group-hover:text-primary-container transition-colors" style="">Asegurarse de que el metal esté limpio</p>
-<p class="text-on-surface-variant text-sm mt-1" style=""><br/></p>
-</div>
-</li>
-<!-- Step 06 -->
-<li class="flex items-start gap-4 group cursor-pointer" style="">
-<span class="font-label text-primary-container font-bold text-lg pt-1" style="">06.</span>
-<div class="flex-grow pb-2">
-<p class="text-on-surface text-2xl font-medium group-hover:text-primary-container transition-colors" style="">Mantener la distancia adecuada entre boquilla y material</p>
-<p class="text-on-surface-variant text-sm mt-1" style=""><br/></p>
-</div>
-</li>
-</ul>
-</div>
-</div>
-<!-- Right: Visual -->
-<div class="lg:col-span-5 flex flex-col">
-<!-- Technical Image -->
-<div class="relative flex-grow bg-surface-container-high overflow-hidden group p-12">
-<div class="absolute inset-0 bg-primary-container/10 group-hover:bg-transparent transition-colors z-10"></div>
-<img alt="Professional Plasma Cutter 30A" class="w-full h-full object-contain grayscale brightness-75 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500" src="plasma_30a.png" style=""/>
-<!-- Decorative HUD elements -->
-<div class="absolute top-4 left-4 z-20 font-label text-[10px] text-primary-container bg-background/80 px-2 py-1 flex items-center gap-2" style="">
-<span class="block w-2 h-2 bg-primary-container animate-pulse"></span>
-                        LIVE_FEED_SYS
+            </h1>
+        </div>
+        <!-- Content Layout: Bento Grid Style -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+            <!-- Left: Checklist Section -->
+            <div class="lg:col-span-7 flex flex-col gap-4">
+                <div class="bg-surface-container-low p-6 border-l-4 border-primary-container relative">
+                    <div class="absolute top-2 right-4 font-label text-[10px] text-outline opacity-50 uppercase"
+                        style="">Checklist A-102</div>
+                    <ul class="space-y-4">
+                        <!-- Step 01 -->
+                        <li class="flex items-start gap-4 group cursor-pointer" style="">
+                            <span class="font-label text-primary-container font-bold text-lg pt-1" style="">01.</span>
+                            <div class="flex-grow border-b border-outline-variant/20 pb-4">
+                                <p class="text-on-surface text-2xl font-medium group-hover:text-primary-container transition-colors"
+                                    style="">Conectar correctamente la tierra</p>
+                                <p class="text-on-surface-variant text-sm mt-1" style=""><br /></p>
+                            </div>
+                        </li>
+                        <!-- Step 02 -->
+                        <li class="flex items-start gap-4 group cursor-pointer" style="">
+                            <span class="font-label text-primary-container font-bold text-lg pt-1" style="">02.</span>
+                            <div class="flex-grow border-b border-outline-variant/20 pb-4">
+                                <p class="text-on-surface text-2xl font-medium group-hover:text-primary-container transition-colors"
+                                    style="">Verificar que la boquilla y el electrodo estén en buen estado</p>
+                                <p class="text-on-surface-variant text-sm mt-1" style=""><br /></p>
+                            </div>
+                        </li>
+                        <!-- Step 03 -->
+                        <li class="flex items-start gap-4 group cursor-pointer" style="">
+                            <span class="font-label text-primary-container font-bold text-lg pt-1" style="">03.</span>
+                            <div class="flex-grow border-b border-outline-variant/20 pb-4">
+                                <p class="text-on-surface text-2xl font-medium group-hover:text-primary-container transition-colors"
+                                    style="">Revisar la presión del aire</p>
+                                <p class="text-on-surface-variant text-sm mt-1" style=""><br /></p>
+                            </div>
+                        </li>
+                        <!-- Step 04 -->
+                        <li class="flex items-start gap-4 group cursor-pointer" style="">
+                            <span class="font-label text-primary-container font-bold text-lg pt-1" style="">04.</span>
+                            <div class="flex-grow border-b border-outline-variant/20 pb-4">
+                                <p class="text-on-surface text-2xl font-medium group-hover:text-primary-container transition-colors"
+                                    style="">Seleccionar el amperaje correcto</p>
+                                <p class="text-on-surface-variant text-sm mt-1" style=""><br /></p>
+                            </div>
+                        </li>
+                        <!-- Step 05 -->
+                        <li class="flex items-start gap-4 group cursor-pointer" style="">
+                            <span class="font-label text-primary-container font-bold text-lg pt-1" style="">05.</span>
+                            <div class="flex-grow border-b border-outline-variant/20 pb-4">
+                                <p class="text-on-surface text-2xl font-medium group-hover:text-primary-container transition-colors"
+                                    style="">Asegurarse de que el metal esté limpio</p>
+                                <p class="text-on-surface-variant text-sm mt-1" style=""><br /></p>
+                            </div>
+                        </li>
+                        <!-- Step 06 -->
+                        <li class="flex items-start gap-4 group cursor-pointer" style="">
+                            <span class="font-label text-primary-container font-bold text-lg pt-1" style="">06.</span>
+                            <div class="flex-grow pb-2">
+                                <p class="text-on-surface text-2xl font-medium group-hover:text-primary-container transition-colors"
+                                    style="">Mantener la distancia adecuada entre boquilla y material</p>
+                                <p class="text-on-surface-variant text-sm mt-1" style=""><br /></p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Important Text Only -->
+                <div class="flex items-start gap-3 mt-2">
+                    <span class="material-symbols-outlined text-3xl text-primary-container shrink-0"
+                        style='font-variation-settings: "FILL" 1;'>warning</span>
+                    <div>
+                        <h4 class="font-headline font-bold text-xl uppercase mb-1 text-primary-container" style="">IMPORTANTE</h4>
+                        <p class="font-medium text-lg leading-tight text-on-surface" style="">La preparación correcta mejora la
+                            calidad del borde y alarga la vida de los consumibles.</p>
                     </div>
-<div class="absolute bottom-4 right-4 z-20 font-label text-[8px] text-primary-container text-right" style="">
-                        X: 452.21<br/>Y: 108.99<br/>Z: 004.00
+                </div>
+            </div>
+            <!-- Right: Visual -->
+            <div class="lg:col-span-5 flex flex-col">
+                <!-- Technical Image -->
+                <div class="relative flex-grow bg-surface-container-high overflow-hidden group p-12">
+                    <div
+                        class="absolute inset-0 bg-primary-container/10 group-hover:bg-transparent transition-colors z-10">
                     </div>
-</div>
-</div>
-</div>
-<!-- Important Note: full width below grid -->
-<div class="mt-6 p-6 flex items-start gap-4 shadow-[0px_0px_15px_rgba(27,255,60,0.3)] bg-surface-container-high" style="">
-<span class="material-symbols-outlined text-4xl text-white shrink-0" style='font-variation-settings: "FILL" 1;'>warning</span>
-<div>
-<h4 class="font-headline font-bold text-2xl uppercase mb-2 text-white" style="">IMPORTANTE</h4>
-<p class="font-medium leading-relaxed text-white text-xl" style="">La preparación correcta mejora la calidad del borde y alarga la vida de los consumibles.</p>
-</div>
-</div>
-</main>
-<!-- Bottom Navigation Bar (JSON Mapping) -->
-<footer class="bg-[#131313] fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-2 border-t border-[#3B4B37]/20 shadow-[0px_0px_15px_rgba(27,255,60,0.1)]">
-<button class="flex flex-col items-center justify-center text-[#84967E] p-2 hover:bg-[#1C1B1B] hover:text-[#1BFF3C] transition-colors" style="">
-<span class="material-symbols-outlined" style="">arrow_back</span>
-<span class="font-['JetBrains_Mono'] text-[10px] uppercase tracking-tighter" style="">Previous</span>
-</button>
-<div class="flex flex-col items-center justify-center p-2 px-6 transition-all min-w-[120px] border-2 border-primary-container">
-<span class="material-symbols-outlined" style="">grid_view</span>
-<span class="font-['JetBrains_Mono'] text-[12px] font-bold uppercase tracking-tighter" style="">13</span>
-</div>
-<button class="flex flex-col items-center justify-center text-[#84967E] p-2 hover:bg-[#1C1B1B] hover:text-[#1BFF3C] transition-colors" style="">
-<span class="material-symbols-outlined" style="">arrow_forward</span>
-<span class="font-['JetBrains_Mono'] text-[10px] uppercase tracking-tighter" style="">Next</span>
-</button>
-<button class="flex flex-col items-center justify-center text-[#84967E] p-2 hover:bg-[#1C1B1B] hover:text-[#1BFF3C] transition-colors" style="">
-<span class="material-symbols-outlined" style="">home</span>
-<span class="font-['JetBrains_Mono'] text-[10px] uppercase tracking-tighter" style="">Home</span>
-</button>
-</footer>
-<!-- Spacer for Footer -->
-<div class="h-24"></div>
-
-
-\n
-
-\n
-
-\n
-
-\n
-
-\n
-
-\n
+                    <img alt="Professional Plasma Cutter 30A"
+                        class="w-full h-full object-contain grayscale brightness-75 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500"
+                        src="plasma_30a.png" style="" />
+                    <!-- Decorative HUD elements -->
+                    
+                    
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- Bottom Navigation Bar (JSON Mapping) -->
+    <footer
+        class="bg-[#131313] fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-2 border-t border-[#3B4B37]/20 shadow-[0px_0px_15px_rgba(27,255,60,0.1)]">
+        <button
+            class="flex flex-col items-center justify-center text-[#84967E] p-2 hover:bg-[#1C1B1B] hover:text-[#1BFF3C] transition-colors"
+            style="">
+            <span class="material-symbols-outlined" style="">arrow_back</span>
+            <span class="font-['JetBrains_Mono'] text-[10px] uppercase tracking-tighter" style="">Previous</span>
+        </button>
+        <div
+            class="flex flex-col items-center justify-center p-2 px-6 transition-all min-w-[120px] border-2 border-primary-container">
+            <span class="material-symbols-outlined" style="">grid_view</span>
+            <span class="font-['JetBrains_Mono'] text-[12px] font-bold uppercase tracking-tighter" style="">13</span>
+        </div>
+        <button
+            class="flex flex-col items-center justify-center text-[#84967E] p-2 hover:bg-[#1C1B1B] hover:text-[#1BFF3C] transition-colors"
+            style="">
+            <span class="material-symbols-outlined" style="">arrow_forward</span>
+            <span class="font-['JetBrains_Mono'] text-[10px] uppercase tracking-tighter" style="">Next</span>
+        </button>
+        <button
+            class="flex flex-col items-center justify-center text-[#84967E] p-2 hover:bg-[#1C1B1B] hover:text-[#1BFF3C] transition-colors"
+            style="">
+            <span class="material-symbols-outlined" style="">home</span>
+            <span class="font-['JetBrains_Mono'] text-[10px] uppercase tracking-tighter" style="">Home</span>
+        </button>
+    </footer>
+    <!-- Spacer for Footer -->
+    <div class="h-24"></div>
 
 
 
 
 
 
-<script id="weld-bear-sync">
-    setTimeout(() => {
-        const triggers = document.querySelectorAll('button, a');
-        triggers.forEach(el => {
-            const text = el.innerText.toUpperCase();
-            const isPrev = text.includes('PREV') || text.includes('ANTERIOR') || text.includes('BACK_IOS') || text.includes('ARROW_BACK');
-            const isNext = text.includes('NEXT') || text.includes('SIGUIENTE') || text.includes('SIGUE') || text.includes('CONTINUAR') || text.includes('ARROW_FORWARD');
-            const isHome = text.includes('HOME') || text.includes('INICIO');
-            const isFinish = text.includes('FINALIZAR') || text.includes('FINISH');
 
-            if (isPrev || isNext || isHome || isFinish) {
-                el.onclick = (e) => {
-                    e.preventDefault();
-                    if (isPrev) window.parent.postMessage('PREV', '*');
-                    if (isNext) window.parent.postMessage('NEXT', '*');
-                    if (isHome) window.parent.postMessage('HOME', '*');
-                    if (isFinish) window.parent.postMessage('FINISH', '*');
-                };
+
+
+
+
+
+
+    <script id="weld-bear-sync">
+        setTimeout(() => {
+            const triggers = document.querySelectorAll('button, a');
+            triggers.forEach(el => {
+                const text = el.innerText.toUpperCase();
+                const isPrev = text.includes('PREV') || text.includes('ANTERIOR') || text.includes('BACK_IOS') || text.includes('ARROW_BACK');
+                const isNext = text.includes('NEXT') || text.includes('SIGUIENTE') || text.includes('SIGUE') || text.includes('CONTINUAR') || text.includes('ARROW_FORWARD');
+                const isHome = text.includes('HOME') || text.includes('INICIO');
+                const isFinish = text.includes('FINALIZAR') || text.includes('FINISH');
+
+                if (isPrev || isNext || isHome || isFinish) {
+                    el.onclick = (e) => {
+                        e.preventDefault();
+                        if (isPrev) window.parent.postMessage('PREV', '*');
+                        if (isNext) window.parent.postMessage('NEXT', '*');
+                        if (isHome) window.parent.postMessage('HOME', '*');
+                        if (isFinish) window.parent.postMessage('FINISH', '*');
+                    };
+                }
+            });
+        }, 500);
+
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ') {
+                e.preventDefault();
+                window.parent.postMessage('NEXT', '*');
+            } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+                e.preventDefault();
+                window.parent.postMessage('PREV', '*');
             }
         });
-    }, 500);
 
-    window.addEventListener('keydown', (e) => {
-        if (e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ') {
-            e.preventDefault();
-            window.parent.postMessage('NEXT', '*');
-        } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
-            e.preventDefault();
-            window.parent.postMessage('PREV', '*');
-        }
-    });
+        window.addEventListener('load', () => {
+            window.parent.postMessage('LOADED', '*');
+        });
+    </script>
 
-    window.addEventListener('load', () => {
-        window.parent.postMessage('LOADED', '*');
-    });
-</script>
+</body>
 
-</body></html>
+</html>

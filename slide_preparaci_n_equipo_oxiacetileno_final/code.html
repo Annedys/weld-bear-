@@ -24,6 +24,22 @@
         .text-glow {
             text-shadow: 0 0 10px rgba(27, 255, 60, 0.5);
         }
+        @media (max-width: 1023px) {
+            body, html { overflow-y: auto !important; overflow-x: hidden !important; height: auto !important; min-height: 100vh !important; }
+            * { box-sizing: border-box !important; }
+            main { height: auto !important; overflow: visible !important; padding: 100px 16px 140px 16px !important; align-items: flex-start !important; }
+            .grid-cols-12 { display: flex !important; flex-direction: column !important; gap: 32px !important; }
+            h1 { font-size: 2.8rem !important; line-height: 1.1 !important; word-wrap: break-word !important; }
+            p { font-size: 1.1rem !important; line-height: 1.4 !important; }
+            .text-5xl, .md\:text-6xl { font-size: 2.5rem !important; }
+            .text-2xl { font-size: 1.3rem !important; }
+            .aspect-square { max-height: 350px !important; border: none !important; }
+            img { object-fit: contain !important; max-height: 350px !important; }
+            header { flex-wrap: wrap !important; gap: 16px !important; padding-bottom: 12px !important; }
+            footer { height: auto !important; padding: 10px !important; flex-wrap: wrap !important; justify-content: center !important; gap: 8px !important; position: fixed !important; bottom: 0 !important; width: 100% !important; z-index: 50 !important; }
+            footer .w-full { flex-wrap: wrap !important; justify-content: center !important; gap: 8px !important; }
+            footer button, footer div { flex: 1 1 40% !important; min-width: 100px !important; padding: 8px !important; border: 1px solid rgba(27,255,60,0.1) !important; }
+        }
     </style>
 <script id="tailwind-config">
       tailwind.config = {
@@ -201,17 +217,11 @@
 </footer>
 
 
-\n
 
-\n
 
-\n
 
-\n
 
-\n
 
-\n
 
 
 

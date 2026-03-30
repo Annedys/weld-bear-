@@ -1,201 +1,226 @@
-<!DOCTYPE html><html class="dark" lang="es"><head>
-<meta charset="utf-8">
-<meta content="width=device-width, initial-scale=1.0" name="viewport">
-<title>Weld Bear Edu - Blueprint Industrial</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&amp;family=Space+Grotesk:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;700&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
-<script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            colors: {
-              "tertiary": "#fff8f7",
-              "on-secondary-fixed": "#221b00",
-              "tertiary-container": "#ffd3cd",
-              "on-secondary-fixed-variant": "#554500",
-              "inverse-on-surface": "#313030",
-              "primary-fixed-dim": "#00e631",
-              "on-primary-container": "#007112",
-              "on-secondary-container": "#6f5c00",
-              "error": "#ffb4ab",
-              "surface-container-highest": "#353534",
-              "on-surface-variant": "#baccb2",
-              "on-surface": "#e5e2e1",
-              "on-error": "#690005",
-              "on-primary-fixed-variant": "#00530a",
-              "primary-fixed": "#74ff6d",
-              "primary-container": "#1bff3c",
-              "on-secondary": "#3b2f00",
-              "surface-container-lowest": "#0e0e0e",
-              "inverse-surface": "#e5e2e1",
-              "surface-container": "#201f1f",
-              "primary": "#ecffe3",
-              "background": "#131313",
-              "tertiary-fixed-dim": "#ffb4aa",
-              "on-error-container": "#ffdad6",
-              "error-container": "#93000a",
-              "surface-dim": "#131313",
-              "on-tertiary": "#690003",
-              "on-tertiary-fixed-variant": "#930005",
-              "surface-bright": "#393939",
-              "on-primary-fixed": "#002202",
-              "on-primary": "#003a05",
-              "surface-container-high": "#2a2a2a",
-              "secondary-fixed-dim": "#eac300",
-              "secondary-container": "#fed400",
-              "surface-container-low": "#1c1b1b",
-              "surface": "#131313",
-              "on-tertiary-container": "#c5020c",
-              "on-tertiary-fixed": "#410001",
-              "secondary-fixed": "#ffe174",
-              "outline-variant": "#3b4b37",
-              "on-background": "#e5e2e1",
-              "secondary": "#fff3d3",
-              "inverse-primary": "#006e11",
-              "surface-tint": "#00e631",
-              "outline": "#84967e",
-              "tertiary-fixed": "#ffdad5",
-              "surface-variant": "#353534"
+<!DOCTYPE html>
+<html class="dark" lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Weld Bear Edu - Blueprint Industrial</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&amp;family=Space+Grotesk:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;700&amp;display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet">
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "tertiary": "#fff8f7",
+                        "on-secondary-fixed": "#221b00",
+                        "tertiary-container": "#ffd3cd",
+                        "on-secondary-fixed-variant": "#554500",
+                        "inverse-on-surface": "#313030",
+                        "primary-fixed-dim": "#00e631",
+                        "on-primary-container": "#007112",
+                        "on-secondary-container": "#6f5c00",
+                        "error": "#ffb4ab",
+                        "surface-container-highest": "#353534",
+                        "on-surface-variant": "#baccb2",
+                        "on-surface": "#e5e2e1",
+                        "on-error": "#690005",
+                        "on-primary-fixed-variant": "#00530a",
+                        "primary-fixed": "#74ff6d",
+                        "primary-container": "#1bff3c",
+                        "on-secondary": "#3b2f00",
+                        "surface-container-lowest": "#0e0e0e",
+                        "inverse-surface": "#e5e2e1",
+                        "surface-container": "#201f1f",
+                        "primary": "#ecffe3",
+                        "background": "#131313",
+                        "tertiary-fixed-dim": "#ffb4aa",
+                        "on-error-container": "#ffdad6",
+                        "error-container": "#93000a",
+                        "surface-dim": "#131313",
+                        "on-tertiary": "#690003",
+                        "on-tertiary-fixed-variant": "#930005",
+                        "surface-bright": "#393939",
+                        "on-primary-fixed": "#002202",
+                        "on-primary": "#003a05",
+                        "surface-container-high": "#2a2a2a",
+                        "secondary-fixed-dim": "#eac300",
+                        "secondary-container": "#fed400",
+                        "surface-container-low": "#1c1b1b",
+                        "surface": "#131313",
+                        "on-tertiary-container": "#c5020c",
+                        "on-tertiary-fixed": "#410001",
+                        "secondary-fixed": "#ffe174",
+                        "outline-variant": "#3b4b37",
+                        "on-background": "#e5e2e1",
+                        "secondary": "#fff3d3",
+                        "inverse-primary": "#006e11",
+                        "surface-tint": "#00e631",
+                        "outline": "#84967e",
+                        "tertiary-fixed": "#ffdad5",
+                        "surface-variant": "#353534"
+                    },
+                    fontFamily: {
+                        "headline": ["Rajdhani"],
+                        "body": ["Space Grotesk"],
+                        "label": ["JetBrains Mono"]
+                    },
+                    borderRadius: { "DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px" },
+                },
             },
-            fontFamily: {
-              "headline": ["Rajdhani"],
-              "body": ["Space Grotesk"],
-              "label": ["JetBrains Mono"]
-            },
-            borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
-          },
-        },
-      }
+        }
     </script>
-<style>
+    <style>
         .blueprint-grid {
-            background-image: 
+            background-image:
                 linear-gradient(to right, rgba(59, 75, 55, 0.1) 1px, transparent 1px),
                 linear-gradient(to bottom, rgba(59, 75, 55, 0.1) 1px, transparent 1px);
             background-size: 40px 40px;
         }
+
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
+        @media (max-width: 1023px) {
+            body, html { overflow-y: auto !important; overflow-x: hidden !important; height: auto !important; min-height: 100vh !important; }
+            * { box-sizing: border-box !important; }
+            main { height: auto !important; overflow: visible !important; display: flex !important; flex-direction: column !important; padding: 40px 16px 140px 16px !important; }
+            h1 { font-size: 2.5rem !important; line-height: 1.1 !important; word-wrap: break-word !important; }
+            .text-5xl, .md\:text-7xl { font-size: 2.5rem !important; }
+            p, .text-xl, .text-2xl { font-size: 1.1rem !important; line-height: 1.4 !important; }
+            .lg\:col-span-8 { min-height: 250px !important; padding: 16px !important; }
+            .lg\:col-span-8 img { object-fit: contain !important; height: auto !important; max-height: 350px !important; }
+            .absolute.bottom-16 { display: none !important; }
+            nav.fixed { height: auto !important; padding: 12px !important; flex-wrap: wrap !important; justify-content: center !important; gap: 8px !important; position: fixed !important; bottom: 0 !important; width: 100% !important; z-index: 50 !important; }
+            nav.fixed button, nav.fixed div { flex: 1 1 20% !important; min-width: 60px !important; padding: 12px 4px !important; border: 1px solid rgba(27,255,60,0.1) !important; margin: 0 !important; }
+        }
     </style>
 </head>
-<body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container min-h-screen flex flex-col overflow-hidden">
-<!-- Technical Canvas -->
-<main class="flex-grow blueprint-grid relative flex flex-col items-center justify-center p-8 md:p-16 mb-16">
-<!-- Header Annotation -->
-<div class="absolute top-8 left-8 flex items-center gap-4">
-<div class="h-px w-12 bg-primary-container/40"></div>
-<span class="font-label text-xs text-outline tracking-[0.2em] uppercase" style=""><span style="color: rgb(27, 255, 60); font-family: Rajdhani, sans-serif; font-size: 24px; font-weight: 700; letter-spacing: -1.2px;" class="">WELD BEAR IEDU</span></span>
-</div>
-<!-- Metadata Corner -->
-<div class="absolute top-8 right-8 text-right">
-<p class="font-label text-[10px] text-outline leading-tight" style="">
+
+<body
+    class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container min-h-screen flex flex-col overflow-hidden">
+    <!-- Technical Canvas -->
+    <main class="flex-grow blueprint-grid relative flex flex-col items-center justify-center p-8 md:p-16 mb-16">
+        <!-- Header Annotation -->
+        <div class="absolute top-8 left-8 flex items-center gap-4">
+            <div class="h-px w-12 bg-primary-container/40"></div>
+            <span class="font-label text-xs text-outline tracking-[0.2em] uppercase" style=""><span
+                    style="color: rgb(27, 255, 60); font-family: Rajdhani, sans-serif; font-size: 24px; font-weight: 700; letter-spacing: -1.2px;"
+                    class="">WELD BEAR IEDU</span></span>
+        </div>
+        <!-- Metadata Corner -->
+        <div class="absolute top-8 right-8 text-right">
+            <p class="font-label text-[10px] text-outline leading-tight" style="">
                 REF: WBE-P-25<br>
                 AUTH: WELD_BEAR_SYS<br>
                 DATE: 2024.10.27
             </p>
-</div>
-<!-- Main Content Area -->
-<div class="w-full max-w-5xl space-y-12">
-<!-- Presentation Title -->
-<div class="space-y-2 border-l-4 border-primary-container pl-6">
-<h2 class="font-label text-primary-container text-sm tracking-widest" style="">DIAPOSITIVA 25</h2>
-<h1 class="font-headline font-bold text-5xl md:text-7xl uppercase tracking-tight text-primary" style="">
+        </div>
+        <!-- Main Content Area -->
+        <div class="w-full max-w-7xl -mt-4 -ml-10">
+            <!-- Presentation Title -->
+            <div class="mb-12 border-l-4 border-primary-container pl-6">
+                <h1 class="font-headline font-bold text-5xl md:text-7xl uppercase tracking-tight text-primary">
                     PARTES VISIBLES DEL PROCESO
                 </h1>
-</div>
-<!-- Technical Blocks Grid -->
-<div class="grid grid-cols-1 md:grid-cols-3 gap-1">
-<!-- Block 1: Arco -->
-<div class="bg-surface-container-low p-6 border border-outline-variant/20 hover:border-primary-container/40 transition-colors duration-300 group">
-<div class="flex justify-between items-start mb-6">
-<span class="font-label text-primary-container text-xs" style="">01</span>
-<span class="material-symbols-outlined text-primary-container opacity-50 group-hover:opacity-100 transition-opacity" data-icon="electric_bolt" style="">electric_bolt</span>
-</div>
-<h3 class="font-headline text-3xl font-bold mb-4 tracking-wide text-on-surface uppercase" style="">Arco</h3>
-<p class="text-lg font-medium text-on-surface leading-relaxed" style="">
-                        Es la luz intensa y el calor visible entre el electrodo y la pieza.
-                    </p>
-<div class="mt-6 pt-6 border-t border-outline-variant/10">
-<div class="h-1 w-full bg-surface-variant">
-<div class="h-full w-full bg-primary-container shadow-[0px_0px_10px_rgba(27,255,60,0.2)]"></div>
-</div>
-</div>
-</div>
-<!-- Block 2: Charco -->
-<div class="bg-surface-container-low p-6 border border-outline-variant/20 hover:border-primary-container/40 transition-colors duration-300 group">
-<div class="flex justify-between items-start mb-6">
-<span class="font-label text-primary-container text-xs" style="">02</span>
-<span class="material-symbols-outlined text-primary-container opacity-50 group-hover:opacity-100 transition-opacity" data-icon="water_drop" style="">water_drop</span>
-</div>
-<h3 class="font-headline text-3xl font-bold mb-4 tracking-wide text-on-surface uppercase" style="">Charco</h3>
-<p class="text-lg font-medium text-on-surface leading-relaxed" style="">
-                        Es el metal líquido que se forma mientras se está soldando.
-                    </p>
-<div class="mt-6 pt-6 border-t border-outline-variant/10">
-<div class="h-1 w-full bg-surface-variant">
-<div class="h-full w-3/4 bg-primary-container shadow-[0px_0px_10px_rgba(27,255,60,0.2)]"></div>
-</div>
-</div>
-</div>
-<!-- Block 3: Cráter -->
-<div class="bg-surface-container-low p-6 border border-outline-variant/20 hover:border-primary-container/40 transition-colors duration-300 group">
-<div class="flex justify-between items-start mb-6">
-<span class="font-label text-primary-container text-xs" style="">03</span>
-<span class="material-symbols-outlined text-primary-container opacity-50 group-hover:opacity-100 transition-opacity" data-icon="leak_add" style="">leak_add</span>
-</div>
-<h3 class="font-headline text-3xl font-bold mb-4 tracking-wide text-on-surface uppercase" style="">Cráter</h3>
-<p class="text-lg font-medium text-on-surface leading-relaxed" style="">
-                        Es la cavidad que puede quedar al final del cordón si no se llena correctamente al terminar.
-                    </p>
-<div class="mt-6 pt-6 border-t border-outline-variant/10">
-<div class="h-1 w-full bg-surface-variant">
-<div class="h-full w-1/2 bg-primary-container shadow-[0px_0px_10px_rgba(27,255,60,0.2)]"></div>
-</div>
-</div>
-</div>
-</div>
-<!-- Conclusion Note -->
-<div class="bg-surface-container-highest/30 p-8 border-l-2 border-secondary-container relative overflow-hidden">
-<div class="absolute top-0 right-0 p-2 font-label text-[10px] text-secondary-container/30 uppercase tracking-tighter" style="">
-                    NOTICE // IMPORTANTE
+            </div>
+
+            <!-- Main Layout: Sidebar Cards + Large Image -->
+            <div class="grid grid-cols-12 gap-8 items-stretch">
+                <!-- Left: Vertical Cards Stack -->
+                <div class="col-span-12 lg:col-span-4 flex flex-col gap-4">
+                    <!-- Block 1: Arco -->
+                    <div class="bg-surface-container-low p-6 border border-outline-variant/20 hover:border-primary-container/40 transition-all duration-300 group flex flex-col gap-2">
+                        <div class="flex justify-between items-center">
+                            <h3 class="font-headline text-3xl font-bold tracking-wide text-[#1BFF3C] uppercase">Arco</h3>
+                            <span class="font-label text-primary-container text-xs">01</span>
+                        </div>
+                        <p class="text-2xl font-medium text-on-surface leading-snug">Es la luz intensa y el calor visible entre el electrodo y la pieza.</p>
+                    </div>
+
+                    <!-- Block 2: Charco -->
+                    <div class="bg-surface-container-low p-6 border border-outline-variant/20 hover:border-primary-container/40 transition-all duration-300 group flex flex-col gap-2">
+                        <div class="flex justify-between items-center">
+                            <h3 class="font-headline text-3xl font-bold tracking-wide text-[#1BFF3C] uppercase">Charco</h3>
+                            <span class="font-label text-primary-container text-xs">02</span>
+                        </div>
+                        <p class="text-2xl font-medium text-on-surface leading-snug">Es el metal líquido que se forma mientras se está soldando.</p>
+                    </div>
+
+                    <!-- Block 3: Cráter -->
+                    <div class="bg-surface-container-low p-6 border border-outline-variant/20 hover:border-primary-container/40 transition-all duration-300 group flex flex-col gap-2">
+                        <div class="flex justify-between items-center">
+                            <h3 class="font-headline text-3xl font-bold tracking-wide text-[#1BFF3C] uppercase">Cráter</h3>
+                            <span class="font-label text-primary-container text-xs">03</span>
+                        </div>
+                        <p class="text-2xl font-medium text-on-surface leading-snug">Es la cavidad que puede quedar al final del cordón si no se llena correctamente.</p>
+                    </div>
                 </div>
-<div class="flex gap-6 items-center">
-<div class="p-3 bg-secondary-container text-on-secondary-container">
-<span class="material-symbols-outlined text-2xl" data-icon="tips_and_updates" style="">tips_and_updates</span>
-</div>
-<p class="text-xl font-medium italic text-secondary tracking-tight" style="">
+
+                <!-- Right: Large Image -->
+                <div class="col-span-12 lg:col-span-8 bg-surface-container-low border border-outline-variant/20 flex items-center justify-center relative overflow-hidden p-8 h-full">
+                    <img alt="Partes del proceso" class="w-full h-full object-contain rounded-sm glow-border" src="../partesdelproceso.png">
+                    <!-- Tech Overlay -->
+                    <div class="absolute top-4 right-4 flex gap-2">
+                        <div class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom: Conclusion Note -->
+            <div class="mt-8 bg-surface-container-highest/30 p-8 border-l-4 border-secondary-container">
+                <div class="flex gap-8 items-center">
+                    <div class="p-4 bg-secondary-container text-on-secondary-container">
+                        <span class="material-symbols-outlined text-3xl" data-icon="tips_and_updates">tips_and_updates</span>
+                    </div>
+                    <p class="text-2xl font-semibold italic text-secondary tracking-tight leading-relaxed">
                         "El soldador debe aprender a identificar estas tres partes para controlar la soldadura correctamente."
                     </p>
-</div>
-</div>
-</div>
-<!-- Decorative Blueprint Lines -->
-<div class="absolute bottom-16 right-0 w-64 h-64 border-r border-b border-outline-variant/10 pointer-events-none"></div>
-<div class="absolute top-0 left-1/2 -translate-x-1/2 w-px h-12 bg-gradient-to-b from-primary-container/20 to-transparent"></div>
-</main>
-<!-- Bottom Navigation Shell -->
-<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-between items-center px-12 h-16 bg-[#1C1B1B] border-t border-[#3B4B37]/30">
-<!-- Anterior -->
-<button class="flex flex-col items-center justify-center text-[#84967E] px-8 py-2 hover:text-[#1BFF3C] hover:bg-[#2A2A2A] active:scale-95 transition-all duration-150" style="">
-<span class="material-symbols-outlined mb-1" data-icon="arrow_back_ios" style="">arrow_back_ios</span>
-<span class="font-['JetBrains_Mono'] text-xs uppercase tracking-tighter" style="">ANTERIOR</span>
-</button>
-<!-- Current Status -->
-<div class="flex flex-col items-center justify-center px-12 py-2 h-full" style="background-color: transparent; border: 1px solid #1BFF3C; color: #1BFF3C;">
-<span class="material-symbols-outlined mb-1" data-icon="dialpad" style="">dialpad</span>
-<span class="font-['JetBrains_Mono'] text-xs uppercase tracking-tighter font-bold" style="">05</span>
-</div>
-<!-- Siguiente -->
-<button class="flex flex-col items-center justify-center text-[#84967E] px-8 py-2 hover:text-[#1BFF3C] hover:bg-[#2A2A2A] active:scale-95 transition-all duration-150" style="">
-<span class="material-symbols-outlined mb-1" data-icon="arrow_forward_ios" style="">arrow_forward_ios</span>
-<span class="font-['JetBrains_Mono'] text-xs uppercase tracking-tighter" style="">SIGUIENTE</span>
-</button>
-</nav>
-</nav>
+                </div>
+            </div>
+        </div>
+        <!-- Decorative Blueprint Lines -->
+        <div
+            class="absolute bottom-16 right-0 w-64 h-64 border-r border-b border-outline-variant/10 pointer-events-none">
+        </div>
+        <div
+            class="absolute top-0 left-1/2 -translate-x-1/2 w-px h-12 bg-gradient-to-b from-primary-container/20 to-transparent">
+        </div>
+    </main>
+    <!-- Bottom Navigation Shell -->
+    <nav
+        class="fixed bottom-0 left-0 w-full z-50 flex justify-between items-center px-12 h-16 bg-[#1C1B1B] border-t border-[#3B4B37]/30">
+        <!-- Anterior -->
+        <button
+            class="flex flex-col items-center justify-center text-[#84967E] px-8 py-2 hover:text-[#1BFF3C] hover:bg-[#2A2A2A] active:scale-95 transition-all duration-150"
+            style="">
+            <span class="material-symbols-outlined mb-1" data-icon="arrow_back_ios" style="">arrow_back_ios</span>
+            <span class="font-['JetBrains_Mono'] text-xs uppercase tracking-tighter" style="">ANTERIOR</span>
+        </button>
+        <!-- Current Status -->
+        <div class="flex flex-col items-center justify-center px-12 py-2 h-full"
+            style="background-color: transparent; border: 1px solid #1BFF3C; color: #1BFF3C;">
+            <span class="material-symbols-outlined mb-1" data-icon="dialpad" style="">dialpad</span>
+            <span class="font-['JetBrains_Mono'] text-xs uppercase tracking-tighter font-bold" style="">05</span>
+        </div>
+        <!-- Siguiente -->
+        <button
+            class="flex flex-col items-center justify-center text-[#84967E] px-8 py-2 hover:text-[#1BFF3C] hover:bg-[#2A2A2A] active:scale-95 transition-all duration-150"
+            style="">
+            <span class="material-symbols-outlined mb-1" data-icon="arrow_forward_ios" style="">arrow_forward_ios</span>
+            <span class="font-['JetBrains_Mono'] text-xs uppercase tracking-tighter" style="">SIGUIENTE</span>
+        </button>
+    </nav>
+    </nav>
 
 
 
@@ -204,41 +229,43 @@
 
 
 
-<script id="weld-bear-sync">
-    setTimeout(() => {
-        const triggers = document.querySelectorAll('button, a');
-        triggers.forEach(el => {
-            const text = el.innerText.toUpperCase();
-            const isPrev = text.includes('PREV') || text.includes('ANTERIOR') || text.includes('BACK_IOS') || text.includes('ARROW_BACK');
-            const isNext = text.includes('NEXT') || text.includes('SIGUIENTE') || text.includes('SIGUE') || text.includes('CONTINUAR') || text.includes('ARROW_FORWARD');
-            const isHome = text.includes('HOME') || text.includes('INICIO');
-            const isFinish = text.includes('FINALIZAR') || text.includes('FINISH');
+    <script id="weld-bear-sync">
+        setTimeout(() => {
+            const triggers = document.querySelectorAll('button, a');
+            triggers.forEach(el => {
+                const text = el.innerText.toUpperCase();
+                const isPrev = text.includes('PREV') || text.includes('ANTERIOR') || text.includes('BACK_IOS') || text.includes('ARROW_BACK');
+                const isNext = text.includes('NEXT') || text.includes('SIGUIENTE') || text.includes('SIGUE') || text.includes('CONTINUAR') || text.includes('ARROW_FORWARD');
+                const isHome = text.includes('HOME') || text.includes('INICIO');
+                const isFinish = text.includes('FINALIZAR') || text.includes('FINISH');
 
-            if (isPrev || isNext || isHome || isFinish) {
-                el.onclick = (e) => {
-                    e.preventDefault();
-                    if (isPrev) window.parent.postMessage('PREV', '*');
-                    if (isNext) window.parent.postMessage('NEXT', '*');
-                    if (isHome) window.parent.postMessage('HOME', '*');
-                    if (isFinish) window.parent.postMessage('FINISH', '*');
-                };
+                if (isPrev || isNext || isHome || isFinish) {
+                    el.onclick = (e) => {
+                        e.preventDefault();
+                        if (isPrev) window.parent.postMessage('PREV', '*');
+                        if (isNext) window.parent.postMessage('NEXT', '*');
+                        if (isHome) window.parent.postMessage('HOME', '*');
+                        if (isFinish) window.parent.postMessage('FINISH', '*');
+                    };
+                }
+            });
+        }, 500);
+
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ') {
+                e.preventDefault();
+                window.parent.postMessage('NEXT', '*');
+            } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+                e.preventDefault();
+                window.parent.postMessage('PREV', '*');
             }
         });
-    }, 500);
 
-    window.addEventListener('keydown', (e) => {
-        if (e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ') {
-            e.preventDefault();
-            window.parent.postMessage('NEXT', '*');
-        } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
-            e.preventDefault();
-            window.parent.postMessage('PREV', '*');
-        }
-    });
+        window.addEventListener('load', () => {
+            window.parent.postMessage('LOADED', '*');
+        });
+    </script>
 
-    window.addEventListener('load', () => {
-        window.parent.postMessage('LOADED', '*');
-    });
-</script>
+</body>
 
-</body></html>
+</html>

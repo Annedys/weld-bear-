@@ -82,9 +82,60 @@
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
         }
+
+        /* ===== MOBILE (max-width: 639px) ===== */
+        @media (max-width: 639px) {
+            body { overflow-x: hidden !important; overflow-y: auto !important; }
+            main {
+                padding: 70px 12px 80px 12px !important;
+                justify-content: flex-start !important;
+            }
+            main h1 { font-size: 1.5rem !important; line-height: 1.1 !important; }
+            main h3 { font-size: 1.2rem !important; margin-bottom: 6px !important; }
+            main p  { font-size: 0.88rem !important; line-height: 1.4 !important; margin-bottom: 10px !important; }
+            main .text-5xl { font-size: 1.5rem !important; }
+            main .text-2xl  { font-size: 0.88rem !important; }
+            main .text-3xl  { font-size: 1.2rem !important; }
+            main .mb-8 { margin-bottom: 14px !important; }
+            main .w-24 { width: 52px !important; min-width: 52px !important; }
+            main .h-24 { height: 52px !important; }
+            main .text-4xl.material-symbols-outlined { font-size: 1.6rem !important; }
+            main .p-8 { padding: 12px !important; }
+            main .gap-6 { gap: 8px !important; }
+            footer { padding: 6px 8px !important; }
+            footer button {
+                padding: 8px 10px !important;
+                min-height: 44px !important;
+                min-width: 44px !important;
+            }
+            footer .px-12 { padding-left: 10px !important; padding-right: 10px !important; }
+            footer .px-8  { padding-left: 8px  !important; padding-right: 8px  !important; }
+            header { padding-left: 12px !important; padding-right: 12px !important; }
+        }
+
+        /* ===== TABLET (640px – 1023px) ===== */
+        @media (min-width: 640px) and (max-width: 1023px) {
+            body { overflow-x: hidden !important; overflow-y: auto !important; }
+            main {
+                padding: 76px 18px 80px 18px !important;
+                justify-content: flex-start !important;
+            }
+            main h1 { font-size: 2.2rem !important; line-height: 1.1 !important; }
+            main h3 { font-size: 1.4rem !important; }
+            main p  { font-size: 0.95rem !important; }
+            main .text-2xl { font-size: 0.95rem !important; }
+            main .text-3xl { font-size: 1.4rem !important; }
+            main .w-24 { width: 64px !important; min-width: 64px !important; }
+            main .h-24 { height: 64px !important; }
+            main .p-8 { padding: 16px !important; }
+            footer button {
+                min-height: 44px !important;
+                min-width: 44px !important;
+            }
+        }
     </style>
 </head>
-<body class="bg-background text-on-background font-body selection:bg-primary-container selection:text-on-primary-container min-h-screen flex flex-col overflow-hidden">
+<body class="bg-background text-on-background font-body selection:bg-primary-container selection:text-on-primary-container min-h-screen flex flex-col lg:overflow-hidden">
 <!-- Top Navigation Bar -->
 <header class="bg-[#131313] dark:bg-[#131313] docked full-width top-0 border-b border-[#3B4B37]/20 flex justify-between items-center w-full px-6 py-4 z-50">
 <div class="text-xl font-bold text-[#1BFF3C] tracking-tighter font-['Rajdhani'] uppercase" style=""><span style="font-family: Rajdhani, sans-serif; font-size: 24px; letter-spacing: -1.2px;">WELD&nbsp; BEAR&nbsp; IEDU</span></div>
@@ -226,17 +277,11 @@
 </footer>
 
 
-\n
 
-\n
 
-\n
 
-\n
 
-\n
 
-\n
 
 
 

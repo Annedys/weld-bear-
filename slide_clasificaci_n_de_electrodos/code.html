@@ -78,6 +78,20 @@
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
+        @media (max-width: 1023px) {
+            body, html { overflow-y: auto !important; overflow-x: hidden !important; height: auto !important; min-height: 100vh !important; }
+            * { box-sizing: border-box !important; }
+            main, main.blueprint-grid { height: auto !important; overflow: visible !important; display: flex !important; flex-direction: column !important; padding: 100px 16px 140px 16px !important; }
+            h1 { font-size: 2.5rem !important; line-height: 1.1 !important; word-wrap: break-word !important; }
+            .text-7xl { font-size: 2.5rem !important; }
+            p, .text-xl, .text-2xl, .text-lg { font-size: 1.1rem !important; line-height: 1.4 !important; }
+            .grid, .grid-cols-1, .md\:grid-cols-12, .sm\:grid-cols-3 { display: flex !important; flex-direction: column !important; gap: 24px !important; }
+            .md\:col-span-8, .md\:col-span-4 { width: 100% !important; flex: none !important; }
+            header.fixed { flex-wrap: wrap !important; height: auto !important; padding: 16px !important; gap: 12px !important; position: relative !important; }
+            footer.fixed { height: auto !important; padding: 12px !important; flex-wrap: wrap !important; justify-content: center !important; gap: 8px !important; position: fixed !important; bottom: 0 !important; width: 100% !important; z-index: 50 !important; }
+            footer.fixed button, footer.fixed div { flex: 1 1 20% !important; min-width: 60px !important; padding: 12px 4px !important; border: 1px solid rgba(27,255,60,0.1) !important; margin: 0 !important; }
+            .absolute.top-0.right-0 { display: none !important; }
+        }
     </style>
 </head>
 <body class="bg-surface text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container min-h-screen flex flex-col">
@@ -103,31 +117,31 @@
 </div>
 </header>
 <!-- Main Content Canvas -->
-<main class="flex-grow pt-24 pb-8 px-6 blueprint-grid relative h-[calc(100vh-100px)] overflow-hidden">
-<div class="max-w-6xl mx-auto h-full flex flex-col gap-8">
+<main class="flex-grow pt-16 pb-16 px-6 blueprint-grid relative lg:h-[calc(100vh-100px)] lg:overflow-hidden">
+<div class="max-w-6xl mx-auto h-full flex flex-col gap-6 justify-center">
 <!-- Page Header Section -->
 <div class="border-l-4 border-primary-container pl-6 py-2">
 
-<h1 class="font-headline font-bold text-5xl md:text-7xl uppercase tracking-tighter leading-none text-on-surface" style="">
+<h1 class="font-headline font-bold text-3xl sm:text-5xl md:text-7xl uppercase tracking-tighter leading-none text-on-surface" style="">
                     CLASIFICACIÓN DE <span class="text-primary-container" style="">ELECTRODOS</span>
 </h1>
 </div>
 <!-- Content Grid (Bento Style) -->
-<div class="grid grid-cols-1 md:grid-cols-12 gap-6 flex-grow">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-4 sm:gap-6 items-start">
 <!-- Main Definition Card -->
-<div class="md:col-span-8 bg-surface-container-low border border-outline-variant/30 p-8 flex flex-col justify-between relative overflow-hidden group hover:border-primary-container/50 transition-colors">
+<div class="md:col-span-8 bg-surface-container-low border border-outline-variant/30 p-6 relative overflow-hidden group hover:border-primary-container/50 transition-colors">
 <div class="absolute top-0 right-0 p-4 font-label text-[10px] text-outline opacity-50" style="">COORD: 45.92 / -12.44</div>
 <div>
 <h2 class="font-headline text-2xl font-bold uppercase tracking-wide text-primary mb-6 flex items-center gap-3" style="">
 <span class="w-8 h-[1px] bg-primary-container"></span>
                             Nomenclatura Técnica
                         </h2>
-<p class="text-xl md:text-2xl font-light leading-relaxed text-on-surface-variant max-w-2xl" style="">
+<p class="text-base sm:text-xl md:text-2xl font-light leading-relaxed text-on-surface-variant max-w-2xl" style="">
                             La clasificación indica <span class="text-primary border-b border-primary/30" style="">resistencia</span>, posiciones de uso y tipo de revestimiento o corriente compatible. Es el estándar fundamental para la selección de material de aporte.
                         </p>
 </div>
-<div class="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-4">
-<div class="bg-surface-container-high p-4 border-l border-primary-container">
+<div class="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4">
+<div class="bg-surface-container-high p-4 border-l-4 border-primary-container">
 <span class="font-label text-xs text-primary-container block mb-1" style="">E</span>
 <span class="text-sm uppercase font-bold text-on-surface" style="">Electrodo</span>
 </div>
@@ -142,8 +156,8 @@
 </div>
 </div>
             <!-- Common Examples Card -->
-            <div class="md:col-span-4 bg-surface-container-high border border-primary-container/20 p-8 shadow-[0_0_20px_rgba(27,255,60,0.05)]">
-                <h3 class="font-headline text-xl font-bold uppercase tracking-widest text-primary mb-8" style="">EJEMPLOS COMUNES</h3>
+            <div class="md:col-span-4 bg-surface-container-high border border-primary-container/20 p-6 shadow-[0_0_20px_rgba(27,255,60,0.05)]">
+                <h3 class="font-headline text-xl font-bold uppercase tracking-widest text-primary mb-6" style="">EJEMPLOS COMUNES</h3>
                 <div class="space-y-8">
                     <!-- Example 1 -->
                     <div class="group cursor-default">
@@ -154,7 +168,7 @@
                         <div class="h-2 w-full bg-surface-variant">
                             <div class="h-full bg-primary-container w-[60%]"></div>
                         </div>
-                        <p class="text-base font-bold text-on-surface mt-3 leading-snug" style="">
+                        <p class="text-lg font-bold text-on-surface mt-3 leading-snug" style="">
                             Alta penetración, fácil encendido. Ideal para carpintería metálica ligera.
                         </p>
                     </div>
@@ -167,7 +181,7 @@
                         <div class="h-2 w-full bg-surface-variant">
                             <div class="h-full bg-primary-container w-[85%]"></div>
                         </div>
-                        <p class="text-base font-bold text-on-surface mt-3 leading-snug" style="">
+                        <p class="text-lg font-bold text-on-surface mt-3 leading-snug" style="">
                             Bajo hidrógeno, excelente calidad de unión. Para estructuras críticas.
                         </p>
                     </div>
@@ -196,17 +210,11 @@
 </footer>
 
 
-\n
 
-\n
 
-\n
 
-\n
 
-\n
 
-\n
 
 
 

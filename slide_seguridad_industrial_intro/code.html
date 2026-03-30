@@ -91,6 +91,25 @@
         .neon-text-glow {
             text-shadow: 0 0 10px rgba(27, 255, 60, 0.5);
         }
+        @media (max-width: 1023px) {
+            body, main { overflow-y: auto !important; overflow-x: hidden !important; height: auto !important; }
+            * { box-sizing: border-box !important; }
+            main { padding-bottom: 120px !important; padding-top: 20px !important; display: block !important; }
+            .grid-cols-12 { display: flex !important; flex-direction: column !important; }
+            h1 { font-size: 2.5rem !important; line-height: 1.1 !important; }
+            .text-7xl, .md\:text-8xl { font-size: 2.5rem !important; }
+            p.text-xl { font-size: 1.1rem !important; line-height: 1.4 !important; }
+            .p-12 { padding: 1.5rem !important; }
+            .mt-24 { margin-top: 2rem !important; }
+            .grid-cols-2 { display: flex !important; flex-direction: column !important; gap: 1.5rem !important; }
+            .md\:col-span-5.relative { min-height: 300px !important; }
+            .grid-cols-3 { gap: 8px !important; padding: 1rem !important; }
+            nav.fixed.bottom-0 { height: auto !important; padding: 10px 0 !important; flex-wrap: wrap !important; width: 100%; z-index: 50; }
+            nav.fixed.bottom-0 button, nav.fixed.bottom-0 div { padding: 8px !important; flex: 1 1 20%; min-width: 60px; }
+            nav.fixed.bottom-0 span.text-xs { font-size: 0.65rem !important; }
+            .flex-grow.relative { display: block !important; height: 300px !important; min-height: 300px !important; }
+            .flex-grow.relative img { object-fit: cover !important; height: 100% !important; width: 100% !important; }
+        }
     </style>
 </head>
 <body class="bg-background text-on-background font-body blueprint-grid min-h-screen flex flex-col">
@@ -205,17 +224,11 @@
 </nav>
 
 
-\n
 
-\n
 
-\n
 
-\n
 
-\n
 
-\n
 
 
 

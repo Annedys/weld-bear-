@@ -86,6 +86,19 @@
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
         }
+        @media (max-width: 1023px) {
+            body, html { overflow-y: auto !important; overflow-x: hidden !important; height: auto !important; min-height: 100vh !important; }
+            * { box-sizing: border-box !important; }
+            main { height: auto !important; overflow: visible !important; display: flex !important; flex-direction: column !important; padding: 100px 16px 140px 16px !important; }
+            h1 { font-size: 2.5rem !important; line-height: 1.1 !important; word-wrap: break-word !important; }
+            .text-5xl, .md\:text-7xl { font-size: 2.5rem !important; }
+            p, .text-xl { font-size: 1.1rem !important; line-height: 1.4 !important; }
+            .grid, .grid-cols-1, .md\:grid-cols-12 { display: flex !important; flex-direction: column !important; gap: 24px !important; }
+            .md\:col-start-3, .md\:col-span-4, .md\:col-span-8 { width: 100% !important; flex: none !important; margin: 0 !important; }
+            header { flex-wrap: wrap !important; height: auto !important; padding: 16px !important; gap: 12px !important; position: relative !important; }
+            nav.fixed { height: auto !important; padding: 12px !important; flex-wrap: wrap !important; justify-content: center !important; gap: 8px !important; position: fixed !important; bottom: 0 !important; width: 100% !important; z-index: 50 !important; }
+            nav.fixed button { flex: 1 1 20% !important; min-width: 60px !important; padding: 12px 4px !important; border: 1px solid rgba(27,255,60,0.1) !important; margin: 0 !important; }
+        }
     </style>
 </head>
 
@@ -263,17 +276,11 @@
     </nav>
 
 
-    \n
 
-    \n
 
-    \n
 
-    \n
 
-    \n
     
-    \n
 
 
 

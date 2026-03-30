@@ -28,6 +28,20 @@
         .technical-line {
             background: repeating-linear-gradient(90deg, #1BFF3C, #1BFF3C 2px, transparent 2px, transparent 4px);
         }
+        @media (max-width: 1023px) {
+            body, html { overflow-y: auto !important; overflow-x: hidden !important; height: auto !important; min-height: 100vh !important; }
+            * { box-sizing: border-box !important; }
+            main { display: flex !important; flex-direction: column !important; padding-bottom: 120px !important; height: auto !important; }
+            .md\:grid { display: flex !important; flex-direction: column !important; gap: 16px !important; }
+            h1 { font-size: 3rem !important; line-height: 1.1 !important; }
+            h2 { font-size: 1.8rem !important; }
+            h3, h4 { font-size: 1.25rem !important; }
+            p { font-size: 1.1rem !important; line-height: 1.4 !important; }
+            .md\:col-span-5, .md\:col-span-7 { width: 100% !important; margin-bottom: 0 !important;}
+            footer { height: auto !important; padding: 10px 0 !important; flex-wrap: wrap !important; position: fixed !important; bottom: 0; width: 100%; z-index: 50; }
+            footer button, footer div { padding: 8px !important; flex: 1 1 auto; min-width: 60px; text-align: center; }
+            footer .flex-grow { display: flex !important; flex-direction: column !important; gap: 8px !important; }
+        }
     </style>
 <script id="tailwind-config">
         tailwind.config = {
@@ -126,7 +140,6 @@ STATUS: ACTIVE_TERMINAL
 <div class="md:col-span-5 flex flex-col gap-6">
 <div class="bg-surface-container-low p-1 border-l-4 border-primary-container blueprint-glow">
 <div class="p-6 bg-surface-container">
-<span class="font-label text-primary-container text-xs block mb-2 tracking-[0.2em]">[ CORE_IDENTIFIER ]</span>
 <h1 class="font-headline text-7xl font-bold text-primary tracking-tighter uppercase mb-4">AWS</h1>
 <div class="h-1 w-24 bg-primary-container mb-6"></div>
 <p class="text-on-surface/90 text-xl leading-relaxed font-medium">
@@ -225,17 +238,11 @@ STATUS: ACTIVE_TERMINAL
 </footer>
 
 
-\n
 
-\n
 
-\n
 
-\n
 
-\n
 
-\n
 
 
 

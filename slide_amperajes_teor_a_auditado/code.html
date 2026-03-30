@@ -34,9 +34,22 @@
                               linear-gradient(to bottom, rgba(59, 75, 55, 0.1) 1px, transparent 1px);
             background-size: 40px 40px;
         }
+        @media (max-width: 1023px) {
+            body, html { overflow-y: auto !important; overflow-x: hidden !important; height: auto !important; min-height: 100vh !important; }
+            * { box-sizing: border-box !important; }
+            main { height: auto !important; overflow: visible !important; display: flex !important; flex-direction: column !important; padding: 100px 16px 140px 16px !important; }
+            h1 { font-size: 2.2rem !important; line-height: 1.1 !important; word-wrap: break-word !important; }
+            .text-6xl, .md\:text-6xl, .text-4xl { font-size: 2.2rem !important; }
+            p, .text-xl, .text-2xl, .text-3xl { font-size: 1.1rem !important; line-height: 1.4 !important; }
+            .grid, .grid-cols-1, .lg\:grid-cols-12 { display: flex !important; flex-direction: column !important; gap: 24px !important; }
+            .lg\:col-span-8, .lg\:col-span-4 { width: 100% !important; flex: none !important; padding: 24px !important; }
+            header.fixed { flex-wrap: wrap !important; height: auto !important; padding: 16px !important; gap: 12px !important; position: relative !important; }
+            nav.fixed { height: auto !important; padding: 12px !important; flex-wrap: wrap !important; justify-content: center !important; gap: 8px !important; position: fixed !important; bottom: 0 !important; width: 100% !important; z-index: 50 !important; }
+            nav.fixed button, nav.fixed div { flex: 1 1 20% !important; min-width: 60px !important; padding: 12px 4px !important; border: 1px solid rgba(27,255,60,0.1) !important; margin: 0 !important; }
+        }
     </style>
 </head>
-<body class="bg-background text-on-surface font-body min-h-screen flex flex-col overflow-hidden">
+<body class="bg-background text-on-surface font-body min-h-screen flex flex-col lg:overflow-hidden">
 <header class="bg-[#131313] flex justify-between items-center w-full px-6 py-4 fixed top-0 z-50 border-b border-[#3B4B37]/20">
 <div class="text-2xl font-bold tracking-tighter text-[#1BFF3C] uppercase font-headline">WELD BEAR IEDU</div>
 <div class="flex items-center gap-4">
@@ -44,15 +57,10 @@
 </div>
 </header>
 
-<main class="flex-grow pt-24 pb-32 px-6 blueprint-grid relative h-[calc(100vh-80px)] overflow-hidden">
+<main class="flex-grow pt-24 pb-32 px-6 blueprint-grid relative lg:h-[calc(100vh-80px)] lg:overflow-hidden">
 <div class="max-w-7xl mx-auto h-full flex flex-col">
 <!-- Header -->
 <div class="mb-10 border-l-4 border-primary-container pl-6 py-2 bg-surface-container-low/50">
-<div class="flex items-center gap-2 mb-1">
-<span class="font-technical text-[10px] text-outline uppercase tracking-widest">Amperage Logic // Output Factors</span>
-<div class="h-[1px] flex-grow bg-outline-variant/30"></div>
-<span class="font-technical text-[10px] text-primary-container">SYS_REF: AMP-VOLT-S2</span>
-</div>
 <h1 class="text-4xl md:text-6xl font-headline font-bold text-on-surface tracking-tight uppercase leading-none">
                     AMPERAJES SEGÚN DIMENSIÓN Y VOLTAJE
                 </h1>

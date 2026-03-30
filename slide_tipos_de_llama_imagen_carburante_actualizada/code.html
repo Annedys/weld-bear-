@@ -1,13 +1,19 @@
 <!DOCTYPE html>
 
-<html class="dark" lang="es"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>WELDING_SYSTEM_v2.1 - Tipos de Llama</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&amp;family=Space+Grotesk:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
+<html class="dark" lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>WELDING_SYSTEM_v2.1 - Tipos de Llama</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&amp;family=Space+Grotesk:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
             theme: {
@@ -66,169 +72,205 @@
                         "body": ["Space Grotesk"],
                         "label": ["JetBrains Mono"]
                     },
-                    borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+                    borderRadius: { "DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px" },
                 },
             },
         }
     </script>
-<style>
+    <style>
         body {
             background-color: #131313;
-            background-image: 
+            background-image:
                 linear-gradient(rgba(59, 75, 55, 0.05) 1px, transparent 1px),
                 linear-gradient(90deg, rgba(59, 75, 55, 0.05) 1px, transparent 1px);
             background-size: 40px 40px;
         }
+
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
+
         .glow-border:hover {
             box-shadow: 0px 0px 15px rgba(27, 255, 60, 0.3);
             border-color: #1BFF3C;
         }
+        @media (max-width: 1023px) {
+            body, html { overflow-y: auto !important; overflow-x: hidden !important; height: auto !important; min-height: 100vh !important; }
+            * { box-sizing: border-box !important; }
+            main { height: auto !important; overflow: visible !important; margin-left: 0 !important; padding: 100px 16px 140px 16px !important; }
+            .grid { display: flex !important; flex-direction: column !important; gap: 24px !important; }
+            .h-\[520px\] { height: auto !important; min-height: 400px !important; }
+            h1 { font-size: 2.8rem !important; line-height: 1.1 !important; }
+            h2 { font-size: 1.6rem !important; }
+            p { font-size: 1.1rem !important; line-height: 1.4 !important; }
+            nav { height: auto !important; padding: 10px !important; flex-wrap: wrap !important; justify-content: center !important; gap: 8px !important; }
+            nav button, nav div { flex: 1 1 20% !important; min-width: 60px !important; padding: 8px !important; }
+            header { flex-wrap: wrap !important; padding: 8px 16px !important; }
+        }
     </style>
 </head>
-<body class="text-on-background font-body selection:bg-primary-container selection:text-on-primary-container min-h-screen flex flex-col">
-<!-- TopAppBar -->
-<header class="bg-[#131313] dark:bg-[#131313] docked full-width top-0 border-b border-[#3B4B37]/20 flex justify-between items-center w-full px-6 py-4 z-50">
-<div class="flex items-center gap-4">
-<span class="font-['Rajdhani'] uppercase tracking-tighter font-bold text-xl font-black text-[#1BFF3C] drop-shadow-[0_0_10px_rgba(27,255,60,0.3)]">WELD BEAR IEDU</span>
-<div class="h-4 w-[1px] bg-outline-variant/30"></div>
-<span class="font-label text-[10px] tracking-[0.2em] text-outline uppercase">Module: Oxy-Acetylene</span>
-</div>
-<div class="flex items-center gap-6">
-<div class="flex gap-4">
-<button class="material-symbols-outlined text-[#84967E] opacity-50 hover:bg-[#1BFF3C]/10 transition-colors p-2">settings</button>
-<button class="material-symbols-outlined text-[#84967E] opacity-50 hover:bg-[#1BFF3C]/10 transition-colors p-2">help_outline</button>
-</div>
-<div class="w-10 h-10 bg-surface-container-high border border-outline-variant/20 flex items-center justify-center">
-<img alt="Instructor" class="w-8 h-8 object-cover filter grayscale" data-alt="Close up portrait of a technical instructor wearing protective gear in a dimly lit industrial setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKj4jBrJpDufyZVJo9K9l4dHJmNpANWKk3g8ttU_J1qKvFS5YAtzD9bGrb6Si0J37PKKPlqvVqgbe7tT13MXttl_m5RjxzAZ4uVEpsqEPVHsMKXjmvWdRegz6heFW3bKsq2OFinAZnRqP9YnH9DhUk3xDMlzWI4frSOT43BJY9TQ7kRhBg"/>
-</div>
-</div>
-</header>
-<!-- Main Content Canvas -->
-<main class="flex-1 lg:ml-64 pt-24 pb-4 px-6 md:px-12 relative z-10 h-[calc(100vh-100px)] overflow-hidden">
-<!-- Presentation Title Section -->
-<div class="mb-8 border-l-4 border-primary-container pl-6">
-<h1 class="font-headline text-5xl font-bold uppercase tracking-tight text-on-background mb-2">Tipos de Llama</h1>
-<p class="font-label text-sm text-primary-container tracking-widest uppercase opacity-80">Parámetros de combustión oxiacetilénica</p>
-</div>
-<!-- Cards Grid -->
-<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-<!-- Card 1: LLAMA NEUTRA -->
-<div class="bg-surface-container-low border border-outline-variant/20 transition-all duration-300 glow-border group flex flex-col h-[520px]">
-<div class="p-6 border-b border-outline-variant/20 flex justify-between items-center">
-<h2 class="font-headline text-2xl font-bold text-[#1BFF3C] tracking-tighter">LLAMA NEUTRA</h2>
-<span class="font-label text-[10px] text-outline px-2 py-1 border border-outline/20">TYPE_01</span>
-</div>
-<div class="relative h-44 bg-surface-container-lowest overflow-hidden">
-<img alt="Llama Neutra" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida/ADBb0uiCHKGMvY07b-PAnhdaRGclhvsZARb_t5nOQc3gb3BmGE48QKYXS6zuqWN_Q5Exgw9lwaRny7nZ-lTlgF8BC6bkDXW5vsvCBo83Jo8Ec4aTkAUwD6nDxJTCDQRvg7W1W0i422tlIREqCZjoUmhlr9t6wzaifCp1ruLfzHaXGjJAddyp8kRRUK4EqhzezI8rLYOJjcecesPUYV4yDc_hfbivvDr_xKrLWTtlSiqaaz91eZRm-EP3vdlNhdPEn3RK4sOkVfhQ_C0t-w"/>
-<div class="absolute top-2 right-2 font-label text-[9px] text-primary-container bg-black/50 px-2 py-1">RATIO 1:1</div>
-</div>
-<div class="p-8 flex-grow flex items-center">
-    <p class="text-on-surface text-xl font-medium leading-relaxed">
-        Tiene balance correcto entre oxígeno y acetileno. Es la llama más estable y la más utilizada para trabajo general y preparación del corte.
-    </p>
-</div>
-</div>
-<!-- Card 2: LLAMA CARBURANTE -->
-<div class="bg-surface-container-low border border-outline-variant/20 transition-all duration-300 glow-border group flex flex-col h-[520px]">
-<div class="p-6 border-b border-outline-variant/20 flex justify-between items-center">
-<h2 class="font-headline text-2xl font-bold text-[#1BFF3C] tracking-tighter">LLAMA CARBURANTE</h2>
-<span class="font-label text-[10px] text-outline px-2 py-1 border border-outline/20">TYPE_02</span>
-</div>
-<div class="relative h-44 bg-surface-container-lowest overflow-hidden">
-<img alt="Llama Carburante" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida/ADBb0ujPGrhz5p6T1GGn74zH_Rog7PELBdPSpV9osHEvKQENqS0Oh-yrWGI9aJMObR4cz6NOnB5JWfe1dWJGKjmBRThFADkyx34q2zOtpTo_jGY2R8sb_XU-2TFbEo4vfOQ1RvGY_8Ewvcl0I5uEMwbTiPZQ8mcV5Fa0OeQE1MeqUe69sczsPdbHikVyOLka0Q9vf24UwoaN4E2Ha3G6qeb3VCTXKrOTKU995dPajXJwpBeEQmrP4_IvpWy_nhiW-WEi0oF8Yxet0nUxFA"/>
-<div class="absolute top-2 right-2 font-label text-[9px] text-secondary-container bg-black/50 px-2 py-1">EXCESS C2H2</div>
-</div>
-<div class="p-8 flex-grow flex items-center">
-    <p class="text-on-surface text-xl font-medium leading-relaxed">
-        Tiene exceso de acetileno. Produce una combustión más rica en combustible. Se usa cuando se quiere reducir oxidación o en algunos trabajos de calentamiento.
-    </p>
-</div>
-</div>
-<!-- Card 3: LLAMA OXIDANTE -->
-<div class="bg-surface-container-low border border-outline-variant/20 transition-all duration-300 glow-border group flex flex-col h-[520px]">
-<div class="p-6 border-b border-outline-variant/20 flex justify-between items-center">
-<h2 class="font-headline text-2xl font-bold text-[#1BFF3C] tracking-tighter">LLAMA OXIDANTE</h2>
-<span class="font-label text-[10px] text-outline px-2 py-1 border border-outline/20">TYPE_03</span>
-</div>
-<div class="relative h-44 bg-surface-container-lowest overflow-hidden">
-    <img alt="Llama Oxidante" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="../llama_oxidante.png"/>
-    <div class="absolute top-2 right-2 font-label text-[9px] text-error bg-black/50 px-2 py-1">EXCESS O2</div>
-</div>
-<div class="p-8 flex-grow flex items-center">
-    <p class="text-on-surface text-xl font-medium leading-relaxed">
-        Tiene exceso de oxígeno. Produce una llama más agresiva y más corta. Puede oxidar demasiado la superficie si no se controla bien.
-    </p>
-</div>
-</div>
-</div>
-<!-- Metadata Hidden -->
-</main>
-<!-- BottomNavBar -->
-<nav class="bg-[#1C1B1B] dark:bg-[#1C1B1B] fixed bottom-0 left-0 w-full z-50 flex justify-between items-center px-12 py-3 border-t border-[#3B4B37]/30 shadow-[0px_0px_15px_rgba(27,255,60,0.1)]">
-<button class="flex flex-col items-center justify-center text-[#84967E] px-8 py-2 font-['JetBrains_Mono'] text-xs tracking-widest hover:text-[#1BFF3C] hover:bg-[#2A2A2A] transition-all duration-200">
-<span class="material-symbols-outlined mb-1">arrow_back</span>
-<span>PREVIOUS</span>
-</button>
-<div class="flex flex-col items-center justify-center border border-[#1BFF3C] text-[#1BFF3C] px-8 py-2 font-['JetBrains_Mono'] text-xs tracking-widest font-bold bg-[#1BFF3C]/5">
-    <span class="material-symbols-outlined mb-1">analytics</span>
-    <span>05</span>
-</div>
-<button class="flex flex-col items-center justify-center text-[#84967E] px-8 py-2 font-['JetBrains_Mono'] text-xs tracking-widest hover:text-[#1BFF3C] hover:bg-[#2A2A2A] transition-all duration-200">
-<span class="material-symbols-outlined mb-1">arrow_forward</span>
-<span>NEXT</span>
-</button>
-</nav>
+
+<body
+    class="text-on-background font-body selection:bg-primary-container selection:text-on-primary-container min-h-screen flex flex-col">
+    <!-- TopAppBar -->
+    <header
+        class="bg-[#131313] dark:bg-[#131313] docked full-width top-0 border-b border-[#3B4B37]/20 flex justify-between items-center w-full px-6 py-4 z-50">
+        <div class="flex items-center gap-4">
+            <span
+                class="font-['Rajdhani'] uppercase tracking-tighter font-bold text-xl font-black text-[#1BFF3C] drop-shadow-[0_0_10px_rgba(27,255,60,0.3)]">WELD
+                BEAR IEDU</span>
+            <div class="h-4 w-[1px] bg-outline-variant/30"></div>
+            <span class="font-label text-[10px] tracking-[0.2em] text-outline uppercase">Module: Oxy-Acetylene</span>
+        </div>
+        <div class="flex items-center gap-6">
+            <div class="flex gap-4">
+                <button
+                    class="material-symbols-outlined text-[#84967E] opacity-50 hover:bg-[#1BFF3C]/10 transition-colors p-2">settings</button>
+                <button
+                    class="material-symbols-outlined text-[#84967E] opacity-50 hover:bg-[#1BFF3C]/10 transition-colors p-2">help_outline</button>
+            </div>
+            <div
+                class="w-10 h-10 bg-surface-container-high border border-outline-variant/20 flex items-center justify-center">
+                <img alt="Instructor" class="w-8 h-8 object-cover filter grayscale"
+                    data-alt="Close up portrait of a technical instructor wearing protective gear in a dimly lit industrial setting"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKj4jBrJpDufyZVJo9K9l4dHJmNpANWKk3g8ttU_J1qKvFS5YAtzD9bGrb6Si0J37PKKPlqvVqgbe7tT13MXttl_m5RjxzAZ4uVEpsqEPVHsMKXjmvWdRegz6heFW3bKsq2OFinAZnRqP9YnH9DhUk3xDMlzWI4frSOT43BJY9TQ7kRhBg" />
+            </div>
+        </div>
+    </header>
+    <!-- Main Content Canvas -->
+    <main class="flex-1 lg:ml-32 pt-24 pb-4 px-6 md:px-12 relative z-10 h-[calc(100vh-100px)] overflow-hidden">
+        <!-- Presentation Title Section -->
+        <div class="mb-8 border-l-4 border-primary-container pl-6">
+            <h1 class="font-headline text-5xl font-bold uppercase tracking-tight text-on-background mb-2">Tipos de Llama
+            </h1>
+            <p class="font-label text-sm text-primary-container tracking-widest uppercase opacity-80">Parámetros de
+                combustión oxiacetilénica</p>
+        </div>
+        <!-- Cards Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Card 1: LLAMA NEUTRA -->
+            <div
+                class="bg-surface-container-low border border-outline-variant/20 transition-all duration-300 glow-border group flex flex-col h-[520px]">
+                <div class="p-6 border-b border-outline-variant/20 flex justify-between items-center">
+                    <h2 class="font-headline text-2xl font-bold text-[#1BFF3C] tracking-tighter">LLAMA NEUTRA</h2>
+                    <span class="font-label text-[10px] text-outline px-2 py-1 border border-outline/20">TYPE_01</span>
+                </div>
+                <div class="relative h-44 bg-surface-container-lowest overflow-hidden">
+                    <img alt="Llama Neutra"
+                        class="w-full h-full object-cover object-top scale-110 group-hover:scale-125 transition-transform duration-500"
+                        src="../llamaneutra.jpg" />
+                </div>
+                <div class="p-8 flex-grow flex items-center">
+                    <p class="text-on-surface text-xl font-medium leading-relaxed">
+                        Tiene balance correcto entre oxígeno y acetileno. Es la llama más estable y la más utilizada
+                        para trabajo general y preparación del corte.
+                    </p>
+                </div>
+            </div>
+            <!-- Card 2: LLAMA CARBURANTE -->
+            <div
+                class="bg-surface-container-low border border-outline-variant/20 transition-all duration-300 glow-border group flex flex-col h-[520px]">
+                <div class="p-6 border-b border-outline-variant/20 flex justify-between items-center">
+                    <h2 class="font-headline text-2xl font-bold text-[#1BFF3C] tracking-tighter">LLAMA CARBURANTE</h2>
+                    <span class="font-label text-[10px] text-outline px-2 py-1 border border-outline/20">TYPE_02</span>
+                </div>
+                <div class="relative h-44 bg-surface-container-lowest overflow-hidden">
+                    <img alt="Llama Carburante"
+                        class="w-full h-full object-cover object-top scale-110 group-hover:scale-125 transition-transform duration-500"
+                        src="../llamacarburante.jpg" />
+                </div>
+                <div class="p-8 flex-grow flex items-center">
+                    <p class="text-on-surface text-xl font-medium leading-relaxed">
+                        Tiene exceso de acetileno. Produce una combustión más rica en combustible. Se usa cuando se
+                        quiere reducir oxidación o en algunos trabajos de calentamiento.
+                    </p>
+                </div>
+            </div>
+            <!-- Card 3: LLAMA OXIDANTE -->
+            <div
+                class="bg-surface-container-low border border-outline-variant/20 transition-all duration-300 glow-border group flex flex-col h-[520px]">
+                <div class="p-6 border-b border-outline-variant/20 flex justify-between items-center">
+                    <h2 class="font-headline text-2xl font-bold text-[#1BFF3C] tracking-tighter">LLAMA OXIDANTE</h2>
+                    <span class="font-label text-[10px] text-outline px-2 py-1 border border-outline/20">TYPE_03</span>
+                </div>
+                <div class="relative h-44 bg-surface-container-lowest overflow-hidden">
+                    <img alt="Llama Oxidante"
+                        class="w-full h-full object-cover object-top scale-110 group-hover:scale-125 transition-transform duration-500"
+                        src="../llamaoxidante.jpg" />
+                </div>
+                <div class="p-8 flex-grow flex items-center">
+                    <p class="text-on-surface text-xl font-medium leading-relaxed">
+                        Tiene exceso de oxígeno. Produce una llama más agresiva y más corta. Puede oxidar demasiado la
+                        superficie si no se controla bien.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- Metadata Hidden -->
+    </main>
+    <!-- BottomNavBar -->
+    <nav
+        class="bg-[#1C1B1B] dark:bg-[#1C1B1B] fixed bottom-0 left-0 w-full z-50 flex justify-between items-center px-12 py-3 border-t border-[#3B4B37]/30 shadow-[0px_0px_15px_rgba(27,255,60,0.1)]">
+        <button
+            class="flex flex-col items-center justify-center text-[#84967E] px-8 py-2 font-['JetBrains_Mono'] text-xs tracking-widest hover:text-[#1BFF3C] hover:bg-[#2A2A2A] transition-all duration-200">
+            <span class="material-symbols-outlined mb-1">arrow_back</span>
+            <span>PREVIOUS</span>
+        </button>
+        <div
+            class="flex flex-col items-center justify-center border border-[#1BFF3C] text-[#1BFF3C] px-8 py-2 font-['JetBrains_Mono'] text-xs tracking-widest font-bold bg-[#1BFF3C]/5">
+            <span class="material-symbols-outlined mb-1">analytics</span>
+            <span>05</span>
+        </div>
+        <button
+            class="flex flex-col items-center justify-center text-[#84967E] px-8 py-2 font-['JetBrains_Mono'] text-xs tracking-widest hover:text-[#1BFF3C] hover:bg-[#2A2A2A] transition-all duration-200">
+            <span class="material-symbols-outlined mb-1">arrow_forward</span>
+            <span>NEXT</span>
+        </button>
+    </nav>
 
 
-\n
 
-\n
 
-\n
 
-\n
 
-\n
 
-\n
-<script id="weld-bear-sync">
-    setTimeout(() => {
-        const triggers = document.querySelectorAll('button, a');
-        triggers.forEach(el => {
-            const text = el.innerText.toUpperCase();
-            const isPrev = text.includes('PREV') || text.includes('ANTERIOR') || text.includes('BACK_IOS') || text.includes('ARROW_BACK');
-            const isNext = text.includes('NEXT') || text.includes('SIGUIENTE') || text.includes('SIGUE') || text.includes('CONTINUAR') || text.includes('ARROW_FORWARD');
-            const isHome = text.includes('HOME') || text.includes('INICIO');
-            const isFinish = text.includes('FINALIZAR') || text.includes('FINISH');
+    <script id="weld-bear-sync">
+        setTimeout(() => {
+            const triggers = document.querySelectorAll('button, a');
+            triggers.forEach(el => {
+                const text = el.innerText.toUpperCase();
+                const isPrev = text.includes('PREV') || text.includes('ANTERIOR') || text.includes('BACK_IOS') || text.includes('ARROW_BACK');
+                const isNext = text.includes('NEXT') || text.includes('SIGUIENTE') || text.includes('SIGUE') || text.includes('CONTINUAR') || text.includes('ARROW_FORWARD');
+                const isHome = text.includes('HOME') || text.includes('INICIO');
+                const isFinish = text.includes('FINALIZAR') || text.includes('FINISH');
 
-            if (isPrev || isNext || isHome || isFinish) {
-                el.onclick = (e) => {
-                    e.preventDefault();
-                    if (isPrev) window.parent.postMessage('PREV', '*');
-                    if (isNext) window.parent.postMessage('NEXT', '*');
-                    if (isHome) window.parent.postMessage('HOME', '*');
-                    if (isFinish) window.parent.postMessage('FINISH', '*');
-                };
+                if (isPrev || isNext || isHome || isFinish) {
+                    el.onclick = (e) => {
+                        e.preventDefault();
+                        if (isPrev) window.parent.postMessage('PREV', '*');
+                        if (isNext) window.parent.postMessage('NEXT', '*');
+                        if (isHome) window.parent.postMessage('HOME', '*');
+                        if (isFinish) window.parent.postMessage('FINISH', '*');
+                    };
+                }
+            });
+        }, 500);
+
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ') {
+                e.preventDefault();
+                window.parent.postMessage('NEXT', '*');
+            } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+                e.preventDefault();
+                window.parent.postMessage('PREV', '*');
             }
         });
-    }, 500);
 
-    window.addEventListener('keydown', (e) => {
-        if (e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ') {
-            e.preventDefault();
-            window.parent.postMessage('NEXT', '*');
-        } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
-            e.preventDefault();
-            window.parent.postMessage('PREV', '*');
-        }
-    });
+        window.addEventListener('load', () => {
+            window.parent.postMessage('LOADED', '*');
+        });
+    </script>
 
-    window.addEventListener('load', () => {
-        window.parent.postMessage('LOADED', '*');
-    });
-</script>
+</body>
 
-</body></html>
+</html>

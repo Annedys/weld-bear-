@@ -86,6 +86,18 @@
             background: linear-gradient(90deg, transparent, #3b4b37 20%, #3b4b37 80%, transparent);
             opacity: 0.3;
         }
+        @media (max-width: 1023px) {
+            body, html { overflow-y: auto !important; overflow-x: hidden !important; height: auto !important; min-height: 100vh !important; }
+            * { box-sizing: border-box !important; }
+            main { height: auto !important; padding: 100px 16px 120px 16px !important; }
+            .grid { display: flex !important; flex-direction: column !important; gap: 24px !important; }
+            h1 { font-size: 3rem !important; line-height: 1.1 !important; word-wrap: break-word !important; }
+            p { font-size: 1.1rem !important; line-height: 1.4 !important; }
+            .h-\[500px\] { height: 300px !important; min-height: 300px !important; }
+            .lg\:grid-cols-2 { display: flex !important; flex-direction: column !important; }
+            footer { height: auto !important; padding: 10px !important; flex-wrap: wrap !important; justify-content: center !important; gap: 8px !important; position: fixed !important; bottom: 0; width: 100%; z-index: 50; }
+            footer button, footer div { flex: 1 1 20%; min-width: 60px; padding: 8px !important; }
+        }
     </style>
 </head>
 <body class="bg-background text-on-background font-body blueprint-grid min-h-screen selection:bg-primary-container selection:text-on-primary">
@@ -112,11 +124,6 @@
 <main class="max-w-7xl mx-auto px-6 pt-12 pb-32">
 <!-- Content Header -->
 <div class="mb-12 border-l-4 border-primary-container pl-6">
-<div class="flex items-center gap-3 mb-2">
-<span class="font-label text-primary-container text-sm" style="">SYSTEM_LOG // MODULE_02</span>
-<span class="h-px w-12 bg-outline-variant/30"></span>
-<span class="font-label text-outline text-sm" style=""><br></span>
-</div>
 <h1 class="font-headline text-6xl font-bold uppercase tracking-tighter text-on-surface" style="">CORTE OXIACETILENO</h1>
 </div>
 <!-- Bento Grid Layout -->
@@ -195,17 +202,11 @@
 </footer>
 
 
-\n
 
-\n
 
-\n
 
-\n
 
-\n
 
-\n
 
 
 

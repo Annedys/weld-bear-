@@ -81,6 +81,28 @@
         .glow-border:hover {
             box-shadow: 0px 0px 15px rgba(27, 255, 60, 0.2);
         }
+        @media (max-width: 1023px) {
+            body, main { overflow-y: auto !important; overflow-x: hidden !important; height: auto !important; min-height: 100vh !important; }
+            * { box-sizing: border-box !important; }
+            main { padding-bottom: 120px !important; padding-top: 20px !important; }
+            .grid { display: flex !important; flex-direction: column !important; gap: 16px !important; }
+            h1 { font-size: 2.2rem !important; line-height: 1.1 !important; margin-top: 0.5rem !important; }
+            h2 { font-size: 1.5rem !important; }
+            h3 { font-size: 1.3rem !important; }
+            p { font-size: 1.1rem !important; line-height: 1.4 !important; }
+            .text-5xl { font-size: 2.2rem !important; }
+            .p-5, .p-6 { padding: 1.25rem !important; }
+            footer { height: auto !important; padding: 10px 0 !important; flex-wrap: wrap !important; position: fixed !important; bottom: 0; width: 100%; z-index: 50; }
+            footer button, footer div { padding: 8px !important; flex: 1 1 20%; min-width: 60px; text-align: center; }
+            footer span.text-xs { font-size: 0.65rem !important; }
+            .mb-8 { margin-bottom: 1rem !important; }
+            .pb-4 { padding-bottom: 1rem !important; }
+            .mt-auto { margin-top: 1rem !important; }
+            main .flex.items-center.gap-6 { flex-direction: column !important; text-align: left !important; align-items: flex-start !important; }
+            .h-\[calc\(100vh-120px\)\] { height: auto !important; }
+            .md\:col-span-2, .md\:col-span-3 { width: 100% !important; margin-bottom: 0px !important; }
+            .material-symbols-outlined.text-\[200px\] { display: none !important; } /* Hide large decorative icon that overflows */
+        }
     </style>
 </head>
 <body class="bg-background text-on-background font-body selection:bg-primary-container selection:text-on-primary-container">
@@ -104,7 +126,6 @@
 <!-- Breadcrumb / Meta -->
 <div class="flex justify-between items-end mb-8 border-b border-outline-variant/30 pb-4">
 <div>
-<span class="font-label text-primary-container text-xs tracking-widest uppercase">Protocolo_07 // Riesgos Críticos</span>
 <h1 class="font-headline text-5xl font-black text-on-surface tracking-tighter uppercase mt-2">Seguridad en soldadura</h1>
 </div>
 <div class="text-right hidden md:block">
@@ -212,17 +233,11 @@
 </footer>
 
 
-\n
 
-\n
 
-\n
 
-\n
 
-\n
 
-\n
 
 
 

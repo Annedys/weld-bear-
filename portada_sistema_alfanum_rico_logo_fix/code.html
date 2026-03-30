@@ -82,6 +82,16 @@
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
+        @media (max-width: 1023px) {
+            body, html { overflow-y: auto !important; overflow-x: hidden !important; height: auto !important; min-height: 100vh !important; }
+            * { box-sizing: border-box !important; }
+            main { height: auto !important; overflow: visible !important; display: flex !important; flex-direction: column !important; padding: 100px 16px 140px 16px !important; }
+            h2, .text-7xl, .md\:text-8xl { font-size: 3rem !important; line-height: 1.1 !important; word-wrap: break-word !important; }
+            .absolute.top-24, .absolute.bottom-32, .absolute.top-32, .fixed.bottom-24 { display: none !important; }
+            header.fixed { flex-wrap: wrap !important; height: auto !important; padding: 16px !important; gap: 12px !important; position: relative !important; }
+            nav.fixed { height: auto !important; padding: 12px !important; flex-wrap: wrap !important; justify-content: center !important; gap: 8px !important; position: fixed !important; bottom: 0 !important; width: 100% !important; z-index: 50 !important; }
+            nav.fixed button, nav.fixed div { flex: 1 1 20% !important; min-width: 60px !important; padding: 12px 4px !important; border: 1px solid rgba(27,255,60,0.1) !important; margin: 0 !important; }
+        }
     </style>
 </head>
 <body class="bg-background text-on-surface font-body overflow-hidden selection:bg-primary-container selection:text-on-primary-container">
@@ -89,10 +99,7 @@
 <div class="fixed inset-0 blueprint-grid pointer-events-none"></div>
 <!-- Top Navigation Anchor -->
 <header class="bg-[#131313] flex justify-between items-center w-full px-6 py-4 fixed top-0 z-50">
-<div class="flex items-center gap-4">
-<img alt="Weld Bear Logo" class="h-12 w-12 object-contain" src="https://lh3.googleusercontent.com/aida/ADBb0uibj48xop7xhy6EEfiOu2dSbJJhw9kS6WGpqAsLufw0n9c1t5tz9lr2VSp9_x0sErc2Fe8afTUJY6T6WbP2agad-sV7LMFYX2BzSSe48S0yfUEq0ZegucjQWChpmJAwF2B3oRLBNnvZo45rShLviCILlUpe9Z7DYibcEuh9RB2erNsbrd405F5Kva19tWBRpRZCeNzp2y3NxvE6c1ibdvh2hg79VEv4jeI8kTZiDjuTPpG6HPBwhqLaK1-5h3cV2THZ9oQEP8Nv" style="">
-<h1 class="font-['Rajdhani'] uppercase tracking-widest font-bold text-lg text-[#1BFF3C]" style=""><br></h1>
-</div>
+<div class="text-2xl font-black text-[#1BFF3C] tracking-widest font-['Rajdhani'] uppercase" style=""><span style="font-family: Rajdhani, sans-serif; letter-spacing: -1.2px;">WELD BEAR IEDU</span></div>
 </header>
 <!-- Main Content Canvas (Presentation Slide) -->
 <main class="relative h-screen flex flex-col items-center justify-center px-8 text-center">
@@ -118,17 +125,7 @@
 <div class="h-[1px] w-20 bg-primary-container/40"></div>
 </div>
 <h2 class="font-headline font-bold text-7xl md:text-8xl lg:text-9xl text-[#1BFF3C] leading-none glow-text uppercase tracking-tight mb-8" style="">POSICIONES DE SOLDADURA</h2>
-<div class="p-4 border border-outline-variant/20 bg-surface-container-low flex items-center gap-8 backdrop-blur-sm">
-<div class="flex flex-col items-start">
-<span class="font-label text-[10px] text-outline uppercase" style="">Módulo de Referencia</span>
-<span class="font-headline font-bold text-xl text-on-surface" style="">ISO-6947:2019</span>
-</div>
-<div class="w-px h-10 bg-outline-variant/30"></div>
-<div class="flex flex-col items-start">
-<span class="font-label text-[10px] text-outline uppercase" style="">Nivel Técnico</span>
-<span class="font-headline font-bold text-xl text-on-surface" style="">ESPECIALISTA</span>
-</div>
-</div>
+
 </div>
 <!-- Visual Anchor Element -->
 <div class="absolute bottom-40 w-full flex justify-center opacity-20">
@@ -162,17 +159,11 @@
     </div>
 
 
-\n
 
-\n
 
-\n
 
-\n
 
-\n
 
-\n
 
 
 

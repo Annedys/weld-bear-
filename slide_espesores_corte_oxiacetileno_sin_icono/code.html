@@ -84,6 +84,27 @@
         .glow-primary {
             box-shadow: 0px 0px 15px rgba(27, 255, 60, 0.15);
         }
+        @media (max-width: 1023px) {
+            body, html { overflow-y: auto !important; overflow-x: hidden !important; height: auto !important; min-height: 100vh !important; }
+            * { box-sizing: border-box !important; }
+            main { height: auto !important; padding: 100px 16px 140px 16px !important; }
+            h1 { font-size: 2.2rem !important; line-height: 1.1 !important; word-wrap: break-word !important; margin-bottom: 12px !important; }
+            p.text-xl { font-size: 1.1rem !important; line-height: 1.4 !important; }
+            .overflow-x-auto { overflow-x: visible !important; }
+            table, thead, tbody, th, td, tr { display: block !important; width: 100% !important; }
+            thead { display: none !important; }
+            tr { margin-bottom: 16px !important; border: 1px solid rgba(132, 150, 126, 0.3) !important; background: #1a1a1a !important; }
+            td { display: flex !important; justify-content: space-between !important; padding: 12px 16px !important; border: none !important; border-bottom: 1px dashed rgba(132, 150, 126, 0.2) !important; font-size: 1rem !important; text-align: right !important; }
+            td:last-child { border-bottom: none !important; }
+            td:nth-child(1)::before { content: "Boquilla:" !important; }
+            td:nth-child(2)::before { content: "Espesor:" !important; }
+            td:nth-child(3)::before { content: "Acetileno:" !important; }
+            td:nth-child(4)::before { content: "Oxígeno:" !important; }
+            td::before { font-weight: bold !important; color: #84967E !important; font-size: 0.85rem !important; padding-right: 12px !important; display: flex !important; align-items: center !important; text-align: left !important; }
+            header { flex-wrap: wrap !important; padding: 16px !important; gap: 12px; }
+            nav { height: auto !important; padding: 12px !important; flex-wrap: wrap !important; justify-content: center !important; gap: 8px !important; position: fixed !important; bottom: 0 !important; }
+            nav button, nav div { flex: 1 1 20% !important; min-width: 60px !important; padding: 8px !important; }
+        }
     </style>
 </head>
 <body class="text-on-background font-body min-h-screen flex flex-col">
@@ -199,17 +220,11 @@
 </nav>
 
 
-\n
 
-\n
 
-\n
 
-\n
 
-\n
 
-\n
 
 
 

@@ -91,6 +91,31 @@
         .technical-line {
             background: repeating-linear-gradient(90deg, #3b4b37 0, #3b4b37 2px, transparent 2px, transparent 4px);
         }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #1c1b1b;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #1BFF3C;
+        }
+        @media (max-width: 1023px) {
+            body, html { overflow-y: auto !important; overflow-x: hidden !important; height: auto !important; min-height: 100vh !important; }
+            * { box-sizing: border-box !important; }
+            main { height: auto !important; overflow: visible !important; display: flex !important; flex-direction: column !important; padding: 100px 16px 140px 16px !important; }
+            .absolute.top-28.right-12 { display: none !important; }
+            h1 { font-size: 2.8rem !important; line-height: 1.1 !important; }
+            .flex-grow.grid { display: flex !important; flex-direction: column !important; overflow: visible !important; gap: 24px !important; }
+            .col-span-12 { width: 100% !important; flex: 0 0 auto !important; height: auto !important; overflow: visible !important; }
+            .overflow-y-auto { overflow: visible !important; max-height: none !important; }
+            .flex-grow.bg-surface-container-low.relative { min-height: 250px !important; padding: 16px !important; }
+            .flex-grow.bg-surface-container-low img { max-height: 300px !important; object-fit: contain !important; position: static !important; }
+            p { font-size: 1.1rem !important; line-height: 1.4 !important; }
+            h4 { font-size: 1.3rem !important; }
+            footer { height: auto !important; padding: 10px !important; flex-wrap: wrap !important; justify-content: center !important; gap: 8px !important; position: fixed !important; bottom: 0; width: 100%; z-index: 50; }
+            footer button, footer div { flex: 1 1 20%; min-width: 60px; padding: 8px !important; }
+        }
     </style>
 </head>
 <body class="bg-background text-on-surface font-body overflow-hidden min-h-screen selection:bg-primary-container selection:text-on-primary-container">
@@ -136,31 +161,22 @@
 <!-- Left: Visual Section -->
 <div class="col-span-12 lg:col-span-6 flex flex-col gap-6 relative">
 <div class="flex-grow bg-surface-container-low border border-outline-variant/30 relative overflow-hidden group p-10 flex items-center justify-center">
-<img alt="Technical diagram of oxy-acetylene cutting equipment" class="max-w-full max-h-full object-contain grayscale opacity-90 group-hover:grayscale-0 transition-all duration-700 bg-surface-container-lowest" src="https://lh3.googleusercontent.com/aida/ADBb0ugas3HG8u-amZzT_1UWS0eDno2wZm_RTZN3CAYKq60YT3plBuwPqFceD0fIrxMDeBjKk9Kec6__ijI3b5VeETtFa511iepKL9od9-AkLTiKcgQqWOs950swScU6gqrdFg0YDnzBySb1PmBX2tPjA23r2Q-qRIMRbn43Y7I9bKKRQeELY1u9Nbu2pVnQoPHSA7Uco8sdGluOd7JH5uc78kGu1_DKYI3IDkmyAYiKB9HRkI_nSe3UtnwXQxu-0t00XSB6LVhmvXCa2Q">
-<!-- Schematic Annotations Overlay -->
-<div class="absolute inset-0 pointer-events-none border-[1px] border-primary-container/10"></div>
-<div class="absolute top-4 left-4 font-label text-[10px] bg-primary-container text-on-primary px-2 py-1">LIVE_SPECIMEN_037</div>
-<!-- Tech Overlays -->
-<div class="absolute bottom-4 right-4 text-right">
-<div class="font-label text-[10px] text-primary-container mb-1">OPTIC_SCAN: 100%</div>
-<div class="w-32 h-1 bg-surface-variant">
-<div class="w-4/5 h-full bg-primary-container"></div>
-</div>
-</div>
+<img alt="Oxy-acetylene cutting equipment on cart (B&W)" class="max-w-full max-h-full object-contain grayscale opacity-80 group-hover:opacity-100 transition-all duration-700" src="../equipo_oxiacetileno_cart.png">
 </div>
 <!-- Bottom Alert Card -->
 </div>
 <!-- Right: Technical Specifications -->
 <div class="col-span-12 lg:col-span-6 flex flex-col gap-4 overflow-y-auto pr-2 custom-scrollbar">
+<div class="font-headline text-3xl font-bold uppercase tracking-wider text-[#1BFF3C] mb-4 border-b border-[#1BFF3C]/30 pb-2">Especificaciones técnicas:</div>
 <!-- Spec 05 -->
 <div class="bg-surface-container-low border border-outline-variant/30 p-5 glow-border transition-all flex items-start gap-5">
 <div class="font-headline text-4xl font-black text-primary-container/20 tabular-nums">05</div>
 <div class="flex-grow">
 <div class="flex justify-between items-baseline mb-2">
-<h4 class="font-headline text-xl font-bold text-primary-container uppercase tracking-wide">SOPLETE</h4>
-<span class="font-label text-[10px] text-outline bg-surface-container px-2 py-0.5">ID: BLW-TRC</span>
+<h4 class="font-headline text-2xl font-bold text-primary-container uppercase tracking-wide">SOPLETE</h4>
+
 </div>
-<p class="text-on-surface font-body text-xl leading-snug">
+<p class="text-on-surface font-body text-2xl leading-snug">
                             Mezcla los gases y permite controlarlos manualmente.
                         </p>
 </div>
@@ -170,10 +186,10 @@
 <div class="font-headline text-4xl font-black text-primary-container/20 tabular-nums">06</div>
 <div class="flex-grow">
 <div class="flex justify-between items-baseline mb-2">
-<h4 class="font-headline text-xl font-bold text-primary-container uppercase tracking-wide">BOQUILLA DE CORTE</h4>
-<span class="font-label text-[10px] text-outline bg-surface-container px-2 py-0.5">ID: NOZ-X2</span>
+<h4 class="font-headline text-2xl font-bold text-primary-container uppercase tracking-wide">BOQUILLA DE CORTE</h4>
+
 </div>
-<p class="text-on-surface font-body text-xl leading-snug">
+<p class="text-on-surface font-body text-2xl leading-snug">
                             Dirige la llama de precalentamiento y el chorro de oxígeno. La boquilla cambia según el espesor del metal.
                         </p>
 </div>
@@ -183,10 +199,10 @@
 <div class="font-headline text-4xl font-black text-primary-container/20 tabular-nums">07</div>
 <div class="flex-grow">
 <div class="flex justify-between items-baseline mb-2">
-<h4 class="font-headline text-xl font-bold text-primary-container uppercase tracking-wide">VÁLVULAS</h4>
-<span class="font-label text-[10px] text-outline bg-surface-container px-2 py-0.5">ID: CTRL-V</span>
+<h4 class="font-headline text-2xl font-bold text-primary-container uppercase tracking-wide">VÁLVULAS</h4>
+
 </div>
-<p class="text-on-surface font-body text-xl leading-snug">
+<p class="text-on-surface font-body text-2xl leading-snug">
                             Permiten abrir, cerrar y ajustar el flujo.
                         </p>
 </div>
@@ -196,10 +212,10 @@
 <div class="font-headline text-4xl font-black text-primary-container/20 tabular-nums">08</div>
 <div class="flex-grow">
 <div class="flex justify-between items-baseline mb-2">
-<h4 class="font-headline text-xl font-bold text-primary-container uppercase tracking-wide">CHISPERO O ENCENDEDOR</h4>
-<span class="font-label text-[10px] text-outline bg-surface-container px-2 py-0.5">ID: IGN-01</span>
+<h4 class="font-headline text-2xl font-bold text-primary-container uppercase tracking-wide">CHISPERO O ENCENDEDOR</h4>
+
 </div>
-<p class="text-on-surface font-body text-xl leading-snug">
+<p class="text-on-surface font-body text-2xl leading-snug">
                             Se usa para encender el equipo de forma segura.
                         </p>
 </div>
@@ -232,17 +248,11 @@
 </footer>
 
 
-\n
 
-\n
 
-\n
 
-\n
 
-\n
 
-\n
 
 
 

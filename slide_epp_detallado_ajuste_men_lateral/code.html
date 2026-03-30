@@ -99,6 +99,25 @@
         border-radius: 50%;
         box-shadow: 0 0 10px #1BFF3C;
       }
+      @media (max-width: 1023px) {
+        body, html { overflow-y: auto !important; overflow-x: hidden !important; height: auto !important; }
+        * { box-sizing: border-box !important; }
+        aside { position: static !important; width: 100% !important; height: auto !important; padding-top: 80px !important; padding-bottom: 16px !important; border-right: none !important; border-bottom: 1px solid rgba(59,75,55,0.2) !important; }
+        aside nav { flex-direction: row !important; flex-wrap: wrap !important; padding: 0 16px !important; gap: 8px !important; }
+        aside nav a { padding: 8px !important; flex: 1 1 calc(50% - 8px) !important; justify-content: flex-start !important; border-left: none !important; border-top: 2px solid transparent !important; }
+        aside nav a.border-l-4 { border-top-color: #1BFF3C !important; background-color: #201f1f !important; }
+        main { margin-left: 0 !important; padding: 16px !important; padding-top: 24px !important; padding-bottom: 120px !important; height: auto !important; min-height: unset !important; }
+        .grid { display: flex !important; flex-direction: column !important; gap: 16px !important; }
+        h1 { font-size: 2.2rem !important; line-height: 1.1 !important; margin-top: 0 !important; }
+        h2 { font-size: 1.5rem !important; }
+        .text-lg { font-size: 1rem !important; line-height: 1.3 !important; }
+        p, .text-base { font-size: 1rem !important; line-height: 1.4 !important; }
+        .col-span-12 { width: 100% !important; margin: 0 !important; }
+        footer { position: fixed !important; bottom: 0 !important; width: 100% !important; height: auto !important; z-index: 50 !important; }
+        footer .max-w-\[1440px\] { flex-direction: column !important; gap: 12px !important; align-items: center !important; }
+        .min-h-\[600px\] { min-height: 300px !important; height: auto !important; padding: 16px !important; }
+        .min-h-\[600px\] img { position: static !important; max-height: 400px !important; width: 100% !important; object-fit: contain !important; }
+      }
     </style>
 </head>
 <body class="font-body selection:bg-primary-container selection:text-on-primary overflow-x-hidden">
@@ -155,10 +174,7 @@
 <main class="ml-64 pt-24 pb-20 px-8 min-h-screen">
 <!-- Header -->
 <div class="mb-10 border-l-4 border-primary-container pl-6 py-2">
-<div class="flex items-center gap-3 mb-2">
-<span class="text-primary-container material-symbols-outlined" data-icon="security">security</span>
-<span class="font-label text-primary-container text-xs tracking-widest uppercase">Safety Protocol 08 // EPP</span>
-</div>
+
 <h1 class="font-headline font-bold text-5xl text-on-surface uppercase tracking-tighter leading-none">
                 EQUIPO DE PROTECCIÓN PERSONAL
             </h1>
@@ -227,7 +243,7 @@
 <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: linear-gradient(#1BFF3C 0.5px, transparent 0.5px), linear-gradient(90deg, #1BFF3C 0.5px, transparent 0.5px); background-size: 20px 20px;"></div>
 <div class="relative h-full w-full flex justify-center items-center">
 <!-- Main Welder Image Updated -->
-<img alt="Professional welder in full PPE" class="max-h-full max-w-full object-contain brightness-110 contrast-125 z-10" src="https://lh3.googleusercontent.com/aida/ADBb0uil1FdMDcb3Ebd2A3ToS6wWNZIF1baNiwR0HKwRV2e32s7NRmkLdXodRXfWp8OyRllyPS805UhYVL0POnSRgPyPhxKkVJLHEbjmqOR3eKyUWoX7HSeLsEBq3JMyCQjpf9w8i7kM16bvHBLrrqKuW9FrvvggaKxEQKJd33M49ocNvR43qfIk-mMgaFC_H4KmL7f5jrIulvLe-HnSQskXLxaGQa8PDH1JyUUW_hesQOwX9Ul2RIbeJprI60XvvMMd59gWaM8krFHc"/>
+<img alt="Welder in full PPE with technical callouts" class="max-h-full max-w-full object-contain z-10" src="../PROTECCION AUDITIVA.jpg"/>
 </div>
 </div>
 </div>
@@ -249,17 +265,11 @@
 </footer>
 
 
-\n
 
-\n
 
-\n
 
-\n
 
-\n
 
-\n
 
 
 

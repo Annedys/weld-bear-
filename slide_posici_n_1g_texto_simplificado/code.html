@@ -86,6 +86,18 @@
                 linear-gradient(to bottom, rgba(59, 75, 55, 0.05) 1px, transparent 1px);
             background-size: 40px 40px;
         }
+        @media (max-width: 1023px) {
+            body, html { overflow-y: auto !important; overflow-x: hidden !important; height: auto !important; min-height: 100vh !important; }
+            * { box-sizing: border-box !important; }
+            main { height: auto !important; overflow: visible !important; display: flex !important; flex-direction: column !important; padding: 100px 16px 140px 16px !important; }
+            h1, .text-6xl, .md\:text-8xl { font-size: 3rem !important; line-height: 1.1 !important; word-wrap: break-word !important; }
+            p, .text-2xl, .md\:text-4xl { font-size: 1.3rem !important; line-height: 1.4 !important; }
+            p.text-lg, p.md\:text-xl { font-size: 1.1rem !important; }
+            nav.fixed.top-0 { flex-wrap: wrap !important; height: auto !important; padding: 16px !important; gap: 12px !important; position: relative !important; }
+            nav.fixed.bottom-0 { height: auto !important; padding: 12px !important; flex-wrap: wrap !important; justify-content: center !important; gap: 8px !important; position: fixed !important; bottom: 0 !important; width: 100% !important; z-index: 50 !important; }
+            nav.fixed.bottom-0 button, nav.fixed.bottom-0 div { flex: 1 1 30% !important; min-width: 60px !important; padding: 12px 4px !important; border: 1px solid rgba(27,255,60,0.1) !important; margin: 0 !important; }
+            .fixed.left-4 { display: none !important; }
+        }
     </style>
 </head>
 <body class="bg-surface text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container h-screen overflow-hidden flex flex-col">
@@ -119,9 +131,7 @@
 <div class="space-y-1">
 <!-- Definition Panel -->
 <div class="bg-surface-container-low border border-outline-variant/30 p-8 md:p-12 relative overflow-hidden flex flex-col items-center text-center">
-<div class="absolute top-0 right-0 p-2 font-label text-[10px] text-outline opacity-40 uppercase" style="">
-                    COORD: X48_Y60 // REF: AWS-D1.1
-                </div>
+
 <div class="space-y-8">
 <p class="text-2xl md:text-4xl font-light leading-snug text-primary max-w-3xl" style="">
                         La posición 1G es una soldadura de ranura o bisel en posición plana.
@@ -159,17 +169,11 @@
 </div>
 
 
-\n
 
-\n
 
-\n
 
-\n
 
-\n
 
-\n
 
 
 
