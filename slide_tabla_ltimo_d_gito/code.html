@@ -25,7 +25,7 @@
               "surface-container-low": "#1c1b1b",
               "outline": "#84967e",
               "on-tertiary": "#690003",
-              "primary-fixed-dim": "#00e631",
+              "primary-fixed-dim": "#22C55E",
               "on-primary-fixed-variant": "#00530a",
               "on-secondary": "#3b2f00",
               "surface-bright": "#393939",
@@ -34,12 +34,12 @@
               "on-tertiary-container": "#c5020c",
               "on-primary": "#003a05",
               "on-background": "#e5e2e1",
-              "surface-tint": "#00e631",
+              "surface-tint": "#22C55E",
               "inverse-surface": "#e5e2e1",
               "surface-dim": "#131313",
               "on-surface-variant": "#baccb2",
               "error": "#ffb4ab",
-              "primary-container": "#1bff3c",
+              "primary-container": "#22C55E",
               "on-error": "#690005",
               "surface-container-highest": "#353534",
               "secondary-fixed": "#ffe174",
@@ -51,7 +51,7 @@
               "secondary": "#fff3d3",
               "secondary-container": "#fed400",
               "on-secondary-fixed-variant": "#554500",
-              "primary-fixed": "#74ff6d",
+              "primary-fixed": "#22C55E",
               "secondary-fixed-dim": "#eac300",
               "surface-container": "#201f1f",
               "surface-variant": "#353534",
@@ -80,7 +80,7 @@
             background-size: 40px 40px;
         }
         .glow-hover:hover {
-            box-shadow: 0px 0px 15px rgba(27, 255, 60, 0.3);
+            box-shadow: 0px 0px 15px rgba(34, 197, 94, 0.3);
         }
         @media (max-width: 1023px) {
             body, html { overflow-y: auto !important; overflow-x: hidden !important; height: auto !important; min-height: 100vh !important; }
@@ -93,7 +93,7 @@
             table { min-width: 600px !important; }
             header.fixed { flex-wrap: wrap !important; height: auto !important; padding: 16px !important; gap: 12px !important; position: relative !important; }
             footer.fixed { height: auto !important; padding: 12px !important; flex-wrap: wrap !important; justify-content: center !important; gap: 8px !important; position: fixed !important; bottom: 0 !important; width: 100% !important; z-index: 50 !important; }
-            footer.fixed button, footer.fixed div { flex: 1 1 20% !important; min-width: 60px !important; padding: 12px 4px !important; border: 1px solid rgba(27,255,60,0.1) !important; margin: 0 !important; }
+            footer.fixed button, footer.fixed div { flex: 1 1 20% !important; min-width: 60px !important; padding: 12px 4px !important; border: 1px solid rgba(34,197,94,0.1) !important; margin: 0 !important; }
             .fixed.top-0.right-0 { display: none !important; }
         }
     </style>
@@ -101,18 +101,18 @@
 <body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container min-h-screen flex flex-col overflow-hidden">
 <!-- TopAppBar -->
 <header class="bg-[#131313] dark:bg-[#131313] flex justify-between items-center w-full px-6 py-4 fixed top-0 z-50 border-b border-[#3B4B37]/20">
-<div class="text-2xl font-bold tracking-tighter text-[#1BFF3C] uppercase font-headline"><span style="letter-spacing: -1.2px;" class="">WELD BEAR&nbsp; IEDU&nbsp;</span></div>
+<div class="text-2xl font-bold tracking-tighter text-[#22C55E] uppercase font-headline"><span style="letter-spacing: -1.2px;" class="">WELD BEAR&nbsp; IEDU&nbsp;</span></div>
 <nav class="hidden md:flex space-x-8 items-center">
-<a class="font-headline text-sm tracking-widest text-[#84967E] hover:text-[#1BFF3C] transition-colors" href="#">MODULES</a>
-<a class="font-headline text-sm tracking-widest text-[#84967E] hover:text-[#1BFF3C] transition-colors" href="#">SAFETY</a>
-<a class="font-headline text-sm tracking-widest text-[#1BFF3C] border-b-2 border-[#1BFF3C] pb-1" href="#">PROCEDURES</a>
-<a class="font-headline text-sm tracking-widest text-[#84967E] hover:text-[#1BFF3C] transition-colors" href="#">METRICS</a>
+<a class="font-headline text-sm tracking-widest text-[#84967E] hover:text-[#22C55E] transition-colors" href="#">MODULES</a>
+<a class="font-headline text-sm tracking-widest text-[#84967E] hover:text-[#22C55E] transition-colors" href="#">SAFETY</a>
+<a class="font-headline text-sm tracking-widest text-[#22C55E] border-b-2 border-[#22C55E] pb-1" href="#">PROCEDURES</a>
+<a class="font-headline text-sm tracking-widest text-[#84967E] hover:text-[#22C55E] transition-colors" href="#">METRICS</a>
 </nav>
 <div class="flex items-center gap-4">
-<button class="text-[#84967E] hover:text-[#1BFF3C] transition-all active:scale-95">
+<button class="text-[#84967E] hover:text-[#22C55E] transition-all active:scale-95">
 <span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
 </button>
-<button class="text-[#84967E] hover:text-[#1BFF3C] transition-all active:scale-95">
+<button class="text-[#84967E] hover:text-[#22C55E] transition-all active:scale-95">
 <span class="material-symbols-outlined" data-icon="settings">settings</span>
 </button>
 </div>
@@ -132,11 +132,11 @@
 <div class="overflow-x-auto">
 <table class="w-full text-left border-collapse">
 <thead>
-<tr class="bg-surface-container-high font-bold text-xs">
-<th class="px-6 py-4 font-technical text-primary-container uppercase border-r border-outline-variant/20 tracking-tighter">ÚLTIMO DÍGITO</th>
-<th class="px-6 py-4 font-technical text-on-surface-variant uppercase border-r border-outline-variant/20 tracking-tighter">CORRIENTE</th>
-<th class="px-6 py-4 font-technical text-on-surface-variant uppercase border-r border-outline-variant/20 tracking-tighter">REVESTIMIENTO</th>
-<th class="px-6 py-4 font-technical text-on-surface-variant uppercase tracking-tighter">PENETRACIÓN</th>
+<tr class="bg-surface-container-high font-bold text-base">
+<th class="px-6 py-4 font-technical text-primary-container uppercase border-r border-outline-variant/20 tracking-wider">ÚLTIMO DÍGITO</th>
+<th class="px-6 py-4 font-technical text-on-surface-variant uppercase border-r border-outline-variant/20 tracking-wider">CORRIENTE</th>
+<th class="px-6 py-4 font-technical text-on-surface-variant uppercase border-r border-outline-variant/20 tracking-wider">REVESTIMIENTO</th>
+<th class="px-6 py-4 font-technical text-on-surface-variant uppercase tracking-wider">PENETRACIÓN</th>
 </tr>
 </thead>
 <tbody class="divide-y divide-outline-variant/5 font-technical text-base font-bold">
@@ -215,16 +215,16 @@
 </div>
 </main>
 <!-- BottomNavBar -->
-<footer class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-20 px-4 bg-[#1C1B1B] border-t border-[#1BFF3C]/20 shadow-[0_-5px_15px_rgba(27,255,60,0.05)]">
-<button class="flex flex-col items-center justify-center text-[#84967E] hover:text-[#1BFF3C] transition-all px-8 py-2 group active:scale-95">
+<footer class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-20 px-4 bg-[#1C1B1B] border-t border-[#22C55E]/20 shadow-[0_-5px_15px_rgba(34,197,94,0.05)]">
+<button class="flex flex-col items-center justify-center text-[#84967E] hover:text-[#22C55E] transition-all px-8 py-2 group active:scale-95">
 <span class="material-symbols-outlined">arrow_back</span>
 <span class="font-technical text-[10px] uppercase mt-1">ANTERIOR</span>
 </button>
-<div class="flex flex-col items-center justify-center text-[#1BFF3C] font-bold">
+<div class="flex flex-col items-center justify-center text-[#22C55E] font-bold">
 <span class="material-symbols-outlined" data-icon="analytics">analytics</span>
 <span class="font-technical text-sm mt-1 uppercase tracking-widest">TABLA_ELECTRODO</span>
 </div>
-<button class="flex flex-col items-center justify-center text-[#84967E] hover:text-[#1BFF3C] transition-all px-8 py-2 group active:scale-95">
+<button class="flex flex-col items-center justify-center text-[#84967E] hover:text-[#22C55E] transition-all px-8 py-2 group active:scale-95">
 <span class="material-symbols-outlined">arrow_forward</span>
 <span class="font-technical text-[10px] uppercase mt-1">SIGUIENTE</span>
 </button>

@@ -14,7 +14,7 @@
               "on-surface-variant": "#baccb2",
               "on-error": "#690005",
               "surface": "#131313",
-              "primary-fixed-dim": "#00e631",
+              "primary-fixed-dim": "#22C55E",
               "on-background": "#e5e2e1",
               "error-container": "#93000a",
               "tertiary": "#fff8f7",
@@ -28,7 +28,7 @@
               "on-primary-container": "#007112",
               "error": "#ffb4ab",
               "surface-container-highest": "#353534",
-              "surface-tint": "#00e631",
+              "surface-tint": "#22C55E",
               "on-secondary": "#3b2f00",
               "inverse-surface": "#e5e2e1",
               "outline": "#84967e",
@@ -41,14 +41,14 @@
               "secondary": "#fff3d3",
               "primary": "#ecffe3",
               "surface-container": "#201f1f",
-              "primary-container": "#1bff3c",
+              "primary-container": "#22C55E",
               "tertiary-container": "#ffd3cd",
               "on-secondary-container": "#6f5c00",
               "tertiary-fixed": "#ffdad5",
               "on-tertiary-container": "#c5020c",
               "surface-variant": "#353534",
               "surface-container-high": "#2a2a2a",
-              "primary-fixed": "#74ff6d",
+              "primary-fixed": "#22C55E",
               "secondary-fixed": "#ffe174",
               "inverse-on-surface": "#313030",
               "surface-container-low": "#1c1b1b",
@@ -88,36 +88,83 @@
         }
         @media (max-width: 1023px) {
             body, html { overflow-y: auto !important; overflow-x: hidden !important; height: auto !important; min-height: 100vh !important; }
-            * { box-sizing: border-box !important; }
-            main { height: auto !important; overflow: visible !important; display: flex !important; flex-direction: column !important; padding: 100px 16px 140px 16px !important; }
-            h1, .text-6xl, .md\:text-8xl { font-size: 3rem !important; line-height: 1.1 !important; word-wrap: break-word !important; }
+            #frame-container { 
+                transform: none !important; 
+                width: 100% !important; 
+                max-width: 100% !important; 
+                height: auto !important; 
+                position: relative !important;
+                display: flex !important;
+                flex-direction: column !important;
+            }
+            main { 
+                height: auto !important; 
+                overflow: visible !important; 
+                display: flex !important; 
+                flex-direction: column !important; 
+                padding: 100px 16px 140px 16px !important; 
+                min-height: 100vh !important;
+                max-width: 100% !important;
+            }
+            h1, .text-6xl, .md\:text-8xl { font-size: 2.5rem !important; line-height: 1.1 !important; word-wrap: break-word !important; }
             p, .text-2xl, .md\:text-4xl { font-size: 1.3rem !important; line-height: 1.4 !important; }
             p.text-lg, p.md\:text-xl { font-size: 1.1rem !important; }
-            nav.fixed.top-0 { flex-wrap: wrap !important; height: auto !important; padding: 16px !important; gap: 12px !important; position: relative !important; }
-            nav.fixed.bottom-0 { height: auto !important; padding: 12px !important; flex-wrap: wrap !important; justify-content: center !important; gap: 8px !important; position: fixed !important; bottom: 0 !important; width: 100% !important; z-index: 50 !important; }
-            nav.fixed.bottom-0 button, nav.fixed.bottom-0 div { flex: 1 1 30% !important; min-width: 60px !important; padding: 12px 4px !important; border: 1px solid rgba(27,255,60,0.1) !important; margin: 0 !important; }
+            nav.fixed.top-0 { 
+                flex-wrap: wrap !important; 
+                height: auto !important; 
+                padding: 16px !important; 
+                gap: 12px !important; 
+                position: relative !important; 
+                width: 100% !important;
+            }
+            nav.fixed.bottom-0 { 
+                height: auto !important; 
+                padding: 12px !important; 
+                flex-wrap: wrap !important; 
+                justify-content: center !important; 
+                gap: 8px !important; 
+                position: fixed !important; 
+                bottom: 0 !important; 
+                width: 100% !important; 
+                z-index: 50 !important; 
+            }
+            nav.fixed.bottom-0 button, nav.fixed.bottom-0 div { 
+                flex: 1 1 25% !important; 
+                min-width: 80px !important; 
+                padding: 12px 4px !important; 
+                border: 1px solid rgba(34,197,94,0.1) !important; 
+                margin: 0 !important; 
+                box-shadow: none !important;
+            }
             .fixed.left-4 { display: none !important; }
+
+            /* Specific text adjustments for very small screens */
+            @media (max-width: 350px) {
+                h1 { font-size: 2rem !important; }
+            }
         }
     </style>
 </head>
 <body class="bg-surface text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container h-screen overflow-hidden flex flex-col">
-<!-- TopAppBar -->
-<nav class="fixed top-0 w-full z-50 flex justify-between items-center px-6 h-16 bg-[#131313] dark:bg-[#131313] border-b border-[#3B4B37]/20 shadow-[0_0_15px_rgba(27,255,60,0.1)]">
-<div class="flex items-center gap-4">
-<span class="material-symbols-outlined text-[#1BFF3C]" style="">precision_manufacturing</span>
-<span class="text-xl font-bold text-[#1BFF3C] tracking-tighter" style=""><span style="font-family: Rajdhani, sans-serif; font-size: 24px; letter-spacing: -1.2px; text-transform: uppercase;" class="">WELD BEAR IEDU</span></span>
-</div>
-<div class="hidden md:flex items-center gap-8 font-['Rajdhani'] uppercase tracking-widest text-sm">
-<a class="text-[#1BFF3C] font-bold transition-colors" href="#" style="">THEORY</a>
-<a class="text-[#84967E] hover:bg-[#1BFF3C]/10 hover:text-[#1BFF3C] transition-colors px-2" href="#" style="">PRACTICE</a>
-<a class="text-[#84967E] hover:bg-[#1BFF3C]/10 hover:text-[#1BFF3C] transition-colors px-2" href="#" style="">SAFETY</a>
-</div>
-<div class="flex items-center gap-4 text-[#1BFF3C]">
-<button class="material-symbols-outlined hover:bg-[#1BFF3C]/10 transition-colors p-2 active:scale-95 duration-75" style="">settings</button>
-<button class="material-symbols-outlined hover:bg-[#1BFF3C]/10 transition-colors p-2 active:scale-95 duration-75" style="">help_outline</button>
-<button class="material-symbols-outlined hover:bg-[#1BFF3C]/10 transition-colors p-2 active:scale-95 duration-75" style="">analytics</button>
-</div>
-</nav>
+<div id="frame-container" class="min-h-screen flex flex-col">
+    <!-- TopAppBar -->
+    <nav class="fixed top-0 w-full z-50 flex justify-between items-center px-6 h-16 bg-[#131313] dark:bg-[#131313] border-b border-[#3B4B37]/20 shadow-[0_0_15px_rgba(34,197,94,0.1)]">
+    <div class="flex items-center gap-4">
+    <span class="material-symbols-outlined text-[#22C55E]" style="">precision_manufacturing</span>
+    <span class="text-xl font-bold text-[#22C55E] tracking-tighter" style=""><span style="font-family: Rajdhani, sans-serif; font-size: 24px; letter-spacing: -1.2px; text-transform: uppercase;" class="">WELD BEAR IEDU</span></span>
+    </div>
+    <div class="hidden md:flex items-center gap-8 font-['Rajdhani'] uppercase tracking-widest text-sm">
+    <a class="text-[#22C55E] font-bold transition-colors" href="#" style="">THEORY</a>
+    <a class="text-[#84967E] hover:bg-[#22C55E]/10 hover:text-[#22C55E] transition-colors px-2" href="#" style="">PRACTICE</a>
+    <a class="text-[#84967E] hover:bg-[#22C55E]/10 hover:text-[#22C55E] transition-colors px-2" href="#" style="">SAFETY</a>
+    </div>
+    <div class="flex items-center gap-4 text-[#22C55E]">
+    <button class="material-symbols-outlined hover:bg-[#22C55E]/10 transition-colors p-2 active:scale-95 duration-75" style="">settings</button>
+    <button class="material-symbols-outlined hover:bg-[#22C55E]/10 transition-colors p-2 active:scale-95 duration-75" style="">help_outline</button>
+    <button class="material-symbols-outlined hover:bg-[#22C55E]/10 transition-colors p-2 active:scale-95 duration-75" style="">analytics</button>
+    </div>
+    </nav>
+
 <!-- Main Canvas -->
 <main class="pt-24 pb-32 px-6 md:px-12 max-w-4xl mx-auto flex-grow flex flex-col justify-center">
 <!-- Section Header -->
@@ -145,19 +192,19 @@
 </div>
 </main>
 <!-- BottomNavBar -->
-<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-between items-center px-4 h-20 bg-[#1C1B1B] dark:bg-[#1C1B1B] border-t border-[#1BFF3C]/30 shadow-[0_-4px_20px_rgba(27,255,60,0.15)]">
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-between items-center px-4 h-20 bg-[#1C1B1B] dark:bg-[#1C1B1B] border-t border-[#22C55E]/30 shadow-[0_-4px_20px_rgba(34,197,94,0.15)]">
 <!-- Previous Button -->
-<button class="flex flex-col items-center justify-center text-[#84967E] px-6 py-2 font-['JetBrains_Mono'] text-[10px] uppercase tracking-tighter hover:bg-[#1BFF3C]/20 transition-all active:bg-[#1BFF3C] active:text-[#003A05] duration-150" style="">
+<button class="flex flex-col items-center justify-center text-[#84967E] px-6 py-2 font-['JetBrains_Mono'] text-[10px] uppercase tracking-tighter hover:bg-[#22C55E]/20 transition-all active:bg-[#22C55E] active:text-[#003A05] duration-150" style="">
 <span class="material-symbols-outlined" style="">chevron_left</span>
 <span class="" style="">ANTERIOR</span>
 </button>
 <!-- Slide Counter -->
-<div class="flex flex-col items-center justify-center text-[#1BFF3C] bg-[#1BFF3C]/10 px-10 py-2 border-x border-[#1BFF3C]/20 font-['JetBrains_Mono'] text-[10px] uppercase tracking-tighter">
+<div class="flex flex-col items-center justify-center text-[#22C55E] bg-[#22C55E]/10 px-10 py-2 border-x border-[#22C55E]/20 font-['JetBrains_Mono'] text-[10px] uppercase tracking-tighter">
 <span class="material-symbols-outlined mb-1" style="">layers</span>
 <span class="font-bold" style="">08</span>
 </div>
 <!-- Next Button -->
-<button class="flex flex-col items-center justify-center text-[#84967E] px-6 py-2 font-['JetBrains_Mono'] text-[10px] uppercase tracking-tighter hover:bg-[#1BFF3C]/20 transition-all active:bg-[#1BFF3C] active:text-[#003A05] duration-150" style="">
+<button class="flex flex-col items-center justify-center text-[#84967E] px-6 py-2 font-['JetBrains_Mono'] text-[10px] uppercase tracking-tighter hover:bg-[#22C55E]/20 transition-all active:bg-[#22C55E] active:text-[#003A05] duration-150" style="">
 <span class="material-symbols-outlined" style="">chevron_right</span>
 <span class="" style="">SIGUIENTE</span>
 </button>
@@ -174,12 +221,7 @@
 
 
 
-
-
-
-
-
-
+</div>
 <script id="weld-bear-sync">
     setTimeout(() => {
         const triggers = document.querySelectorAll('button, a');

@@ -13,7 +13,7 @@
             colors: {
               "surface": "#131313",
               "surface-dim": "#131313",
-              "primary-container": "#1bff3c",
+              "primary-container": "#22C55E",
               "on-tertiary-container": "#c5020c",
               "inverse-surface": "#e5e2e1",
               "on-primary": "#003a05",
@@ -36,7 +36,7 @@
               "error-container": "#93000a",
               "tertiary-fixed-dim": "#ffb4aa",
               "surface-container-highest": "#353534",
-              "surface-tint": "#00e631",
+              "surface-tint": "#22C55E",
               "on-tertiary-fixed": "#410001",
               "surface-container-high": "#2a2a2a",
               "on-secondary-fixed": "#221b00",
@@ -55,8 +55,8 @@
               "surface-variant": "#353534",
               "secondary-container": "#fed400",
               "on-tertiary": "#690003",
-              "primary-fixed-dim": "#00e631",
-              "primary-fixed": "#74ff6d",
+              "primary-fixed-dim": "#22C55E",
+              "primary-fixed": "#22C55E",
               "on-primary-fixed": "#002202"
             },
             fontFamily: {
@@ -81,34 +81,132 @@
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
         .glow-primary {
-            box-shadow: 0px 0px 15px rgba(27, 255, 60, 0.2);
+            box-shadow: 0px 0px 15px rgba(34, 197, 94, 0.2);
         }
-        @media (max-width: 1023px) {
-            body, html { overflow-y: auto !important; overflow-x: hidden !important; height: auto !important; min-height: 100vh !important; }
+        /* ===== TRUE RESPONSIVE STRATEGY (Móvil, Tablet, Nest Hub, iPad Pro) ===== */
+        @media (max-width: 1023px), (max-height: 850px) {
+            body, html { 
+                overflow-y: auto !important; 
+                overflow-x: hidden !important; 
+                height: auto !important; 
+                min-height: 100vh !important; 
+                display: block !important; 
+                background-attachment: scroll !important;
+                transform: none !important;
+            }
             * { box-sizing: border-box !important; }
-            main { height: auto !important; overflow: visible !important; display: flex !important; flex-direction: column !important; padding: 100px 16px 140px 16px !important; }
-            h1 { font-size: 2.5rem !important; line-height: 1.1 !important; word-wrap: break-word !important; }
-            .text-6xl, .lg\:text-8xl { font-size: 2.5rem !important; }
-            p, .text-xl, .text-lg { font-size: 1.1rem !important; line-height: 1.4 !important; }
-            .grid, .grid-cols-1, .md\:grid-cols-12, .grid-cols-2, .sm\:grid-cols-3 { display: flex !important; flex-direction: column !important; gap: 24px !important; }
-            .col-span-12, .md\:col-span-5, .md\:col-span-7 { width: 100% !important; flex: none !important; }
-            .h-full { height: auto !important; }
-            .aspect-square { aspect-ratio: auto !important; padding: 24px !important; }
-            header { flex-wrap: wrap !important; height: auto !important; padding: 16px !important; gap: 12px !important; position: relative !important; }
-            nav.fixed { height: auto !important; padding: 12px !important; flex-wrap: wrap !important; justify-content: center !important; gap: 8px !important; position: fixed !important; bottom: 0 !important; width: 100% !important; z-index: 50 !important; }
-            nav.fixed button, nav.fixed div { flex: 1 1 20% !important; min-width: 60px !important; padding: 12px 4px !important; border: 1px solid rgba(27,255,60,0.1) !important; margin: 0 !important; }
+            
+            header { 
+                background: #131313 !important;
+                padding: 12px 16px !important;
+                position: relative !important;
+                height: auto !important;
+                display: flex !important;
+                border-bottom: 1px solid rgba(34, 197, 94, 0.1) !important;
+            }
+            
+            main { 
+                height: auto !important; 
+                padding: 20px 16px 140px 16px !important; 
+                display: block !important;
+                transform: none !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                margin-bottom: 0 !important;
+                overflow: visible !important;
+                padding-top: 20px !important;
+            }
+            
+            .max-w-7xl.mx-auto.grid {
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 24px !important;
+            }
+            
+            h1 { 
+                font-size: clamp(2.2rem, 8vw, 4.5rem) !important; 
+                line-height: 0.9 !important; 
+                word-wrap: break-word !important; 
+            }
+            
+            .col-span-12, .md\:col-span-12, .md\:col-span-5, .md\:col-span-7 { 
+                width: 100% !important; 
+                margin: 0 !important;
+                flex: none !important;
+            }
+            
+            .bg-surface-container-low.p-8 { padding: 20px !important; }
+            
+            .text-xl, .text-lg, .text-base { font-size: 1.1rem !important; line-height: 1.4 !important; }
+            .font-headline.text-2xl { font-size: 1.5rem !important; }
+
+            /* Fracciones grid en móvil */
+            .grid.grid-cols-2.sm\:grid-cols-3 {
+                display: grid !important;
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 8px !important;
+            }
+            .aspect-square { aspect-ratio: 1/1 !important; height: auto !important; width: 100% !important; }
+
+            nav.fixed { 
+                height: 64px !important; 
+                padding: 8px !important; 
+                flex-wrap: nowrap !important; 
+                justify-content: space-around !important; 
+                gap: 4px !important; 
+                position: fixed !important; 
+                bottom: 0 !important; 
+                width: 100% !important; 
+                z-index: 100 !important;
+                background: #1C1B1B !important;
+                display: flex !important;
+                border-top: 1px solid rgba(59,75,55,0.3) !important;
+            }
+            
+            nav.fixed button, nav.fixed div { 
+                flex: 1 1 auto !important; 
+                min-width: 50px !important; 
+                height: 48px !important;
+                padding: 4px !important; 
+                border: none !important;
+                background: transparent !important;
+                margin: 0 !important;
+            }
+            nav.fixed div { border: 1px solid rgba(34,197,94,0.3) !important; background: rgba(34,197,94,0.05) !important; }
+            nav.fixed button span.font-technical { font-size: 9px !important; margin-top: 2px !important; }
+
+            .absolute.top-2.right-4, .absolute.-top-3, .absolute.right-0.bottom-0 { opacity: 0.1 !important; }
+
+            /* Tablet adjust */
+            @media (min-width: 768px) and (max-width: 1023px) {
+                .max-w-7xl.mx-auto.grid { display: grid !important; grid-template-columns: repeat(12, 1fr) !important; gap: 24px !important; }
+                .md\:col-span-5 { grid-column: span 5 / span 12 !important; }
+                .md\:col-span-7 { grid-column: span 7 / span 12 !important; }
+                .grid.grid-cols-2.sm\:grid-cols-3 { grid-template-columns: repeat(3, 1fr) !important; }
+                h1 { font-size: 4rem !important; }
+            }
+        }
+
+        /* Protect 4K/Desktop scale alignment */
+        @media (min-width: 1024px) {
+            body { 
+                height: 100vh !important; 
+                overflow: hidden !important; 
+                display: flex !important;
+                flex-direction: column !important;
+            }
         }
     </style>
 </head>
 <body class="bg-surface text-on-surface font-body selection:bg-primary-container selection:text-on-primary">
 <!-- Top Navigation Shell -->
 <header class="bg-[#131313] dark:bg-zinc-950 flex justify-between items-center w-full px-6 py-4 border-b border-zinc-800 fixed top-0 z-50">
-<div class="text-xl font-bold tracking-widest text-[#1BFF3C] font-['Rajdhani'] uppercase" style=""><span style="font-size: 24px; letter-spacing: 2.4px; background-color: rgb(19, 19, 19);" class="">WELD BEAR IEDU&nbsp;</span></div>
+<div class="text-xl font-bold tracking-widest text-[#22C55E] font-['Rajdhani'] uppercase" style=""><span style="font-size: 24px; letter-spacing: 2.4px; background-color: rgb(19, 19, 19);" class="">WELD BEAR IEDU&nbsp;</span></div>
 <div class="flex gap-4">
-<button class="text-zinc-500 hover:bg-emerald-950/30 hover:text-[#1BFF3C] transition-colors duration-150 p-2" style="">
+<button class="text-zinc-500 hover:bg-emerald-950/30 hover:text-[#22C55E] transition-colors duration-150 p-2" style="">
 <span class="material-symbols-outlined" data-icon="settings" style="">settings</span>
 </button>
-<button class="text-zinc-500 hover:bg-emerald-950/30 hover:text-[#1BFF3C] transition-colors duration-150 p-2" style="">
+<button class="text-zinc-500 hover:bg-emerald-950/30 hover:text-[#22C55E] transition-colors duration-150 p-2" style="">
 <span class="material-symbols-outlined" data-icon="help" style="">help</span>
 </button>
 </div>
@@ -211,16 +309,16 @@
 </div>
 </main>
 <!-- Bottom Navigation Shell -->
-<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-between items-center px-4 md:px-12 h-16 bg-[#1C1B1B] dark:bg-zinc-900 border-t border-zinc-800 shadow-[0px_0px_15px_rgba(27,255,60,0.1)]">
-<button class="flex flex-col items-center justify-center text-zinc-400 px-4 md:px-8 py-2 hover:bg-zinc-800 hover:text-[#1BFF3C] transition-all active:scale-95 group" style="">
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-between items-center px-4 md:px-12 h-16 bg-[#1C1B1B] dark:bg-zinc-900 border-t border-zinc-800 shadow-[0px_0px_15px_rgba(34,197,94,0.1)]">
+<button class="flex flex-col items-center justify-center text-zinc-400 px-4 md:px-8 py-2 hover:bg-zinc-800 hover:text-[#22C55E] transition-all active:scale-95 group" style="">
 <span class="material-symbols-outlined text-xl mb-0.5" data-icon="arrow_back" style="">arrow_back</span>
 <span class="uppercase font-medium text-[10px] tracking-widest font-technical" style="">ANTERIOR</span>
 </button>
-<div class="flex flex-col items-center justify-center bg-[#1BFF3C] px-8 md:px-16 py-2 font-bold h-full border border-primary-container text-primary-container bg-transparent">
+<div class="flex flex-col items-center justify-center bg-[#22C55E] px-8 md:px-16 py-2 font-bold h-full border border-primary-container text-primary-container bg-transparent">
 <span class="material-symbols-outlined text-xl mb-0.5" data-icon="numbers" style="">numbers</span>
 <span class="uppercase font-bold text-xs tracking-widest font-technical" style="">15</span>
 </div>
-<button class="flex flex-col items-center justify-center text-zinc-400 px-4 md:px-8 py-2 hover:bg-zinc-800 hover:text-[#1BFF3C] transition-all active:scale-95 group" style="">
+<button class="flex flex-col items-center justify-center text-zinc-400 px-4 md:px-8 py-2 hover:bg-zinc-800 hover:text-[#22C55E] transition-all active:scale-95 group" style="">
 <span class="material-symbols-outlined text-xl mb-0.5" data-icon="arrow_forward" style="">arrow_forward</span>
 <span class="uppercase font-medium text-[10px] tracking-widest font-technical" style="">SIGUIENTE</span>
 </button>

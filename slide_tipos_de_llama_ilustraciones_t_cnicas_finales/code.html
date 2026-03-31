@@ -1,19 +1,25 @@
 <!DOCTYPE html>
 
-<html class="dark" lang="es"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>WELDING_SYSTEM_v2.1 - Tipos de Llama</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&amp;family=Space+Grotesk:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
+<html class="dark" lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>WELDING_SYSTEM_v2.1 - Tipos de Llama</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&amp;family=Space+Grotesk:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
             theme: {
                 extend: {
                     colors: {
-                        "primary-fixed": "#74ff6d",
+                        "primary-fixed": "#22C55E",
                         "on-surface-variant": "#baccb2",
                         "error": "#ffb4ab",
                         "outline": "#84967e",
@@ -25,7 +31,7 @@
                         "on-primary-fixed-variant": "#00530a",
                         "on-primary-container": "#007112",
                         "inverse-on-surface": "#313030",
-                        "surface-tint": "#00e631",
+                        "surface-tint": "#22C55E",
                         "surface-container": "#201f1f",
                         "outline-variant": "#3b4b37",
                         "surface-container-lowest": "#0e0e0e",
@@ -39,7 +45,7 @@
                         "on-tertiary-fixed-variant": "#930005",
                         "on-tertiary": "#690003",
                         "surface": "#131313",
-                        "primary-container": "#1bff3c",
+                        "primary-container": "#22C55E",
                         "surface-bright": "#393939",
                         "on-secondary-fixed": "#221b00",
                         "on-error": "#690005",
@@ -50,7 +56,7 @@
                         "on-surface": "#e5e2e1",
                         "tertiary-fixed": "#ffdad5",
                         "tertiary": "#fff8f7",
-                        "primary-fixed-dim": "#00e631",
+                        "primary-fixed-dim": "#22C55E",
                         "on-secondary-container": "#6f5c00",
                         "tertiary-container": "#ffd3cd",
                         "surface-dim": "#131313",
@@ -66,121 +72,156 @@
                         "body": ["Space Grotesk"],
                         "label": ["JetBrains Mono"]
                     },
-                    borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+                    borderRadius: { "DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px" },
                 },
             },
         }
     </script>
-<style>
+    <style>
         body {
             background-color: #131313;
-            background-image: 
+            background-image:
                 linear-gradient(rgba(59, 75, 55, 0.05) 1px, transparent 1px),
                 linear-gradient(90deg, rgba(59, 75, 55, 0.05) 1px, transparent 1px);
             background-size: 40px 40px;
         }
+
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
+
         .glow-border:hover {
-            box-shadow: 0px 0px 15px rgba(27, 255, 60, 0.3);
-            border-color: #1BFF3C;
+            box-shadow: 0px 0px 15px rgba(34, 197, 94, 0.3);
+            border-color: #22C55E;
         }
     </style>
 </head>
-<body class="text-on-background font-body selection:bg-primary-container selection:text-on-primary-container min-h-screen flex flex-col">
-<!-- TopAppBar -->
-<header class="bg-[#131313] dark:bg-[#131313] docked full-width top-0 border-b border-[#3B4B37]/20 flex justify-between items-center w-full px-6 py-4 z-50">
-<div class="flex items-center gap-4">
-<span class="font-['Rajdhani'] uppercase tracking-tighter font-bold text-xl font-black text-[#1BFF3C] drop-shadow-[0_0_10px_rgba(27,255,60,0.3)]">WELD BEAR IEDU</span>
-<div class="h-4 w-[1px] bg-outline-variant/30"></div>
-<span class="font-label text-[10px] tracking-[0.2em] text-outline uppercase">Module: Oxy-Acetylene</span>
-</div>
-<div class="flex items-center gap-6">
-<div class="flex gap-4">
-<button class="material-symbols-outlined text-[#84967E] opacity-50 hover:bg-[#1BFF3C]/10 transition-colors p-2">settings</button>
-<button class="material-symbols-outlined text-[#84967E] opacity-50 hover:bg-[#1BFF3C]/10 transition-colors p-2">help_outline</button>
-</div>
-<div class="w-10 h-10 bg-surface-container-high border border-outline-variant/20 flex items-center justify-center">
-<img alt="Instructor" class="w-8 h-8 object-cover filter grayscale" data-alt="Close up portrait of a technical instructor wearing protective gear in a dimly lit industrial setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKj4jBrJpDufyZVJo9K9l4dHJmNpANWKk3g8ttU_J1qKvFS5YAtzD9bGrb6Si0J37PKKPlqvVqgbe7tT13MXttl_m5RjxzAZ4uVEpsqEPVHsMKXjmvWdRegz6heFW3bKsq2OFinAZnRqP8RrNa7ovpfTTpvIVrAIinMwWq-FRKZkDNHQK6utEOjS2WPslh_fMTY5zK_S-oRNOFBt0gKeFabSfUj_9x04YK-430rP9YnH9DhUk3xDMlzWI4frSOT43BJY9TQ7kRhBg"/>
-</div>
-</div>
-</header>
-<!-- Main Content Canvas -->
-<main class="flex-grow container mx-auto px-6 pt-12 pb-32">
-<!-- Presentation Title Section -->
-<div class="mb-12 border-l-4 border-primary-container pl-6">
-<h1 class="font-headline text-5xl font-bold uppercase tracking-tight text-on-background mb-2">Tipos de Llama</h1>
-<p class="font-label text-sm text-primary-container tracking-widest uppercase opacity-80">Parámetros de combustión oxiacetilénica</p>
-</div>
-<!-- Cards Grid -->
-<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-<!-- Card 1: LLAMA NEUTRA -->
-<div class="bg-surface-container-low border border-outline-variant/20 transition-all duration-300 glow-border group flex flex-col h-[520px]">
-<div class="p-6 border-b border-outline-variant/20 flex justify-between items-center">
-<h2 class="font-headline text-2xl font-bold text-[#1BFF3C] tracking-tighter">LLAMA NEUTRA</h2>
-<span class="font-label text-[10px] text-outline px-2 py-1 border border-outline/20">TYPE_01</span>
-</div>
-<div class="relative h-44 bg-surface-container-lowest overflow-hidden">
-<img alt="Llama Neutra" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBr3A3sTq2dlRIJFEY-vokaKeHWFTy5LgvvXrIlFymXEAI6SB0SIMAfNBJCBzULoXD3nw1xJLgSu25C5CpV8wbTFZ356f5n2cC15cCIBfpYYD892a4P-IKDlH-r6r-S7h86IBnH_H9-Xzmg0F2LvQzzSJiAcRPL4hif8pVrr7NOhZwOtRs4nYWdN9sL2KJqxhKdUC2GDLx3DLChsg_L0f_oo-NGLLaQlrMDPWtIWK4EXVpcmWcAD1zedHXI0VFH5GVRgY0YCQUnJZk"/>
-<div class="absolute top-2 right-2 font-label text-[9px] text-primary-container bg-black/50 px-2 py-1">RATIO 1:1</div>
-</div>
-<div class="p-8 flex-grow flex items-center">
-    <p class="text-on-surface text-xl font-medium leading-relaxed">
-        Tiene balance correcto entre oxígeno y acetileno. Es la llama más estable y la más utilizada para trabajo general y preparación del corte.
-    </p>
-</div>
-</div>
-<!-- Card 2: LLAMA CARBURANTE -->
-<div class="bg-surface-container-low border border-outline-variant/20 transition-all duration-300 glow-border group flex flex-col h-[520px]">
-<div class="p-6 border-b border-outline-variant/20 flex justify-between items-center">
-<h2 class="font-headline text-2xl font-bold text-[#1BFF3C] tracking-tighter">LLAMA CARBURANTE</h2>
-<span class="font-label text-[10px] text-outline px-2 py-1 border border-outline/20">TYPE_02</span>
-</div>
-<div class="relative h-44 bg-surface-container-lowest overflow-hidden">
-<img alt="Llama Carburante" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_U75uTlomBZKn6tH04277EOmS_8SflQv_zDjkZizjGMHGsIDwqFnNK1Xie3EqeBhOa1yBO1duktmu0ZJH03L-jg7G7IF2Pi_Z_6OSWubGdyXD3T327D8UYSN3jepXuyPCQwlYWg5gh6A-mo2klQWiGFg83IMQi4eZQ-BW_Gi2T_J0a8WFIBNw7p3Xu-DySO46olZcBmcQHDL9kUH24VTdhuHisKgVIGwlr-WPix28MoCnzt7RAMLNrV88cjcAKC4RorW5vjgMyZc"/>
-<div class="absolute top-2 right-2 font-label text-[9px] text-secondary-container bg-black/50 px-2 py-1">EXCESS C2H2</div>
-</div>
-<div class="p-8 flex-grow flex items-center">
-    <p class="text-on-surface text-xl font-medium leading-relaxed">
-        Tiene exceso de acetileno. Produce una combustión más rica en combustible. Se usa cuando se quiere reducir oxidación o en algunos trabajos de calentamiento.
-    </p>
-</div>
-</div>
-<!-- Card 3: LLAMA OXIDANTE -->
-<div class="bg-surface-container-low border border-outline-variant/20 transition-all duration-300 glow-border group flex flex-col h-[520px]">
-<div class="p-6 border-b border-outline-variant/20 flex justify-between items-center">
-<h2 class="font-headline text-2xl font-bold text-[#1BFF3C] tracking-tighter">LLAMA OXIDANTE</h2>
-<span class="font-label text-[10px] text-outline px-2 py-1 border border-outline/20">TYPE_03</span>
-</div>
-<div class="relative h-44 bg-surface-container-lowest overflow-hidden">
-    <img alt="Llama Oxidante" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="../llama_oxidante.png"/>
-    <div class="absolute top-2 right-2 font-label text-[9px] text-error bg-black/50 px-2 py-1">EXCESS O2</div>
-</div>
-<div class="p-8 flex-grow flex items-center">
-    <p class="text-on-surface text-xl font-medium leading-relaxed">
-        Tiene exceso de oxígeno. Produce una llama más agresiva y más corta. Puede oxidar demasiado la superficie si no se controla bien.
-    </p>
-</div>
-</div>
-</div>
-<!-- Metadata Hidden by Request -->
-</main>
-<!-- BottomNavBar -->
-<nav class="bg-[#1C1B1B] dark:bg-[#1C1B1B] fixed bottom-0 left-0 w-full z-50 flex justify-between items-center px-12 py-3 border-t border-[#3B4B37]/30 shadow-[0px_0px_15px_rgba(27,255,60,0.1)]">
-<button class="flex flex-col items-center justify-center text-[#84967E] px-8 py-2 font-['JetBrains_Mono'] text-xs tracking-widest hover:text-[#1BFF3C] hover:bg-[#2A2A2A] transition-all duration-200">
-<span class="material-symbols-outlined mb-1">arrow_back</span>
-<span>PREVIOUS</span>
-</button>
-<div class="flex flex-col items-center justify-center border border-[#1BFF3C] text-[#1BFF3C] px-8 py-2 font-['JetBrains_Mono'] text-xs tracking-widest font-bold bg-[#1BFF3C]/5">
-                    <span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">analytics</span>
-                    <span>05</span>
+
+<body
+    class="text-on-background font-body selection:bg-primary-container selection:text-on-primary-container min-h-screen flex flex-col">
+    <!-- TopAppBar -->
+    <header
+        class="bg-[#131313] dark:bg-[#131313] docked full-width top-0 border-b border-[#3B4B37]/20 flex justify-between items-center w-full px-6 py-4 z-50">
+        <div class="flex items-center gap-4">
+            <span
+                class="font-['Rajdhani'] uppercase tracking-tighter font-bold text-xl font-black text-[#22C55E] drop-shadow-[0_0_10px_rgba(34,197,94,0.3)]">WELD
+                BEAR IEDU</span>
+            <div class="h-4 w-[1px] bg-outline-variant/30"></div>
+            <span class="font-label text-[10px] tracking-[0.2em] text-outline uppercase">Module: Oxy-Acetylene</span>
+        </div>
+        <div class="flex items-center gap-6">
+            <div class="flex gap-4">
+                <button
+                    class="material-symbols-outlined text-[#84967E] opacity-50 hover:bg-[#22C55E]/10 transition-colors p-2">settings</button>
+                <button
+                    class="material-symbols-outlined text-[#84967E] opacity-50 hover:bg-[#22C55E]/10 transition-colors p-2">help_outline</button>
+            </div>
+            <div
+                class="w-10 h-10 bg-surface-container-high border border-outline-variant/20 flex items-center justify-center">
+                <img alt="Instructor" class="w-8 h-8 object-cover filter grayscale"
+                    data-alt="Close up portrait of a technical instructor wearing protective gear in a dimly lit industrial setting"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKj4jBrJpDufyZVJo9K9l4dHJmNpANWKk3g8ttU_J1qKvFS5YAtzD9bGrb6Si0J37PKKPlqvVqgbe7tT13MXttl_m5RjxzAZ4uVEpsqEPVHsMKXjmvWdRegz6heFW3bKsq2OFinAZnRqP8RrNa7ovpfTTpvIVrAIinMwWq-FRKZkDNHQK6utEOjS2WPslh_fMTY5zK_S-oRNOFBt0gKeFabSfUj_9x04YK-430rP9YnH9DhUk3xDMlzWI4frSOT43BJY9TQ7kRhBg" />
+            </div>
+        </div>
+    </header>
+    <!-- Main Content Canvas -->
+    <main class="flex-grow container mx-auto px-6 pt-12 pb-32">
+        <!-- Presentation Title Section -->
+        <div class="mb-12 border-l-4 border-primary-container pl-6">
+            <h1 class="font-headline text-5xl font-bold uppercase tracking-tight text-on-background mb-2">Tipos de Llama
+            </h1>
+            <p class="font-label text-sm text-primary-container tracking-widest uppercase opacity-80">Parámetros de
+                combustión oxiacetilénica</p>
+        </div>
+        <!-- Cards Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Card 1: LLAMA NEUTRA -->
+            <div
+                class="bg-surface-container-low border border-outline-variant/20 transition-all duration-300 glow-border group flex flex-col h-[520px]">
+                <div class="p-6 border-b border-outline-variant/20 flex justify-between items-center">
+                    <h2 class="font-headline text-2xl font-bold text-[#22C55E] tracking-tighter">LLAMA NEUTRA</h2>
+                    <span class="font-label text-[10px] text-outline px-2 py-1 border border-outline/20">TYPE_01</span>
                 </div>
-<button class="flex flex-col items-center justify-center text-[#84967E] px-8 py-2 font-['JetBrains_Mono'] text-xs tracking-widest hover:text-[#1BFF3C] hover:bg-[#2A2A2A] transition-all duration-200">
-<span class="material-symbols-outlined mb-1">arrow_forward</span>
-<span>NEXT</span>
-</button>
-</nav>
+                <div class="relative h-64 bg-surface-container-lowest overflow-hidden">
+                    <img alt="Llama Neutra"
+                        class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
+                        src="../llama_neutra12.jpg" />
+                    <div
+                        class="absolute top-2 right-2 font-label text-[10px] text-primary-container bg-black/50 px-2 py-1">
+                        RATIO 1:1</div>
+                </div>
+                <div class="p-8 flex-grow flex items-center">
+                    <p class="text-on-surface text-xl font-medium leading-relaxed">
+                        Tiene balance correcto entre oxígeno y acetileno. Es la llama más estable y la más utilizada
+                        para trabajo general y preparación del corte.
+                    </p>
+                </div>
+            </div>
+            <!-- Card 2: LLAMA CARBURANTE -->
+            <div
+                class="bg-surface-container-low border border-outline-variant/20 transition-all duration-300 glow-border group flex flex-col h-[520px]">
+                <div class="p-6 border-b border-outline-variant/20 flex justify-between items-center">
+                    <h2 class="font-headline text-2xl font-bold text-[#22C55E] tracking-tighter">LLAMA CARBURANTE</h2>
+                    <span class="font-label text-[10px] text-outline px-2 py-1 border border-outline/20">TYPE_02</span>
+                </div>
+                <div class="relative h-64 bg-surface-container-lowest overflow-hidden">
+                    <img alt="Llama Carburante"
+                        class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
+                        src="../llama_carburante12.jpg" />
+                    <div
+                        class="absolute top-2 right-2 font-label text-[10px] text-secondary-container bg-black/50 px-2 py-1">
+                        EXCESS C2H2</div>
+                </div>
+                <div class="p-8 flex-grow flex items-center">
+                    <p class="text-on-surface text-xl font-medium leading-relaxed">
+                        Tiene exceso de acetileno. Produce una combustión más rica en combustible. Se usa cuando se
+                        quiere reducir oxidación o en algunos trabajos de calentamiento.
+                    </p>
+                </div>
+            </div>
+            <!-- Card 3: LLAMA OXIDANTE -->
+            <div
+                class="bg-surface-container-low border border-outline-variant/20 transition-all duration-300 glow-border group flex flex-col h-[520px]">
+                <div class="p-6 border-b border-outline-variant/20 flex justify-between items-center">
+                    <h2 class="font-headline text-2xl font-bold text-[#22C55E] tracking-tighter">LLAMA OXIDANTE</h2>
+                    <span class="font-label text-[10px] text-outline px-2 py-1 border border-outline/20">TYPE_03</span>
+                </div>
+                <div class="relative h-64 bg-surface-container-lowest overflow-hidden">
+                    <img alt="Llama Oxidante"
+                        class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
+                        src="../llama_oxidante12.jpg" />
+                    <div class="absolute top-2 right-2 font-label text-[10px] text-error bg-black/50 px-2 py-1">EXCESS O2
+                    </div>
+                </div>
+                <div class="p-8 flex-grow flex items-center">
+                    <p class="text-on-surface text-xl font-medium leading-relaxed">
+                        Tiene exceso de oxígeno. Produce una llama más agresiva y más corta. Puede oxidar demasiado la
+                        superficie si no se controla bien.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- Metadata Hidden by Request -->
+    </main>
+    <!-- BottomNavBar -->
+    <nav
+        class="bg-[#1C1B1B] dark:bg-[#1C1B1B] fixed bottom-0 left-0 w-full z-50 flex justify-between items-center px-12 py-3 border-t border-[#3B4B37]/30 shadow-[0px_0px_15px_rgba(34,197,94,0.1)]">
+        <button
+            class="flex flex-col items-center justify-center text-[#84967E] px-8 py-2 font-['JetBrains_Mono'] text-xs tracking-widest hover:text-[#22C55E] hover:bg-[#2A2A2A] transition-all duration-200">
+            <span class="material-symbols-outlined mb-1">arrow_back</span>
+            <span>PREVIOUS</span>
+        </button>
+        <div
+            class="flex flex-col items-center justify-center border border-[#22C55E] text-[#22C55E] px-8 py-2 font-['JetBrains_Mono'] text-xs tracking-widest font-bold bg-[#22C55E]/5">
+            <span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">analytics</span>
+            <span>05</span>
+        </div>
+        <button
+            class="flex flex-col items-center justify-center text-[#84967E] px-8 py-2 font-['JetBrains_Mono'] text-xs tracking-widest hover:text-[#22C55E] hover:bg-[#2A2A2A] transition-all duration-200">
+            <span class="material-symbols-outlined mb-1">arrow_forward</span>
+            <span>NEXT</span>
+        </button>
+    </nav>
 
 
 
@@ -191,41 +232,43 @@
 
 
 
-<script id="weld-bear-sync">
-    setTimeout(() => {
-        const triggers = document.querySelectorAll('button, a');
-        triggers.forEach(el => {
-            const text = el.innerText.toUpperCase();
-            const isPrev = text.includes('PREV') || text.includes('ANTERIOR') || text.includes('BACK_IOS') || text.includes('ARROW_BACK');
-            const isNext = text.includes('NEXT') || text.includes('SIGUIENTE') || text.includes('SIGUE') || text.includes('CONTINUAR') || text.includes('ARROW_FORWARD');
-            const isHome = text.includes('HOME') || text.includes('INICIO');
-            const isFinish = text.includes('FINALIZAR') || text.includes('FINISH');
+    <script id="weld-bear-sync">
+        setTimeout(() => {
+            const triggers = document.querySelectorAll('button, a');
+            triggers.forEach(el => {
+                const text = el.innerText.toUpperCase();
+                const isPrev = text.includes('PREV') || text.includes('ANTERIOR') || text.includes('BACK_IOS') || text.includes('ARROW_BACK');
+                const isNext = text.includes('NEXT') || text.includes('SIGUIENTE') || text.includes('SIGUE') || text.includes('CONTINUAR') || text.includes('ARROW_FORWARD');
+                const isHome = text.includes('HOME') || text.includes('INICIO');
+                const isFinish = text.includes('FINALIZAR') || text.includes('FINISH');
 
-            if (isPrev || isNext || isHome || isFinish) {
-                el.onclick = (e) => {
-                    e.preventDefault();
-                    if (isPrev) window.parent.postMessage('PREV', '*');
-                    if (isNext) window.parent.postMessage('NEXT', '*');
-                    if (isHome) window.parent.postMessage('HOME', '*');
-                    if (isFinish) window.parent.postMessage('FINISH', '*');
-                };
+                if (isPrev || isNext || isHome || isFinish) {
+                    el.onclick = (e) => {
+                        e.preventDefault();
+                        if (isPrev) window.parent.postMessage('PREV', '*');
+                        if (isNext) window.parent.postMessage('NEXT', '*');
+                        if (isHome) window.parent.postMessage('HOME', '*');
+                        if (isFinish) window.parent.postMessage('FINISH', '*');
+                    };
+                }
+            });
+        }, 500);
+
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ') {
+                e.preventDefault();
+                window.parent.postMessage('NEXT', '*');
+            } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+                e.preventDefault();
+                window.parent.postMessage('PREV', '*');
             }
         });
-    }, 500);
 
-    window.addEventListener('keydown', (e) => {
-        if (e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ') {
-            e.preventDefault();
-            window.parent.postMessage('NEXT', '*');
-        } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
-            e.preventDefault();
-            window.parent.postMessage('PREV', '*');
-        }
-    });
+        window.addEventListener('load', () => {
+            window.parent.postMessage('LOADED', '*');
+        });
+    </script>
 
-    window.addEventListener('load', () => {
-        window.parent.postMessage('LOADED', '*');
-    });
-</script>
+</body>
 
-</body></html>
+</html>

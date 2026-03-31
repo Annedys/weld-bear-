@@ -10,7 +10,7 @@
             theme: {
                 extend: {
                     colors: {
-                        "primary-container": "#1bff3c",
+                        "primary-container": "#22C55E",
                         "background": "#131313",
                         "surface": "#131313",
                         "on-surface": "#e5e2e1",
@@ -24,103 +24,158 @@
             },
         }
     </script>
-<style>
+    <style>
         .blueprint-grid {
             background-image: 
-                linear-gradient(to right, rgba(27, 255, 60, 0.05) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(27, 255, 60, 0.05) 1px, transparent 1px);
+                linear-gradient(to right, rgba(34, 197, 94, 0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(34, 197, 94, 0.05) 1px, transparent 1px);
             background-size: 40px 40px;
         }
         @media (max-width: 1023px) {
             body, html { overflow-y: auto !important; overflow-x: hidden !important; height: auto !important; min-height: 100vh !important; }
-            * { box-sizing: border-box !important; }
-            main { height: auto !important; overflow: visible !important; display: flex !important; flex-direction: column !important; padding: 100px 16px 140px 16px !important; }
+            #frame-container { 
+                transform: none !important; 
+                width: 100% !important; 
+                max-width: 100% !important; 
+                height: auto !important; 
+                position: relative !important;
+                display: flex !important;
+                flex-direction: column !important;
+            }
+            main { 
+                height: auto !important; 
+                overflow: visible !important; 
+                display: flex !important; 
+                flex-direction: column !important; 
+                padding: 40px 20px 120px 20px !important; 
+                justify-content: flex-start !important;
+                align-items: flex-start !important;
+            }
             h1 { font-size: 2.2rem !important; line-height: 1.1 !important; word-wrap: break-word !important; }
-            .text-6xl { font-size: 2.5rem !important; }
+            .text-6xl { font-size: 2.2rem !important; }
             p, .text-xl { font-size: 1.1rem !important; line-height: 1.4 !important; }
-            .grid, .grid-cols-1, .md\:grid-cols-2 { display: flex !important; flex-direction: column !important; gap: 24px !important; }
-            .w-full.max-w-7xl { max-width: 100% !important; }
-            header { flex-wrap: wrap !important; height: auto !important; padding: 16px !important; gap: 12px !important; position: relative !important; }
-            footer.fixed { height: auto !important; padding: 12px !important; flex-wrap: wrap !important; justify-content: center !important; gap: 8px !important; position: fixed !important; bottom: 0 !important; width: 100% !important; z-index: 50 !important; }
-            footer.fixed button, footer.fixed div { flex: 1 1 20% !important; min-width: 60px !important; padding: 12px 4px !important; border: 1px solid rgba(27,255,60,0.1) !important; margin: 0 !important; }
+            .grid, .grid-cols-1, .md\:grid-cols-2 { 
+                display: flex !important; 
+                flex-direction: column !important; 
+                gap: 20px !important; 
+                width: 100% !important;
+            }
+            .w-full.max-w-7xl { max-width: 100% !important; width: 100% !important; }
+            header { 
+                flex-wrap: wrap !important; 
+                height: auto !important; 
+                padding: 16px !important; 
+                gap: 12px !important; 
+                position: relative !important; 
+                width: 100% !important;
+            }
+            footer.fixed { 
+                height: auto !important; 
+                padding: 12px !important; 
+                flex-wrap: wrap !important; 
+                justify-content: center !important; 
+                gap: 8px !important; 
+                position: fixed !important; 
+                bottom: 0 !important; 
+                width: 100% !important; 
+                z-index: 50 !important; 
+            }
+            footer.fixed button, footer.fixed div { 
+                flex: 1 1 25% !important; 
+                min-width: 80px !important; 
+                padding: 10px 4px !important; 
+                border: 1px solid rgba(34,197,94,0.1) !important; 
+                margin: 0 !important; 
+            }
+            
+            /* Specific text adjustments for very small screens */
+            @media (max-width: 350px) {
+                h1 { font-size: 1.8rem !important; }
+                .text-6xl { font-size: 1.8rem !important; }
+                .text-3xl { font-size: 1.5rem !important; }
+                .text-2xl { font-size: 1.2rem !important; }
+            }
         }
     </style>
 </head>
 <body class="bg-background text-on-surface font-body min-h-screen flex flex-col overflow-hidden">
-<header class="bg-[#131313] flex justify-between items-center w-full px-6 py-4 border-b border-[#1BFF3C]/20 z-50">
-<div class="text-xl font-bold text-[#1BFF3C] tracking-tighter font-headline uppercase">WELD BEAR IEDU</div>
-<div class="flex items-center space-x-4 text-[#84967E] font-label text-[10px] uppercase tracking-widest">
-<span>System: Active</span>
-<span class="text-[#1BFF3C]/50">|</span>
-<span>Module: Metallurgy</span>
+<div id="frame-container" class="min-h-screen flex flex-col">
+    <header class="bg-[#131313] flex justify-between items-center w-full px-6 py-4 border-b border-[#22C55E]/20 z-50">
+    <div class="text-xl font-bold text-[#22C55E] tracking-tighter font-headline uppercase">WELD BEAR IEDU</div>
+    <div class="flex items-center space-x-4 text-[#84967E] font-label text-[10px] uppercase tracking-widest">
+    <span>System: Active</span>
+    <span class="text-[#22C55E]/50">|</span>
+    <span>Module: Metallurgy</span>
+    </div>
+    </header>
+
+    <main class="flex-grow relative blueprint-grid flex flex-col items-center justify-center px-12 pb-24">
+        <!-- Section Header -->
+        <div class="w-full max-w-7xl mb-12 border-l-4 border-[#22C55E] pl-6">
+            <h1 class="font-headline text-6xl font-black tracking-tight text-on-surface uppercase drop-shadow-[0_0_15px_rgba(34,197,94,0.2)]">TIPOS DE METALES</h1>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-7xl mb-12">
+            <!-- Card 1: Acero Negro -->
+            <div class="bg-[#1C1B1B] border border-[#22C55E]/20 p-8 shadow-[0_0_20px_rgba(0,0,0,0.5)] group hover:border-[#22C55E]/50 transition-all">
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="bg-[#22C55E]/10 p-3">
+                        <span class="material-symbols-outlined text-[#22C55E] text-3xl" data-icon="layers">layers</span>
+                    </div>
+                    <h3 class="font-headline text-3xl font-bold text-[#22C55E] tracking-tight uppercase">Acero Negro</h3>
+                </div>
+                <p class="text-on-surface text-xl font-medium leading-relaxed mb-4">
+                    (Carbon Steel) Es el metal más común en soldadura estructural and fabricación.
+                </p>
+                <div class="flex gap-2">
+                    <span class="bg-[#22C55E]/10 text-[#22C55E] px-2 py-1 font-label text-[10px] uppercase">Common</span>
+                    <span class="bg-[#22C55E]/10 text-[#22C55E] px-2 py-1 font-label text-[10px] uppercase">Structural</span>
+                </div>
+            </div>
+
+            <!-- Card 2: Galvanizado -->
+            <div class="bg-[#1C1B1B] border border-[#22C55E]/20 p-8 shadow-[0_0_20px_rgba(0,0,0,0.5)] group hover:border-[#22C55E]/50 transition-all">
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="bg-[#22C55E]/10 p-3">
+                        <span class="material-symbols-outlined text-[#22C55E] text-3xl" data-icon="shield">shield</span>
+                    </div>
+                    <h3 class="font-headline text-3xl font-bold text-[#22C55E] tracking-tight uppercase">Galvanizado</h3>
+                </div>
+                <p class="text-on-surface text-xl font-medium leading-relaxed mb-4">
+                    Es de acero recubierto con zinc para prevenir la corrosión.
+                </p>
+                <div class="flex gap-2">
+                    <span class="bg-[#22C55E]/10 text-[#22C55E] px-2 py-1 font-label text-[10px] uppercase">Zinc Coated</span>
+                    <span class="bg-[#22C55E]/10 text-[#22C55E] px-2 py-1 font-label text-[10px] uppercase">Anti-Corrosive</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Final Note / Highlight -->
+        <div class="w-full max-w-7xl bg-[#22C55E]/5 border border-[#22C55E]/20 p-6 flex items-center gap-6">
+            <span class="material-symbols-outlined text-[#22C55E] text-4xl" data-icon="warning">warning</span>
+            <p class="font-headline text-2xl font-bold text-[#22C55E] tracking-wide uppercase leading-tight">
+                Cada metal se comporta distinto al calentarse y requiere precauciones específicas.
+            </p>
+        </div>
+    </main>
+
+    <footer class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-20 px-4 bg-[#1C1B1B] border-t border-[#22C55E]/20 shadow-[0_-5px_15px_rgba(34,197,94,0.05)]">
+        <button class="flex flex-col items-center justify-center text-[#84967E] px-8 py-2 hover:text-[#22C55E] transition-all group active:scale-95">
+            <span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+            <span class="font-label text-[10px] uppercase mt-1">ANTERIOR</span>
+        </button>
+        <div class="flex flex-col items-center justify-center text-[#22C55E] px-12 py-2 border border-[#22C55E]/30 bg-[#22C55E]/5">
+            <span class="material-symbols-outlined text-sm mb-1" data-icon="format_list_numbered">format_list_numbered</span>
+            <span class="font-label text-[11px] font-bold">54</span>
+        </div>
+        <button class="flex flex-col items-center justify-center text-[#84967E] px-8 py-2 hover:text-[#22C55E] transition-all group active:scale-95">
+            <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+            <span class="font-label text-[10px] uppercase mt-1">SIGUIENTE</span>
+        </button>
+    </footer>
 </div>
-</header>
-
-<main class="flex-grow relative blueprint-grid flex flex-col items-center justify-center px-12 pb-24">
-    <!-- Section Header -->
-    <div class="w-full max-w-7xl mb-12 border-l-4 border-[#1BFF3C] pl-6">
-        <h1 class="font-headline text-6xl font-black tracking-tight text-on-surface uppercase drop-shadow-[0_0_15px_rgba(27,255,60,0.2)]">TIPOS DE METALES</h1>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-7xl mb-12">
-        <!-- Card 1: Acero Negro -->
-        <div class="bg-[#1C1B1B] border border-[#1BFF3C]/20 p-8 shadow-[0_0_20px_rgba(0,0,0,0.5)] group hover:border-[#1BFF3C]/50 transition-all">
-            <div class="flex items-center gap-4 mb-6">
-                <div class="bg-[#1BFF3C]/10 p-3">
-                    <span class="material-symbols-outlined text-[#1BFF3C] text-3xl" data-icon="layers">layers</span>
-                </div>
-                <h3 class="font-headline text-3xl font-bold text-[#1BFF3C] tracking-tight uppercase">Acero Negro</h3>
-            </div>
-            <p class="text-on-surface text-xl font-medium leading-relaxed mb-4">
-                (Carbon Steel) Es el metal más común en soldadura estructural y fabricación.
-            </p>
-            <div class="flex gap-2">
-                <span class="bg-[#1BFF3C]/10 text-[#1BFF3C] px-2 py-1 font-label text-[10px] uppercase">Common</span>
-                <span class="bg-[#1BFF3C]/10 text-[#1BFF3C] px-2 py-1 font-label text-[10px] uppercase">Structural</span>
-            </div>
-        </div>
-
-        <!-- Card 2: Galvanizado -->
-        <div class="bg-[#1C1B1B] border border-[#1BFF3C]/20 p-8 shadow-[0_0_20px_rgba(0,0,0,0.5)] group hover:border-[#1BFF3C]/50 transition-all">
-            <div class="flex items-center gap-4 mb-6">
-                <div class="bg-[#1BFF3C]/10 p-3">
-                    <span class="material-symbols-outlined text-[#1BFF3C] text-3xl" data-icon="shield">shield</span>
-                </div>
-                <h3 class="font-headline text-3xl font-bold text-[#1BFF3C] tracking-tight uppercase">Galvanizado</h3>
-            </div>
-            <p class="text-on-surface text-xl font-medium leading-relaxed mb-4">
-                Es de acero recubierto con zinc para prevenir la corrosión.
-            </p>
-            <div class="flex gap-2">
-                <span class="bg-[#1BFF3C]/10 text-[#1BFF3C] px-2 py-1 font-label text-[10px] uppercase">Zinc Coated</span>
-                <span class="bg-[#1BFF3C]/10 text-[#1BFF3C] px-2 py-1 font-label text-[10px] uppercase">Anti-Corrosive</span>
-            </div>
-        </div>
-    </div>
-
-    <!-- Final Note / Highlight -->
-    <div class="w-full max-w-7xl bg-[#1BFF3C]/5 border border-[#1BFF3C]/20 p-6 flex items-center gap-6">
-        <span class="material-symbols-outlined text-[#1BFF3C] text-4xl" data-icon="warning">warning</span>
-        <p class="font-headline text-2xl font-bold text-[#1BFF3C] tracking-wide uppercase leading-tight">
-            Cada metal se comporta distinto al calentarse y requiere precauciones específicas.
-        </p>
-    </div>
-</main>
-
-<footer class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-20 px-4 bg-[#1C1B1B] border-t border-[#1BFF3C]/20 shadow-[0_-5px_15px_rgba(27,255,60,0.05)]">
-    <button class="flex flex-col items-center justify-center text-[#84967E] px-8 py-2 hover:text-[#1BFF3C] transition-all group active:scale-95">
-        <span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
-        <span class="font-label text-[10px] uppercase mt-1">ANTERIOR</span>
-    </button>
-    <div class="flex flex-col items-center justify-center text-[#1BFF3C] px-12 py-2 border border-[#1BFF3C]/30 bg-[#1BFF3C]/5">
-        <span class="material-symbols-outlined text-sm mb-1" data-icon="format_list_numbered">format_list_numbered</span>
-        <span class="font-label text-[11px] font-bold">54</span>
-    </div>
-    <button class="flex flex-col items-center justify-center text-[#84967E] px-8 py-2 hover:text-[#1BFF3C] transition-all group active:scale-95">
-        <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
-        <span class="font-label text-[10px] uppercase mt-1">SIGUIENTE</span>
-    </button>
-</footer>
+oter>
 
 
 

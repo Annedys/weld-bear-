@@ -16,7 +16,7 @@
               "primary": "#ecffe3",
               "surface-container-low": "#1c1b1b",
               "outline": "#84967e",
-              "primary-container": "#1bff3c",
+              "primary-container": "#22C55E",
               "outline-variant": "#3b4b37",
               "secondary-container": "#fed400",
               "error": "#ffb4ab",
@@ -41,28 +41,111 @@
             background-size: 40px 40px;
         }
         @media (max-width: 1023px) {
-            body, html { overflow-y: auto !important; overflow-x: hidden !important; height: auto !important; min-height: 100vh !important; }
-            * { box-sizing: border-box !important; }
-            main { height: auto !important; overflow: visible !important; display: flex !important; flex-direction: column !important; padding: 100px 16px 140px 16px !important; }
-            h1 { font-size: 2.2rem !important; line-height: 1.1 !important; word-wrap: break-word !important; }
-            .text-7xl, .md\:text-7xl, .text-5xl { font-size: 2.2rem !important; }
-            p, .text-xl, .text-2xl { font-size: 1.1rem !important; line-height: 1.4 !important; }
-            .grid, .grid-cols-1, .lg\:grid-cols-12 { display: flex !important; flex-direction: column !important; gap: 24px !important; }
-            .lg\:col-span-9, .lg\:col-span-3 { width: 100% !important; flex: none !important; }
-            .overflow-x-auto { width: 100% !important; overflow-x: auto !important; -webkit-overflow-scrolling: touch !important; padding-bottom: 8px !important; }
-            table { min-width: 600px !important; }
-            header.fixed { flex-wrap: wrap !important; height: auto !important; padding: 16px !important; gap: 12px !important; position: relative !important; }
-            nav.fixed { height: auto !important; padding: 12px !important; flex-wrap: wrap !important; justify-content: center !important; gap: 8px !important; position: fixed !important; bottom: 0 !important; width: 100% !important; z-index: 50 !important; }
-            nav.fixed button, nav.fixed div { flex: 1 1 20% !important; min-width: 60px !important; padding: 12px 4px !important; border: 1px solid rgba(27,255,60,0.1) !important; margin: 0 !important; }
+            body, html { 
+                overflow-y: auto !important; 
+                overflow-x: hidden !important; 
+                height: auto !important; 
+                min-height: 100vh !important;
+                background-color: #131313 !important;
+            }
+            
+            #frame-container {
+                transform: none !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                height: auto !important;
+                position: relative !important;
+                display: flex !important;
+                flex-direction: column !important;
+                overflow: visible !important;
+            }
+
+            main {
+                height: auto !important;
+                overflow: visible !important;
+                display: flex !important;
+                flex-direction: column !important;
+                padding: 100px 16px 140px 16px !important;
+                min-height: 100vh !important;
+                max-width: 100% !important;
+            }
+
+            h1 { font-size: 2.5rem !important; line-height: 1.1 !important; word-wrap: break-word !important; }
+            .text-5xl, .md\:text-7xl { font-size: 2.5rem !important; }
+
+            p, .text-xl, .text-2xl { 
+                font-size: 1.1rem !important; 
+                line-height: 1.4 !important; 
+            }
+
+            .grid, .grid-cols-1, .lg\:grid-cols-12 { 
+                display: flex !important; 
+                flex-direction: column !important; 
+                gap: 24px !important; 
+                width: 100% !important;
+            }
+
+            .lg\:col-span-9, .lg\:col-span-3 { 
+                width: 100% !important; 
+            }
+
+            .overflow-x-auto { 
+                width: 100% !important; 
+                overflow-x: auto !important; 
+                -webkit-overflow-scrolling: touch !important; 
+                margin: 0 !important;
+            }
+
+            table { 
+                min-width: 500px !important;
+            }
+            
+            header { 
+                flex-wrap: wrap !important; 
+                height: auto !important; 
+                padding: 16px !important; 
+                gap: 12px !important; 
+                position: relative !important; 
+                width: 100% !important;
+            }
+
+            nav.fixed { 
+                height: auto !important; 
+                padding: 12px !important; 
+                flex-wrap: wrap !important; 
+                justify-content: center !important; 
+                gap: 8px !important; 
+                position: fixed !important; 
+                bottom: 0 !important; 
+                width: 100% !important; 
+                z-index: 50 !important; 
+            }
+
+            nav.fixed button, nav.fixed div { 
+                flex: 1 1 25% !important; 
+                min-width: 80px !important; 
+                padding: 12px 4px !important; 
+                border: 1px solid rgba(34,197,94,0.1) !important; 
+                margin: 0 !important; 
+                box-shadow: none !important;
+            }
+
+            /* Specific text adjustments for very small screens */
+            @media (max-width: 350px) {
+                h1, .text-5xl, .md\:text-7xl { font-size: 2rem !important; }
+                table { min-width: 400px !important; }
+                th, td { padding: 8px 4px !important; font-size: 0.9rem !important; }
+            }
         }
     </style>
 </head>
 <body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container min-h-screen flex flex-col overflow-hidden">
+<div id="frame-container" class="min-h-screen flex flex-col">
 <!-- TopAppBar -->
 <header class="bg-[#131313] flex justify-between items-center w-full px-6 py-4 fixed top-0 z-50 border-b border-[#3B4B37]/20">
-<div class="text-2xl font-bold tracking-tighter text-[#1BFF3C] uppercase font-headline">WELD BEAR IEDU</div>
+<div class="text-2xl font-bold tracking-tighter text-[#22C55E] uppercase font-headline">WELD BEAR IEDU</div>
 <div class="flex items-center gap-4">
-<button class="text-[#84967E] hover:text-[#1BFF3C] transition-all"><span class="material-symbols-outlined">settings</span></button>
+<button class="text-[#84967E] hover:text-[#22C55E] transition-all"><span class="material-symbols-outlined">settings</span></button>
 </div>
 </header>
 
@@ -139,20 +222,21 @@
 </main>
 
 <!-- BottomNavBar -->
-<nav class="bg-[#1C1B1B] fixed bottom-0 left-0 w-full z-50 flex justify-between items-center px-12 py-4 h-20 border-t border-[#3B4B37]/20 shadow-[0px_0px_15px_rgba(27,255,60,0.15)]">
-<button class="flex flex-col items-center justify-center text-[#84967E] hover:text-[#1BFF3C] transition-all px-6 py-2 group">
+<nav class="bg-[#1C1B1B] fixed bottom-0 left-0 w-full z-50 flex justify-between items-center px-12 py-4 h-20 border-t border-[#3B4B37]/20 shadow-[0px_0px_15px_rgba(34,197,94,0.15)]">
+<button class="flex flex-col items-center justify-center text-[#84967E] hover:text-[#22C55E] transition-all px-6 py-2 group">
 <span class="material-symbols-outlined">arrow_back</span>
 <span class="font-technical text-[10px] mt-1">ANTERIOR</span>
 </button>
-<div class="flex flex-col items-center justify-center text-[#1BFF3C] font-bold">
+<div class="flex flex-col items-center justify-center text-[#22C55E] font-bold">
 <span class="material-symbols-outlined">analytics</span>
 <span class="font-technical text-sm mt-1">COMPARATIVA_V</span>
 </div>
-<button class="flex flex-col items-center justify-center text-[#84967E] hover:text-[#1BFF3C] transition-all px-6 py-2 group">
+<button class="flex flex-col items-center justify-center text-[#84967E] hover:text-[#22C55E] transition-all px-6 py-2 group">
 <span class="material-symbols-outlined">arrow_forward</span>
 <span class="font-technical text-[10px] mt-1">SIGUIENTE</span>
 </button>
 </nav>
+</div>
 
 
 

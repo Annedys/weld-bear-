@@ -39,9 +39,9 @@
               "on-secondary": "#3b2f00",
               "tertiary-fixed": "#ffdad5",
               "surface-container": "#201f1f",
-              "primary-fixed-dim": "#00e631",
+              "primary-fixed-dim": "#22C55E",
               "surface-container-highest": "#353534",
-              "primary-container": "#1bff3c",
+              "primary-container": "#22C55E",
               "on-primary": "#003a05",
               "secondary": "#fff3d3",
               "surface-variant": "#353534",
@@ -52,8 +52,8 @@
               "on-tertiary-container": "#c5020c",
               "on-primary-fixed": "#002202",
               "primary": "#ecffe3",
-              "surface-tint": "#00e631",
-              "primary-fixed": "#74ff6d",
+              "surface-tint": "#22C55E",
+              "primary-fixed": "#22C55E",
               "outline-variant": "#3b4b37",
               "tertiary-fixed-dim": "#ffb4aa",
               "surface-container-high": "#2a2a2a",
@@ -77,20 +77,111 @@
             display: flex;
             flex-direction: column;
             overflow: hidden;
-        }
-        @media (max-width: 1023px) {
-            body, html { overflow-y: auto !important; overflow-x: hidden !important; height: auto !important; min-height: 100vh !important; }
+        }        /* ===== TRUE RESPONSIVE STRATEGY (Móvil, Tablet, Nest Hub, iPad Pro) ===== */
+        @media (max-width: 1366px), (max-height: 850px) {
+            body, html { 
+                overflow-y: auto !important; 
+                overflow-x: hidden !important; 
+                height: auto !important; 
+                min-height: 100vh !important; 
+                display: block !important; 
+                background-attachment: scroll !important;
+                transform: none !important;
+            }
             * { box-sizing: border-box !important; }
-            main { height: auto !important; overflow: visible !important; display: flex !important; flex-direction: column !important; padding: 100px 16px 140px 16px !important; }
-            h1 { font-size: 2.5rem !important; line-height: 1.1 !important; word-wrap: break-word !important; }
-            .text-5xl, .md\:text-7xl { font-size: 2.5rem !important; }
-            p, .text-xl { font-size: 1.1rem !important; line-height: 1.4 !important; }
-            .grid-cols-12 { display: flex !important; flex-direction: column !important; gap: 24px !important; }
-            .md\:col-span-12 { width: 100% !important; flex: none !important; }
-            .grid-cols-2 { grid-template-columns: 1fr !important; }
-            header { flex-wrap: wrap !important; height: auto !important; padding: 16px !important; gap: 12px !important; position: relative !important; }
-            nav.fixed { height: auto !important; padding: 12px !important; flex-wrap: wrap !important; justify-content: center !important; gap: 8px !important; position: fixed !important; bottom: 0 !important; width: 100% !important; z-index: 50 !important; }
-            nav.fixed a { flex: 1 1 20% !important; min-width: 60px !important; padding: 12px 4px !important; border: 1px solid rgba(27,255,60,0.1) !important; margin: 0 !important; }
+            
+            header { 
+                background: #131313 !important;
+                padding: 12px 16px !important;
+                position: relative !important;
+                height: auto !important;
+                display: flex !important;
+            }
+            header nav { display: none !important; }
+            
+            main { 
+                height: auto !important; 
+                padding: 20px 16px 140px 16px !important; 
+                display: block !important;
+                transform: none !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                margin-bottom: 0 !important;
+            }
+            
+            h1 { 
+                font-size: clamp(2.5rem, 8vw, 4.5rem) !important; 
+                line-height: 0.9 !important; 
+                word-wrap: break-word !important; 
+            }
+            
+            .grid.grid-cols-1.md\:grid-cols-12 { 
+                display: flex !important; 
+                flex-direction: column !important; 
+                gap: 16px !important; 
+            }
+            
+            .md\:col-span-12 { width: 100% !important; }
+            
+            .grid.grid-cols-2.md\:grid-cols-5 { 
+                display: flex !important; 
+                flex-direction: column !important; 
+                gap: 12px !important; 
+            }
+            
+            .bg-surface-container-low.p-8, .bg-primary-container\/5.p-6 { padding: 16px !important; }
+            
+            .text-xl, .text-lg { font-size: 1rem !important; line-height: 1.4 !important; }
+            .text-2xl { font-size: 1.8rem !important; }
+            .text-3xl { font-size: 1.5rem !important; }
+
+            .bg-primary-container\/5.p-6 { 
+                flex-direction: column !important; 
+                text-align: center !important;
+            }
+            .bg-primary-container\/5 p { text-align: center !important; }
+
+            nav.fixed { 
+                height: 64px !important; 
+                padding: 8px !important; 
+                flex-wrap: nowrap !important; 
+                justify-content: space-around !important; 
+                gap: 4px !important; 
+                position: fixed !important; 
+                bottom: 0 !important; 
+                width: 100% !important; 
+                z-index: 100 !important;
+                background: #1C1B1B !important;
+                display: flex !important;
+                border-top: 1px solid rgba(59,75,55,0.3) !important;
+            }
+            
+            nav.fixed a { 
+                flex: 1 1 auto !important; 
+                min-width: 50px !important; 
+                height: 48px !important;
+                padding: 4px !important; 
+                border: none !important;
+                background: transparent !important;
+                margin: 0 !important;
+            }
+            nav.fixed a[class*="border-x"] { border: 1px solid rgba(34,197,94,0.3) !important; background: rgba(34,197,94,0.05) !important; }
+            nav.fixed a span.font-['JetBrains_Mono'] { font-size: 9px !important; margin-top: 2px !important; }
+
+            /* Tablet adjust */
+            @media (min-width: 768px) and (max-width: 1366px) {
+                .grid.grid-cols-2.md\:grid-cols-5 { display: grid !important; grid-template-cols: repeat(3, 1fr) !important; gap: 16px !important; }
+                h1 { font-size: 4.5rem !important; }
+            }
+        }
+
+        /* Protect 4K/Desktop scale alignment */
+        @media (min-width: 1367px) and (min-height: 851px) {
+            body { 
+                height: 100vh !important; 
+                overflow: hidden !important; 
+                display: flex !important;
+            }
         }
     </style>
 </head>
@@ -98,7 +189,7 @@
 <!-- TopAppBar -->
 <header class="fixed top-0 w-full border-b border-[#3B4B37]/20 bg-[#131313] z-50 flex justify-between items-center px-6 h-16 w-full">
 <div class="flex items-center gap-4">
-<span class="text-xl font-black text-[#1BFF3C] drop-shadow-[0_0_8px_rgba(27,255,60,0.4)] font-['Rajdhani'] uppercase tracking-widest" style=""><span style="font-family: Rajdhani, sans-serif; font-size: 24px; letter-spacing: -1.2px;" class="">WELD BEAR IEDU</span></span>
+<span class="text-xl font-black text-[#22C55E] drop-shadow-[0_0_8px_rgba(34,197,94,0.4)] font-['Rajdhani'] uppercase tracking-widest" style=""><span style="font-family: Rajdhani, sans-serif; font-size: 24px; letter-spacing: -1.2px;" class="">WELD BEAR IEDU</span></span>
 <div class="hidden md:block h-4 w-[1px] bg-outline-variant/30"></div>
 <span class="hidden md:block font-mono text-[10px] text-outline tracking-tighter uppercase" style="">
                 SYS_REF: SOLDADURA_MODULE_04
@@ -106,15 +197,15 @@
 </div>
 <nav class="flex items-center gap-6">
 <div class="hidden md:flex gap-8 font-['Rajdhani'] uppercase tracking-widest font-bold text-sm">
-<a class="text-[#84967E]/60 hover:bg-[#1BFF3C]/10 transition-colors duration-200 px-2 py-1" href="#" style="">Overview</a>
-<a class="text-[#1BFF3C] border-b-2 border-[#1BFF3C] px-2 py-1" href="#" style="">Lecture</a>
-<a class="text-[#84967E]/60 hover:bg-[#1BFF3C]/10 transition-colors duration-200 px-2 py-1" href="#" style="">Resources</a>
+<a class="text-[#84967E]/60 hover:bg-[#22C55E]/10 transition-colors duration-200 px-2 py-1" href="#" style="">Overview</a>
+<a class="text-[#22C55E] border-b-2 border-[#22C55E] px-2 py-1" href="#" style="">Lecture</a>
+<a class="text-[#84967E]/60 hover:bg-[#22C55E]/10 transition-colors duration-200 px-2 py-1" href="#" style="">Resources</a>
 </div>
 <div class="flex items-center gap-2">
-<button class="p-2 text-on-surface-variant hover:bg-[#1BFF3C]/10 transition-colors duration-200 active:scale-95" style="">
+<button class="p-2 text-on-surface-variant hover:bg-[#22C55E]/10 transition-colors duration-200 active:scale-95" style="">
 <span class="material-symbols-outlined" data-icon="settings" style="">settings</span>
 </button>
-<button class="p-2 text-on-surface-variant hover:bg-[#1BFF3C]/10 transition-colors duration-200 active:scale-95" style="">
+<button class="p-2 text-on-surface-variant hover:bg-[#22C55E]/10 transition-colors duration-200 active:scale-95" style="">
 <span class="material-symbols-outlined" data-icon="help_outline" style="">help_outline</span>
 </button>
 </div>
@@ -141,7 +232,7 @@
                     El cordón de soldadura es el <span class="text-primary-container font-semibold" style="">depósito continuo de metal</span> formado durante el proceso de soldadura. Se origina mediante la fusión controlada del metal de aporte sobre el metal base, creando una unión estructural permanente.
                 </p>
 <div class="mt-6 h-1 w-full bg-surface-variant relative">
-<div class="absolute inset-0 w-3/4 bg-primary-container shadow-[0_0_10px_rgba(27,255,60,0.4)]"></div>
+<div class="absolute inset-0 w-3/4 bg-primary-container shadow-[0_0_10px_rgba(34,197,94,0.4)]"></div>
 </div>
 <div class="mt-2 flex justify-between font-mono text-[10px] text-outline uppercase">
 <span class="" style="">Deposition Rate</span>
@@ -151,8 +242,8 @@
 <!-- Evaluation Criteria Section -->
 <div class="md:col-span-12 mt-6">
 <div class="flex items-center gap-4 mb-8">
-<h3 class="text-3xl font-headline font-black uppercase tracking-widest text-[#1BFF3C]" style="">CRITERIOS DE EVALUACIÓN</h3>
-<div class="h-[1px] flex-grow bg-gradient-to-r from-[#1BFF3C]/30 to-transparent"></div>
+<h3 class="text-3xl font-headline font-black uppercase tracking-widest text-[#22C55E]" style="">CRITERIOS DE EVALUACIÓN</h3>
+<div class="h-[1px] flex-grow bg-gradient-to-r from-[#22C55E]/30 to-transparent"></div>
 </div>
 <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
 <!-- Criteria Item -->
@@ -201,16 +292,16 @@
 </div>
 </main>
 <!-- BottomNavBar -->
-<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-center items-center gap-0 bg-[#1C1B1B] h-20 border-t border-[#3B4B37]/30 shadow-[0_-4px_20px_rgba(27,255,60,0.1)]">
-<a class="flex flex-col items-center justify-center text-[#84967E] px-8 h-full hover:bg-[#2A2A2A] hover:text-[#1BFF3C] transition-all group active:brightness-125" href="#" style="">
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-center items-center gap-0 bg-[#1C1B1B] h-20 border-t border-[#3B4B37]/30 shadow-[0_-4px_20px_rgba(34,197,94,0.1)]">
+<a class="flex flex-col items-center justify-center text-[#84967E] px-8 h-full hover:bg-[#2A2A2A] hover:text-[#22C55E] transition-all group active:brightness-125" href="#" style="">
 <span class="material-symbols-outlined mb-1 group-hover:scale-110 transition-transform" data-icon="arrow_back_ios" style="">arrow_back_ios</span>
 <span class="font-['JetBrains_Mono'] text-[10px] uppercase tracking-tighter" style="">PREVIOUS</span>
 </a>
-<a class="flex flex-col items-center justify-center px-12 h-full transition-all active:brightness-125 text-[#1BFF3C] border-x border-[#1BFF3C]" href="#" style="">
+<a class="flex flex-col items-center justify-center px-12 h-full transition-all active:brightness-125 text-[#22C55E] border-x border-[#22C55E]" href="#" style="">
 <span class="material-symbols-outlined mb-1" data-icon="grid_view" style="">grid_view</span>
 <span class="font-['JetBrains_Mono'] text-[10px] uppercase tracking-tighter font-bold" style="">08</span>
 </a>
-<a class="flex flex-col items-center justify-center text-[#84967E] px-8 h-full hover:bg-[#2A2A2A] hover:text-[#1BFF3C] transition-all group active:brightness-125" href="#" style="">
+<a class="flex flex-col items-center justify-center text-[#84967E] px-8 h-full hover:bg-[#2A2A2A] hover:text-[#22C55E] transition-all group active:brightness-125" href="#" style="">
 <span class="material-symbols-outlined mb-1 group-hover:scale-110 transition-transform" data-icon="arrow_forward_ios" style="">arrow_forward_ios</span>
 <span class="font-['JetBrains_Mono'] text-[10px] uppercase tracking-tighter" style="">NEXT</span>
 </a>

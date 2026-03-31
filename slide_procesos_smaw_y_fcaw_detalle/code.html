@@ -27,7 +27,7 @@
                         "on-primary-fixed-variant": "#00530a",
                         "on-secondary-fixed-variant": "#554500",
                         "background": "#131313",
-                        "primary-container": "#1bff3c",
+                        "primary-container": "#22C55E",
                         "on-surface": "#e5e2e1",
                         "outline-variant": "#3b4b37",
                         "secondary-container": "#fed400",
@@ -42,7 +42,7 @@
                         "secondary": "#fff3d3",
                         "inverse-primary": "#006e11",
                         "error-container": "#93000a",
-                        "surface-tint": "#00e631",
+                        "surface-tint": "#22C55E",
                         "surface-container-highest": "#353534",
                         "on-surface-variant": "#baccb2",
                         "on-secondary": "#3b2f00",
@@ -51,8 +51,8 @@
                         "surface-container": "#201f1f",
                         "tertiary": "#fff8f7",
                         "surface-container-lowest": "#0e0e0e",
-                        "primary-fixed": "#74ff6d",
-                        "primary-fixed-dim": "#00e631",
+                        "primary-fixed": "#22C55E",
+                        "primary-fixed-dim": "#22C55E",
                         "secondary-fixed-dim": "#eac300",
                         "secondary-fixed": "#ffe174",
                         "tertiary-container": "#ffd3cd",
@@ -80,25 +80,114 @@
             font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
         }
         .glow-text {
-            text-shadow: 0px 0px 15px rgba(27, 255, 60, 0.6);
+            text-shadow: 0px 0px 15px rgba(34, 197, 94, 0.6);
         }
         .technical-line {
             background: linear-gradient(90deg, transparent, #3B4B37 15%, #3B4B37 85%, transparent);
         }
-        @media (max-width: 1023px) {
-            body, html { overflow-y: auto !important; overflow-x: hidden !important; height: auto !important; min-height: 100vh !important; }
+        /* ===== TRUE RESPONSIVE STRATEGY (Móvil, Tablet, Nest Hub, iPad Pro) ===== */
+        @media (max-width: 1366px), (max-height: 850px) {
+            body, html { 
+                overflow-y: auto !important; 
+                overflow-x: hidden !important; 
+                height: auto !important; 
+                min-height: 100vh !important; 
+                display: block !important; 
+                background-attachment: scroll !important;
+                transform: none !important;
+            }
             * { box-sizing: border-box !important; }
-            main { height: auto !important; display: block !important; padding: 100px 16px 140px 16px !important; }
-            .grid-cols-12 { display: flex !important; flex-direction: column !important; gap: 32px !important; }
-            h1 { font-size: 2.2rem !important; line-height: 1.1 !important; word-wrap: break-word !important; }
-            .text-6xl, .md\:text-8xl { font-size: 2.2rem !important; }
-            .lg\:col-span-7, .lg\:col-span-5 { width: 100% !important; flex: none !important; }
-            .aspect-square { aspect-ratio: auto !important; height: 350px !important; }
-            .pl-8 { padding-left: 16px !important; }
-            p { font-size: 1.1rem !important; line-height: 1.4 !important; }
-            header { flex-wrap: wrap !important; padding: 16px !important; gap: 12px !important; height: auto !important; position: relative !important; }
-            footer { height: auto !important; padding: 12px !important; flex-wrap: wrap !important; justify-content: center !important; gap: 8px !important; position: fixed !important; bottom: 0 !important; width: 100% !important; z-index: 50 !important; }
-            footer button, footer div { flex: 1 1 20% !important; min-width: 60px !important; padding: 12px 4px !important; border: 1px solid rgba(27,255,60,0.1) !important; }
+            
+            header { 
+                background: #131313 !important;
+                padding: 12px 16px !important;
+                position: relative !important;
+                height: auto !important;
+                display: flex !important;
+            }
+            header nav { display: none !important; }
+            
+            main { 
+                height: auto !important; 
+                padding: 20px 16px 140px 16px !important; 
+                display: block !important;
+                transform: none !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                margin-bottom: 0 !important;
+            }
+            
+            h1 { 
+                font-size: clamp(2.2rem, 8vw, 4.5rem) !important; 
+                line-height: 0.9 !important; 
+                word-wrap: break-word !important; 
+            }
+            
+            .max-w-7xl.w-full.grid.grid-cols-1.lg\:grid-cols-12 { 
+                display: flex !important; 
+                flex-direction: column !important; 
+                gap: 24px !important; 
+                width: 100% !important;
+            }
+            
+            .lg\:col-span-7, .lg\:col-span-5 { width: 100% !important; }
+            
+            .pt-8.flex.flex-col.gap-6.border-l-4 { padding-left: 16px !important; }
+            
+            .aspect-square { 
+                aspect-ratio: auto !important; 
+                height: 280px !important; 
+                min-height: 280px !important;
+            }
+            
+            .absolute.-bottom-6.-right-4 { 
+                position: relative !important; 
+                bottom: auto !important; 
+                right: auto !important; 
+                margin-top: 16px !important; 
+                max-width: 100% !important; 
+            }
+
+            footer { 
+                height: 64px !important; 
+                padding: 8px !important; 
+                flex-wrap: nowrap !important; 
+                justify-content: space-around !important; 
+                gap: 4px !important; 
+                position: fixed !important; 
+                bottom: 0 !important; 
+                width: 100% !important; 
+                z-index: 100 !important;
+                background: #1C1B1B !important;
+                display: flex !important;
+            }
+            
+            footer button, footer div { 
+                flex: 1 1 auto !important; 
+                min-width: 50px !important; 
+                height: 48px !important;
+                padding: 4px !important; 
+                border: none !important;
+                background: transparent !important;
+            }
+            footer button span.font-['JetBrains_Mono'], footer div span.font-['JetBrains_Mono'] { font-size: 9px !important; margin-top: 2px !important; }
+
+            /* Tablet adjust */
+            @media (min-width: 768px) and (max-width: 1366px) {
+                .max-w-7xl.w-full.grid.grid-cols-1.lg\:grid-cols-12 { display: grid !important; grid-template-cols: repeat(12, 1fr) !important; gap: 32px !important; }
+                .lg\:col-span-7 { grid-column: span 7 / span 12 !important; }
+                .lg\:col-span-5 { grid-column: span 5 / span 12 !important; }
+                h1 { font-size: 4.5rem !important; }
+            }
+        }
+
+        /* Protect 4K/Desktop scale alignment */
+        @media (min-width: 1367px) and (min-height: 851px) {
+            body { 
+                height: 100vh !important; 
+                overflow: hidden !important; 
+                display: flex !important;
+            }
         }
     </style>
 </head>
@@ -106,17 +195,17 @@
 <!-- Top Navigation Bar -->
 <header class="bg-[#131313] dark:bg-[#131313] flex justify-between items-center w-full px-6 py-4 docked full-width top-0 border-b border-[#3B4B37]/20 z-50">
 <div class="flex items-center gap-8">
-<span class="text-2xl font-black text-[#1BFF3C] tracking-tighter font-headline" style=""><span style="font-family: Rajdhani, sans-serif; letter-spacing: -1.2px; text-transform: uppercase;">WELD BEAR IEDU</span></span>
+<span class="text-2xl font-black text-[#22C55E] tracking-tighter font-headline" style=""><span style="font-family: Rajdhani, sans-serif; letter-spacing: -1.2px; text-transform: uppercase;">WELD BEAR IEDU</span></span>
 <nav class="hidden md:flex gap-6">
-<a class="font-['Rajdhani'] uppercase tracking-wider font-bold text-lg text-[#1BFF3C] border-b-2 border-[#1BFF3C] pb-1" href="#" style="">MODULES</a>
-<a class="font-['Rajdhani'] uppercase tracking-wider font-bold text-lg text-[#84967E] hover:text-[#1BFF3C] transition-colors" href="#" style="">SCHEMATICS</a>
-<a class="font-['Rajdhani'] uppercase tracking-wider font-bold text-lg text-[#84967E] hover:text-[#1BFF3C] transition-colors" href="#" style="">SAFETY</a>
-<a class="font-['Rajdhani'] uppercase tracking-wider font-bold text-lg text-[#84967E] hover:text-[#1BFF3C] transition-colors" href="#" style="">RESOURCES</a>
+<a class="font-['Rajdhani'] uppercase tracking-wider font-bold text-lg text-[#22C55E] border-b-2 border-[#22C55E] pb-1" href="#" style="">MODULES</a>
+<a class="font-['Rajdhani'] uppercase tracking-wider font-bold text-lg text-[#84967E] hover:text-[#22C55E] transition-colors" href="#" style="">SCHEMATICS</a>
+<a class="font-['Rajdhani'] uppercase tracking-wider font-bold text-lg text-[#84967E] hover:text-[#22C55E] transition-colors" href="#" style="">SAFETY</a>
+<a class="font-['Rajdhani'] uppercase tracking-wider font-bold text-lg text-[#84967E] hover:text-[#22C55E] transition-colors" href="#" style="">RESOURCES</a>
 </nav>
 </div>
 <div class="flex gap-4">
-<button class="material-symbols-outlined text-[#84967E] hover:text-[#1BFF3C] transition-all duration-75 ease-in-out active:scale-95" data-icon="help" style="">help</button>
-<button class="material-symbols-outlined text-[#84967E] hover:text-[#1BFF3C] transition-all duration-75 ease-in-out active:scale-95" data-icon="settings" style="">settings</button>
+<button class="material-symbols-outlined text-[#84967E] hover:text-[#22C55E] transition-all duration-75 ease-in-out active:scale-95" data-icon="help" style="">help</button>
+<button class="material-symbols-outlined text-[#84967E] hover:text-[#22C55E] transition-all duration-75 ease-in-out active:scale-95" data-icon="settings" style="">settings</button>
 </div>
 </header>
 <!-- Main Content Canvas -->
@@ -205,7 +294,7 @@
                         [ SYSTEM_SCAN: ACTIVE ]
                     </div>
 <!-- Technical Image Frame Overlay -->
-<div class="absolute bottom-0 left-0 w-full h-1 bg-primary-container shadow-[0_0_15px_rgba(27,255,60,0.6)]"></div>
+<div class="absolute bottom-0 left-0 w-full h-1 bg-primary-container shadow-[0_0_15px_rgba(34,197,94,0.6)]"></div>
 <div class="absolute top-0 left-0 w-1 h-full bg-primary-container/20"></div>
 <!-- Schematic Image Alternative for SEO/Accessibility -->
 <img alt="Industrial welding blueprint" class="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-20 grayscale" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhlV6WLpJf0rDU8KUTlByIDgEz8t1sJZp6-scKaWWZzyZudx1hH5T0QBhxsYy9nIye6cA9ykrZvvqAkaeOnPC8Ax7vLf0imeeTbJpRdPFxWARaC8G_y319xU39KTQNWCqv2NE07ihm2-Rtv-2uuGa0ouYfhqNZw6yZ9Arirs-ghzNPxVZuoLUA-vyG-Fe6GJ6YSvZUC3svHbiEB6Sr2hQxCCe_xZMONmJkWZGY3mjtC3Ms3elgKJvdc0eT4eP-inZkp1OirMjxpo0" style="">
@@ -220,24 +309,24 @@
 </div>
 </main>
 <!-- Bottom Navigation Shell -->
-<footer class="bg-[#1C1B1B] dark:bg-[#1C1B1B] fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-20 px-4 border-t border-[#3B4B37]/30 shadow-[0px_0px_15px_rgba(27,255,60,0.15)]">
+<footer class="bg-[#1C1B1B] dark:bg-[#1C1B1B] fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-20 px-4 border-t border-[#3B4B37]/30 shadow-[0px_0px_15px_rgba(34,197,94,0.15)]">
 <!-- Previous Button -->
-<button class="flex flex-col items-center justify-center text-[#84967E] px-6 py-2 hover:bg-[#2A2A2A] hover:text-[#1BFF3C] transition-all duration-150 group" style="">
+<button class="flex flex-col items-center justify-center text-[#84967E] px-6 py-2 hover:bg-[#2A2A2A] hover:text-[#22C55E] transition-all duration-150 group" style="">
 <span class="material-symbols-outlined mb-1" data-icon="arrow_back" style="">arrow_back</span>
 <span class="font-['JetBrains_Mono'] text-xs font-medium uppercase tracking-widest" style="">PREVIOUS</span>
 </button>
 <!-- Status Indicator -->
-<div class="flex flex-col items-center justify-center text-[#1BFF3C] bg-[#1BFF3C]/10 px-10 py-2 border-t-2 border-[#1BFF3C]">
+<div class="flex flex-col items-center justify-center text-[#22C55E] bg-[#22C55E]/10 px-10 py-2 border-t-2 border-[#22C55E]">
 <span class="material-symbols-outlined mb-1" data-icon="numbers" style="">numbers</span>
 <span class="font-['JetBrains_Mono'] text-xs font-medium uppercase tracking-widest" style=""><br></span>
 </div>
 <!-- Next Button -->
-<button class="flex flex-col items-center justify-center text-[#84967E] px-6 py-2 hover:bg-[#2A2A2A] hover:text-[#1BFF3C] transition-all duration-150 group" style="">
+<button class="flex flex-col items-center justify-center text-[#84967E] px-6 py-2 hover:bg-[#2A2A2A] hover:text-[#22C55E] transition-all duration-150 group" style="">
 <span class="material-symbols-outlined mb-1" data-icon="arrow_forward" style="">arrow_forward</span>
 <span class="font-['JetBrains_Mono'] text-xs font-medium uppercase tracking-widest" style="">NEXT</span>
 </button>
 <!-- Home Button -->
-<button class="flex flex-col items-center justify-center text-[#84967E] px-6 py-2 hover:bg-[#2A2A2A] hover:text-[#1BFF3C] transition-all duration-150 group" style="">
+<button class="flex flex-col items-center justify-center text-[#84967E] px-6 py-2 hover:bg-[#2A2A2A] hover:text-[#22C55E] transition-all duration-150 group" style="">
 <span class="material-symbols-outlined mb-1" data-icon="home" style="">home</span>
 <span class="font-['JetBrains_Mono'] text-xs font-medium uppercase tracking-widest" style="">HOME</span>
 </button>

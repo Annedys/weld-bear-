@@ -19,7 +19,7 @@
             theme: {
                 extend: {
                     colors: {
-                        "primary-fixed": "#74ff6d",
+                        "primary-fixed": "#22C55E",
                         "on-surface-variant": "#baccb2",
                         "error": "#ffb4ab",
                         "outline": "#84967e",
@@ -31,7 +31,7 @@
                         "on-primary-fixed-variant": "#00530a",
                         "on-primary-container": "#007112",
                         "inverse-on-surface": "#313030",
-                        "surface-tint": "#00e631",
+                        "surface-tint": "#22C55E",
                         "surface-container": "#201f1f",
                         "outline-variant": "#3b4b37",
                         "surface-container-lowest": "#0e0e0e",
@@ -45,7 +45,7 @@
                         "on-tertiary-fixed-variant": "#930005",
                         "on-tertiary": "#690003",
                         "surface": "#131313",
-                        "primary-container": "#1bff3c",
+                        "primary-container": "#22C55E",
                         "surface-bright": "#393939",
                         "on-secondary-fixed": "#221b00",
                         "on-error": "#690005",
@@ -56,7 +56,7 @@
                         "on-surface": "#e5e2e1",
                         "tertiary-fixed": "#ffdad5",
                         "tertiary": "#fff8f7",
-                        "primary-fixed-dim": "#00e631",
+                        "primary-fixed-dim": "#22C55E",
                         "on-secondary-container": "#6f5c00",
                         "tertiary-container": "#ffd3cd",
                         "surface-dim": "#131313",
@@ -91,21 +91,94 @@
         }
 
         .glow-border:hover {
-            box-shadow: 0px 0px 15px rgba(27, 255, 60, 0.3);
-            border-color: #1BFF3C;
+            box-shadow: 0px 0px 15px rgba(34, 197, 94, 0.3);
+            border-color: #22C55E;
         }
-        @media (max-width: 1023px) {
-            body, html { overflow-y: auto !important; overflow-x: hidden !important; height: auto !important; min-height: 100vh !important; }
+
+        /* ===== TRUE RESPONSIVE STRATEGY (Móvil, Tablet, Nest Hub, iPad Pro) ===== */
+        @media (max-width: 1366px), (max-height: 850px) {
+            body, html { 
+                overflow-y: auto !important; 
+                overflow-x: hidden !important; 
+                height: auto !important; 
+                min-height: 100vh !important; 
+                transform: none !important;
+            }
             * { box-sizing: border-box !important; }
-            main { height: auto !important; overflow: visible !important; margin-left: 0 !important; padding: 100px 16px 140px 16px !important; }
-            .grid { display: flex !important; flex-direction: column !important; gap: 24px !important; }
-            .h-\[520px\] { height: auto !important; min-height: 400px !important; }
-            h1 { font-size: 2.8rem !important; line-height: 1.1 !important; }
-            h2 { font-size: 1.6rem !important; }
+            
+            header { 
+                background: #131313 !important;
+                padding: 10px 16px !important;
+                position: relative !important;
+                height: auto !important;
+            }
+            header .hidden.md\:flex { display: none !important; }
+            
+            main { 
+                height: auto !important; 
+                padding: 20px 16px 100px 16px !important; 
+                display: block !important;
+                transform: none !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                margin-left: 0 !important;
+            }
+            
+            h1 { 
+                font-size: clamp(2.2rem, 8vw, 3.5rem) !important; 
+                line-height: 1.1 !important; 
+                word-wrap: break-word !important;
+            }
+            
+            .grid { 
+                display: flex !important; 
+                flex-direction: column !important; 
+                gap: 20px !important; 
+                width: 100% !important;
+            }
+            
+            .h-\[520px\] { height: auto !important; min-height: 0 !important; }
+            .h-40 { height: 180px !important; }
+            
+            h2 { font-size: 1.5rem !important; }
             p { font-size: 1.1rem !important; line-height: 1.4 !important; }
-            nav { height: auto !important; padding: 10px !important; flex-wrap: wrap !important; justify-content: center !important; gap: 8px !important; }
-            nav button, nav div { flex: 1 1 20% !important; min-width: 60px !important; padding: 8px !important; }
-            header { flex-wrap: wrap !important; padding: 8px 16px !important; }
+            
+            .p-8 { padding: 1.5rem !important; }
+            
+            nav { 
+                height: 64px !important; 
+                padding: 8px !important; 
+                flex-wrap: nowrap !important; 
+                justify-content: space-around !important; 
+                gap: 4px !important; 
+                position: fixed !important; 
+                bottom: 0 !important; 
+                width: 100% !important; 
+                z-index: 100 !important;
+                background: #1C1B1B !important;
+            }
+            
+            nav button, nav div { 
+                flex: 1 1 auto !important; 
+                min-width: 50px !important; 
+                height: 48px !important;
+                padding: 4px !important; 
+            }
+            nav button span, nav div span { font-size: 18px !important; }
+            nav button span:not(.material-symbols-outlined), 
+            nav div span:not(.material-symbols-outlined) { font-size: 9px !important; margin-top: 2px !important; }
+
+            /* Tablet adjust */
+            @media (min-width: 768px) and (max-width: 1366px) {
+                .grid { display: grid !important; grid-template-cols: repeat(3, 1fr) !important; align-items: stretch !important; }
+                h1 { font-size: 3.5rem !important; }
+            }
+
+            /* Small mobile specific */
+            @media (max-width: 340px) {
+                h1 { font-size: 1.8rem !important; }
+                h2 { font-size: 1.3rem !important; }
+            }
         }
     </style>
 </head>
@@ -117,7 +190,7 @@
         class="bg-[#131313] dark:bg-[#131313] docked full-width top-0 border-b border-[#3B4B37]/20 flex justify-between items-center w-full px-6 py-4 z-50">
         <div class="flex items-center gap-4">
             <span
-                class="font-['Rajdhani'] uppercase tracking-tighter font-bold text-xl font-black text-[#1BFF3C] drop-shadow-[0_0_10px_rgba(27,255,60,0.3)]">WELD
+                class="font-['Rajdhani'] uppercase tracking-tighter font-bold text-xl font-black text-[#22C55E] drop-shadow-[0_0_10px_rgba(34,197,94,0.3)]">WELD
                 BEAR IEDU</span>
             <div class="h-4 w-[1px] bg-outline-variant/30"></div>
             <span class="font-label text-[10px] tracking-[0.2em] text-outline uppercase">Module: Oxy-Acetylene</span>
@@ -125,9 +198,9 @@
         <div class="flex items-center gap-6">
             <div class="flex gap-4">
                 <button
-                    class="material-symbols-outlined text-[#84967E] opacity-50 hover:bg-[#1BFF3C]/10 transition-colors p-2">settings</button>
+                    class="material-symbols-outlined text-[#84967E] opacity-50 hover:bg-[#22C55E]/10 transition-colors p-2">settings</button>
                 <button
-                    class="material-symbols-outlined text-[#84967E] opacity-50 hover:bg-[#1BFF3C]/10 transition-colors p-2">help_outline</button>
+                    class="material-symbols-outlined text-[#84967E] opacity-50 hover:bg-[#22C55E]/10 transition-colors p-2">help_outline</button>
             </div>
             <div
                 class="w-10 h-10 bg-surface-container-high border border-outline-variant/20 flex items-center justify-center">
@@ -152,13 +225,13 @@
             <div
                 class="bg-surface-container-low border border-outline-variant/20 transition-all duration-300 glow-border group flex flex-col h-[520px]">
                 <div class="p-6 border-b border-outline-variant/20 flex justify-between items-center">
-                    <h2 class="font-headline text-2xl font-bold text-[#1BFF3C] tracking-tighter">LLAMA NEUTRA</h2>
+                    <h2 class="font-headline text-2xl font-bold text-[#22C55E] tracking-tighter">LLAMA NEUTRA</h2>
                     <span class="font-label text-[10px] text-outline px-2 py-1 border border-outline/20">TYPE_01</span>
                 </div>
-                <div class="relative h-44 bg-surface-container-lowest overflow-hidden">
+                <div class="relative h-40 bg-surface-container-lowest overflow-hidden">
                     <img alt="Llama Neutra"
-                        class="w-full h-full object-cover object-top scale-110 group-hover:scale-125 transition-transform duration-500"
-                        src="../llamaneutra.jpg" />
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        src="../llama_neutra12.jpg" />
                 </div>
                 <div class="p-8 flex-grow flex items-center">
                     <p class="text-on-surface text-xl font-medium leading-relaxed">
@@ -171,13 +244,13 @@
             <div
                 class="bg-surface-container-low border border-outline-variant/20 transition-all duration-300 glow-border group flex flex-col h-[520px]">
                 <div class="p-6 border-b border-outline-variant/20 flex justify-between items-center">
-                    <h2 class="font-headline text-2xl font-bold text-[#1BFF3C] tracking-tighter">LLAMA CARBURANTE</h2>
+                    <h2 class="font-headline text-2xl font-bold text-[#22C55E] tracking-tighter">LLAMA CARBURANTE</h2>
                     <span class="font-label text-[10px] text-outline px-2 py-1 border border-outline/20">TYPE_02</span>
                 </div>
-                <div class="relative h-44 bg-surface-container-lowest overflow-hidden">
+                <div class="relative h-40 bg-surface-container-lowest overflow-hidden">
                     <img alt="Llama Carburante"
-                        class="w-full h-full object-cover object-top scale-110 group-hover:scale-125 transition-transform duration-500"
-                        src="../llamacarburante.jpg" />
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        src="../llama_carburante12.jpg" />
                 </div>
                 <div class="p-8 flex-grow flex items-center">
                     <p class="text-on-surface text-xl font-medium leading-relaxed">
@@ -190,13 +263,13 @@
             <div
                 class="bg-surface-container-low border border-outline-variant/20 transition-all duration-300 glow-border group flex flex-col h-[520px]">
                 <div class="p-6 border-b border-outline-variant/20 flex justify-between items-center">
-                    <h2 class="font-headline text-2xl font-bold text-[#1BFF3C] tracking-tighter">LLAMA OXIDANTE</h2>
+                    <h2 class="font-headline text-2xl font-bold text-[#22C55E] tracking-tighter">LLAMA OXIDANTE</h2>
                     <span class="font-label text-[10px] text-outline px-2 py-1 border border-outline/20">TYPE_03</span>
                 </div>
-                <div class="relative h-44 bg-surface-container-lowest overflow-hidden">
+                <div class="relative h-40 bg-surface-container-lowest overflow-hidden">
                     <img alt="Llama Oxidante"
-                        class="w-full h-full object-cover object-top scale-110 group-hover:scale-125 transition-transform duration-500"
-                        src="../llamaoxidante.jpg" />
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        src="../llama_oxidante12.jpg" />
                 </div>
                 <div class="p-8 flex-grow flex items-center">
                     <p class="text-on-surface text-xl font-medium leading-relaxed">
@@ -210,19 +283,19 @@
     </main>
     <!-- BottomNavBar -->
     <nav
-        class="bg-[#1C1B1B] dark:bg-[#1C1B1B] fixed bottom-0 left-0 w-full z-50 flex justify-between items-center px-12 py-3 border-t border-[#3B4B37]/30 shadow-[0px_0px_15px_rgba(27,255,60,0.1)]">
+        class="bg-[#1C1B1B] dark:bg-[#1C1B1B] fixed bottom-0 left-0 w-full z-50 flex justify-between items-center px-12 py-3 border-t border-[#3B4B37]/30 shadow-[0px_0px_15px_rgba(34,197,94,0.1)]">
         <button
-            class="flex flex-col items-center justify-center text-[#84967E] px-8 py-2 font-['JetBrains_Mono'] text-xs tracking-widest hover:text-[#1BFF3C] hover:bg-[#2A2A2A] transition-all duration-200">
+            class="flex flex-col items-center justify-center text-[#84967E] px-8 py-2 font-['JetBrains_Mono'] text-xs tracking-widest hover:text-[#22C55E] hover:bg-[#2A2A2A] transition-all duration-200">
             <span class="material-symbols-outlined mb-1">arrow_back</span>
             <span>PREVIOUS</span>
         </button>
         <div
-            class="flex flex-col items-center justify-center border border-[#1BFF3C] text-[#1BFF3C] px-8 py-2 font-['JetBrains_Mono'] text-xs tracking-widest font-bold bg-[#1BFF3C]/5">
+            class="flex flex-col items-center justify-center border border-[#22C55E] text-[#22C55E] px-8 py-2 font-['JetBrains_Mono'] text-xs tracking-widest font-bold bg-[#22C55E]/5">
             <span class="material-symbols-outlined mb-1">analytics</span>
             <span>05</span>
         </div>
         <button
-            class="flex flex-col items-center justify-center text-[#84967E] px-8 py-2 font-['JetBrains_Mono'] text-xs tracking-widest hover:text-[#1BFF3C] hover:bg-[#2A2A2A] transition-all duration-200">
+            class="flex flex-col items-center justify-center text-[#84967E] px-8 py-2 font-['JetBrains_Mono'] text-xs tracking-widest hover:text-[#22C55E] hover:bg-[#2A2A2A] transition-all duration-200">
             <span class="material-symbols-outlined mb-1">arrow_forward</span>
             <span>NEXT</span>
         </button>

@@ -24,17 +24,17 @@
                         "on-tertiary-container": "#c5020c",
                         "on-primary-fixed": "#002202",
                         "on-secondary-fixed-variant": "#554500",
-                        "primary-fixed": "#74ff6d",
-                        "surface-tint": "#00e631",
+                        "primary-fixed": "#22C55E",
+                        "surface-tint": "#22C55E",
                         "primary": "#ecffe3",
                         "tertiary-fixed-dim": "#ffb4aa",
                         "outline-variant": "#3b4b37",
                         "on-primary-container": "#007112",
                         "surface-container-high": "#2a2a2a",
                         "on-secondary-container": "#6f5c00",
-                        "primary-container": "#1bff3c",
+                        "primary-container": "#22C55E",
                         "surface-container-highest": "#353534",
-                        "primary-fixed-dim": "#00e631",
+                        "primary-fixed-dim": "#22C55E",
                         "surface-container": "#201f1f",
                         "surface-variant": "#353534",
                         "on-surface": "#e5e2e1",
@@ -91,55 +91,136 @@
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
+
         @media (max-width: 1023px) {
-            body, html { overflow-y: auto !important; overflow-x: hidden !important; height: auto !important; min-height: 100vh !important; }
-            * { box-sizing: border-box !important; }
-            main { height: auto !important; overflow: visible !important; display: flex !important; flex-direction: column !important; padding: 100px 16px 140px 16px !important; }
-            h1 { font-size: 2.2rem !important; line-height: 1.1 !important; word-wrap: break-word !important; }
-            p, .text-xl { font-size: 1.1rem !important; line-height: 1.4 !important; }
-            .flex.flex-wrap, .grid, .grid-cols-1 { display: flex !important; flex-direction: column !important; gap: 24px !important; }
-            .w-full.md\:w-\[calc\(50\%-1rem\)\], .w-full.lg\:w-\[calc\(33\%-1\.33rem\)\] { width: 100% !important; }
-            header.fixed { flex-wrap: wrap !important; height: auto !important; padding: 16px !important; gap: 12px !important; position: relative !important; }
-            footer.fixed { height: auto !important; padding: 12px !important; flex-wrap: wrap !important; justify-content: center !important; gap: 8px !important; position: fixed !important; bottom: 0 !important; width: 100% !important; z-index: 50 !important; }
-            footer.fixed button, footer.fixed div { flex: 1 1 20% !important; min-width: 60px !important; padding: 12px 4px !important; border: 1px solid rgba(27,255,60,0.1) !important; margin: 0 !important; }
+            body,
+            html {
+                overflow-y: auto !important;
+                overflow-x: hidden !important;
+                height: auto !important;
+                min-height: 100vh !important;
+            }
+
+            #frame-container { 
+                transform: none !important; 
+                width: 100% !important; 
+                max-width: 100% !important; 
+                height: auto !important; 
+                position: relative !important;
+                display: flex !important;
+                flex-direction: column !important;
+            }
+
+            main {
+                height: auto !important;
+                overflow: visible !important;
+                display: flex !important;
+                flex-direction: column !important;
+                padding: 100px 16px 140px 16px !important;
+                max-width: 100% !important;
+            }
+
+            h1 {
+                font-size: 2.2rem !important;
+                line-height: 1.1 !important;
+                word-wrap: break-word !important;
+            }
+
+            p,
+            .text-xl {
+                font-size: 1.1rem !important;
+                line-height: 1.4 !important;
+            }
+
+            .flex.flex-wrap,
+            .grid,
+            .grid-cols-1 {
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 20px !important;
+                width: 100% !important;
+            }
+
+            .w-full.md\:w-\[calc\(50\%-1rem\)\],
+            .w-full.lg\:w-\[calc\(33\%-1\.33rem\)\] {
+                width: 100% !important;
+            }
+
+            header {
+                flex-wrap: wrap !important;
+                height: auto !important;
+                padding: 16px !important;
+                gap: 12px !important;
+                position: relative !important;
+                width: 100% !important;
+            }
+
+            footer {
+                height: auto !important;
+                padding: 12px !important;
+                flex-wrap: wrap !important;
+                justify-content: center !important;
+                gap: 8px !important;
+                position: fixed !important;
+                bottom: 0 !important;
+                width: 100% !important;
+                z-index: 50 !important;
+            }
+
+            footer button, footer div { 
+                flex: 1 1 25% !important; 
+                min-width: 80px !important; 
+                padding: 12px 4px !important; 
+                border: 1px solid rgba(34,197,94,0.1) !important; 
+                margin: 0 !important; 
+                box-shadow: none !important;
+            }
+
+            /* Specific text adjustments for very small screens */
+            @media (max-width: 350px) {
+                h1 { font-size: 1.8rem !important; }
+            }
         }
     </style>
 </head>
 
-<body class="min-h-screen text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+<body
+    class="min-h-screen text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container overflow-y-hidden">
+<div id="frame-container" class="min-h-screen flex flex-col">
     <!-- TopAppBar -->
     <header
-        class="bg-[#131313] dark:bg-[#131313] docked full-width top-0 border-b-0 bg-[#1C1B1B] border-none shadow-[0px_0px_15px_rgba(27,255,60,0.1)] flex justify-between items-center w-full px-6 py-4 fixed z-50">
+        class="bg-[#131313] dark:bg-[#131313] docked full-width top-0 border-b-0 bg-[#1C1B1B] border-none shadow-[0px_0px_15px_rgba(34,197,94,0.1)] flex justify-between items-center w-full px-6 py-4 fixed z-50">
         <div class="flex items-center gap-4">
             <span
-                class="text-xl font-black text-[#1BFF3C] tracking-tighter font-['Rajdhani'] uppercase tracking-widest font-bold"
+                class="text-xl font-black text-[#22C55E] tracking-tighter font-['Rajdhani'] uppercase tracking-widest font-bold"
                 style=""><span style="font-family: Rajdhani, sans-serif; font-size: 24px; letter-spacing: -1.2px;">WELD
                     BEAR IEDU</span></span>
         </div>
         <nav class="flex items-center gap-6">
             <button
-                class="material-symbols-outlined text-[#84967E] hover:text-[#1BFF3C] transition-all duration-150 ease-in-out"
+                class="material-symbols-outlined text-[#84967E] hover:text-[#22C55E] transition-all duration-150 ease-in-out"
                 data-icon="info" style="">info</button>
             <button
-                class="material-symbols-outlined text-[#84967E] hover:text-[#1BFF3C] transition-all duration-150 ease-in-out"
+                class="material-symbols-outlined text-[#84967E] hover:text-[#22C55E] transition-all duration-150 ease-in-out"
                 data-icon="settings" style="">settings</button>
         </nav>
     </header>
-    <main class="pt-24 pb-16 px-6 max-w-7xl mx-auto overflow-hidden">
+
+    <main class="pt-16 pb-8 px-6 max-w-7xl mx-auto overflow-hidden">
         <!-- Content Header -->
-        <div class="mb-8">
+        <div class="mb-2">
             <h1
-                class="font-headline text-5xl md:text-7xl font-extrabold uppercase tracking-tight text-on-surface leading-none mb-4">
+                class="font-headline text-5xl md:text-7xl font-extrabold uppercase tracking-tight text-on-surface leading-none mb-1">
                 TIPOS DE JUNTAS
             </h1>
-            <p class="text-xl leading-relaxed text-on-surface-variant font-medium max-w-4xl">
-                Las juntas más comunes en procesos de soldadura industrial se clasifican según la disposición geométrica
-                de las piezas a unir, requiriendo preparación y técnicas específicas.
+            <p class="text-lg leading-relaxed text-on-surface-variant font-medium max-w-4xl">
+                Las juntas más comunes en procesos de soldadura industrial, requiriendo preparación y técnicas
+                específicas.
             </p>
         </div>
 
         <!-- Juntas Visual Layout: 2 + 3 centered -->
-        <div class="flex flex-col gap-6">
+        <div class="flex flex-col gap-3">
             <!-- Row 1: 2 Centered Cards -->
             <div class="flex flex-wrap justify-center gap-6">
                 <!-- Junta 01: A Tope -->
@@ -150,8 +231,8 @@
                         <h3 class="font-headline text-xl font-bold uppercase tracking-wider text-on-surface">Junta A
                             Tope</h3>
                     </div>
-                    <div class="h-64 bg-surface-container-lowest overflow-hidden flex items-center justify-center p-6">
-                        <img src="../junta tope.png" alt="Junta a tope"
+                    <div class="h-64 bg-surface-container-lowest overflow-hidden flex items-center justify-center p-1">
+                        <img src="../juntatopeverde.png" alt="Junta a tope"
                             class="max-w-full max-h-full object-contain transition-all duration-500 transform group-hover:scale-110">
                     </div>
                 </div>
@@ -164,8 +245,8 @@
                         <h3 class="font-headline text-xl font-bold uppercase tracking-wider text-on-surface">Junta de
                             Esquina</h3>
                     </div>
-                    <div class="h-64 bg-surface-container-lowest overflow-hidden flex items-center justify-center p-6">
-                        <img src="../junta esquina.png" alt="Junta de esquina"
+                    <div class="h-64 bg-surface-container-lowest overflow-hidden flex items-center justify-center p-1">
+                        <img src="../juntaesquinav.png" alt="Junta de esquina"
                             class="max-w-full max-h-full object-contain transition-all duration-500 transform group-hover:scale-110">
                     </div>
                 </div>
@@ -181,8 +262,8 @@
                         <h3 class="font-headline text-xl font-bold uppercase tracking-wider text-on-surface">Junta de
                             Borde</h3>
                     </div>
-                    <div class="h-64 bg-surface-container-lowest overflow-hidden flex items-center justify-center p-6">
-                        <img src="../junta borde.png" alt="Junta de borde"
+                    <div class="h-64 bg-surface-container-lowest overflow-hidden flex items-center justify-center p-1">
+                        <img src="../juntabordev.png" alt="Junta de borde"
                             class="max-w-full max-h-full object-contain transition-all duration-500 transform group-hover:scale-110">
                     </div>
                 </div>
@@ -195,8 +276,8 @@
                         <h3 class="font-headline text-xl font-bold uppercase tracking-wider text-on-surface">Junta de
                             Traslape</h3>
                     </div>
-                    <div class="h-64 bg-surface-container-lowest overflow-hidden flex items-center justify-center p-6">
-                        <img src="../junta traslape.png" alt="Junta traslapada"
+                    <div class="h-64 bg-surface-container-lowest overflow-hidden flex items-center justify-center p-1">
+                        <img src="../juntatraslapev.png" alt="Junta traslapada"
                             class="max-w-full max-h-full object-contain transition-all duration-500 transform group-hover:scale-110">
                     </div>
                 </div>
@@ -209,8 +290,8 @@
                         <h3 class="font-headline text-xl font-bold uppercase tracking-wider text-on-surface">Junta en T
                         </h3>
                     </div>
-                    <div class="h-64 bg-surface-container-lowest overflow-hidden flex items-center justify-center p-6">
-                        <img src="../juntat.png" alt="Junta en T"
+                    <div class="h-64 bg-surface-container-lowest overflow-hidden flex items-center justify-center p-1">
+                        <img src="../juntaTverde.png" alt="Junta en T"
                             class="max-w-full max-h-full object-contain transition-all duration-500 transform group-hover:scale-110">
                     </div>
                 </div>
@@ -222,21 +303,21 @@
         class="bg-[#131313] dark:bg-[#131313] fixed bottom-0 left-0 w-full z-50 flex justify-between items-center px-8 font-['JetBrains_Mono'] text-xs font-bold uppercase border-t border-[#3B4B37]/20 tonal-shift-from-surface-to-low">
         <!-- PREVIOUS -->
         <button
-            class="flex flex-col items-center justify-center text-[#84967E] p-4 hover:bg-[#1BFF3C]/10 hover:text-[#1BFF3C] transition-all duration-150 ease-in-out active:scale-95 duration-75"
+            class="flex flex-col items-center justify-center text-[#84967E] p-4 hover:bg-[#22C55E]/10 hover:text-[#22C55E] transition-all duration-150 ease-in-out active:scale-95 duration-75"
             style="">
             <span class="material-symbols-outlined mb-1" data-icon="arrow_back" style="">arrow_back</span>
             <span class="" style="">PREVIOUS</span>
         </button>
         <!-- ACTIVE: 43 / 60 -->
         <div
-            class="flex flex-col items-center justify-center text-[#1BFF3C] bg-[#1C1B1B] p-4 min-w-[120px] border-x border-[#3B4B37]/20">
+            class="flex flex-col items-center justify-center text-[#22C55E] bg-[#1C1B1B] p-4 min-w-[120px] border-x border-[#3B4B37]/20">
             <span class="material-symbols-outlined mb-1" data-icon="analytics"
                 style="font-variation-settings: &quot;FILL&quot; 1;">analytics</span>
             <span class="" style="">03</span>
         </div>
         <!-- NEXT -->
         <button
-            class="flex flex-col items-center justify-center text-[#84967E] p-4 hover:bg-[#1BFF3C]/10 hover:text-[#1BFF3C] transition-all duration-150 ease-in-out active:scale-95 duration-75"
+            class="flex flex-col items-center justify-center text-[#84967E] p-4 hover:bg-[#22C55E]/10 hover:text-[#22C55E] transition-all duration-150 ease-in-out active:scale-95 duration-75"
             style="">
             <span class="material-symbols-outlined mb-1" data-icon="arrow_forward" style="">arrow_forward</span>
             <span class="" style="">NEXT</span>

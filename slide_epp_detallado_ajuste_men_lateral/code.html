@@ -15,7 +15,7 @@
             colors: {
               "surface-variant": "#353534",
               "on-secondary": "#3b2f00",
-              "primary-fixed-dim": "#00e631",
+              "primary-fixed-dim": "#22C55E",
               "on-primary": "#003a05",
               "error": "#ffb4ab",
               "outline": "#84967e",
@@ -25,7 +25,7 @@
               "inverse-surface": "#e5e2e1",
               "tertiary-fixed-dim": "#ffb4aa",
               "tertiary-fixed": "#ffdad5",
-              "primary-fixed": "#74ff6d",
+              "primary-fixed": "#22C55E",
               "secondary-container": "#fed400",
               "surface-container": "#201f1f",
               "background": "#131313",
@@ -37,11 +37,11 @@
               "surface": "#131313",
               "surface-container-lowest": "#0e0e0e",
               "on-primary-container": "#007112",
-              "surface-tint": "#00e631",
+              "surface-tint": "#22C55E",
               "inverse-on-surface": "#313030",
               "surface-container-low": "#1c1b1b",
               "secondary": "#fff3d3",
-              "primary-container": "#1bff3c",
+              "primary-container": "#22C55E",
               "on-tertiary-fixed": "#410001",
               "inverse-primary": "#006e11",
               "tertiary": "#fff8f7",
@@ -88,55 +88,58 @@
       .pointer-line {
         position: absolute;
         height: 1px;
-        background: #1BFF3C;
-        box-shadow: 0 0 8px #1BFF3C;
+        background: #22C55E;
+        box-shadow: 0 0 8px #22C55E;
       }
       .pointer-dot {
         position: absolute;
         width: 6px;
         height: 6px;
-        background: #1BFF3C;
+        background: #22C55E;
         border-radius: 50%;
-        box-shadow: 0 0 10px #1BFF3C;
+        box-shadow: 0 0 10px #22C55E;
       }
       @media (max-width: 1023px) {
-        body, html { overflow-y: auto !important; overflow-x: hidden !important; height: auto !important; }
+        body, html { overflow-y: auto !important; overflow-x: hidden !important; height: auto !important; min-height: 100vh !important; }
         * { box-sizing: border-box !important; }
-        aside { position: static !important; width: 100% !important; height: auto !important; padding-top: 80px !important; padding-bottom: 16px !important; border-right: none !important; border-bottom: 1px solid rgba(59,75,55,0.2) !important; }
-        aside nav { flex-direction: row !important; flex-wrap: wrap !important; padding: 0 16px !important; gap: 8px !important; }
-        aside nav a { padding: 8px !important; flex: 1 1 calc(50% - 8px) !important; justify-content: flex-start !important; border-left: none !important; border-top: 2px solid transparent !important; }
-        aside nav a.border-l-4 { border-top-color: #1BFF3C !important; background-color: #201f1f !important; }
-        main { margin-left: 0 !important; padding: 16px !important; padding-top: 24px !important; padding-bottom: 120px !important; height: auto !important; min-height: unset !important; }
-        .grid { display: flex !important; flex-direction: column !important; gap: 16px !important; }
-        h1 { font-size: 2.2rem !important; line-height: 1.1 !important; margin-top: 0 !important; }
-        h2 { font-size: 1.5rem !important; }
-        .text-lg { font-size: 1rem !important; line-height: 1.3 !important; }
-        p, .text-base { font-size: 1rem !important; line-height: 1.4 !important; }
-        .col-span-12 { width: 100% !important; margin: 0 !important; }
-        footer { position: fixed !important; bottom: 0 !important; width: 100% !important; height: auto !important; z-index: 50 !important; }
+        header { flex-wrap: wrap !important; height: auto !important; padding: 12px !important; gap: 8px !important; }
+        header nav { display: none !important; }
+        aside { position: relative !important; width: 100% !important; height: auto !important; padding: 80px 16px 12px 16px !important; border-right: none !important; border-bottom: 1px solid rgba(59,75,55,0.2) !important; background: #131313 !important; }
+        aside nav { flex-direction: row !important; flex-wrap: wrap !important; gap: 8px !important; padding: 0 !important; }
+        aside nav a { padding: 8px 12px !important; flex: 1 1 calc(50% - 8px) !important; font-size: 0.75rem !important; border-left: none !important; border: 1px solid rgba(34,197,94,0.2) !important; background: rgba(34,197,94,0.05) !important; border-radius: 4px !important; }
+        aside .px-6.mb-8 { margin-bottom: 12px !important; padding: 0 !important; }
+        main { margin-left: 0 !important; padding: 24px 16px 140px 16px !important; width: 100% !important; max-width: 100% !important; height: auto !important; min-height: auto !important; display: block !important; transform: none !important; scale: 1 !important; }
+        h1 { font-size: 2rem !important; line-height: 1.1 !important; word-wrap: break-word !important; }
+        p.text-lg { font-size: 0.9rem !important; line-height: 1.3 !important; }
+        .grid { display: flex !important; flex-direction: column !important; gap: 20px !important; width: 100% !important; }
+        .col-span-12, .lg:col-span-4, .lg:col-span-8 { width: 100% !important; }
+        .min-h-\[600px\], .min-h-\[300px\] { min-height: auto !important; height: auto !important; padding: 16px !important; }
+        .min-h-\[600px\] img { position: static !important; max-height: 350px !important; width: 100% !important; object-fit: contain !important; margin: 0 auto; }
+        footer { height: auto !important; padding: 12px !important; flex-wrap: wrap !important; justify-content: center !important; position: fixed !important; bottom: 0 !important; width: 100% !important; background: #131313 !important; z-index: 60 !important; }
         footer .max-w-\[1440px\] { flex-direction: column !important; gap: 12px !important; align-items: center !important; }
-        .min-h-\[600px\] { min-height: 300px !important; height: auto !important; padding: 16px !important; }
-        .min-h-\[600px\] img { position: static !important; max-height: 400px !important; width: 100% !important; object-fit: contain !important; }
+        footer .flex.gap-8 { flex-wrap: wrap !important; justify-content: center !important; gap: 16px !important; }
+        footer a { font-size: 0.65rem !important; }
+        .border-l-4.pl-6 { border-left-width: 3px !important; padding-left: 12px !important; }
       }
     </style>
 </head>
 <body class="font-body selection:bg-primary-container selection:text-on-primary overflow-x-hidden">
 <!-- TopAppBar -->
 <header class="fixed top-0 w-full z-50 flex justify-between items-center px-6 py-4 bg-[#131313] bg-opacity-80 backdrop-blur-md border-b border-[#3B4B37]/20">
-<div class="text-[#1BFF3C] font-bold tracking-tighter text-2xl font-headline"><span style="font-family: Rajdhani, sans-serif; letter-spacing: -1.2px; text-transform: uppercase; background-color: rgb(19, 19, 19);">WELD  BEAR  IEDU</span></div>
+<div class="text-[#22C55E] font-bold tracking-tighter text-2xl font-headline"><span style="font-family: Rajdhani, sans-serif; letter-spacing: -1.2px; text-transform: uppercase; background-color: rgb(19, 19, 19);">WELD  BEAR  IEDU</span></div>
 <nav class="hidden md:flex gap-8 font-['Rajdhani'] uppercase tracking-widest font-bold text-xl">
-<a class="text-[#84967E] hover:text-[#1BFF3C] transition-colors" href="#">MODULES</a>
-<a class="text-[#1BFF3C] border-b-2 border-[#1BFF3C] pb-1" href="#">SCHEMATICS</a>
-<a class="text-[#84967E] hover:text-[#1BFF3C] transition-colors" href="#">LOGS</a>
+<a class="text-[#84967E] hover:text-[#22C55E] transition-colors" href="#">MODULES</a>
+<a class="text-[#22C55E] border-b-2 border-[#22C55E] pb-1" href="#">SCHEMATICS</a>
+<a class="text-[#84967E] hover:text-[#22C55E] transition-colors" href="#">LOGS</a>
 </nav>
 <div class="flex gap-4 items-center">
-<button class="p-2 text-[#1BFF3C] hover:bg-[#1BFF3C]/10 transition-all active:scale-95">
+<button class="p-2 text-[#22C55E] hover:bg-[#22C55E]/10 transition-all active:scale-95">
 <span class="material-symbols-outlined" data-icon="settings">settings</span>
 </button>
-<button class="p-2 text-[#1BFF3C] hover:bg-[#1BFF3C]/10 transition-all active:scale-95">
+<button class="p-2 text-[#22C55E] hover:bg-[#22C55E]/10 transition-all active:scale-95">
 <span class="material-symbols-outlined" data-icon="sensors">sensors</span>
 </button>
-<button class="p-2 text-[#1BFF3C] hover:bg-[#1BFF3C]/10 transition-all active:scale-95">
+<button class="p-2 text-[#22C55E] hover:bg-[#22C55E]/10 transition-all active:scale-95">
 <span class="material-symbols-outlined" data-icon="power_settings_new">power_settings_new</span>
 </button>
 </div>
@@ -144,7 +147,7 @@
 <!-- SideNavBar -->
 <aside class="fixed left-0 top-0 h-full flex flex-col pt-24 pb-12 w-64 z-40 bg-[#131313] border-r border-[#3B4B37]/20 font-['Space_Grotesk'] font-medium text-sm tracking-tight">
 <div class="px-6 mb-8">
-<div class="font-['JetBrains_Mono'] text-[#1BFF3C] text-xs mb-1">SYSTEM_ACTIVE</div>
+<div class="font-['JetBrains_Mono'] text-[#22C55E] text-xs mb-1">SYSTEM_ACTIVE</div>
 <div class="text-outline text-[10px] uppercase">OPERATOR_0821</div>
 </div>
 <nav class="flex flex-col flex-grow">
@@ -152,8 +155,8 @@
 <span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
                 DASHBOARD
             </a>
-<a class="flex items-center gap-4 px-6 py-4 font-bold border-l-4 border-[#1BFF3C] bg-[#131313] text-white" href="#">
-<span class="material-symbols-outlined text-[#1BFF3C]" data-icon="precision_manufacturing">precision_manufacturing</span>
+<a class="flex items-center gap-4 px-6 py-4 font-bold border-l-4 border-[#22C55E] bg-[#131313] text-white" href="#">
+<span class="material-symbols-outlined text-[#22C55E]" data-icon="precision_manufacturing">precision_manufacturing</span>
                 EQUIPMENT
             </a>
 <a class="flex items-center gap-4 px-6 py-4 text-[#84967E] hover:bg-[#2A2A2A] transition-colors" href="#">
@@ -240,7 +243,7 @@
 <!-- Right: Technical Image Area -->
 <div class="col-span-12 lg:col-span-8 relative bg-surface-container-lowest border border-outline-variant/20 p-8 min-h-[600px] flex items-center justify-center overflow-hidden">
 <!-- Background Grid Accent -->
-<div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: linear-gradient(#1BFF3C 0.5px, transparent 0.5px), linear-gradient(90deg, #1BFF3C 0.5px, transparent 0.5px); background-size: 20px 20px;"></div>
+<div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: linear-gradient(#22C55E 0.5px, transparent 0.5px), linear-gradient(90deg, #22C55E 0.5px, transparent 0.5px); background-size: 20px 20px;"></div>
 <div class="relative h-full w-full flex justify-center items-center">
 <!-- Main Welder Image Updated -->
 <img alt="Welder in full PPE with technical callouts" class="max-h-full max-w-full object-contain z-10" src="../PROTECCION AUDITIVA.jpg"/>

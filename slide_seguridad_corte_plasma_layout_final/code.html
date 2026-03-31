@@ -16,7 +16,7 @@
               "secondary": "#fff3d3",
               "primary": "#ecffe3",
               "surface-container": "#201f1f",
-              "primary-container": "#1bff3c",
+              "primary-container": "#22C55E",
               "tertiary-container": "#ffd3cd",
               "on-secondary-container": "#6f5c00",
               "on-tertiary": "#690003",
@@ -25,7 +25,7 @@
               "tertiary-fixed": "#ffdad5",
               "surface-variant": "#353534",
               "surface-container-high": "#2a2a2a",
-              "primary-fixed": "#74ff6d",
+              "primary-fixed": "#22C55E",
               "secondary-fixed": "#ffe174",
               "inverse-on-surface": "#313030",
               "surface-container-lowest": "#0e0e0e",
@@ -36,7 +36,7 @@
               "on-tertiary-fixed": "#410001",
               "on-secondary-fixed-variant": "#554500",
               "surface": "#131313",
-              "primary-fixed-dim": "#00e631",
+              "primary-fixed-dim": "#22C55E",
               "on-background": "#e5e2e1",
               "error-container": "#93000a",
               "on-surface-variant": "#baccb2",
@@ -50,7 +50,7 @@
               "on-error-container": "#ffdad6",
               "outline-variant": "#3b4b37",
               "inverse-primary": "#006e11",
-              "surface-tint": "#00e631",
+              "surface-tint": "#22C55E",
               "on-secondary": "#3b2f00",
               "inverse-surface": "#e5e2e1",
               "error": "#ffb4ab",
@@ -71,7 +71,7 @@
         },
       }
     </script>
-<style>
+    <style>
         body {
             background-color: #131313;
             background-image: 
@@ -90,19 +90,109 @@
             filter: grayscale(1) contrast(1.2) brightness(0.8);
         }
         .glow-text {
-            text-shadow: 0 0 10px rgba(27, 255, 60, 0.4);
+            text-shadow: 0 0 10px rgba(34, 197, 94, 0.4);
+        }
+
+        /* ===== TRUE RESPONSIVE STRATEGY (Móvil, Tablet, Nest Hub, iPad Pro) ===== */
+        @media (max-width: 1366px), (max-height: 850px) {
+            body, html { 
+                overflow-y: auto !important; 
+                overflow-x: hidden !important; 
+                height: auto !important; 
+                min-height: 100vh !important; 
+                display: block !important; 
+                background-attachment: scroll !important;
+                transform: none !important;
+            }
+            * { box-sizing: border-box !important; }
+            
+            header { 
+                background: #131313 !important;
+                padding: 12px 16px !important;
+                position: relative !important;
+                height: auto !important;
+                display: flex !important;
+            }
+            
+            main { 
+                height: auto !important; 
+                padding: 20px 16px 140px 16px !important; 
+                display: block !important;
+                transform: none !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                margin-bottom: 0 !important;
+            }
+            
+            h2 { 
+                font-size: clamp(2rem, 8vw, 3.5rem) !important; 
+                line-height: 1.1 !important; 
+                word-wrap: break-word !important; 
+            }
+            
+            .col-span-12, .lg\:col-span-7, .lg\:col-span-5 { width: 100% !important; }
+            
+            .pt-12 { padding-top: 0 !important; }
+            
+            .w-full.h-\[60\%\] { 
+                height: 250px !important; 
+                min-height: 250px !important;
+            }
+            
+            .blueprint-overlay { height: 100% !important; object-fit: cover !important; }
+            
+            .max-w-md { max-width: 100% !important; margin-top: 24px !important; }
+            
+            nav.fixed { 
+                height: 64px !important; 
+                padding: 8px !important; 
+                flex-wrap: nowrap !important; 
+                justify-content: space-around !important; 
+                gap: 4px !important; 
+                position: fixed !important; 
+                bottom: 0 !important; 
+                width: 100% !important; 
+                z-index: 100 !important;
+                background: #1C1B1B !important;
+                display: flex !important;
+            }
+            
+            nav.fixed button, nav.fixed div { 
+                flex: 1 1 auto !important; 
+                min-width: 50px !important; 
+                height: 48px !important;
+                padding: 4px !important; 
+                border: none !important;
+            }
+            nav.fixed button span.font-['JetBrains_Mono'], nav.fixed div span.font-['JetBrains_Mono'] { font-size: 9px !important; margin-top: 2px !important; }
+
+            /* Tablet fix */
+            @media (min-width: 768px) and (max-width: 1366px) {
+                main { display: grid !important; grid-template-cols: repeat(12, 1fr) !important; gap: 32px !important; }
+                .lg\:col-span-5 { grid-column: span 5 / span 12 !important; }
+                .lg\:col-span-7 { grid-column: span 7 / span 12 !important; }
+                h2 { font-size: 3.5rem !important; }
+            }
+        }
+
+        /* Protect 4K/Desktop scale alignment */
+        @media (min-width: 1367px) and (min-height: 851px) {
+            body { 
+                height: 100vh !important; 
+                overflow: hidden !important; 
+            }
         }
     </style>
 </head>
 <body class="font-body min-h-screen flex flex-col">
 <!-- TopAppBar -->
-<header class="bg-[#131313] dark:bg-[#131313] shadow-[0px_0px_15px_rgba(27,255,60,0.1)] flex justify-between items-center px-6 py-4 w-full fixed top-0 z-50">
+<header class="bg-[#131313] dark:bg-[#131313] shadow-[0px_0px_15px_rgba(34,197,94,0.1)] flex justify-between items-center px-6 py-4 w-full fixed top-0 z-50">
 <div class="flex items-center gap-4">
-<span class="text-[#1BFF3C] font-['Rajdhani'] font-black tracking-tighter text-2xl">WELD BEAR IEDU</span>
+<span class="text-[#22C55E] font-['Rajdhani'] font-black tracking-tighter text-2xl">WELD BEAR IEDU</span>
 </div>
 <div class="flex items-center gap-6">
-<span class="material-symbols-outlined text-[#84967E] hover:text-[#1BFF3C] transition-colors cursor-pointer" data-icon="settings">settings</span>
-<span class="material-symbols-outlined text-[#84967E] hover:text-[#1BFF3C] transition-colors cursor-pointer" data-icon="help_outline">help_outline</span>
+<span class="material-symbols-outlined text-[#84967E] hover:text-[#22C55E] transition-colors cursor-pointer" data-icon="settings">settings</span>
+<span class="material-symbols-outlined text-[#84967E] hover:text-[#22C55E] transition-colors cursor-pointer" data-icon="help_outline">help_outline</span>
 <div class="w-10 h-10 border border-outline-variant p-0.5">
 <img alt="instructor_avatar" class="w-full h-full object-cover grayscale" data-alt="Professional portrait of a technical instructor in a workshop setting, serious expression, high contrast lighting, black and white photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQm0eFmqvdMwfZLw_WI4TtaPGIGyzz0Wz5-UFLFk9KTRezZzrwalyyhipbAm-9kCALindAZJg4E-yeFEMCtYsutDv42SwkWisGtrBeyWkTyxFqkiabHXqpAe8_VlK2CC6leUosE5o_7tuovH8IlxCMWJduGD_H5oPPl9YpGAO-354cjbmVETFjVVytmW5GPkA64pALMHhBBlEHEjRdNg2VHpVGiwpodZuop7M6YTFGkW5u7JlpIcfwaEjcw2cx1hoiVvS5h46YlVA"/>
 </div>
@@ -154,9 +244,9 @@
 <img alt="plasma_cutting_technical" class="w-full h-full object-cover blueprint-overlay" data-alt="Technical close-up of a worker in protective gear using a plasma cutter, high-speed photography capturing intense sparks and bright white plasma arc in a dark industrial workshop." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSTFKFBQfiYUBjuiETuAUXfJooV6Mal3CCXQiQ2uZwH7GoeqRDS33YaHyEmBSFVKnQLEFyG5rg7ksCZyaqz0QNmKr8Yrf8XqdihY1vn2usN462w5zdikyf4iz8OxHD2mm3ze1wXTigTwXHmNrVR2GvVSHL_q3M4bt31wi70A2n3aDWwlCF_DNU16YVH4uodQrwEl4-8J9OhhIY9yihxk1nLCCo0H9xyf7FIZb6yKVr_yl0654jt42lgdKkwGI9kkI_74nSCu7PqV4"/>
 <!-- Crosshair SVG overlay -->
 <svg class="absolute inset-0 w-full h-full pointer-events-none opacity-30" xmlns="http://www.w3.org/2000/svg">
-<line stroke="#1BFF3C" stroke-width="0.5" x1="50%" x2="50%" y1="0" y2="100%"></line>
-<line stroke="#1BFF3C" stroke-width="0.5" x1="0" x2="100%" y1="50%" y2="50%"></line>
-<circle cx="50%" cy="50%" fill="none" r="40" stroke="#1BFF3C" stroke-width="0.5"></circle>
+<line stroke="#22C55E" stroke-width="0.5" x1="50%" x2="50%" y1="0" y2="100%"></line>
+<line stroke="#22C55E" stroke-width="0.5" x1="0" x2="100%" y1="50%" y2="50%"></line>
+<circle cx="50%" cy="50%" fill="none" r="40" stroke="#22C55E" stroke-width="0.5"></circle>
 </svg>
 </div>
 <!-- Danger / Warning Card -->
@@ -182,24 +272,24 @@
 <!-- BottomNavBar -->
 <nav class="fixed bottom-0 left-0 w-full z-50 flex justify-between items-center px-8 pb-4 h-20 bg-[#131313] border-t border-[#3B4B37]/20">
 <!-- Previous Segment -->
-<button class="flex flex-col items-center justify-center text-[#84967E] pt-2 hover:bg-[#1C1B1B] hover:text-[#1BFF3C] transition-all group">
+<button class="flex flex-col items-center justify-center text-[#84967E] pt-2 hover:bg-[#1C1B1B] hover:text-[#22C55E] transition-all group">
 <span class="material-symbols-outlined mb-1" data-icon="arrow_back_ios">arrow_back_ios</span>
 <span class="font-['JetBrains_Mono'] text-[10px] uppercase tracking-widest">PREVIOUS_SEGMENT</span>
 </button>
 <!-- Current Slide (Active State) -->
-<div class="flex flex-col items-center justify-center text-[#1BFF3C] border-t-2 border-[#1BFF3C] pt-2 px-12 h-full">
+<div class="flex flex-col items-center justify-center text-[#22C55E] border-t-2 border-[#22C55E] pt-2 px-12 h-full">
 <span class="material-symbols-outlined text-3xl mb-1" data-icon="analytics" data-weight="fill" style="font-variation-settings: 'FILL' 1;">analytics</span>
 <span class="font-['JetBrains_Mono'] text-[10px] uppercase tracking-widest font-bold">SLIDE_18_OF_60</span>
 </div>
 <!-- Next Segment -->
-<button class="flex flex-col items-center justify-center text-[#84967E] pt-2 hover:bg-[#1C1B1B] hover:text-[#1BFF3C] transition-all group">
+<button class="flex flex-col items-center justify-center text-[#84967E] pt-2 hover:bg-[#1C1B1B] hover:text-[#22C55E] transition-all group">
 <span class="material-symbols-outlined mb-1" data-icon="arrow_forward_ios">arrow_forward_ios</span>
 <span class="font-['JetBrains_Mono'] text-[10px] uppercase tracking-widest">NEXT_SEGMENT</span>
 </button>
 </nav>
 <!-- Background Decoration -->
 <div class="fixed top-0 left-0 w-full h-1 bg-[#1C1B1B]">
-<div class="bg-[#1BFF3C] h-full w-[30%] shadow-[0_0_10px_#1BFF3C]"></div>
+<div class="bg-[#22C55E] h-full w-[30%] shadow-[0_0_10px_#22C55E]"></div>
 </div>
 </div>
 

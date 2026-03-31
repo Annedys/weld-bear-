@@ -17,9 +17,9 @@
                         "on-surface-variant": "#baccb2",
                         "outline": "#84967e",
                         "tertiary-fixed": "#ffdad5",
-                        "primary-fixed-dim": "#00e631",
+                        "primary-fixed-dim": "#22C55E",
                         "secondary-container": "#fed400",
-                        "primary-container": "#1bff3c",
+                        "primary-container": "#22C55E",
                         "primary": "#ecffe3",
                         "surface-container-highest": "#353534",
                         "surface": "#131313",
@@ -40,10 +40,10 @@
                         "on-primary-fixed-variant": "#00530a",
                         "on-tertiary-container": "#c5020c",
                         "on-surface": "#e5e2e1",
-                        "primary-fixed": "#74ff6d",
+                        "primary-fixed": "#22C55E",
                         "tertiary-fixed-dim": "#ffb4aa",
                         "inverse-primary": "#006e11",
-                        "surface-tint": "#00e631",
+                        "surface-tint": "#22C55E",
                         "on-secondary-fixed-variant": "#554500",
                         "on-background": "#e5e2e1",
                         "on-tertiary-fixed-variant": "#930005",
@@ -78,35 +78,126 @@
                 linear-gradient(to bottom, rgba(59, 75, 55, 0.1) 1px, transparent 1px);
             background-size: 40px 40px;
         }
-        @media (max-width: 1023px) {
-            body, html { overflow-y: auto !important; overflow-x: hidden !important; height: auto !important; min-height: 100vh !important; }
+        /* ===== TRUE RESPONSIVE STRATEGY (Móvil, Tablet, Nest Hub, iPad Pro) ===== */
+        @media (max-width: 1023px), (max-height: 850px) {
+            body, html { 
+                overflow-y: auto !important; 
+                overflow-x: hidden !important; 
+                height: auto !important; 
+                min-height: 100vh !important; 
+                display: block !important; 
+                background-attachment: scroll !important;
+                transform: none !important;
+            }
             * { box-sizing: border-box !important; }
-            main { height: auto !important; overflow: visible !important; display: flex !important; flex-direction: column !important; padding: 100px 16px 140px 16px !important; }
-            h2 { font-size: 2rem !important; line-height: 1.1 !important; word-wrap: break-word !important; }
-            h3 { font-size: 1.25rem !important; }
-            .text-4xl { font-size: 2.5rem !important; }
-            p, .text-xl, .text-2xl, .text-lg, .text-base { font-size: 1.1rem !important; line-height: 1.4 !important; }
-            .grid, .grid-cols-1, .md\:grid-cols-2, .grid-cols-2 { display: flex !important; flex-direction: column !important; gap: 24px !important; }
-            .max-w-5xl { max-width: 100% !important; }
-            header.fixed { flex-wrap: wrap !important; height: auto !important; padding: 16px !important; gap: 12px !important; position: relative !important; }
-            footer.fixed { height: auto !important; padding: 12px !important; flex-wrap: wrap !important; justify-content: center !important; gap: 8px !important; position: fixed !important; bottom: 0 !important; width: 100% !important; z-index: 50 !important; }
-            footer.fixed button, footer.fixed div { flex: 1 1 20% !important; min-width: 60px !important; padding: 12px 4px !important; border: 1px solid rgba(27,255,60,0.1) !important; margin: 0 !important; }
+            
+            header { 
+                background: #131313 !important;
+                padding: 12px 16px !important;
+                position: relative !important;
+                height: auto !important;
+                display: flex !important;
+                border: none !important;
+            }
+            
+            main { 
+                height: auto !important; 
+                padding: 20px 16px 140px 16px !important; 
+                display: block !important;
+                transform: none !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                margin-bottom: 0 !important;
+                overflow: visible !important;
+                padding-top: 20px !important;
+            }
+            
+            .max-w-5xl {
+                max-width: 100% !important;
+                width: 100% !important;
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 24px !important;
+            }
+            
+            h2 { 
+                font-size: clamp(2.0rem, 8vw, 4.5rem) !important; 
+                line-height: 1.0 !important; 
+                word-wrap: break-word !important; 
+            }
+            
+            .grid.grid-cols-1.md\:grid-cols-2 { 
+                display: flex !important; 
+                flex-direction: column !important; 
+                gap: 24px !important; 
+            }
+            
+            .bg-surface-container-low.p-10 { padding: 24px 16px !important; }
+            
+            .text-xl, .text-lg, .text-base, .text-2xl { font-size: 1.1rem !important; line-height: 1.4 !important; }
+            .font-headline.text-4xl { font-size: 2.2rem !important; }
+            .font-headline.text-xl { font-size: 1.4rem !important; }
+
+            footer.fixed { 
+                height: 64px !important; 
+                padding: 8px !important; 
+                flex-wrap: nowrap !important; 
+                justify-content: space-around !important; 
+                gap: 4px !important; 
+                position: fixed !important; 
+                bottom: 0 !important; 
+                width: 100% !important; 
+                z-index: 100 !important;
+                background: #1C1B1B !important;
+                display: flex !important;
+                border-top: 1px solid rgba(59,75,55,0.3) !important;
+            }
+            
+            footer.fixed button, footer.fixed div { 
+                flex: 1 1 auto !important; 
+                min-width: 50px !important; 
+                height: 48px !important;
+                padding: 4px !important; 
+                border: none !important;
+                background: transparent !important;
+                margin: 0 !important;
+            }
+            footer.fixed div { border: 1px solid rgba(34,197,94,0.3) !important; background: rgba(34,197,94,0.05) !important; }
+            footer.fixed button span.font-label { font-size: 9px !important; margin-top: 2px !important; }
+
+            .absolute.top-0.left-0, .absolute.bottom-0.right-0, .absolute.top-0.right-0, .absolute.bottom-0.left-0 { opacity: 0.2 !important; }
+
+            /* Tablet adjust */
+            @media (min-width: 768px) and (max-width: 1023px) {
+                .grid.grid-cols-1.md\:grid-cols-2 { display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 24px !important; }
+                h2 { font-size: 3.5rem !important; }
+            }
+        }
+
+        /* Protect 4K/Desktop scale alignment */
+        @media (min-width: 1024px) {
+            body { 
+                height: 100vh !important; 
+                overflow: hidden !important; 
+                display: flex !important;
+                flex-direction: column !important;
+            }
         }
     </style>
 </head>
 <body class="bg-surface text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
 <!-- TopAppBar -->
-<header class="fixed top-0 left-0 w-full z-50 bg-[#131313] shadow-[0_0_15px_rgba(27,255,60,0.1)] border-b border-[#3B4B37]/20 flex justify-between items-center px-6 py-4">
+<header class="fixed top-0 left-0 w-full z-50 bg-[#131313] shadow-[0_0_15px_rgba(34,197,94,0.1)] border-b border-[#3B4B37]/20 flex justify-between items-center px-6 py-4">
 <div class="flex items-center gap-3">
-<h1 class="font-['Rajdhani'] font-bold uppercase tracking-widest text-2xl text-[#1BFF3C]" style=""><span style="letter-spacing: 2.4px;">WELD BEAR IEDU&nbsp;</span></h1>
+<h1 class="font-['Rajdhani'] font-bold uppercase tracking-widest text-2xl text-[#22C55E]" style=""><span style="letter-spacing: 2.4px;">WELD BEAR IEDU&nbsp;</span></h1>
 </div>
 <div class="flex items-center gap-6">
 <span class="font-['JetBrains_Mono'] text-xs text-[#84967E] uppercase tracking-tighter" style="">Status: Nominal</span>
 <div class="flex gap-4">
-<button class="text-[#84967E] hover:text-[#1BFF3C] transition-all active:scale-95 duration-75" style="">
+<button class="text-[#84967E] hover:text-[#22C55E] transition-all active:scale-95 duration-75" style="">
 <span class="material-symbols-outlined" data-icon="info" style="">info</span>
 </button>
-<button class="text-[#84967E] hover:text-[#1BFF3C] transition-all active:scale-95 duration-75" style="">
+<button class="text-[#84967E] hover:text-[#22C55E] transition-all active:scale-95 duration-75" style="">
 <span class="material-symbols-outlined" data-icon="settings" style="">settings</span>
 </button>
 </div>
@@ -134,10 +225,7 @@
 <div class="bg-primary-container/10 px-4 py-2 border border-primary-container/20">
 <span class="font-headline text-4xl font-bold text-primary-container tracking-tighter" style="">E6013</span>
 </div>
-<div class="text-right font-label text-[10px] text-outline leading-tight" style="">
-                            SPEC_ID: RUT_6013<br>
-                            TYPE: GEN_PURPOSE
-                        </div>
+
 </div>
 <h3 class="font-headline text-xl font-bold uppercase text-on-surface mb-6 flex items-center gap-2" style="">
 <span class="w-2 h-2 bg-primary-container"></span>
@@ -187,10 +275,7 @@
 <div class="bg-secondary-container/10 px-4 py-2 border border-secondary-container/20">
 <span class="font-headline text-4xl font-bold text-secondary-container tracking-tighter" style="">E7018</span>
 </div>
-<div class="text-right font-label text-[10px] text-outline leading-tight" style="">
-                            SPEC_ID: LOW_H2_7018<br>
-                            TYPE: STRUCTURAL
-                        </div>
+
 </div>
 <h3 class="font-headline text-xl font-bold uppercase text-on-surface mb-6 flex items-center gap-2" style="">
 <span class="w-2 h-2 bg-secondary-container"></span>
@@ -235,17 +320,17 @@
 <!-- BottomNavBar -->
 <footer class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-3 bg-[#131313] border-t border-[#3B4B37]/20">
 <!-- ANTERIOR -->
-<button class="flex flex-col items-center justify-center text-[#84967E] px-6 py-2 hover:bg-[#1BFF3C]/10 hover:text-[#1BFF3C] transition-colors active:bg-[#1BFF3C] active:text-[#003A05] group" style="">
+<button class="flex flex-col items-center justify-center text-[#84967E] px-6 py-2 hover:bg-[#22C55E]/10 hover:text-[#22C55E] transition-colors active:bg-[#22C55E] active:text-[#003A05] group" style="">
 <span class="material-symbols-outlined mb-1" data-icon="arrow_back" style="">arrow_back</span>
 <span class="font-['JetBrains_Mono'] text-xs uppercase tracking-tighter" style="">ANTERIOR</span>
 </button>
     <!-- ACTIVE PAGE INDICATOR -->
-    <div class="flex flex-col items-center justify-center text-[#1BFF3C] border border-[#1BFF3C]/30 bg-[#1BFF3C]/5 px-8 py-2">
+    <div class="flex flex-col items-center justify-center text-[#22C55E] border border-[#22C55E]/30 bg-[#22C55E]/5 px-8 py-2">
         <span class="material-symbols-outlined text-sm mb-1" data-icon="format_list_numbered">format_list_numbered</span>
         <span class="font-label text-[11px] font-bold">50</span>
     </div>
     <!-- SIGUIENTE -->
-    <button class="flex flex-col items-center justify-center text-[#84967E] px-8 py-2 hover:bg-[#1BFF3C]/10 hover:text-[#1BFF3C] transition-colors active:bg-[#1BFF3C] active:text-[#003A05] group" style="">
+    <button class="flex flex-col items-center justify-center text-[#84967E] px-8 py-2 hover:bg-[#22C55E]/10 hover:text-[#22C55E] transition-colors active:bg-[#22C55E] active:text-[#003A05] group" style="">
         <span class="material-symbols-outlined mb-1" data-icon="arrow_forward" style="">arrow_forward</span>
         <span class="font-label text-[10px] mt-1">SIGUIENTE</span>
     </button>

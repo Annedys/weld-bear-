@@ -13,7 +13,7 @@
               "surface-container-high": "#2a2a2a",
               "on-surface": "#e5e2e1",
               "background": "#131313",
-              "primary-container": "#1bff3c",
+              "primary-container": "#22C55E",
               "surface-container-low": "#1c1b1b",
               "outline": "#84967e",
               "outline-variant": "#3b4b37",
@@ -37,92 +37,145 @@
         }
         @media (max-width: 1023px) {
             body, html { overflow-y: auto !important; overflow-x: hidden !important; height: auto !important; min-height: 100vh !important; }
-            * { box-sizing: border-box !important; }
-            main { height: auto !important; overflow: visible !important; display: flex !important; flex-direction: column !important; padding: 100px 16px 140px 16px !important; }
-            h1 { font-size: 2.2rem !important; line-height: 1.1 !important; word-wrap: break-word !important; }
+            #frame-container { 
+                transform: none !important; 
+                width: 100% !important; 
+                max-width: 100% !important; 
+                height: auto !important; 
+                position: relative !important;
+                display: flex !important;
+                flex-direction: column !important;
+            }
+            main { 
+                height: auto !important; 
+                overflow: visible !important; 
+                display: flex !important; 
+                flex-direction: column !important; 
+                padding: 100px 16px 140px 16px !important; 
+                min-height: 100vh !important;
+            }
+            main > div { height: auto !important; }
+            h1 { font-size: 2.22rem !important; line-height: 1.1 !important; word-wrap: break-word !important; }
             h2, .text-5xl { font-size: 1.8rem !important; line-height: 1.2 !important; }
-            .text-6xl, .md\:text-6xl, .text-4xl { font-size: 2.5rem !important; }
+            .text-6xl, .md\:text-6xl, .text-4xl { font-size: 2.2rem !important; }
             p, .text-xl, .text-2xl, .text-3xl { font-size: 1.1rem !important; line-height: 1.4 !important; }
-            .grid, .grid-cols-1, .md\:grid-cols-2 { display: flex !important; flex-direction: column !important; gap: 24px !important; }
+            .grid, .grid-cols-1, .md\:grid-cols-2 { 
+                display: flex !important; 
+                flex-direction: column !important; 
+                gap: 24px !important; 
+                height: auto !important;
+                padding-bottom: 40px !important;
+            }
             .w-full.max-w-7xl { max-width: 100% !important; }
             .p-10 { padding: 24px !important; }
-            header.fixed { flex-wrap: wrap !important; height: auto !important; padding: 16px !important; gap: 12px !important; position: relative !important; }
-            footer.fixed { height: auto !important; padding: 12px !important; flex-wrap: wrap !important; justify-content: center !important; gap: 8px !important; position: fixed !important; bottom: 0 !important; width: 100% !important; z-index: 50 !important; }
-            footer.fixed button, footer.fixed div { flex: 1 1 20% !important; min-width: 60px !important; padding: 12px 4px !important; border: 1px solid rgba(27,255,60,0.1) !important; margin: 0 !important; }
+            header { 
+                flex-wrap: wrap !important; 
+                height: auto !important; 
+                padding: 16px !important; 
+                gap: 12px !important; 
+                position: relative !important; 
+                width: 100% !important;
+            }
+            footer.fixed { 
+                height: auto !important; 
+                padding: 12px !important; 
+                flex-wrap: wrap !important; 
+                justify-content: center !important; 
+                gap: 8px !important; 
+                position: fixed !important; 
+                bottom: 0 !important; 
+                width: 100% !important; 
+                z-index: 50 !important; 
+            }
+            footer.fixed button, footer.fixed div { 
+                flex: 1 1 25% !important; 
+                min-width: 80px !important; 
+                padding: 12px 4px !important; 
+                border: 1px solid rgba(34,197,94,0.1) !important; 
+                margin: 0 !important; 
+            }
+
+            /* Specific text adjustments for very small screens */
+            @media (max-width: 350px) {
+                h1, .text-4xl, .md\:text-6xl { font-size: 1.7rem !important; }
+                h2, .text-5xl { font-size: 1.5rem !important; }
+            }
         }
     </style>
 </head>
 <body class="bg-background text-on-surface font-body min-h-screen flex flex-col overflow-hidden">
-<header class="bg-[#131313] flex justify-between items-center w-full px-6 py-4 fixed top-0 z-50 border-b border-[#3B4B37]/20">
-<div class="text-2xl font-bold tracking-tighter text-[#1BFF3C] uppercase font-headline">WELD BEAR IEDU</div>
-<div class="flex items-center gap-4">
-<button class="text-[#84967E] hover:text-[#1BFF3C] transition-all"><span class="material-symbols-outlined">precision_manufacturing</span></button>
-</div>
-</header>
+<div id="frame-container" class="min-h-screen flex flex-col">
+    <header class="bg-[#131313] flex justify-between items-center w-full px-6 py-4 fixed top-0 z-50 border-b border-[#3B4B37]/20">
+    <div class="text-2xl font-bold tracking-tighter text-[#22C55E] uppercase font-headline">WELD BEAR IEDU</div>
+    <div class="flex items-center gap-4">
+    <button class="text-[#84967E] hover:text-[#22C55E] transition-all"><span class="material-symbols-outlined">precision_manufacturing</span></button>
+    </div>
+    </header>
 
-<main class="flex-grow pt-24 pb-32 px-6 blueprint-grid relative h-[calc(100vh-80px)] overflow-hidden">
-<div class="max-w-7xl mx-auto h-full flex flex-col">
-<!-- Section Header -->
-<div class="mb-12 border-l-4 border-primary-container pl-6 py-2 bg-surface-container-low/50">
-<h1 class="text-4xl md:text-6xl font-headline font-bold text-on-surface tracking-tight uppercase leading-none">
-                    QUÉ ELECTRODO SE USA EN CADA METAL
-                </h1>
+    <main class="flex-grow pt-24 pb-32 px-6 blueprint-grid relative h-[calc(100vh-80px)] overflow-hidden">
+    <div class="max-w-7xl mx-auto h-full flex flex-col">
+    <!-- Section Header -->
+    <div class="mb-12 border-l-4 border-primary-container pl-6 py-2 bg-surface-container-low/50">
+    <h1 class="text-4xl md:text-6xl font-headline font-bold text-on-surface tracking-tight uppercase leading-none">
+                        QUÉ ELECTRODO SE USA EN CADA METAL
+                    </h1>
+    </div>
+
+    <!-- Cards Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 flex-grow pb-24 h-full">
+    <!-- Acero Negro -->
+    <div class="bg-surface-container-low border border-outline-variant/30 p-10 flex flex-col justify-between group hover:border-primary-container transition-all">
+    <div>
+    <h2 class="text-5xl font-black font-headline text-on-surface mb-8 uppercase tracking-widest flex items-center gap-4">
+    <span class="material-symbols-outlined text-primary-container text-4xl">layers</span> ACERO NEGRO</h2>
+    <div class="space-y-6">
+    <div class="bg-primary-container/10 p-8 border-l-4 border-primary-container shadow-[inset_0_0_50px_rgba(34,197,94,0.05)]">
+    <p class="text-3xl font-body text-on-surface leading-snug font-bold uppercase italic">
+                                        "Se trabaja comúnmente con <span class="text-primary-container font-black">E6013, E7018 o E6011</span> según el tipo de trabajo."
+                                    </p>
+    </div>
+    </div>
+    </div>
+    </div>
+
+    <!-- Galvanizado -->
+    <div class="bg-surface-container-high border-2 border-outline-variant/20 p-10 flex flex-col justify-between group hover:border-secondary-container transition-all relative">
+    <div>
+    <h2 class="text-5xl font-black font-headline text-on-surface mb-8 uppercase tracking-widest flex items-center gap-4">
+    <span class="material-symbols-outlined text-secondary-container text-4xl">shield</span> GALVANIZADO</h2>
+    <div class="space-y-6">
+    <div class="bg-secondary-container/5 p-8 border-l-4 border-secondary-container">
+    <p class="text-2xl font-body text-on-surface leading-snug font-medium uppercase italic">
+                                        "Puede soldarse, pero requiere <span class="text-secondary-container font-bold">limpieza de la zona</span> y precaución por los vapores del zinc."
+                                    </p>
+    <hr class="my-6 border-outline-variant/20">
+    <p class="text-xl font-body text-on-surface/80 leading-relaxed font-normal uppercase italic">
+                                        "En trabajos básicos puede utilizarse electrodo <span class="text-primary-container font-black underline decoration-2 underline-offset-4">E6013</span> adecuado para acero galvanizado, luego limpiando bien el área."
+                                    </p>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </main>
+
+    <footer class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-20 px-4 bg-[#1C1B1B] border-t border-[#3B4B37]/20 shadow-[0_-5px_15px_rgba(34,197,94,0.05)]">
+    <button class="flex flex-col items-center justify-center text-[#84967E] hover:text-[#22C55E] px-8 py-2 group">
+    <span class="material-symbols-outlined">arrow_back</span>
+    <span class="font-technical text-[10px] mt-1 uppercase">ANTERIOR</span>
+    </button>
+    <div class="flex flex-col items-center justify-center text-[#22C55E] font-bold">
+    <span class="material-symbols-outlined">settings_backup_restore</span>
+    <span class="font-technical text-sm mt-1 uppercase tracking-[0.2em]">METAL_GUIDE</span>
+    </div>
+    <button class="flex flex-col items-center justify-center text-[#84967E] hover:text-[#22C55E] px-8 py-2 group">
+    <span class="material-symbols-outlined">arrow_forward</span>
+    <span class="font-technical text-[10px] mt-1 uppercase">SIGUIENTE</span>
+    </button>
+    </footer>
 </div>
 
-<!-- Cards Grid -->
-<div class="grid grid-cols-1 md:grid-cols-2 gap-8 flex-grow pb-24 h-full">
-<!-- Acero Negro -->
-<div class="bg-surface-container-low border border-outline-variant/30 p-10 flex flex-col justify-between group hover:border-primary-container transition-all">
-<div>
-<h2 class="text-5xl font-black font-headline text-on-surface mb-8 uppercase tracking-widest flex items-center gap-4">
-<span class="material-symbols-outlined text-primary-container text-4xl">layers</span> ACERO NEGRO</h2>
-<div class="space-y-6">
-<div class="bg-primary-container/10 p-8 border-l-4 border-primary-container shadow-[inset_0_0_50px_rgba(27,255,60,0.05)]">
-<p class="text-3xl font-body text-on-surface leading-snug font-bold uppercase italic">
-                                    "Se trabaja comúnmente con <span class="text-primary-container font-black">E6013, E7018 o E6011</span> según el tipo de trabajo."
-                                </p>
-</div>
-</div>
-</div>
-</div>
-
-<!-- Galvanizado -->
-<div class="bg-surface-container-high border-2 border-outline-variant/20 p-10 flex flex-col justify-between group hover:border-secondary-container transition-all relative">
-<div class="absolute -top-3 left-6 bg-secondary-container text-background px-3 py-1 text-[10px] font-black uppercase tracking-widest">Safety Warning</div>
-<div>
-<h2 class="text-5xl font-black font-headline text-on-surface mb-8 uppercase tracking-widest flex items-center gap-4">
-<span class="material-symbols-outlined text-secondary-container text-4xl">shield</span> GALVANIZADO</h2>
-<div class="space-y-6">
-<div class="bg-secondary-container/5 p-8 border-l-4 border-secondary-container">
-<p class="text-2xl font-body text-on-surface leading-snug font-medium uppercase italic">
-                                    "Puede soldarse, pero requiere <span class="text-secondary-container font-bold">limpieza de la zona</span> y precaución por los vapores del zinc."
-                                </p>
-<hr class="my-6 border-outline-variant/20">
-<p class="text-xl font-body text-on-surface/80 leading-relaxed font-normal uppercase italic">
-                                    "En trabajos básicos puede utilizarse electrodo <span class="text-primary-container font-black underline decoration-2 underline-offset-4">E6013</span> adecuado para acero galvanizado, luego limpiando bien el área."
-                                </p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</main>
-
-<footer class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-20 px-4 bg-[#1C1B1B] border-t border-[#3B4B37]/20 shadow-[0_-5px_15px_rgba(27,255,60,0.05)]">
-<button class="flex flex-col items-center justify-center text-[#84967E] hover:text-[#1BFF3C] px-8 py-2 group">
-<span class="material-symbols-outlined">arrow_back</span>
-<span class="font-technical text-[10px] mt-1 uppercase">ANTERIOR</span>
-</button>
-<div class="flex flex-col items-center justify-center text-[#1BFF3C] font-bold">
-<span class="material-symbols-outlined">settings_backup_restore</span>
-<span class="font-technical text-sm mt-1 uppercase tracking-[0.2em]">METAL_GUIDE</span>
-</div>
-<button class="flex flex-col items-center justify-center text-[#84967E] hover:text-[#1BFF3C] px-8 py-2 group">
-<span class="material-symbols-outlined">arrow_forward</span>
-<span class="font-technical text-[10px] mt-1 uppercase">SIGUIENTE</span>
-</button>
-</footer>
 
 
 

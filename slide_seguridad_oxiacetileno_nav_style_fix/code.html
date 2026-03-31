@@ -35,7 +35,7 @@
                         "on-tertiary-fixed-variant": "#930005",
                         "surface-container-lowest": "#0e0e0e",
                         "on-secondary-container": "#6f5c00",
-                        "primary-fixed-dim": "#00e631",
+                        "primary-fixed-dim": "#22C55E",
                         "primary": "#ecffe3",
                         "on-primary-container": "#007112",
                         "on-error": "#690005",
@@ -45,15 +45,15 @@
                         "error": "#ffb4ab",
                         "surface-container-low": "#1c1b1b",
                         "on-primary-fixed-variant": "#00530a",
-                        "surface-tint": "#00e631",
+                        "surface-tint": "#22C55E",
                         "surface-container-high": "#2a2a2a",
                         "inverse-on-surface": "#313030",
                         "surface": "#131313",
-                        "primary-fixed": "#74ff6d",
+                        "primary-fixed": "#22C55E",
                         "secondary-fixed-dim": "#eac300",
                         "error-container": "#93000a",
                         "on-primary": "#003a05",
-                        "primary-container": "#1bff3c",
+                        "primary-container": "#22C55E",
                         "surface-container": "#201f1f",
                         "on-background": "#e5e2e1",
                         "tertiary-fixed-dim": "#ffb4aa",
@@ -80,34 +80,119 @@
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
         }
-        @media (max-width: 1023px) {
-            body, html { overflow-y: auto !important; overflow-x: hidden !important; height: auto !important; min-height: 100vh !important; }
+        /* ===== TRUE RESPONSIVE STRATEGY (Móvil, Tablet, Nest Hub, iPad Pro) ===== */
+        @media (max-width: 1366px), (max-height: 850px) {
+            body, html { 
+                overflow-y: auto !important; 
+                overflow-x: hidden !important; 
+                height: auto !important; 
+                min-height: 100vh !important; 
+                display: block !important; 
+                background-attachment: scroll !important;
+                transform: none !important;
+            }
             * { box-sizing: border-box !important; }
-            main { height: auto !important; overflow: visible !important; padding: 100px 16px 140px 16px !important; }
-            .grid-cols-12 { display: flex !important; flex-direction: column !important; gap: 32px !important; }
-            .col-span-12, .lg\:col-span-7, .lg\:col-span-5 { width: 100% !important; }
-            h1 { font-size: 2.5rem !important; line-height: 1.1 !important; word-wrap: break-word !important; }
-            .md\:text-7xl { font-size: 2.5rem !important; }
+            
+            header { 
+                background: #131313 !important;
+                padding: 12px 16px !important;
+                position: relative !important;
+                height: auto !important;
+            }
+            header .bg-\[\#1C1B1B\].h-8 { display: none !important; }
+            
+            main { 
+                height: auto !important; 
+                padding: 20px 16px 140px 16px !important; 
+                display: block !important;
+                transform: none !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                margin-bottom: 0 !important;
+            }
+            
+            h1 { 
+                font-size: clamp(2rem, 8vw, 3.5rem) !important; 
+                line-height: 1.1 !important; 
+                word-wrap: break-word !important; 
+            }
+            
+            .grid.grid-cols-1.lg\:grid-cols-12 { 
+                display: flex !important; 
+                flex-direction: column !important; 
+                gap: 24px !important; 
+                width: 100% !important;
+            }
+            
+            .lg\:col-span-7, .lg\:col-span-5 { width: 100% !important; }
+            
+            .lg\:col-span-7.bg-surface-container-low { padding: 16px !important; }
+            
+            img { 
+                object-fit: cover !important; 
+                max-height: 250px !important; 
+                width: 100% !important;
+            }
+            
             p, li p { font-size: 1.1rem !important; line-height: 1.4 !important; }
-            .p-8, .p-16 { padding: 24px 16px !important; }
-            nav { height: auto !important; padding: 12px 8px !important; flex-wrap: wrap !important; justify-content: center !important; gap: 8px !important; position: fixed !important; bottom: 0 !important; }
-            nav button, nav div { flex: 1 1 40% !important; min-width: 100px !important; padding: 12px 4px !important; border: 1px solid rgba(27,255,60,0.1) !important; }
+            
+            nav { 
+                height: 64px !important; 
+                padding: 8px !important; 
+                flex-direction: row !important;
+                flex-wrap: nowrap !important; 
+                justify-content: space-around !important; 
+                gap: 4px !important; 
+                position: fixed !important; 
+                bottom: 0 !important; 
+                width: 100% !important; 
+                z-index: 100 !important;
+                background: #1C1B1B !important;
+            }
+            
+            nav button, nav div { 
+                flex: 1 1 auto !important; 
+                min-width: 50px !important; 
+                height: 48px !important;
+                padding: 4px !important; 
+                border: none !important;
+                box-shadow: none !important;
+            }
+            nav button span.font-label, nav div span.font-label { font-size: 9px !important; margin-top: 2px !important; }
+            nav div.max-w-xs { max-width: none !important; grow: 1 !important; }
+
+            /* Tablet fix */
+            @media (min-width: 768px) and (max-width: 1366px) {
+                .grid.grid-cols-1.lg\:grid-cols-12 { display: grid !important; grid-template-cols: repeat(12, 1fr) !important; gap: 32px !important; }
+                .lg\:col-span-7 { grid-column: span 7 / span 7 !important; }
+                .lg\:col-span-5 { grid-column: span 5 / span 5 !important; }
+                h1 { font-size: 3.5rem !important; }
+            }
+        }
+
+        /* Protect 4K/Desktop scale alignment */
+        @media (min-width: 1367px) and (min-height: 851px) {
+            body { 
+                height: 100vh !important; 
+                overflow: hidden !important; 
+                display: flex !important;
+            }
         }
     </style>
 </head>
 <body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary blueprint-grid min-h-screen flex flex-col">
 <!-- TopAppBar -->
-<header class="bg-[#131313] dark:bg-[#131313] shadow-[0px_0px_15px_rgba(27,255,60,0.15)] flex justify-between items-center w-full px-6 py-4 z-50">
+<header class="bg-[#131313] dark:bg-[#131313] shadow-[0px_0px_15px_rgba(34,197,94,0.15)] flex justify-between items-center w-full px-6 py-4 z-50">
 <div class="flex items-center gap-4">
-<span class="text-[#1BFF3C] font-black tracking-tighter font-headline uppercase text-lg" style=""><span style="font-family: Rajdhani, sans-serif; font-size: 24px; letter-spacing: -1.2px;" class="">WELD BEAR IEDU</span></span>
+<span class="text-[#22C55E] font-black tracking-tighter font-headline uppercase text-lg" style=""><span style="font-family: Rajdhani, sans-serif; font-size: 24px; letter-spacing: -1.2px;" class="">WELD BEAR IEDU</span></span>
 <div class="bg-[#1C1B1B] h-8 w-[1px] mx-2"></div>
 <span class="font-label text-xs text-outline tracking-widest uppercase" style=""><br></span>
 </div>
 <div class="flex items-center gap-6">
-<button class="text-[#84967E] hover:text-[#1BFF3C] transition-colors duration-200 cursor-crosshair" style="">
+<button class="text-[#84967E] hover:text-[#22C55E] transition-colors duration-200 cursor-crosshair" style="">
 <span class="material-symbols-outlined" style="">settings</span>
 </button>
-<button class="text-[#84967E] hover:text-[#1BFF3C] transition-colors duration-200 cursor-crosshair" style="">
+<button class="text-[#84967E] hover:text-[#22C55E] transition-colors duration-200 cursor-crosshair" style="">
 <span class="material-symbols-outlined" style="">fullscreen</span>
 </button>
 <div class="w-8 h-8 bg-surface-container-high flex items-center justify-center border border-outline-variant/30">
@@ -216,19 +301,19 @@
 </main>
 <!-- BottomNavBar -->
 <nav class="fixed bottom-0 left-0 w-full flex justify-between items-stretch px-0 bg-[#1C1B1B] z-50 border-t border-[#3B4B37]/30">
-<button class="flex flex-col items-center justify-center text-[#84967E] px-12 py-3 hover:bg-[#2A2A2A] hover:text-[#1BFF3C] transition-all duration-150 group" style="">
+<button class="flex flex-col items-center justify-center text-[#84967E] px-12 py-3 hover:bg-[#2A2A2A] hover:text-[#22C55E] transition-all duration-150 group" style="">
 <span class="material-symbols-outlined mb-1" style="">arrow_back</span>
 <span class="font-label text-xs font-medium uppercase tracking-tighter" style="">PREVIOUS</span>
 </button>
-<div class="flex flex-col items-center justify-center px-12 py-3 grow max-w-xs shadow-[0px_0px_20px_rgba(27,255,60,0.4)] border border-[#1BFF3C] text-[#1BFF3C]">
+<div class="flex flex-col items-center justify-center px-12 py-3 grow max-w-xs shadow-[0px_0px_20px_rgba(34,197,94,0.4)] border border-[#22C55E] text-[#22C55E]">
 <span class="material-symbols-outlined mb-1" style="font-variation-settings: &quot;FILL&quot; 1;">analytics</span>
 <span class="font-label text-xs font-bold uppercase" style="">SLIDE 24 / 60</span>
 </div>
-<button class="flex flex-col items-center justify-center text-[#84967E] px-12 py-3 hover:bg-[#2A2A2A] hover:text-[#1BFF3C] transition-all duration-150 group" style="">
+<button class="flex flex-col items-center justify-center text-[#84967E] px-12 py-3 hover:bg-[#2A2A2A] hover:text-[#22C55E] transition-all duration-150 group" style="">
 <span class="material-symbols-outlined mb-1" style="">arrow_forward</span>
 <span class="font-label text-xs font-medium uppercase tracking-tighter" style="">NEXT</span>
 </button>
-<button class="flex flex-col items-center justify-center text-[#84967E] px-12 py-3 hover:bg-[#2A2A2A] hover:text-[#1BFF3C] transition-all duration-150 group" style="">
+<button class="flex flex-col items-center justify-center text-[#84967E] px-12 py-3 hover:bg-[#2A2A2A] hover:text-[#22C55E] transition-all duration-150 group" style="">
 <span class="material-symbols-outlined mb-1" style="">home</span>
 <span class="font-label text-xs font-medium uppercase tracking-tighter" style="">HOME</span>
 </button>

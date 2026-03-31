@@ -211,8 +211,8 @@ const indexHtml = `<!DOCTYPE html>
             transform: translateX(-50%);
             z-index: 200;
             background: rgba(0,0,0,0.8);
-            border: 1px solid #1BFF3C;
-            color: #1BFF3C;
+            border: 1px solid #22C55E;
+            color: #22C55E;
             padding: 8px 20px;
             border-radius: 20px;
             font-family: monospace;

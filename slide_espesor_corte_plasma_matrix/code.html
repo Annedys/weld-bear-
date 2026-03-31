@@ -12,10 +12,10 @@
             theme: {
                 extend: {
                     colors: {
-                        "primary-container": "#1bff3c",
+                        "primary-container": "#22C55E",
                         "on-tertiary-container": "#c5020c",
                         "tertiary-fixed": "#ffdad5",
-                        "surface-tint": "#00e631",
+                        "surface-tint": "#22C55E",
                         "secondary": "#fff3d3",
                         "error": "#ffb4ab",
                         "surface-dim": "#131313",
@@ -45,7 +45,7 @@
                         "on-primary-fixed-variant": "#00530a",
                         "background": "#131313",
                         "on-error-container": "#ffdad6",
-                        "primary-fixed": "#74ff6d",
+                        "primary-fixed": "#22C55E",
                         "outline-variant": "#3b4b37",
                         "on-background": "#e5e2e1",
                         "tertiary": "#fff8f7",
@@ -58,7 +58,7 @@
                         "surface-container": "#201f1f",
                         "secondary-fixed-dim": "#eac300",
                         "secondary-container": "#fed400",
-                        "primary-fixed-dim": "#00e631"
+                        "primary-fixed-dim": "#22C55E"
                     },
                     fontFamily: {
                         "headline": ["Rajdhani", "sans-serif"],
@@ -87,43 +87,118 @@
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
         .technical-line {
-            background: repeating-linear-gradient(90deg, #1BFF3C, #1BFF3C 2px, transparent 2px, transparent 4px);
+            background: repeating-linear-gradient(90deg, #22C55E, #22C55E 2px, transparent 2px, transparent 4px);
         }
-        @media (max-width: 1023px) {
-            body, html { overflow-y: auto !important; overflow-x: hidden !important; height: auto !important; min-height: 100vh !important; }
+        /* ===== TRUE RESPONSIVE STRATEGY (Móvil, Tablet, Nest Hub, iPad Pro) ===== */
+        @media (max-width: 1366px), (max-height: 850px) {
+            body, html { 
+                overflow-y: auto !important; 
+                overflow-x: hidden !important; 
+                height: auto !important; 
+                min-height: 100vh !important; 
+                display: block !important; 
+                background-attachment: scroll !important;
+                transform: none !important;
+            }
             * { box-sizing: border-box !important; }
-            main { height: auto !important; padding: 100px 16px 140px 16px !important; display: block !important; }
-            h1 { font-size: 2.5rem !important; line-height: 1.1 !important; word-wrap: break-word !important; }
-            .text-5xl, .md\:text-7xl { font-size: 2.5rem !important; }
-            p { font-size: 1.1rem !important; line-height: 1.4 !important; }
+            
+            header { 
+                background: #131313 !important;
+                padding: 12px 16px !important;
+                position: relative !important;
+                height: auto !important;
+            }
+            header nav { display: none !important; }
+            
+            main { 
+                height: auto !important; 
+                padding: 20px 16px 140px 16px !important; 
+                display: block !important;
+                transform: none !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                margin-bottom: 0 !important;
+            }
+            
+            h1 { 
+                font-size: clamp(2rem, 8vw, 3.5rem) !important; 
+                line-height: 1.1 !important; 
+                word-wrap: break-word !important; 
+            }
+            
+            .text-2xl.font-light { font-size: 1.1rem !important; line-height: 1.4 !important; }
+            
+            div.bg-surface-container-low.border { border: none !important; background: transparent !important; }
+            
             table, thead, tbody, th, td, tr { display: block !important; width: 100% !important; }
             thead { display: none !important; }
-            tr { margin-bottom: 16px !important; border: 1px solid rgba(132, 150, 126, 0.3) !important; background: #1a1a1a !important; }
+            tr { margin-bottom: 16px !important; border: 1px solid rgba(132, 150, 126, 0.3) !important; background: #1a1a1a !important; padding: 8px !important; }
             td { display: flex !important; flex-direction: column !important; padding: 12px 16px !important; border: none !important; border-bottom: 1px dashed rgba(132, 150, 126, 0.2) !important; font-size: 1rem !important; text-align: left !important; }
             td:last-child { border-bottom: none !important; }
-            td:nth-child(1)::before { content: "Espesor:" !important; }
-            td:nth-child(2)::before { content: "Amperaje:" !important; }
-            td:nth-child(3)::before { content: "Presión de Aire:" !important; }
-            td::before { font-weight: bold !important; color: #84967E !important; font-size: 0.85rem !important; padding-bottom: 4px !important; display: block !important; text-align: left !important; }
-            header { flex-wrap: wrap !important; padding: 16px !important; gap: 12px !important; }
-            nav.fixed { height: auto !important; padding: 12px !important; flex-wrap: wrap !important; justify-content: center !important; gap: 8px !important; position: fixed !important; bottom: 0 !important; width: 100% !important; }
-            nav.fixed button, nav.fixed div { flex: 1 1 20% !important; min-width: 60px !important; padding: 12px 4px !important; border: 1px solid rgba(27,255,60,0.1) !important; }
+            td::before { font-weight: bold !important; color: #22C55E !important; font-size: 0.75rem !important; margin-bottom: 4px !important; display: block !important; text-transform: uppercase !important; }
+            td:nth-child(1)::before { content: "Espesor del Material:" !important; }
+            td:nth-child(2)::before { content: "Amperaje Requerido:" !important; }
+            td:nth-child(3)::before { content: "Presión de Aire (PSI):" !important; }
+            
+            .mt-10.p-6.bg-surface-container-highest { padding: 16px !important; border-left-width: 4px !important; flex-direction: column !important; gap: 12px !important; }
+            .text-xl { font-size: 1.1rem !important; }
+            
+            nav.fixed { 
+                height: 64px !important; 
+                padding: 8px !important; 
+                flex-wrap: nowrap !important; 
+                justify-content: space-around !important; 
+                gap: 4px !important; 
+                position: fixed !important; 
+                bottom: 0 !important; 
+                width: 100% !important; 
+                z-index: 100 !important;
+                background: #1C1B1B !important;
+            }
+            
+            nav.fixed button, nav.fixed div { 
+                flex: 1 1 auto !important; 
+                min-width: 50px !important; 
+                height: 48px !important;
+                padding: 4px !important; 
+                border: none !important;
+            }
+            nav.fixed button span.font-['JetBrains_Mono'], nav.fixed div span.font-['JetBrains_Mono'] { font-size: 9px !important; margin-top: 2px !important; }
+
+            /* Tablet fix */
+            @media (min-width: 768px) and (max-width: 1366px) {
+                thead { display: table-header-group !important; }
+                table, thead, tbody, th, td, tr { display: table !important; }
+                tr { display: table-row !important; border: none !important; }
+                td { display: table-cell !important; border-bottom: 1px solid rgba(132, 150, 126, 0.1) !important; }
+                td::before { display: none !important; }
+                h1 { font-size: 3.5rem !important; }
+            }
+        }
+
+        /* Protect 4K/Desktop scale alignment */
+        @media (min-width: 1367px) and (min-height: 851px) {
+            body { 
+                height: 100vh !important; 
+                overflow: hidden !important; 
+                display: flex !important;
+            }
         }
     </style>
 </head>
 <body class="text-on-surface font-body min-h-screen flex flex-col overflow-hidden">
 <!-- TopAppBar Component -->
-<header class="bg-[#131313] dark:bg-[#131313] text-[#1BFF3C] font-['Rajdhani'] uppercase tracking-wider font-bold text-lg docked full-width top-0 border-b border-[#3B4B37]/20 flex justify-between items-center w-full px-6 py-4 z-50">
-<div class="text-2xl font-black text-[#1BFF3C] tracking-tighter" style=""><span style="font-family: Rajdhani, sans-serif; letter-spacing: -1.2px;">WELD BEAR IEDU</span></div>
+<header class="bg-[#131313] dark:bg-[#131313] text-[#22C55E] font-['Rajdhani'] uppercase tracking-wider font-bold text-lg docked full-width top-0 border-b border-[#3B4B37]/20 flex justify-between items-center w-full px-6 py-4 z-50">
+<div class="text-2xl font-black text-[#22C55E] tracking-tighter" style=""><span style="font-family: Rajdhani, sans-serif; letter-spacing: -1.2px;">WELD BEAR IEDU</span></div>
 <nav class="hidden md:flex items-center space-x-8">
-<a class="text-[#84967E] hover:text-[#1BFF3C] transition-colors" href="#" style="">MODULES</a>
-<a class="text-[#1BFF3C] border-b-2 border-[#1BFF3C] pb-1" href="#" style="">SCHEMATICS</a>
-<a class="text-[#84967E] hover:text-[#1BFF3C] transition-colors" href="#" style="">SAFETY</a>
-<a class="text-[#84967E] hover:text-[#1BFF3C] transition-colors" href="#" style="">RESOURCES</a>
+<a class="text-[#84967E] hover:text-[#22C55E] transition-colors" href="#" style="">MODULES</a>
+<a class="text-[#22C55E] border-b-2 border-[#22C55E] pb-1" href="#" style="">SCHEMATICS</a>
+<a class="text-[#84967E] hover:text-[#22C55E] transition-colors" href="#" style="">SAFETY</a>
+<a class="text-[#84967E] hover:text-[#22C55E] transition-colors" href="#" style="">RESOURCES</a>
 </nav>
 <div class="flex items-center space-x-4">
-<button class="material-symbols-outlined text-[#84967E] hover:text-[#1BFF3C] transition-colors" data-icon="settings" style="">settings</button>
-<button class="material-symbols-outlined text-[#84967E] hover:text-[#1BFF3C] transition-colors" data-icon="help" style="">help</button>
+<button class="material-symbols-outlined text-[#84967E] hover:text-[#22C55E] transition-colors" data-icon="settings" style="">settings</button>
+<button class="material-symbols-outlined text-[#84967E] hover:text-[#22C55E] transition-colors" data-icon="help" style="">help</button>
 </div>
 </header>
 <!-- Main Content Canvas -->
@@ -151,9 +226,9 @@
 <table class="w-full text-left border-collapse">
 <thead>
 <tr class="bg-surface-container-high">
-<th class="p-5 font-headline text-primary-container uppercase tracking-widest text-sm border-b border-outline-variant/30" style="">ESPESOR</th>
-<th class="p-5 font-headline text-primary-container uppercase tracking-widest text-sm border-b border-outline-variant/30" style="">AMPERAJE DEL EQUIPO</th>
-<th class="p-5 font-headline text-primary-container uppercase tracking-widest text-sm border-b border-outline-variant/30" style="">PRESIÓN DE AIRE</th>
+<th class="p-5 font-headline text-primary-container uppercase tracking-widest text-lg border-b border-outline-variant/30" style="">ESPESOR</th>
+<th class="p-5 font-headline text-primary-container uppercase tracking-widest text-lg border-b border-outline-variant/30" style="">AMPERAJE DEL EQUIPO</th>
+<th class="p-5 font-headline text-primary-container uppercase tracking-widest text-lg border-b border-outline-variant/30" style="">PRESIÓN DE AIRE</th>
 </tr>
 </thead>
 <tbody class="font-label text-lg">
@@ -203,20 +278,20 @@
 </div>
 </main>
 <!-- BottomNavBar Component -->
-<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-20 px-4 bg-[#1C1B1B] dark:bg-[#1C1B1B] text-[#1BFF3C] border-t border-[#3B4B37]/30 shadow-[0px_0px_15px_rgba(27,255,60,0.15)]">
-<button class="flex flex-col items-center justify-center text-[#84967E] px-6 py-2 hover:bg-[#2A2A2A] hover:text-[#1BFF3C] transition-all duration-150" style="">
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-20 px-4 bg-[#1C1B1B] dark:bg-[#1C1B1B] text-[#22C55E] border-t border-[#3B4B37]/30 shadow-[0px_0px_15px_rgba(34,197,94,0.15)]">
+<button class="flex flex-col items-center justify-center text-[#84967E] px-6 py-2 hover:bg-[#2A2A2A] hover:text-[#22C55E] transition-all duration-150" style="">
 <span class="material-symbols-outlined" data-icon="arrow_back" style="">arrow_back</span>
 <span class="font-['JetBrains_Mono'] text-xs font-medium uppercase mt-1" style="">PREVIOUS</span>
 </button>
-<div class="flex flex-col items-center justify-center text-[#1BFF3C] bg-[#1BFF3C]/10 px-8 py-2 border-t-2 border-[#1BFF3C]">
+<div class="flex flex-col items-center justify-center text-[#22C55E] bg-[#22C55E]/10 px-8 py-2 border-t-2 border-[#22C55E]">
 <span class="material-symbols-outlined" data-icon="numbers" style="">numbers</span>
 <span class="font-['JetBrains_Mono'] text-xs font-medium uppercase mt-1" style="">14</span>
 </div>
-<button class="flex flex-col items-center justify-center text-[#84967E] px-6 py-2 hover:bg-[#2A2A2A] hover:text-[#1BFF3C] transition-all duration-150" style="">
+<button class="flex flex-col items-center justify-center text-[#84967E] px-6 py-2 hover:bg-[#2A2A2A] hover:text-[#22C55E] transition-all duration-150" style="">
 <span class="material-symbols-outlined" data-icon="arrow_forward" style="">arrow_forward</span>
 <span class="font-['JetBrains_Mono'] text-xs font-medium uppercase mt-1" style="">NEXT</span>
 </button>
-<button class="flex flex-col items-center justify-center text-[#84967E] px-6 py-2 hover:bg-[#2A2A2A] hover:text-[#1BFF3C] transition-all duration-150" style="">
+<button class="flex flex-col items-center justify-center text-[#84967E] px-6 py-2 hover:bg-[#2A2A2A] hover:text-[#22C55E] transition-all duration-150" style="">
 <span class="material-symbols-outlined" data-icon="home" style="">home</span>
 <span class="font-['JetBrains_Mono'] text-xs font-medium uppercase mt-1" style="">HOME</span>
 </button>

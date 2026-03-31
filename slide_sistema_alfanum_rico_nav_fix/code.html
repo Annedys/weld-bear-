@@ -19,16 +19,67 @@
         }
         @media (max-width: 1023px) {
             body, html { overflow-y: auto !important; overflow-x: hidden !important; height: auto !important; min-height: 100vh !important; }
-            * { box-sizing: border-box !important; }
-            main { height: auto !important; overflow: visible !important; display: flex !important; flex-direction: column !important; padding: 100px 16px 140px 16px !important; }
+            #frame-container { 
+                transform: none !important; 
+                width: 100% !important; 
+                max-width: 100% !important; 
+                height: auto !important; 
+                position: relative !important;
+                display: flex !important;
+                flex-direction: column !important;
+            }
+            main { 
+                height: auto !important; 
+                overflow: visible !important; 
+                display: flex !important; 
+                flex-direction: column !important; 
+                padding: 100px 16px 140px 16px !important; 
+                min-height: 100vh !important;
+                max-width: 100% !important;
+            }
             h1 { font-size: 2.5rem !important; line-height: 1.1 !important; word-wrap: break-word !important; }
             p { font-size: 1.1rem !important; line-height: 1.4 !important; }
-            h2, .text-8xl { font-size: 3rem !important; }
-            .grid, .grid-cols-1, .md\:grid-cols-12 { display: flex !important; flex-direction: column !important; gap: 24px !important; }
+            h2, .text-8xl { font-size: 2.2rem !important; }
+            .grid, .grid-cols-1, .md\:grid-cols-12 { 
+                display: flex !important; 
+                flex-direction: column !important; 
+                gap: 20px !important; 
+                width: 100% !important;
+            }
             .md\:col-span-6, .md\:col-span-4 { width: 100% !important; flex: none !important; }
-            header.fixed { flex-wrap: wrap !important; height: auto !important; padding: 16px !important; gap: 12px !important; position: relative !important; }
-            nav.fixed { height: auto !important; padding: 12px !important; flex-wrap: wrap !important; justify-content: center !important; gap: 8px !important; position: fixed !important; bottom: 0 !important; width: 100% !important; z-index: 50 !important; }
-            nav.fixed button, nav.fixed div { flex: 1 1 20% !important; min-width: 60px !important; padding: 12px 4px !important; border: 1px solid rgba(27,255,60,0.1) !important; margin: 0 !important; }
+            header { 
+                flex-wrap: wrap !important; 
+                height: auto !important; 
+                padding: 16px !important; 
+                gap: 12px !important; 
+                position: relative !important; 
+                width: 100% !important;
+            }
+            nav { 
+                height: auto !important; 
+                padding: 12px !important; 
+                flex-wrap: wrap !important; 
+                justify-content: center !important; 
+                gap: 8px !important; 
+                position: fixed !important; 
+                bottom: 0 !important; 
+                width: 100% !important; 
+                z-index: 50 !important; 
+            }
+            nav button, nav div { 
+                flex: 1 1 25% !important; 
+                min-width: 80px !important; 
+                padding: 12px 4px !important; 
+                border: 1px solid rgba(34,197,94,0.1) !important; 
+                margin: 0 !important; 
+                box-shadow: none !important;
+            }
+
+            /* Specific text adjustments for very small screens */
+            @media (max-width: 350px) {
+                h1 { font-size: 2rem !important; }
+                h2, .text-8xl { font-size: 1.8rem !important; }
+            }
         }
     </style>
 <script id="tailwind-config">
@@ -48,20 +99,20 @@
                 "on-primary-container": "#007112",
                 "on-surface": "#e5e2e1",
                 "on-secondary-fixed-variant": "#554500",
-                "surface-tint": "#00e631",
+                "surface-tint": "#22C55E",
                 "tertiary-fixed": "#ffdad5",
                 "on-error-container": "#ffdad6",
                 "outline-variant": "#3b4b37",
                 "on-error": "#690005",
                 "primary": "#ecffe3",
-                "primary-container": "#1bff3c",
+                "primary-container": "#22C55E",
                 "inverse-primary": "#006e11",
                 "surface-container-high": "#2a2a2a",
                 "on-primary-fixed": "#002202",
                 "surface-container-highest": "#353534",
                 "secondary-fixed-dim": "#eac300",
                 "surface-container-lowest": "#0e0e0e",
-                "primary-fixed-dim": "#00e631",
+                "primary-fixed-dim": "#22C55E",
                 "tertiary-container": "#ffd3cd",
                 "inverse-on-surface": "#313030",
                 "surface-container-low": "#1c1b1b",
@@ -75,7 +126,7 @@
                 "surface": "#131313",
                 "surface-container": "#201f1f",
                 "outline": "#84967e",
-                "primary-fixed": "#74ff6d",
+                "primary-fixed": "#22C55E",
                 "background": "#131313",
                 "on-tertiary-fixed-variant": "#930005",
                 "on-tertiary-fixed": "#410001",
@@ -97,17 +148,18 @@
       </script>
 </head>
 <body class="text-on-surface font-body min-h-screen flex flex-col">
-<!-- Top Navigation Bar -->
-<header class="fixed top-0 w-full bg-[#131313] dark:bg-[#131313] border-b border-[#3B4B37]/20 z-50 shadow-[0px_0px_15px_rgba(27,255,60,0.15)]">
+<div id="frame-container" class="min-h-screen flex flex-col">
+    <!-- Top Navigation Bar -->
+    <header class="fixed top-0 w-full bg-[#131313] dark:bg-[#131313] border-b border-[#3B4B37]/20 z-50 shadow-[0px_0px_15px_rgba(34,197,94,0.15)]">
 <div class="flex justify-between items-center px-6 py-4 w-full">
 <div class="flex items-center gap-4">
-<span class="text-xl font-bold text-[#1BFF3C] tracking-tighter font-headline uppercase"><span style="font-family: Rajdhani, sans-serif; font-size: 24px; letter-spacing: -1.2px;">WELD BEAR IEDU</span></span>
+<span class="text-xl font-bold text-[#22C55E] tracking-tighter font-headline uppercase"><span style="font-family: Rajdhani, sans-serif; font-size: 24px; letter-spacing: -1.2px;">WELD BEAR IEDU</span></span>
 <div class="h-4 w-[1px] bg-outline-variant/30"></div>
 <span class="font-label text-xs text-outline uppercase tracking-widest">Module 04 // Alfanumérico</span>
 </div>
 <div class="flex items-center gap-6">
-<button class="material-symbols-outlined text-[#84967E] hover:text-[#1BFF3C] transition-colors" data-icon="help">help</button>
-<button class="material-symbols-outlined text-[#84967E] hover:text-[#1BFF3C] transition-colors" data-icon="settings">settings</button>
+<button class="material-symbols-outlined text-[#84967E] hover:text-[#22C55E] transition-colors" data-icon="help">help</button>
+<button class="material-symbols-outlined text-[#84967E] hover:text-[#22C55E] transition-colors" data-icon="settings">settings</button>
 <div class="w-8 h-8 bg-surface-container-high border border-outline-variant flex items-center justify-center">
 <span class="material-symbols-outlined text-xs" data-icon="person">person</span>
 </div>
@@ -135,7 +187,7 @@
 <div>
 <h2 class="font-headline text-8xl font-extrabold text-primary tracking-tighter mb-2">NÚMERO</h2>
 <div class="h-px w-full bg-outline-variant/30 mb-4"></div>
-<p class="font-label text-lg text-[#1BFF3C] flex items-center gap-2">
+<p class="font-label text-lg text-[#22C55E] flex items-center gap-2">
 <span class="material-symbols-outlined text-sm" data-icon="arrow_right_alt">arrow_right_alt</span>
                         IDENTIFICA: POSICIÓN
                     </p>
@@ -149,7 +201,7 @@
 <div>
 <h2 class="font-headline text-8xl font-extrabold text-primary tracking-tighter mb-2">LETRA</h2>
 <div class="h-px w-full bg-outline-variant/30 mb-4"></div>
-<p class="font-label text-lg text-[#1BFF3C] flex items-center gap-2">
+<p class="font-label text-lg text-[#22C55E] flex items-center gap-2">
 <span class="material-symbols-outlined text-sm" data-icon="arrow_right_alt">arrow_right_alt</span>
                         IDENTIFICA: TIPO DE SOLDADURA
                     </p>
@@ -177,7 +229,7 @@
 </div>
 <!-- Summary Text Block -->
 <div class="md:col-span-4 bg-surface-container-high p-6 border border-outline-variant/20 flex flex-col justify-center">
-<span class="material-symbols-outlined text-[#1BFF3C] mb-2" data-icon="info">info</span>
+<span class="material-symbols-outlined text-[#22C55E] mb-2" data-icon="info">info</span>
 <p class="font-body text-white font-bold text-sm leading-tight uppercase tracking-tight">
                     Este sistema permite identificar cómo está colocada la junta y qué tipo de soldadura se realizará.
                 </p>
@@ -188,17 +240,17 @@
 <!-- Bottom Navigation Controls -->
 <nav class="fixed bottom-0 left-0 w-full flex justify-between items-center px-12 py-4 bg-[#1C1B1B] border-t border-[#3B4B37]/30 z-50">
 <!-- Previous Button -->
-<button class="flex flex-col items-center justify-center text-[#84967E] px-6 py-2 hover:bg-[#2A2A2A] hover:text-[#1BFF3C] transition-all group active:scale-95 duration-100 ease-in-out">
+<button class="flex flex-col items-center justify-center text-[#84967E] px-6 py-2 hover:bg-[#2A2A2A] hover:text-[#22C55E] transition-all group active:scale-95 duration-100 ease-in-out">
 <span class="material-symbols-outlined mb-1" data-icon="arrow_back">arrow_back</span>
 <span class="font-label text-xs font-medium uppercase tracking-widest">PREVIOUS</span>
 </button>
 <!-- Slide Counter (Active State Logic) -->
-<div class="flex flex-col items-center justify-center px-8 py-3 shadow-[0px_0px_10px_rgba(27,255,60,0.4)] bg-transparent border border-[#1BFF3C] text-[#1BFF3C]">
+<div class="flex flex-col items-center justify-center px-8 py-3 shadow-[0px_0px_10px_rgba(34,197,94,0.4)] bg-transparent border border-[#22C55E] text-[#22C55E]">
 <span class="material-symbols-outlined mb-1" data-icon="analytics">analytics</span>
 <span class="font-label text-xs font-bold uppercase tracking-widest leading-none">02</span>
 </div>
 <!-- Next Button -->
-<button class="flex flex-col items-center justify-center text-[#84967E] px-6 py-2 hover:bg-[#2A2A2A] hover:text-[#1BFF3C] transition-all group active:scale-95 duration-100 ease-in-out">
+<button class="flex flex-col items-center justify-center text-[#84967E] px-6 py-2 hover:bg-[#2A2A2A] hover:text-[#22C55E] transition-all group active:scale-95 duration-100 ease-in-out">
 <span class="material-symbols-outlined mb-1" data-icon="arrow_forward">arrow_forward</span>
 <span class="font-label text-xs font-medium uppercase tracking-widest">NEXT</span>
 </button>
@@ -210,12 +262,7 @@
 
 
 
-
-
-
-
-
-
+</div>
 <script id="weld-bear-sync">
     setTimeout(() => {
         const triggers = document.querySelectorAll('button, a');

@@ -50,7 +50,7 @@ html_content = f"""<!DOCTYPE html>
             overflow: hidden;
             background-color: #131313;
             font-family: sans-serif;
-            color: #1BFF3C;
+            color: #22C55E;
         }}
         iframe {{
             width: 100%;

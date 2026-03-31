@@ -26,13 +26,13 @@
                         "on-background": "#e5e2e1",
                         "on-secondary-fixed-variant": "#554500",
                         "on-secondary-container": "#6f5c00",
-                        "primary-container": "#1bff3c",
+                        "primary-container": "#22C55E",
                         "inverse-surface": "#e5e2e1",
                         "background": "#131313",
                         "on-primary-container": "#007112",
                         "on-primary-fixed-variant": "#00530a",
                         "surface-variant": "#353534",
-                        "primary-fixed-dim": "#00e631",
+                        "primary-fixed-dim": "#22C55E",
                         "on-secondary": "#3b2f00",
                         "error": "#ffb4ab",
                         "surface-bright": "#393939",
@@ -44,10 +44,10 @@
                         "surface": "#131313",
                         "error-container": "#93000a",
                         "on-tertiary-container": "#c5020c",
-                        "primary-fixed": "#74ff6d",
+                        "primary-fixed": "#22C55E",
                         "on-surface": "#e5e2e1",
                         "on-error-container": "#ffdad6",
-                        "surface-tint": "#00e631",
+                        "surface-tint": "#22C55E",
                         "on-surface-variant": "#baccb2",
                         "surface-container-low": "#1c1b1b",
                         "on-tertiary-fixed-variant": "#930005",
@@ -79,7 +79,7 @@
             },
         }
     </script>
-    <style>
+<style>
         .blueprint-grid {
             background-image:
                 linear-gradient(to right, rgba(59, 75, 55, 0.1) 1px, transparent 1px),
@@ -92,58 +92,110 @@
         }
 
         .glow-primary {
-            box-shadow: 0px 0px 15px rgba(27, 255, 60, 0.15);
+            box-shadow: 0px 0px 15px rgba(34, 197, 94, 0.15);
         }
 
         .glow-primary-strong {
-            box-shadow: 0px 0px 20px rgba(27, 255, 60, 0.3);
+            box-shadow: 0px 0px 20px rgba(34, 197, 94, 0.3);
         }
         @media (max-width: 1023px) {
             body, html { overflow-y: auto !important; overflow-x: hidden !important; height: auto !important; min-height: 100vh !important; }
-            * { box-sizing: border-box !important; }
-            main { height: auto !important; overflow: visible !important; display: flex !important; flex-direction: column !important; padding: 100px 16px 140px 16px !important; }
+            #frame-container { 
+                transform: none !important; 
+                width: 100% !important; 
+                max-width: 100% !important; 
+                height: auto !important; 
+                position: relative !important;
+                display: flex !important;
+                flex-direction: column !important;
+            }
+            main { 
+                height: auto !important; 
+                overflow: visible !important; 
+                display: flex !important; 
+                flex-direction: column !important; 
+                padding: 100px 16px 140px 16px !important; 
+                min-height: 100vh !important;
+                max-width: 100% !important;
+            }
             h1 { font-size: 2.5rem !important; line-height: 1.1 !important; word-wrap: break-word !important; }
             p, .text-xl, .text-2xl { font-size: 1.1rem !important; line-height: 1.4 !important; }
-            .grid, .grid-cols-1, .md\:grid-cols-12, .grid-cols-2 { display: flex !important; flex-direction: column !important; gap: 24px !important; }
-            .md\:col-span-7, .md\:col-span-5 { width: 100% !important; }
+            .grid, .grid-cols-1, .md\:grid-cols-12, .grid-cols-2 { 
+                display: flex !important; 
+                flex-direction: column !important; 
+                gap: 24px !important; 
+                width: 100% !important;
+            }
+            .md\:col-span-7, .md\:col-span-5 { width: 100% !important; flex: none !important; }
             .min-h-\[400px\] { min-height: 250px !important; }
-            header { flex-wrap: wrap !important; height: auto !important; padding: 16px !important; gap: 12px !important; position: relative !important; }
-            footer.fixed { height: auto !important; padding: 12px !important; flex-wrap: wrap !important; justify-content: center !important; gap: 8px !important; position: fixed !important; bottom: 0 !important; width: 100% !important; z-index: 50 !important; }
-            footer.fixed button, footer.fixed div { flex: 1 1 20% !important; min-width: 60px !important; padding: 12px 4px !important; border: 1px solid rgba(27,255,60,0.1) !important; margin: 0 !important; }
+            header { 
+                flex-wrap: wrap !important; 
+                height: auto !important; 
+                padding: 16px !important; 
+                gap: 12px !important; 
+                position: relative !important; 
+                width: 100% !important;
+            }
+            footer { 
+                height: auto !important; 
+                padding: 12px !important; 
+                flex-wrap: wrap !important; 
+                justify-content: center !important; 
+                gap: 8px !important; 
+                position: fixed !important; 
+                bottom: 0 !important; 
+                width: 100% !important; 
+                z-index: 50 !important; 
+            }
+            footer button, footer div { 
+                flex: 1 1 25% !important; 
+                min-width: 80px !important; 
+                padding: 12px 4px !important; 
+                border: 1px solid rgba(34,197,94,0.1) !important; 
+                margin: 0 !important; 
+                box-shadow: none !important;
+            }
             .fixed.top-0, .fixed.bottom-20 { display: none !important; }
+
+            /* Specific text adjustments for very small screens */
+            @media (max-width: 350px) {
+                h1 { font-size: 2rem !important; }
+            }
         }
     </style>
 </head>
 
 <body
     class="bg-background text-on-background font-body selection:bg-primary-container selection:text-on-primary min-h-screen flex flex-col blueprint-grid">
+<div id="frame-container" class="min-h-screen flex flex-col">
     <!-- TopAppBar -->
     <header
         class="flex justify-between items-center w-full px-6 py-4 bg-[#131313] rounded-none border-b border-[#3B4B37]/30 z-50">
         <div class="flex items-center gap-4">
-            <span class="text-[#1BFF3C] text-xl font-black font-['Rajdhani'] tracking-tighter" style=""><span
+            <span class="text-[#22C55E] text-xl font-black font-['Rajdhani'] tracking-tighter" style=""><span
                     style="font-family: Rajdhani, sans-serif; font-size: 24px; letter-spacing: -1.2px; text-transform: uppercase;"
                     class="">WELD BEAR IEDU</span></span>
             <div class="hidden md:flex gap-6 ml-10">
                 <nav class="flex gap-8">
-                    <a class="font-['Rajdhani'] uppercase tracking-widest font-bold text-[#1BFF3C] border-b-2 border-[#1BFF3C] py-1"
+                    <a class="font-['Rajdhani'] uppercase tracking-widest font-bold text-[#22C55E] border-b-2 border-[#22C55E] py-1"
                         href="#" style="">TRAINING_MODULE</a>
-                    <a class="font-['Rajdhani'] uppercase tracking-widest font-bold text-[#84967E] hover:bg-[#1BFF3C]/10 hover:text-[#1BFF3C] transition-colors duration-150 py-1"
+                    <a class="font-['Rajdhani'] uppercase tracking-widest font-bold text-[#84967E] hover:bg-[#22C55E]/10 hover:text-[#22C55E] transition-colors duration-150 py-1"
                         href="#" style="">RESOURCES</a>
-                    <a class="font-['Rajdhani'] uppercase tracking-widest font-bold text-[#84967E] hover:bg-[#1BFF3C]/10 hover:text-[#1BFF3C] transition-colors duration-150 py-1"
+                    <a class="font-['Rajdhani'] uppercase tracking-widest font-bold text-[#84967E] hover:bg-[#22C55E]/10 hover:text-[#22C55E] transition-colors duration-150 py-1"
                         href="#" style="">CERTIFICATION</a>
                 </nav>
             </div>
         </div>
-        <div class="flex items-center gap-4 text-[#1BFF3C]">
-            <button class="p-2 hover:bg-[#1BFF3C]/10 transition-colors duration-150" style="">
+        <div class="flex items-center gap-4 text-[#22C55E]">
+            <button class="p-2 hover:bg-[#22C55E]/10 transition-colors duration-150" style="">
                 <span class="material-symbols-outlined" data-icon="info" style="">info</span>
             </button>
-            <button class="p-2 hover:bg-[#1BFF3C]/10 transition-colors duration-150" style="">
+            <button class="p-2 hover:bg-[#22C55E]/10 transition-colors duration-150" style="">
                 <span class="material-symbols-outlined" data-icon="settings" style="">settings</span>
             </button>
         </div>
     </header>
+
     <!-- Main Content -->
     <main class="max-w-7xl mx-auto h-[calc(100vh-100px)] overflow-hidden flex flex-col p-6 relative">
         <!-- Header Section -->
@@ -158,7 +210,7 @@
             <!-- Left Column: Schematic/Visual -->
             <div class="md:col-span-7 relative group">
                 <div class="w-full h-full min-h-[400px] bg-surface-container-low border border-outline-variant/30 relative flex items-center justify-center overflow-hidden bg-[#131313]">
-                    <img alt="Fillet Welds technical diagram 3F" class="absolute inset-0 w-full h-full object-contain p-12 mix-blend-screen" data-alt="Technical diagram showing 3F fillet weld positions" src="../posicion3.png" style="">
+                    <img alt="Fillet Welds technical diagram 3F" class="absolute inset-0 w-full h-full object-contain p-2 mix-blend-screen drop-shadow-[0_0_25px_rgba(34,197,94,0.2)] hover:scale-105 transition-all duration-500" data-alt="Technical diagram showing 3F fillet weld positions" src="../posicion_3F.jpg" style="">
                 </div>
             </div>
             <!-- Right Column: Technical Details -->
@@ -210,20 +262,20 @@
     </main>
     <!-- BottomNavBar -->
     <footer
-        class="fixed bottom-0 left-0 w-full z-50 flex justify-between items-stretch px-0 bg-[#1C1B1B] border-t border-[#3B4B37]/40 shadow-[0px_-5px_15px_rgba(27,255,60,0.1)]">
+        class="fixed bottom-0 left-0 w-full z-50 flex justify-between items-stretch px-0 bg-[#1C1B1B] border-t border-[#3B4B37]/40 shadow-[0px_-5px_15px_rgba(34,197,94,0.1)]">
         <button
-            class="flex-1 flex items-center justify-center gap-2 font-['JetBrains_Mono'] text-xs font-medium uppercase tracking-tight text-[#1BFF3C] border border-[#1BFF3C]/20 p-4 hover:bg-[#1BFF3C] hover:text-[#003A05] transition-all cursor-crosshair"
+            class="flex-1 flex items-center justify-center gap-2 font-['JetBrains_Mono'] text-xs font-medium uppercase tracking-tight text-[#22C55E] border border-[#22C55E]/20 p-4 hover:bg-[#22C55E] hover:text-[#003A05] transition-all cursor-crosshair"
             style="">
             <span class="material-symbols-outlined" data-icon="arrow_back_ios_new" style="">arrow_back_ios_new</span>
             <span class="" style="">PREVIOUS</span>
         </button>
         <div
-            class="flex-[1.5] flex items-center justify-center gap-3 bg-transparent text-[#1BFF3C] border-x border-[#1BFF3C]/20 font-bold p-4">
+            class="flex-[1.5] flex items-center justify-center gap-3 bg-transparent text-[#22C55E] border-x border-[#22C55E]/20 font-bold p-4">
             <span class="material-symbols-outlined text-lg" data-icon="analytics"
                 style="font-variation-settings: &quot;FILL&quot; 1;">analytics</span><span
                 class="font-['JetBrains_Mono'] text-sm uppercase tracking-widest" style="">06</span></div>
         <button
-            class="flex-1 flex items-center justify-center gap-2 font-['JetBrains_Mono'] text-xs font-medium uppercase tracking-tight text-[#1BFF3C] border border-[#1BFF3C]/20 p-4 hover:bg-[#1BFF3C] hover:text-[#003A05] transition-all cursor-crosshair"
+            class="flex-1 flex items-center justify-center gap-2 font-['JetBrains_Mono'] text-xs font-medium uppercase tracking-tight text-[#22C55E] border border-[#22C55E]/20 p-4 hover:bg-[#22C55E] hover:text-[#003A05] transition-all cursor-crosshair"
             style="">
             <span class="" style="">NEXT</span>
             <span class="material-symbols-outlined" data-icon="arrow_forward_ios" style="">arrow_forward_ios</span>
@@ -242,11 +294,7 @@
 
 
 
-
-
-
-
-
+</div>
     <script id="weld-bear-sync">
         setTimeout(() => {
             const triggers = document.querySelectorAll('button, a');

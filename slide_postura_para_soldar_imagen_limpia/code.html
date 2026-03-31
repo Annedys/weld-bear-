@@ -26,7 +26,7 @@
               "on-primary-fixed-variant": "#00530a",
               "on-secondary-fixed-variant": "#554500",
               "background": "#131313",
-              "primary-container": "#1bff3c",
+              "primary-container": "#22C55E",
               "on-surface": "#e5e2e1",
               "outline-variant": "#3b4b37",
               "secondary-container": "#fed400",
@@ -41,7 +41,7 @@
               "secondary": "#fff3d3",
               "inverse-primary": "#006e11",
               "error-container": "#93000a",
-              "surface-tint": "#00e631",
+              "surface-tint": "#22C55E",
               "surface-container-highest": "#353534",
               "on-surface-variant": "#baccb2",
               "on-secondary": "#3b2f00",
@@ -50,8 +50,8 @@
               "surface-container": "#201f1f",
               "tertiary": "#fff8f7",
               "surface-container-lowest": "#0e0e0e",
-              "primary-fixed": "#74ff6d",
-              "primary-fixed-dim": "#00e631",
+              "primary-fixed": "#22C55E",
+              "primary-fixed-dim": "#22C55E",
               "secondary-fixed-dim": "#eac300",
               "secondary-fixed": "#ffe174",
               "tertiary-container": "#ffd3cd",
@@ -80,39 +80,132 @@
         font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
       }
       .technical-line {
-        background: repeating-linear-gradient(90deg, #1bff3c 0, #1bff3c 2px, transparent 2px, transparent 4px);
+        background: repeating-linear-gradient(90deg, #22C55E 0, #22C55E 2px, transparent 2px, transparent 4px);
         height: 1px;
         opacity: 0.3;
       }
-        @media (max-width: 1023px) {
-            body, html { overflow-y: auto !important; overflow-x: hidden !important; height: auto !important; min-height: 100vh !important; }
+        /* ===== TRUE RESPONSIVE STRATEGY (Móvil, Tablet, Nest Hub, iPad Pro) ===== */
+        @media (max-width: 1366px), (max-height: 850px) {
+            body, html { 
+                overflow-y: auto !important; 
+                overflow-x: hidden !important; 
+                height: auto !important; 
+                min-height: 100vh !important; 
+                display: block !important; 
+                background-attachment: scroll !important;
+                transform: none !important;
+            }
             * { box-sizing: border-box !important; }
-            main { height: auto !important; overflow: visible !important; display: flex !important; flex-direction: column !important; padding: 100px 16px 140px 16px !important; }
-            .md\:flex-row { flex-direction: column !important; }
-            .md\:w-1\/2 { width: 100% !important; height: auto !important; min-height: 250px !important; }
-            h1 { font-size: 2.5rem !important; line-height: 1.1 !important; word-wrap: break-word !important; }
-            .text-5xl, .md\:text-6xl { font-size: 2.5rem !important; }
-            p, .text-xl { font-size: 1.1rem !important; line-height: 1.4 !important; }
-            .space-y-4 { overflow: visible !important; height: auto !important; }
-            header { flex-wrap: wrap !important; height: auto !important; padding: 16px !important; gap: 12px !important; position: relative !important; }
-            nav.fixed { height: auto !important; padding: 12px !important; flex-wrap: wrap !important; justify-content: center !important; gap: 8px !important; position: fixed !important; bottom: 0 !important; width: 100% !important; z-index: 50 !important; }
-            nav.fixed button, nav.fixed div { flex: 1 1 20% !important; min-width: 60px !important; padding: 12px 4px !important; border: 1px solid rgba(27,255,60,0.1) !important; margin: 0 !important; }
+            
+            header { 
+                background: #131313 !important;
+                padding: 12px 16px !important;
+                position: relative !important;
+                height: auto !important;
+                display: flex !important;
+            }
+            header nav { display: none !important; }
+            
+            main { 
+                height: auto !important; 
+                padding: 20px 16px 140px 16px !important; 
+                display: block !important;
+                transform: none !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                margin-bottom: 0 !important;
+            }
+            
+            h1 { 
+                font-size: clamp(2.2rem, 8vw, 4.5rem) !important; 
+                line-height: 0.9 !important; 
+                word-wrap: break-word !important; 
+            }
+            
+            section.w-full.md\:w-1\/2 { 
+                  width: 100% !important;
+                  height: auto !important;
+                  min-height: auto !important;
+                  margin-bottom: 24px !important;
+                  overflow: visible !important;
+            }
+
+            .relative.bg-surface-container-low {
+                height: 300px !important;
+            }
+            
+            .space-y-4 { 
+                height: auto !important; 
+                overflow: visible !important; 
+                padding-right: 0 !important;
+            }
+            
+            .bg-surface-container.p-5 { padding: 16px !important; }
+            
+            .text-xl, .text-lg, .text-base { font-size: 1.1rem !important; line-height: 1.4 !important; }
+            .font-headline.text-2xl { font-size: 1.5rem !important; }
+
+            nav.fixed { 
+                height: 64px !important; 
+                padding: 8px !important; 
+                flex-wrap: nowrap !important; 
+                justify-content: space-around !important; 
+                gap: 4px !important; 
+                position: fixed !important; 
+                bottom: 0 !important; 
+                width: 100% !important; 
+                z-index: 100 !important;
+                background: #1C1B1B !important;
+                display: flex !important;
+                border-top: 1px solid rgba(59,75,55,0.3) !important;
+            }
+            
+            nav.fixed button, nav.fixed div { 
+                flex: 1 1 auto !important; 
+                min-width: 50px !important; 
+                height: 48px !important;
+                padding: 4px !important; 
+                border: none !important;
+                background: transparent !important;
+                margin: 0 !important;
+            }
+            nav.fixed div { border: 1px solid rgba(34,197,94,0.3) !important; background: rgba(34,197,94,0.05) !important; }
+            nav.fixed button span.font-['JetBrains_Mono'], nav.fixed div span.font-['JetBrains_Mono'] { font-size: 9px !important; margin-top: 2px !important; }
+
+            .hidden.md\:flex { display: none !important; }
+
+            /* Tablet adjust */
+            @media (min-width: 768px) and (max-width: 1366px) {
+                main { display: flex !important; flex-direction: row !important; gap: 24px !important; }
+                section.w-full.md\:w-1\/2 { width: 50% !important; }
+                .relative.bg-surface-container-low { height: 100% !important; }
+                h1 { font-size: 4rem !important; }
+            }
+        }
+
+        /* Protect 4K/Desktop scale alignment */
+        @media (min-width: 1367px) and (min-height: 851px) {
+            body { 
+                height: 100vh !important; 
+                overflow: hidden !important; 
+                display: flex !important;
+            }
         }
     </style>
 </head>
 <body class="font-body text-on-surface min-h-screen flex flex-col">
 <!-- TopAppBar -->
 <header class="bg-[#131313] dark:bg-[#131313] flex justify-between items-center w-full px-6 py-4 docked full-width top-0 border-b border-[#3B4B37]/20 z-50">
-<div class="text-2xl font-black text-[#1BFF3C] tracking-tighter font-headline" style=""><span class="" style="font-family: Rajdhani; letter-spacing: -1.2px;">WELD BEAR IEDU&nbsp;</span></div>
+<div class="text-2xl font-black text-[#22C55E] tracking-tighter font-headline" style=""><span class="" style="font-family: Rajdhani; letter-spacing: -1.2px;">WELD BEAR IEDU&nbsp;</span></div>
 <nav class="hidden md:flex space-x-8">
-<a class="font-['Rajdhani'] uppercase tracking-wider font-bold text-lg text-[#1BFF3C] border-b-2 border-[#1BFF3C] pb-1" href="#" style="">MODULES</a>
-<a class="font-['Rajdhani'] uppercase tracking-wider font-bold text-lg text-[#84967E] hover:text-[#1BFF3C] transition-colors" href="#" style="">SCHEMATICS</a>
-<a class="font-['Rajdhani'] uppercase tracking-wider font-bold text-lg text-[#84967E] hover:text-[#1BFF3C] transition-colors" href="#" style="">SAFETY</a>
-<a class="font-['Rajdhani'] uppercase tracking-wider font-bold text-lg text-[#84967E] hover:text-[#1BFF3C] transition-colors" href="#" style="">RESOURCES</a>
+<a class="font-['Rajdhani'] uppercase tracking-wider font-bold text-lg text-[#22C55E] border-b-2 border-[#22C55E] pb-1" href="#" style="">MODULES</a>
+<a class="font-['Rajdhani'] uppercase tracking-wider font-bold text-lg text-[#84967E] hover:text-[#22C55E] transition-colors" href="#" style="">SCHEMATICS</a>
+<a class="font-['Rajdhani'] uppercase tracking-wider font-bold text-lg text-[#84967E] hover:text-[#22C55E] transition-colors" href="#" style="">SAFETY</a>
+<a class="font-['Rajdhani'] uppercase tracking-wider font-bold text-lg text-[#84967E] hover:text-[#22C55E] transition-colors" href="#" style="">RESOURCES</a>
 </nav>
 <div class="flex items-center space-x-4">
-<button class="material-symbols-outlined text-[#84967E] hover:bg-[#1BFF3C]/10 hover:text-[#1BFF3C] p-2 transition-all" style="">settings</button>
-<button class="material-symbols-outlined text-[#84967E] hover:bg-[#1BFF3C]/10 hover:text-[#1BFF3C] p-2 transition-all" style="">help</button>
+<button class="material-symbols-outlined text-[#84967E] hover:bg-[#22C55E]/10 hover:text-[#22C55E] p-2 transition-all" style="">settings</button>
+<button class="material-symbols-outlined text-[#84967E] hover:bg-[#22C55E]/10 hover:text-[#22C55E] p-2 transition-all" style="">help</button>
 </div>
 </header>
 <!-- Main Content Canvas -->
@@ -182,20 +275,20 @@
         </section>
 </main>
 <!-- BottomNavBar -->
-<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-20 px-4 bg-[#1C1B1B] dark:bg-[#1C1B1B] border-t border-[#3B4B37]/30 shadow-[0px_0px_15px_rgba(27,255,60,0.15)]">
-<button class="flex flex-col items-center justify-center text-[#84967E] px-6 py-2 hover:bg-[#2A2A2A] hover:text-[#1BFF3C] transition-all duration-150 group" style="">
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-20 px-4 bg-[#1C1B1B] dark:bg-[#1C1B1B] border-t border-[#3B4B37]/30 shadow-[0px_0px_15px_rgba(34,197,94,0.15)]">
+<button class="flex flex-col items-center justify-center text-[#84967E] px-6 py-2 hover:bg-[#2A2A2A] hover:text-[#22C55E] transition-all duration-150 group" style="">
 <span class="material-symbols-outlined mb-1" style="">arrow_back</span>
 <span class="font-['JetBrains_Mono'] text-xs font-medium uppercase" style="">PREVIOUS</span>
 </button>
-<div class="flex flex-col items-center justify-center text-[#1BFF3C] bg-[#1BFF3C]/10 px-6 py-2 border-t-2 border-[#1BFF3C]">
+<div class="flex flex-col items-center justify-center text-[#22C55E] bg-[#22C55E]/10 px-6 py-2 border-t-2 border-[#22C55E]">
 <span class="material-symbols-outlined mb-1" style="">numbers</span>
 <span class="font-['JetBrains_Mono'] text-xs font-medium uppercase" style="">12</span>
 </div>
-<button class="flex flex-col items-center justify-center text-[#84967E] px-6 py-2 hover:bg-[#2A2A2A] hover:text-[#1BFF3C] transition-all duration-150 group" style="">
+<button class="flex flex-col items-center justify-center text-[#84967E] px-6 py-2 hover:bg-[#2A2A2A] hover:text-[#22C55E] transition-all duration-150 group" style="">
 <span class="material-symbols-outlined mb-1" style="">arrow_forward</span>
 <span class="font-['JetBrains_Mono'] text-xs font-medium uppercase" style="">NEXT</span>
 </button>
-<button class="hidden md:flex flex-col items-center justify-center text-[#84967E] px-6 py-2 hover:bg-[#2A2A2A] hover:text-[#1BFF3C] transition-all duration-150 group" style="">
+<button class="hidden md:flex flex-col items-center justify-center text-[#84967E] px-6 py-2 hover:bg-[#2A2A2A] hover:text-[#22C55E] transition-all duration-150 group" style="">
 <span class="material-symbols-outlined mb-1" style="">home</span>
 <span class="font-['JetBrains_Mono'] text-xs font-medium uppercase" style="">HOME</span>
 </button>

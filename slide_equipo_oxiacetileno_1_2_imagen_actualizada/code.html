@@ -1,23 +1,29 @@
 <!DOCTYPE html>
 
-<html class="dark" lang="es"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>WELD_TECH_OS - EQUIPO DE CORTE OXIACETILENO</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700;900&amp;family=Space+Grotesk:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
+<html class="dark" lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>WELD_TECH_OS - EQUIPO DE CORTE OXIACETILENO</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700;900&amp;family=Space+Grotesk:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
             theme: {
                 extend: {
                     colors: {
-                        "primary-container": "#1bff3c",
+                        "primary-container": "#22C55E",
                         "surface-bright": "#393939",
                         "primary": "#ecffe3",
                         "on-secondary-container": "#6f5c00",
-                        "surface-tint": "#00e631",
+                        "surface-tint": "#22C55E",
                         "secondary": "#fff3d3",
                         "on-secondary-fixed-variant": "#554500",
                         "tertiary-container": "#ffd3cd",
@@ -44,11 +50,11 @@
                         "inverse-primary": "#006e11",
                         "on-surface-variant": "#baccb2",
                         "background": "#131313",
-                        "primary-fixed": "#74ff6d",
+                        "primary-fixed": "#22C55E",
                         "tertiary-fixed": "#ffdad5",
                         "tertiary": "#fff8f7",
                         "secondary-container": "#fed400",
-                        "primary-fixed-dim": "#00e631",
+                        "primary-fixed-dim": "#22C55E",
                         "on-tertiary-fixed-variant": "#930005",
                         "on-error-container": "#ffdad6",
                         "surface": "#131313",
@@ -73,177 +79,331 @@
             },
         }
     </script>
-<style>
+    <style>
         .blueprint-grid {
-            background-image: 
+            background-image:
                 linear-gradient(to right, rgba(59, 75, 55, 0.1) 1px, transparent 1px),
                 linear-gradient(to bottom, rgba(59, 75, 55, 0.1) 1px, transparent 1px);
             background-size: 40px 40px;
         }
+
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
+
         .glow-border:hover {
-            box-shadow: 0px 0px 15px rgba(27, 255, 60, 0.2);
-            border-color: #1bff3c;
+            box-shadow: 0px 0px 15px rgba(34, 197, 94, 0.2);
+            border-color: #22C55E;
         }
+
         .technical-line {
             background: repeating-linear-gradient(90deg, #3b4b37 0, #3b4b37 2px, transparent 2px, transparent 4px);
         }
+
         .custom-scrollbar::-webkit-scrollbar {
             width: 4px;
         }
+
         .custom-scrollbar::-webkit-scrollbar-track {
             background: #1c1b1b;
         }
+
         .custom-scrollbar::-webkit-scrollbar-thumb {
-            background: #1BFF3C;
+            background: #22C55E;
         }
+
         @media (max-width: 1023px) {
-            body, html { overflow-y: auto !important; overflow-x: hidden !important; height: auto !important; min-height: 100vh !important; }
-            * { box-sizing: border-box !important; }
-            main { height: auto !important; overflow: visible !important; display: flex !important; flex-direction: column !important; padding: 100px 16px 140px 16px !important; }
-            .absolute.top-28.right-12 { display: none !important; }
-            h1 { font-size: 2.8rem !important; line-height: 1.1 !important; }
-            .flex-grow.grid { display: flex !important; flex-direction: column !important; overflow: visible !important; gap: 24px !important; }
-            .col-span-12 { width: 100% !important; flex: 0 0 auto !important; height: auto !important; overflow: visible !important; }
-            .overflow-y-auto { overflow: visible !important; max-height: none !important; }
-            .flex-grow.bg-surface-container-low.relative { min-height: 250px !important; padding: 16px !important; }
-            .flex-grow.bg-surface-container-low img { max-height: 300px !important; object-fit: contain !important; position: static !important; }
-            p { font-size: 1.1rem !important; line-height: 1.4 !important; }
-            h4 { font-size: 1.3rem !important; }
-            footer { height: auto !important; padding: 10px !important; flex-wrap: wrap !important; justify-content: center !important; gap: 8px !important; position: fixed !important; bottom: 0; width: 100%; z-index: 50; }
-            footer button { flex: 1 1 20%; min-width: 60px; padding: 8px !important; }
+
+            body,
+            html {
+                overflow-y: auto !important;
+                overflow-x: hidden !important;
+                height: auto !important;
+                min-height: 100vh !important;
+                transform: none !important;
+            }
+
+            * {
+                box-sizing: border-box !important;
+            }
+
+            header {
+                background: #131313 !important;
+                padding: 12px 16px !important;
+                position: relative !important;
+                height: auto !important;
+            }
+
+            header nav {
+                display: none !important;
+            }
+
+            main {
+                height: auto !important;
+                padding: 30px 16px 140px 16px !important;
+                display: block !important;
+                transform: none !important;
+                width: 100% !important;
+                max-width: 100% !important;
+            }
+
+            .absolute.top-28.right-12 {
+                display: none !important;
+            }
+
+            h1 {
+                font-size: clamp(2.2rem, 8vw, 3.5rem) !important;
+                line-height: 1.1 !important;
+                word-wrap: break-word !important;
+                margin-bottom: 20px !important;
+            }
+
+            .flex-grow.grid {
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 20px !important;
+                width: 100% !important;
+                overflow: visible !important;
+            }
+
+            .col-span-12 {
+                width: 100% !important;
+                height: auto !important;
+                overflow: visible !important;
+            }
+
+            .overflow-y-auto {
+                overflow: visible !important;
+                max-height: none !important;
+            }
+
+            .flex-grow.bg-surface-container-low.relative {
+                min-height: 220px !important;
+                padding: 10px !important;
+                display: flex !important;
+                justify-content: center !important;
+            }
+
+            .flex-grow.bg-surface-container-low img {
+                max-height: 250px !important;
+                width: auto !important;
+                object-fit: contain !important;
+                position: static !important;
+            }
+
+            p.text-2xl {
+                font-size: 1.15rem !important;
+                line-height: 1.4 !important;
+            }
+
+            h4.text-2xl {
+                font-size: 1.25rem !important;
+            }
+
+            .bg-surface-container-low.p-5 {
+                padding: 16px !important;
+                gap: 12px !important;
+            }
+
+            footer {
+                height: auto !important;
+                padding: 10px !important;
+                flex-wrap: nowrap !important;
+                justify-content: space-around !important;
+                gap: 4px !important;
+                position: fixed !important;
+                bottom: 0 !important;
+                width: 100% !important;
+                z-index: 100 !important;
+                background: #1C1B1B !important;
+            }
+
+            footer button {
+                flex: 1 1 auto !important;
+                min-width: 60px !important;
+                height: 56px !important;
+                padding: 6px !important;
+            }
+
+            footer button span.text-xs {
+                font-size: 10px !important;
+            }
+
+            /* Small mobile specific */
+            @media (max-width: 340px) {
+                h1 {
+                    font-size: 2rem !important;
+                }
+
+                h4.text-2xl {
+                    font-size: 1.1rem !important;
+                }
+
+                p.text-2xl {
+                    font-size: 1rem !important;
+                }
+            }
         }
     </style>
 </head>
-<body class="bg-background text-on-surface font-body overflow-hidden min-h-screen selection:bg-primary-container selection:text-on-primary-container">
-<!-- Top AppBar -->
-<header class="bg-[#131313] dark:bg-[#131313] border-b border-[#3B4B37]/20 flex justify-between items-center w-full px-6 py-4 fixed top-0 z-50">
-<div class="text-2xl font-black text-[#1BFF3C] tracking-tighter font-headline uppercase"><span style="letter-spacing: -1.2px;">WELD BEAR IEDU</span></div>
-<nav class="hidden md:flex items-center space-x-8">
-<a class="font-headline uppercase tracking-wider font-bold text-lg text-[#1BFF3C] border-b-2 border-[#1BFF3C] pb-1" href="#">MODULES</a>
-<a class="font-headline uppercase tracking-wider font-bold text-lg text-[#84967E] hover:text-[#1BFF3C] transition-colors" href="#">SCHEMATICS</a>
-<a class="font-headline uppercase tracking-wider font-bold text-lg text-[#84967E] hover:text-[#1BFF3C] transition-colors" href="#">SAFETY</a>
-<a class="font-headline uppercase tracking-wider font-bold text-lg text-[#84967E] hover:text-[#1BFF3C] transition-colors" href="#">RESOURCES</a>
-</nav>
-<div class="flex items-center space-x-4">
-<button class="text-[#84967E] hover:text-[#1BFF3C] p-2 hover:bg-[#1BFF3C]/10 transition-all duration-75 ease-in-out active:scale-95">
-<span class="material-symbols-outlined" data-icon="settings">settings</span>
-</button>
-<button class="text-[#84967E] hover:text-[#1BFF3C] p-2 hover:bg-[#1BFF3C]/10 transition-all duration-75 ease-in-out active:scale-95">
-<span class="material-symbols-outlined" data-icon="help">help</span>
-</button>
-</div>
-</header>
-<main class="pt-24 pb-20 px-12 h-screen relative blueprint-grid flex flex-col">
-<!-- Background Decorative Metadata -->
-<div class="absolute top-28 right-12 font-label text-[10px] text-outline opacity-40 uppercase tracking-widest text-right leading-relaxed">
-            SYS_REF: OXY_CUT_V01<br/>
-            OPERATING_TEMP: 3200C<br/>
+
+<body
+    class="bg-background text-on-surface font-body overflow-hidden min-h-screen selection:bg-primary-container selection:text-on-primary-container">
+    <!-- Top AppBar -->
+    <header
+        class="bg-[#131313] dark:bg-[#131313] border-b border-[#3B4B37]/20 flex justify-between items-center w-full px-6 py-4 fixed top-0 z-50">
+        <div class="text-2xl font-black text-[#22C55E] tracking-tighter font-headline uppercase"><span
+                style="letter-spacing: -1.2px;">WELD BEAR IEDU</span></div>
+        <nav class="hidden md:flex items-center space-x-8">
+            <a class="font-headline uppercase tracking-wider font-bold text-lg text-[#22C55E] border-b-2 border-[#22C55E] pb-1"
+                href="#">MODULES</a>
+            <a class="font-headline uppercase tracking-wider font-bold text-lg text-[#84967E] hover:text-[#22C55E] transition-colors"
+                href="#">SCHEMATICS</a>
+            <a class="font-headline uppercase tracking-wider font-bold text-lg text-[#84967E] hover:text-[#22C55E] transition-colors"
+                href="#">SAFETY</a>
+            <a class="font-headline uppercase tracking-wider font-bold text-lg text-[#84967E] hover:text-[#22C55E] transition-colors"
+                href="#">RESOURCES</a>
+        </nav>
+        <div class="flex items-center space-x-4">
+            <button
+                class="text-[#84967E] hover:text-[#22C55E] p-2 hover:bg-[#22C55E]/10 transition-all duration-75 ease-in-out active:scale-95">
+                <span class="material-symbols-outlined" data-icon="settings">settings</span>
+            </button>
+            <button
+                class="text-[#84967E] hover:text-[#22C55E] p-2 hover:bg-[#22C55E]/10 transition-all duration-75 ease-in-out active:scale-95">
+                <span class="material-symbols-outlined" data-icon="help">help</span>
+            </button>
+        </div>
+    </header>
+    <main class="pt-24 pb-20 px-12 h-screen relative blueprint-grid flex flex-col">
+        <!-- Background Decorative Metadata -->
+        <div
+            class="absolute top-28 right-12 font-label text-[10px] text-outline opacity-40 uppercase tracking-widest text-right leading-relaxed">
+            SYS_REF: OXY_CUT_V01<br />
+            OPERATING_TEMP: 3200C<br />
             GRID_LOC: 44.20.91
         </div>
-<!-- Page Header -->
-<div class="mb-10">
-<h1 class="font-headline text-5xl font-black text-primary-container tracking-tighter uppercase mb-1">
+        <!-- Page Header -->
+        <div class="mb-10">
+            <h1 class="font-headline text-5xl font-black text-primary-container tracking-tighter uppercase mb-1">
                 EQUIPO DE CORTE OXIACETILENO
             </h1>
-<div class="flex items-center gap-4">
-<div class="h-px w-12 bg-primary-container"></div>
-<h2 class="font-label text-sm uppercase tracking-[0.2em] text-outline">
+            <div class="flex items-center gap-4">
+                <div class="h-px w-12 bg-primary-container"></div>
+                <h2 class="font-label text-sm uppercase tracking-[0.2em] text-outline">
                     COMPONENTES PRINCIPALES (PARTE 1)
                 </h2>
-</div>
-</div>
-<!-- Layout Container -->
-<div class="flex-grow grid grid-cols-12 gap-10 overflow-hidden">
-<!-- Left: Visual Section -->
-<div class="col-span-12 lg:col-span-6 flex flex-col gap-6 relative">
-<div class="flex-grow bg-surface-container-low border border-outline-variant/30 relative overflow-hidden group p-10 flex items-center justify-center">
-<img alt="Oxy-acetylene cutting equipment on cart (B&W)" class="max-w-full max-h-full object-contain grayscale opacity-80 group-hover:opacity-100 transition-all duration-700" src="../equipo_oxiacetileno_cart.png">
-</div>
-<!-- Bottom Alert Card -->
-</div>
-<!-- Right: Technical Specifications -->
-<div class="col-span-12 lg:col-span-6 flex flex-col gap-4 overflow-y-auto pr-2 custom-scrollbar"><div class="font-headline text-3xl font-bold uppercase tracking-wider text-[#1BFF3C] mb-4 border-b border-[#1BFF3C]/30 pb-2">Especificaciones técnicas:</div>
-<!-- Card 01 -->
-<div class="bg-surface-container-low border border-outline-variant/30 p-5 glow-border transition-all flex items-start gap-5">
-<div class="font-headline text-4xl font-black text-primary-container/20 tabular-nums">01</div>
-<div class="flex-grow">
-<div class="flex justify-between items-baseline mb-2">
-<h4 class="font-headline text-2xl font-bold text-primary-container uppercase tracking-wide">CILINDRO DE OXÍGENO</h4>
+            </div>
+        </div>
+        <!-- Layout Container -->
+        <div class="flex-grow grid grid-cols-12 gap-10 overflow-hidden">
+            <!-- Left: Visual Section -->
+            <div class="col-span-12 lg:col-span-6 flex flex-col gap-6 relative">
+                <div
+                    class="flex-grow bg-surface-container-low border border-outline-variant/30 relative overflow-hidden group p-10 flex items-center justify-center">
+                    <img alt="Oxy-acetylene cutting equipment on cart (B&W)"
+                        class="max-w-full max-h-full object-contain grayscale opacity-80 group-hover:opacity-100 transition-all duration-700"
+                        src="../equipo_oxiacetileno_cart.png">
+                </div>
+                <!-- Bottom Alert Card -->
+            </div>
+            <!-- Right: Technical Specifications -->
+            <div class="col-span-12 lg:col-span-6 flex flex-col gap-4 overflow-y-auto pr-2 custom-scrollbar">
+                <div
+                    class="font-headline text-3xl font-bold uppercase tracking-wider text-[#22C55E] mb-4 border-b border-[#22C55E]/30 pb-2">
+                    Especificaciones técnicas:</div>
+                <!-- Card 01 -->
+                <div
+                    class="bg-surface-container-low border border-outline-variant/30 p-5 glow-border transition-all flex items-start gap-5">
+                    <div class="font-headline text-4xl font-black text-primary-container/20 tabular-nums">01</div>
+                    <div class="flex-grow">
+                        <div class="flex justify-between items-baseline mb-2">
+                            <h4 class="font-headline text-2xl font-bold text-primary-container uppercase tracking-wide">
+                                CILINDRO DE OXÍGENO</h4>
 
-</div>
-<p class="text-on-surface font-body text-2xl leading-snug">
-                            Almacena el oxígeno a alta presión. Su función es alimentar la combustión y luego generar el chorro de oxígeno de corte.
+                        </div>
+                        <p class="text-on-surface font-body text-2xl leading-snug">
+                            Almacena el oxígeno a alta presión. Su función es alimentar la combustión y luego generar el
+                            chorro de oxígeno de corte.
                         </p>
-</div>
-</div>
-<!-- Card 02 -->
-<div class="bg-surface-container-low border border-outline-variant/30 p-5 glow-border transition-all flex items-start gap-5">
-<div class="font-headline text-4xl font-black text-primary-container/20 tabular-nums">02</div>
-<div class="flex-grow">
-<div class="flex justify-between items-baseline mb-2">
-<h4 class="font-headline text-2xl font-bold text-primary-container uppercase tracking-wide">CILINDRO DE ACETILENO</h4>
+                    </div>
+                </div>
+                <!-- Card 02 -->
+                <div
+                    class="bg-surface-container-low border border-outline-variant/30 p-5 glow-border transition-all flex items-start gap-5">
+                    <div class="font-headline text-4xl font-black text-primary-container/20 tabular-nums">02</div>
+                    <div class="flex-grow">
+                        <div class="flex justify-between items-baseline mb-2">
+                            <h4 class="font-headline text-2xl font-bold text-primary-container uppercase tracking-wide">
+                                CILINDRO DE ACETILENO</h4>
 
-</div>
-<p class="text-on-surface font-body text-2xl leading-snug">
+                        </div>
+                        <p class="text-on-surface font-body text-2xl leading-snug">
                             Almacena el gas combustible. Su función es producir la llama junto con el oxígeno.
                         </p>
-</div>
-</div>
-<!-- Card 03 -->
-<div class="bg-surface-container-low border border-outline-variant/30 p-5 glow-border transition-all flex items-start gap-5">
-<div class="font-headline text-4xl font-black text-primary-container/20 tabular-nums">03</div>
-<div class="flex-grow">
-<div class="flex justify-between items-baseline mb-2">
-<h4 class="font-headline text-2xl font-bold text-primary-container uppercase tracking-wide">REGULADORES DE PRESIÓN</h4>
+                    </div>
+                </div>
+                <!-- Card 03 -->
+                <div
+                    class="bg-surface-container-low border border-outline-variant/30 p-5 glow-border transition-all flex items-start gap-5">
+                    <div class="font-headline text-4xl font-black text-primary-container/20 tabular-nums">03</div>
+                    <div class="flex-grow">
+                        <div class="flex justify-between items-baseline mb-2">
+                            <h4 class="font-headline text-2xl font-bold text-primary-container uppercase tracking-wide">
+                                REGULADORES DE PRESIÓN</h4>
 
-</div>
-<p class="text-on-surface font-body text-2xl leading-snug">
+                        </div>
+                        <p class="text-on-surface font-body text-2xl leading-snug">
                             Bajan la presión del cilindro a una presión de trabajo utilizable.
                         </p>
-</div>
-</div>
-<!-- Card 04 -->
-<div class="bg-surface-container-low border border-outline-variant/30 p-5 glow-border transition-all flex items-start gap-5">
-<div class="font-headline text-4xl font-black text-primary-container/20 tabular-nums">04</div>
-<div class="flex-grow">
-<div class="flex justify-between items-baseline mb-2">
-<h4 class="font-headline text-2xl font-bold text-primary-container uppercase tracking-wide">MANGUERAS</h4>
+                    </div>
+                </div>
+                <!-- Card 04 -->
+                <div
+                    class="bg-surface-container-low border border-outline-variant/30 p-5 glow-border transition-all flex items-start gap-5">
+                    <div class="font-headline text-4xl font-black text-primary-container/20 tabular-nums">04</div>
+                    <div class="flex-grow">
+                        <div class="flex justify-between items-baseline mb-2">
+                            <h4 class="font-headline text-2xl font-bold text-primary-container uppercase tracking-wide">
+                                MANGUERAS</h4>
 
-</div>
-<p class="text-on-surface font-body text-2xl leading-snug">
+                        </div>
+                        <p class="text-on-surface font-body text-2xl leading-snug">
                             Transportan ambos gases desde los cilindros hasta el soplete.
                         </p>
-</div>
-</div>
-</div>
-</div>
-</main>
-<!-- BottomNavBar -->
-<footer class="fixed bottom-0 left-0 w-full z-50 bg-[#1C1B1B] dark:bg-[#1C1B1B] border-t border-[#3B4B37]/30 flex justify-around items-center h-20 px-4 shadow-[0px_0px_15px_rgba(27,255,60,0.15)]">
-<!-- Previous -->
-<button class="flex flex-col items-center justify-center text-[#84967E] px-6 py-2 hover:bg-[#2A2A2A] hover:text-[#1BFF3C] transition-all">
-<span class="material-symbols-outlined mb-1" data-icon="arrow_back">arrow_back</span>
-<span class="font-['JetBrains_Mono'] text-xs font-medium uppercase">PREVIOUS</span>
-</button>
-<!-- Current Status (Active) -->
-<button class="flex flex-col items-center justify-center text-[#1BFF3C] bg-[#1BFF3C]/10 px-8 py-2 border-t-2 border-[#1BFF3C] transition-all">
-<span class="material-symbols-outlined mb-1" data-icon="numbers">numbers</span>
-<span class="font-['JetBrains_Mono'] text-xs font-medium uppercase">02</span>
-</button>
-<!-- Next -->
-<button class="flex flex-col items-center justify-center text-[#84967E] px-6 py-2 hover:bg-[#2A2A2A] hover:text-[#1BFF3C] transition-all">
-<span class="material-symbols-outlined mb-1" data-icon="arrow_forward">arrow_forward</span>
-<span class="font-['JetBrains_Mono'] text-xs font-medium uppercase">NEXT</span>
-</button>
-<!-- Home -->
-<button class="flex flex-col items-center justify-center text-[#84967E] px-6 py-2 hover:bg-[#2A2A2A] hover:text-[#1BFF3C] transition-all">
-<span class="material-symbols-outlined mb-1" data-icon="home">home</span>
-<span class="font-['JetBrains_Mono'] text-xs font-medium uppercase">HOME</span>
-</button>
-</footer>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- BottomNavBar -->
+    <footer
+        class="fixed bottom-0 left-0 w-full z-50 bg-[#1C1B1B] dark:bg-[#1C1B1B] border-t border-[#3B4B37]/30 flex justify-around items-center h-20 px-4 shadow-[0px_0px_15px_rgba(34,197,94,0.15)]">
+        <!-- Previous -->
+        <button
+            class="flex flex-col items-center justify-center text-[#84967E] px-6 py-2 hover:bg-[#2A2A2A] hover:text-[#22C55E] transition-all">
+            <span class="material-symbols-outlined mb-1" data-icon="arrow_back">arrow_back</span>
+            <span class="font-['JetBrains_Mono'] text-xs font-medium uppercase">PREVIOUS</span>
+        </button>
+        <!-- Current Status (Active) -->
+        <button
+            class="flex flex-col items-center justify-center text-[#22C55E] bg-[#22C55E]/10 px-8 py-2 border-t-2 border-[#22C55E] transition-all">
+            <span class="material-symbols-outlined mb-1" data-icon="numbers">numbers</span>
+            <span class="font-['JetBrains_Mono'] text-xs font-medium uppercase">02</span>
+        </button>
+        <!-- Next -->
+        <button
+            class="flex flex-col items-center justify-center text-[#84967E] px-6 py-2 hover:bg-[#2A2A2A] hover:text-[#22C55E] transition-all">
+            <span class="material-symbols-outlined mb-1" data-icon="arrow_forward">arrow_forward</span>
+            <span class="font-['JetBrains_Mono'] text-xs font-medium uppercase">NEXT</span>
+        </button>
+        <!-- Home -->
+        <button
+            class="flex flex-col items-center justify-center text-[#84967E] px-6 py-2 hover:bg-[#2A2A2A] hover:text-[#22C55E] transition-all">
+            <span class="material-symbols-outlined mb-1" data-icon="home">home</span>
+            <span class="font-['JetBrains_Mono'] text-xs font-medium uppercase">HOME</span>
+        </button>
+    </footer>
 
 
 
@@ -257,41 +417,43 @@
 
 
 
-<script id="weld-bear-sync">
-    setTimeout(() => {
-        const triggers = document.querySelectorAll('button, a');
-        triggers.forEach(el => {
-            const text = el.innerText.toUpperCase();
-            const isPrev = text.includes('PREV') || text.includes('ANTERIOR') || text.includes('BACK_IOS') || text.includes('ARROW_BACK');
-            const isNext = text.includes('NEXT') || text.includes('SIGUIENTE') || text.includes('SIGUE') || text.includes('CONTINUAR') || text.includes('ARROW_FORWARD');
-            const isHome = text.includes('HOME') || text.includes('INICIO');
-            const isFinish = text.includes('FINALIZAR') || text.includes('FINISH');
+    <script id="weld-bear-sync">
+        setTimeout(() => {
+            const triggers = document.querySelectorAll('button, a');
+            triggers.forEach(el => {
+                const text = el.innerText.toUpperCase();
+                const isPrev = text.includes('PREV') || text.includes('ANTERIOR') || text.includes('BACK_IOS') || text.includes('ARROW_BACK');
+                const isNext = text.includes('NEXT') || text.includes('SIGUIENTE') || text.includes('SIGUE') || text.includes('CONTINUAR') || text.includes('ARROW_FORWARD');
+                const isHome = text.includes('HOME') || text.includes('INICIO');
+                const isFinish = text.includes('FINALIZAR') || text.includes('FINISH');
 
-            if (isPrev || isNext || isHome || isFinish) {
-                el.onclick = (e) => {
-                    e.preventDefault();
-                    if (isPrev) window.parent.postMessage('PREV', '*');
-                    if (isNext) window.parent.postMessage('NEXT', '*');
-                    if (isHome) window.parent.postMessage('HOME', '*');
-                    if (isFinish) window.parent.postMessage('FINISH', '*');
-                };
+                if (isPrev || isNext || isHome || isFinish) {
+                    el.onclick = (e) => {
+                        e.preventDefault();
+                        if (isPrev) window.parent.postMessage('PREV', '*');
+                        if (isNext) window.parent.postMessage('NEXT', '*');
+                        if (isHome) window.parent.postMessage('HOME', '*');
+                        if (isFinish) window.parent.postMessage('FINISH', '*');
+                    };
+                }
+            });
+        }, 500);
+
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ') {
+                e.preventDefault();
+                window.parent.postMessage('NEXT', '*');
+            } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+                e.preventDefault();
+                window.parent.postMessage('PREV', '*');
             }
         });
-    }, 500);
 
-    window.addEventListener('keydown', (e) => {
-        if (e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ') {
-            e.preventDefault();
-            window.parent.postMessage('NEXT', '*');
-        } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
-            e.preventDefault();
-            window.parent.postMessage('PREV', '*');
-        }
-    });
+        window.addEventListener('load', () => {
+            window.parent.postMessage('LOADED', '*');
+        });
+    </script>
 
-    window.addEventListener('load', () => {
-        window.parent.postMessage('LOADED', '*');
-    });
-</script>
+</body>
 
-</body></html>
+</html>

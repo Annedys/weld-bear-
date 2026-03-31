@@ -37,7 +37,7 @@
                         "on-primary-fixed-variant": "#00530a",
                         "on-secondary-fixed-variant": "#554500",
                         "background": "#131313",
-                        "primary-container": "#1bff3c",
+                        "primary-container": "#22C55E",
                         "on-surface": "#e5e2e1",
                         "outline-variant": "#3b4b37",
                         "secondary-container": "#fed400",
@@ -52,7 +52,7 @@
                         "secondary": "#fff3d3",
                         "inverse-primary": "#006e11",
                         "error-container": "#93000a",
-                        "surface-tint": "#00e631",
+                        "surface-tint": "#22C55E",
                         "surface-container-highest": "#353534",
                         "on-surface-variant": "#baccb2",
                         "on-secondary": "#3b2f00",
@@ -61,8 +61,8 @@
                         "surface-container": "#201f1f",
                         "tertiary": "#fff8f7",
                         "surface-container-lowest": "#0e0e0e",
-                        "primary-fixed": "#74ff6d",
-                        "primary-fixed-dim": "#00e631",
+                        "primary-fixed": "#22C55E",
+                        "primary-fixed-dim": "#22C55E",
                         "secondary-fixed-dim": "#eac300",
                         "secondary-fixed": "#ffe174",
                         "tertiary-container": "#ffd3cd",
@@ -94,16 +94,88 @@
             background-image: linear-gradient(to right, rgba(59, 75, 55, 0.1) 1px, transparent 1px),
                 linear-gradient(to bottom, rgba(59, 75, 55, 0.1) 1px, transparent 1px);
         }
-        @media (max-width: 1023px) {
-            body, html { overflow-y: auto !important; overflow-x: hidden !important; height: auto !important; min-height: 100vh !important; }
+        /* ===== TRUE RESPONSIVE STRATEGY (Móvil, Tablet, Nest Hub, iPad Pro) ===== */
+        @media (max-width: 1366px), (max-height: 850px) {
+            body, html { 
+                overflow-y: auto !important; 
+                overflow-x: hidden !important; 
+                height: auto !important; 
+                min-height: 100vh !important; 
+                transform: none !important;
+            }
             * { box-sizing: border-box !important; }
-            main { height: auto !important; padding: 100px 16px 140px 16px !important; overflow: visible !important; }
-            .grid { display: flex !important; flex-direction: column !important; gap: 24px !important; }
-            h1 { font-size: 2.5rem !important; line-height: 1.1 !important; }
-            h3 { font-size: 1.8rem !important; }
+            
+            header { 
+                background: #131313 !important;
+                padding: 12px 16px !important;
+                position: relative !important;
+                height: auto !important;
+            }
+            header nav { display: none !important; }
+            
+            main { 
+                height: auto !important; 
+                padding: 20px 16px 140px 16px !important; 
+                display: block !important;
+                transform: none !important;
+                width: 100% !important;
+                max-width: 100% !important;
+            }
+            
+            h1 { 
+                font-size: clamp(2.2rem, 8vw, 3.5rem) !important; 
+                line-height: 1.1 !important; 
+                word-wrap: break-word !important;
+                margin-top: 10px !important;
+            }
+            
+            .grid { 
+                display: flex !important; 
+                flex-direction: column !important; 
+                gap: 20px !important; 
+                width: 100% !important;
+            }
+            
+            .bg-surface-container-low.p-8 { padding: 1.5rem !important; }
+            
+            h3 { font-size: 1.6rem !important; }
             p { font-size: 1.1rem !important; line-height: 1.4 !important; }
-            footer { height: auto !important; padding: 10px !important; flex-wrap: wrap !important; justify-content: center !important; gap: 8px !important; position: fixed !important; bottom: 0 !important; width: 100% !important; z-index: 50 !important; margin-top: 0 !important; }
-            footer button, footer div { flex: 1 1 20% !important; min-width: 60px !important; padding: 8px !important; }
+            
+            .w-1, .w-2, .w-4 { height: 80px !important; }
+            
+            footer { 
+                height: 64px !important; 
+                padding: 8px !important; 
+                flex-wrap: nowrap !important; 
+                justify-content: space-around !important; 
+                gap: 4px !important; 
+                position: fixed !important; 
+                bottom: 0 !important; 
+                width: 100% !important; 
+                z-index: 100 !important;
+                background: #1C1B1B !important;
+                margin-top: 0 !important;
+            }
+            
+            footer button, footer div { 
+                flex: 1 1 auto !important; 
+                min-width: 50px !important; 
+                height: 48px !important;
+                padding: 4px !important; 
+            }
+            footer button span.text-xs, footer div span.text-xs { font-size: 9px !important; margin-top: 2px !important; }
+
+            /* Tablet adjust */
+            @media (min-width: 768px) and (max-width: 1366px) {
+                .grid { display: grid !important; grid-template-cols: repeat(3, 1fr) !important; align-items: stretch !important; }
+                h1 { font-size: 3.5rem !important; }
+            }
+
+            /* Small mobile specific */
+            @media (max-width: 340px) {
+                h1 { font-size: 1.8rem !important; }
+                h3 { font-size: 1.4rem !important; }
+            }
         }
     </style>
 </head>
@@ -112,25 +184,25 @@
     <!-- TopAppBar -->
     <header
         class="bg-[#131313] dark:bg-[#131313] flex justify-between items-center w-full px-6 py-4 docked full-width top-0 border-b border-[#3B4B37]/20 z-50">
-        <div class="text-2xl font-black text-[#1BFF3C] tracking-tighter font-headline"><span
+        <div class="text-2xl font-black text-[#22C55E] tracking-tighter font-headline"><span
                 style="letter-spacing: -1.2px; text-transform: uppercase;">WELD BEAR IEDU</span></div>
         <nav class="hidden md:flex gap-8">
-            <a class="font-['Rajdhani'] uppercase tracking-wider font-bold text-lg text-[#1BFF3C] border-b-2 border-[#1BFF3C] pb-1"
+            <a class="font-['Rajdhani'] uppercase tracking-wider font-bold text-lg text-[#22C55E] border-b-2 border-[#22C55E] pb-1"
                 href="#">MODULES</a>
-            <a class="font-['Rajdhani'] uppercase tracking-wider font-bold text-lg text-[#84967E] hover:text-[#1BFF3C] transition-colors"
+            <a class="font-['Rajdhani'] uppercase tracking-wider font-bold text-lg text-[#84967E] hover:text-[#22C55E] transition-colors"
                 href="#">SCHEMATICS</a>
-            <a class="font-['Rajdhani'] uppercase tracking-wider font-bold text-lg text-[#84967E] hover:text-[#1BFF3C] transition-colors"
+            <a class="font-['Rajdhani'] uppercase tracking-wider font-bold text-lg text-[#84967E] hover:text-[#22C55E] transition-colors"
                 href="#">SAFETY</a>
-            <a class="font-['Rajdhani'] uppercase tracking-wider font-bold text-lg text-[#84967E] hover:text-[#1BFF3C] transition-colors"
+            <a class="font-['Rajdhani'] uppercase tracking-wider font-bold text-lg text-[#84967E] hover:text-[#22C55E] transition-colors"
                 href="#">RESOURCES</a>
         </nav>
         <div class="flex items-center gap-4">
             <button
-                class="text-[#84967E] hover:bg-[#1BFF3C]/10 hover:text-[#1BFF3C] p-2 transition-all active:scale-95 duration-75">
+                class="text-[#84967E] hover:bg-[#22C55E]/10 hover:text-[#22C55E] p-2 transition-all active:scale-95 duration-75">
                 <span class="material-symbols-outlined" data-icon="settings">settings</span>
             </button>
             <button
-                class="text-[#84967E] hover:bg-[#1BFF3C]/10 hover:text-[#1BFF3C] p-2 transition-all active:scale-95 duration-75">
+                class="text-[#84967E] hover:bg-[#22C55E]/10 hover:text-[#22C55E] p-2 transition-all active:scale-95 duration-75">
                 <span class="material-symbols-outlined" data-icon="help">help</span>
             </button>
         </div>
@@ -169,7 +241,7 @@
                     </div>
 
                     <div class="w-full mt-4 pt-4 border-t border-outline-variant/10">
-                        <h3 class="font-headline text-3xl font-black text-on-background uppercase mb-3 text-[#1BFF3C]">
+                        <h3 class="font-headline text-3xl font-black text-on-background uppercase mb-3 text-[#22C55E]">
                             Trabajo Fino</h3>
                         <p class="text-xl text-on-surface font-medium leading-tight">Ideal para láminas delgadas y
                             soldadura de precisión en joyería o componentes electrónicos industriales.</p>
@@ -190,7 +262,7 @@
                         <div class="mt-2 flex flex-col items-center gap-3">
                             <div class="w-2 h-16 bg-primary-container/20 relative">
                                 <div
-                                    class="absolute top-0 left-1/2 -translate-x-1/2 w-[6px] h-full bg-primary-container shadow-[0_0_10px_rgba(27,255,60,0.3)]">
+                                    class="absolute top-0 left-1/2 -translate-x-1/2 w-[6px] h-full bg-primary-container shadow-[0_0_10px_rgba(34,197,94,0.3)]">
                                 </div>
                             </div>
                             <span class="font-label text-lg text-on-surface font-bold">3/8" - 1"</span>
@@ -198,7 +270,7 @@
                     </div>
 
                     <div class="w-full mt-4 pt-4 border-t border-outline-variant/10">
-                        <h3 class="font-headline text-3xl font-black text-on-background uppercase mb-3 text-[#1BFF3C]">
+                        <h3 class="font-headline text-3xl font-black text-on-background uppercase mb-3 text-[#22C55E]">
                             Uso General</h3>
                         <p class="text-xl text-on-surface font-medium leading-tight">Estándar para mantenimiento
                             industrial, reparación de marcos y estructuras metálicas de calibre medio.</p>
@@ -218,7 +290,7 @@
                         <div class="mt-2 flex flex-col items-center gap-3">
                             <div class="w-4 h-16 bg-primary-container/20 relative">
                                 <div
-                                    class="absolute top-0 left-1/2 -translate-x-1/2 w-[14px] h-full bg-primary-container shadow-[0_0_15px_rgba(27,255,60,0.4)]">
+                                    class="absolute top-0 left-1/2 -translate-x-1/2 w-[14px] h-full bg-primary-container shadow-[0_0_15px_rgba(34,197,94,0.4)]">
                                 </div>
                             </div>
                             <span class="font-label text-lg text-on-surface font-bold">1" - 2"</span>
@@ -226,7 +298,7 @@
                     </div>
 
                     <div class="w-full mt-4 pt-4 border-t border-outline-variant/10">
-                        <h3 class="font-headline text-3xl font-black text-on-background uppercase mb-3 text-[#1BFF3C]">
+                        <h3 class="font-headline text-3xl font-black text-on-background uppercase mb-3 text-[#22C55E]">
                             Servicio Pesado</h3>
                         <p class="text-xl text-on-surface font-medium leading-tight">Diseñada para cortes profundos y
                             precalentamiento de placas de acero estructural masivo.</p>
@@ -260,28 +332,28 @@
     </main>
     <!-- BottomNavBar -->
     <footer
-        class="left-0 w-full flex justify-around items-center h-20 px-4 bg-[#1C1B1B] dark:bg-[#1C1B1B] border-t border-[#3B4B37]/30 shadow-[0px_0px_15px_rgba(27,255,60,0.15)] mt-auto mt-12">
+        class="left-0 w-full flex justify-around items-center h-20 px-4 bg-[#1C1B1B] dark:bg-[#1C1B1B] border-t border-[#3B4B37]/30 shadow-[0px_0px_15px_rgba(34,197,94,0.15)] mt-auto mt-12">
         <!-- PREVIOUS -->
         <button
-            class="flex flex-col items-center justify-center text-[#84967E] px-6 py-2 hover:bg-[#2A2A2A] hover:text-[#1BFF3C] transition-all group active:scale-95">
+            class="flex flex-col items-center justify-center text-[#84967E] px-6 py-2 hover:bg-[#2A2A2A] hover:text-[#22C55E] transition-all group active:scale-95">
             <span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
             <span class="font-['JetBrains_Mono'] text-xs font-medium uppercase mt-1">PREVIOUS</span>
         </button>
         <!-- ACTIVE SLIDE INDICATOR -->
         <div
-            class="flex flex-col items-center justify-center text-[#1BFF3C] bg-[#1BFF3C]/10 px-8 py-2 border-t-2 border-[#1BFF3C]">
+            class="flex flex-col items-center justify-center text-[#22C55E] bg-[#22C55E]/10 px-8 py-2 border-t-2 border-[#22C55E]">
             <span class="material-symbols-outlined" data-icon="numbers">numbers</span>
             <span class="font-['JetBrains_Mono'] text-xs font-medium uppercase mt-1">04</span>
         </div>
         <!-- NEXT -->
         <button
-            class="flex flex-col items-center justify-center text-[#84967E] px-6 py-2 hover:bg-[#2A2A2A] hover:text-[#1BFF3C] transition-all group active:scale-95">
+            class="flex flex-col items-center justify-center text-[#84967E] px-6 py-2 hover:bg-[#2A2A2A] hover:text-[#22C55E] transition-all group active:scale-95">
             <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
             <span class="font-['JetBrains_Mono'] text-xs font-medium uppercase mt-1">NEXT</span>
         </button>
         <!-- HOME -->
         <button
-            class="flex flex-col items-center justify-center text-[#84967E] px-6 py-2 hover:bg-[#2A2A2A] hover:text-[#1BFF3C] transition-all group active:scale-95">
+            class="flex flex-col items-center justify-center text-[#84967E] px-6 py-2 hover:bg-[#2A2A2A] hover:text-[#22C55E] transition-all group active:scale-95">
             <span class="material-symbols-outlined" data-icon="home">home</span>
             <span class="font-['JetBrains_Mono'] text-xs font-medium uppercase mt-1">HOME</span>
         </button>

@@ -17,9 +17,9 @@
                         "on-primary": "#003a05",
                         "surface-variant": "#353534",
                         "on-surface": "#e5e2e1",
-                        "primary-fixed-dim": "#00e631",
+                        "primary-fixed-dim": "#22C55E",
                         "surface-container": "#201f1f",
-                        "primary-container": "#1bff3c",
+                        "primary-container": "#22C55E",
                         "surface-container-highest": "#353534",
                         "on-primary-container": "#007112",
                         "surface-container-high": "#2a2a2a",
@@ -27,8 +27,8 @@
                         "outline-variant": "#3b4b37",
                         "tertiary-fixed-dim": "#ffb4aa",
                         "primary": "#ecffe3",
-                        "primary-fixed": "#74ff6d",
-                        "surface-tint": "#00e631",
+                        "primary-fixed": "#22C55E",
+                        "surface-tint": "#22C55E",
                         "on-secondary-fixed-variant": "#554500",
                         "on-tertiary-container": "#c5020c",
                         "on-primary-fixed": "#002202",
@@ -86,30 +86,119 @@
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
-        @media (max-width: 1023px) {
-            body, html { overflow-y: auto !important; overflow-x: hidden !important; height: auto !important; min-height: 100vh !important; }
+        /* ===== TRUE RESPONSIVE STRATEGY (Móvil, Tablet, Nest Hub, iPad Pro) ===== */
+        @media (max-width: 1366px), (max-height: 850px) {
+            body, html { 
+                overflow-y: auto !important; 
+                overflow-x: hidden !important; 
+                height: auto !important; 
+                min-height: 100vh !important; 
+                display: block !important; 
+                background-attachment: scroll !important;
+                transform: none !important;
+            }
             * { box-sizing: border-box !important; }
-            main { height: auto !important; overflow: visible !important; display: flex !important; flex-direction: column !important; padding: 40px 16px 140px 16px !important; }
-            h1 { font-size: 2.5rem !important; line-height: 1.1 !important; word-wrap: break-word !important; }
-            .text-6xl, .md\:text-8xl { font-size: 2.5rem !important; }
-            p, .text-xl, .text-2xl { font-size: 1.1rem !important; line-height: 1.4 !important; }
-            .grid-cols-12 { display: flex !important; flex-direction: column !important; gap: 24px !important; }
-            .md\:col-span-7, .md\:col-span-5, .md\:col-span-12 { width: 100% !important; flex: none !important; }
-            header { flex-wrap: wrap !important; height: auto !important; padding: 16px !important; gap: 12px !important; position: relative !important; }
-            nav.fixed { height: auto !important; padding: 12px !important; flex-wrap: wrap !important; justify-content: center !important; gap: 8px !important; position: fixed !important; bottom: 0 !important; width: 100% !important; z-index: 50 !important; }
-            nav.fixed a, nav.fixed div { flex: 1 1 20% !important; min-width: 60px !important; padding: 12px 4px !important; border: 1px solid rgba(27,255,60,0.1) !important; margin: 0 !important; }
+            
+            header { 
+                background: #131313 !important;
+                padding: 12px 16px !important;
+                position: relative !important;
+                height: auto !important;
+                display: flex !important;
+            }
+            
+            main { 
+                height: auto !important; 
+                padding: 20px 16px 140px 16px !important; 
+                display: block !important;
+                transform: none !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                margin-bottom: 0 !important;
+            }
+            
+            h1 { 
+                font-size: clamp(2.5rem, 8vw, 4.5rem) !important; 
+                line-height: 0.9 !important; 
+                word-wrap: break-word !important; 
+            }
+            
+            .grid.grid-cols-1.md\:grid-cols-12 { 
+                display: flex !important; 
+                flex-direction: column !important; 
+                gap: 16px !important; 
+            }
+            
+            .md\:col-span-12, .md\:col-span-7, .md\:col-span-5 { width: 100% !important; }
+            
+            .bg-surface-container-low.p-8, .bg-surface-container-high.p-8, .bg-surface-container-lowest.p-8 { padding: 16px !important; }
+            
+            .text-xl, .text-lg, .text-2xl { font-size: 1.1rem !important; line-height: 1.4 !important; }
+            .font-headline.text-2xl { font-size: 1.5rem !important; }
+
+            .flex-col.md\:flex-row.gap-8 { 
+                flex-direction: column !important; 
+                gap: 12px !important;
+                text-align: center !important;
+            }
+            .flex-col.md\:flex-row.gap-8 p { text-align: center !important; }
+
+            nav.fixed { 
+                height: 64px !important; 
+                padding: 8px !important; 
+                flex-wrap: nowrap !important; 
+                justify-content: space-around !important; 
+                gap: 4px !important; 
+                position: fixed !important; 
+                bottom: 0 !important; 
+                width: 100% !important; 
+                z-index: 100 !important;
+                background: #1C1B1B !important;
+                display: flex !important;
+                border-top: 1px solid rgba(59,75,55,0.3) !important;
+            }
+            
+            nav.fixed a, nav.fixed div { 
+                flex: 1 1 auto !important; 
+                min-width: 50px !important; 
+                height: 48px !important;
+                padding: 4px !important; 
+                border: none !important;
+                background: transparent !important;
+                margin: 0 !important;
+            }
+            nav.fixed div { border: 1px solid rgba(34,197,94,0.3) !important; background: rgba(34,197,94,0.05) !important; }
+            nav.fixed a span.font-['JetBrains_Mono'], nav.fixed div span.font-['JetBrains_Mono'] { font-size: 9px !important; margin-top: 2px !important; }
+
             .grid-cols-2.md\:grid-cols-4 { display: none !important; }
+
+            /* Tablet adjust */
+            @media (min-width: 768px) and (max-width: 1366px) {
+                .grid.grid-cols-1.md\:grid-cols-12 { display: grid !important; grid-template-cols: repeat(12, 1fr) !important; gap: 24px !important; }
+                .md\:col-span-7 { grid-column: span 7 / span 12 !important; }
+                .md\:col-span-5 { grid-column: span 5 / span 12 !important; }
+                h1 { font-size: 4rem !important; }
+            }
+        }
+
+        /* Protect 4K/Desktop scale alignment */
+        @media (min-width: 1367px) and (min-height: 851px) {
+            body { 
+                height: 100vh !important; 
+                overflow: hidden !important; 
+                display: flex !important;
+            }
         }
     </style>
 </head>
 <body class="text-on-surface font-body min-h-screen flex flex-col overflow-hidden">
 <!-- TopAppBar -->
-<header class="bg-[#131313] text-[#1BFF3C] font-['Rajdhani'] uppercase tracking-widest font-bold text-xl docked full-width top-0 border-b-0 bg-[#1C1B1B] border-b border-[#3B4B37]/20 flat shadow-[0_0_15px_rgba(27,255,60,0.1)] flex justify-between items-center w-full px-6 py-4">
-<div class="text-[#1BFF3C] font-['Rajdhani'] font-black tracking-tighter text-2xl" style="">
+<header class="bg-[#131313] text-[#22C55E] font-['Rajdhani'] uppercase tracking-widest font-bold text-xl docked full-width top-0 border-b-0 bg-[#1C1B1B] border-b border-[#3B4B37]/20 flat shadow-[0_0_15px_rgba(34,197,94,0.1)] flex justify-between items-center w-full px-6 py-4">
+<div class="text-[#22C55E] font-['Rajdhani'] font-black tracking-tighter text-2xl" style="">
             WELD BEAR IEDU&nbsp;</div>
 <div class="flex gap-4">
-<button class="material-symbols-outlined hover:bg-[#1BFF3C]/10 transition-colors duration-200 p-2" style="">settings</button>
-<button class="material-symbols-outlined hover:bg-[#1BFF3C]/10 transition-colors duration-200 p-2" style="">terminal</button>
+<button class="material-symbols-outlined hover:bg-[#22C55E]/10 transition-colors duration-200 p-2" style="">settings</button>
+<button class="material-symbols-outlined hover:bg-[#22C55E]/10 transition-colors duration-200 p-2" style="">terminal</button>
 </div>
 </header>
 <!-- Main Content -->
@@ -136,7 +225,7 @@
                 </p>
 <div class="mt-8 pt-8 border-t border-outline-variant/20 flex gap-4">
 <div class="h-1 flex-grow bg-outline-variant/20">
-<div class="h-full bg-primary-container w-1/3 shadow-[0_0_10px_rgba(27,255,60,0.5)]"></div>
+<div class="h-full bg-primary-container w-1/3 shadow-[0_0_10px_rgba(34,197,94,0.5)]"></div>
 </div>
 </div>
 </div>
@@ -188,17 +277,17 @@
 <!-- BottomNavBar -->
 <nav class="fixed bottom-0 left-0 w-full z-50 flex justify-between items-stretch h-16 bg-[#131313] border-t border-[#3B4B37]/20">
 <!-- Previous Item -->
-<a class="flex flex-col items-center justify-center text-[#84967E] px-8 py-3 hover:bg-[#1BFF3C]/20 hover:text-[#1BFF3C] transition-all flex-1" href="#" style="">
+<a class="flex flex-col items-center justify-center text-[#84967E] px-8 py-3 hover:bg-[#22C55E]/20 hover:text-[#22C55E] transition-all flex-1" href="#" style="">
 <span class="material-symbols-outlined mb-1" style="">arrow_back_ios</span>
 <span class="font-['JetBrains_Mono'] text-xs font-bold uppercase tracking-widest" style="">PREVIOUS</span>
 </a>
 <!-- Active Item (Current Slide) -->
-<div class="flex flex-col items-center justify-center px-8 py-3 flex-1 bg-[#131313] text-[#1BFF3C] border border-[#1BFF3C]">
+<div class="flex flex-col items-center justify-center px-8 py-3 flex-1 bg-[#131313] text-[#22C55E] border border-[#22C55E]">
 <span class="material-symbols-outlined mb-1" style="">grid_view</span>
 <span class="font-['JetBrains_Mono'] text-xs font-bold uppercase tracking-widest" style="">10</span>
 </div>
 <!-- Next Item -->
-<a class="flex flex-col items-center justify-center text-[#84967E] px-8 py-3 hover:bg-[#1BFF3C]/20 hover:text-[#1BFF3C] transition-all flex-1" href="#" style="">
+<a class="flex flex-col items-center justify-center text-[#84967E] px-8 py-3 hover:bg-[#22C55E]/20 hover:text-[#22C55E] transition-all flex-1" href="#" style="">
 <span class="material-symbols-outlined mb-1" style="">arrow_forward_ios</span>
 <span class="font-['JetBrains_Mono'] text-xs font-bold uppercase tracking-widest" style="">NEXT</span>
 </a>

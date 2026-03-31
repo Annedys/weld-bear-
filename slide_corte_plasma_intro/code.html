@@ -17,13 +17,13 @@
                         "inverse-surface": "#e5e2e1",
                         "on-tertiary-fixed": "#410001",
                         "error-container": "#93000a",
-                        "primary-fixed-dim": "#00e631",
+                        "primary-fixed-dim": "#22C55E",
                         "on-secondary": "#3b2f00",
                         "surface-container-low": "#1c1b1b",
                         "on-surface": "#e5e2e1",
                         "surface-dim": "#131313",
                         "background": "#131313",
-                        "primary-container": "#1bff3c",
+                        "primary-container": "#22C55E",
                         "surface": "#131313",
                         "surface-container-highest": "#353534",
                         "outline": "#84967e",
@@ -54,36 +54,118 @@
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
         .glow-primary {
-            box-shadow: 0px 0px 15px rgba(27, 255, 60, 0.15);
+            box-shadow: 0px 0px 15px rgba(34, 197, 94, 0.15);
         }
-        @media (max-width: 1023px) {
-            body, html { overflow-y: auto !important; overflow-x: hidden !important; height: auto !important; min-height: 100vh !important; }
+        /* ===== TRUE RESPONSIVE STRATEGY (Móvil, Tablet, Nest Hub, iPad Pro) ===== */
+        @media (max-width: 1366px), (max-height: 850px) {
+            body, html { 
+                overflow-y: auto !important; 
+                overflow-x: hidden !important; 
+                height: auto !important; 
+                min-height: 100vh !important; 
+                display: block !important; 
+                background-attachment: scroll !important;
+                transform: none !important;
+            }
             * { box-sizing: border-box !important; }
-            main { height: auto !important; overflow: visible !important; flex-direction: column !important; padding-bottom: 120px !important; }
-            section:first-child { min-height: 40vh !important; width: 100% !important; display: block !important; flex: none !important; }
-            section:last-child { width: 100% !important; display: block !important; padding: 24px 16px !important; flex: none !important; }
-            h1 { font-size: 3rem !important; line-height: 1.1 !important; word-wrap: break-word !important; }
-            .text-6xl, .md\:text-8xl { font-size: 3rem !important; }
-            p { font-size: 1.1rem !important; line-height: 1.4 !important; }
-            header { flex-wrap: wrap !important; padding: 16px !important; gap: 12px !important; }
-            footer { height: auto !important; padding: 12px !important; flex-wrap: wrap !important; justify-content: center !important; gap: 8px !important; position: fixed !important; bottom: 0 !important; width: 100% !important; z-index: 50 !important; }
-            footer button, footer div { flex: 1 1 20% !important; min-width: 60px !important; padding: 12px 4px !important; border: 1px solid rgba(27,255,60,0.1) !important; }
+            
+            header { 
+                background: #131313 !important;
+                padding: 12px 16px !important;
+                position: relative !important;
+                height: auto !important;
+            }
+            header nav { display: none !important; }
+            
+            main { 
+                height: auto !important; 
+                padding: 0 !important; 
+                display: block !important;
+                transform: none !important;
+                width: 100% !important;
+                max-width: 100% !important;
+            }
+            
+            section:first-child { 
+                width: 100% !important; 
+                height: 250px !important; 
+                min-height: 250px !important;
+                border-right: none !important;
+                border-bottom: 1px solid rgba(59, 75, 55, 0.2) !important;
+            }
+            
+            section:last-child { 
+                width: 100% !important; 
+                padding: 24px 16px 140px 16px !important; 
+            }
+            
+            h1 { 
+                font-size: clamp(2.5rem, 10vw, 4.5rem) !important; 
+                line-height: 1 !important; 
+                word-wrap: break-word !important; 
+            }
+            
+            p.text-lg { font-size: 1.1rem !important; line-height: 1.4 !important; }
+            
+            .grid.grid-cols-1.md\:grid-cols-2 { 
+                display: flex !important; 
+                flex-direction: column !important; 
+                gap: 16px !important; 
+            }
+            
+            footer { 
+                height: 64px !important; 
+                padding: 8px !important; 
+                flex-wrap: nowrap !important; 
+                justify-content: space-around !important; 
+                gap: 4px !important; 
+                position: fixed !important; 
+                bottom: 0 !important; 
+                width: 100% !important; 
+                z-index: 100 !important;
+                background: #1C1B1B !important;
+            }
+            
+            footer button, footer div { 
+                flex: 1 1 auto !important; 
+                min-width: 50px !important; 
+                height: 48px !important;
+                padding: 4px !important; 
+                border: none !important;
+            }
+            footer button span.font-['JetBrains_Mono'] { font-size: 9px !important; }
+
+            /* Tablet adjust */
+            @media (min-width: 768px) and (max-width: 1366px) {
+                main { display: flex !important; flex-direction: row !important; }
+                section:first-child { width: 40% !important; height: 100% !important; min-height: 100vh !important; }
+                section:last-child { width: 60% !important; display: flex !important; flex-direction: column !important; justify-content: center !important; }
+                .grid.grid-cols-1.md\:grid-cols-2 { display: grid !important; grid-template-cols: repeat(2, 1fr) !important; }
+            }
+        }
+
+        /* Protect 4K/Desktop scale alignment */
+        @media (min-width: 1367px) and (min-height: 851px) {
+            body { 
+                height: 100vh !important; 
+                overflow: hidden !important; 
+            }
         }
     </style>
 </head>
 <body class="bg-background text-on-background font-body selection:bg-primary-container selection:text-on-primary-container overflow-hidden h-screen flex flex-col">
 <!-- Top Navigation Anchor -->
 <header class="bg-[#131313] dark:bg-[#131313] flex justify-between items-center w-full px-6 py-4 docked full-width top-0 border-b border-[#3B4B37]/20 z-50">
-<div class="text-2xl font-black text-[#1BFF3C] tracking-tighter font-headline" style=""><span style="letter-spacing: -1.2px; text-transform: uppercase;">WELD BEAR IEDU</span></div>
+<div class="text-2xl font-black text-[#22C55E] tracking-tighter font-headline" style=""><span style="letter-spacing: -1.2px; text-transform: uppercase;">WELD BEAR IEDU</span></div>
 <nav class="hidden md:flex gap-8">
-<a class="font-['Rajdhani'] uppercase tracking-wider font-bold text-lg text-[#1BFF3C] border-b-2 border-[#1BFF3C] pb-1" href="#" style="">MODULES</a>
-<a class="font-['Rajdhani'] uppercase tracking-wider font-bold text-lg text-[#84967E] hover:text-[#1BFF3C] transition-colors" href="#" style="">SCHEMATICS</a>
-<a class="font-['Rajdhani'] uppercase tracking-wider font-bold text-lg text-[#84967E] hover:text-[#1BFF3C] transition-colors" href="#" style="">SAFETY</a>
-<a class="font-['Rajdhani'] uppercase tracking-wider font-bold text-lg text-[#84967E] hover:text-[#1BFF3C] transition-colors" href="#" style="">RESOURCES</a>
+<a class="font-['Rajdhani'] uppercase tracking-wider font-bold text-lg text-[#22C55E] border-b-2 border-[#22C55E] pb-1" href="#" style="">MODULES</a>
+<a class="font-['Rajdhani'] uppercase tracking-wider font-bold text-lg text-[#84967E] hover:text-[#22C55E] transition-colors" href="#" style="">SCHEMATICS</a>
+<a class="font-['Rajdhani'] uppercase tracking-wider font-bold text-lg text-[#84967E] hover:text-[#22C55E] transition-colors" href="#" style="">SAFETY</a>
+<a class="font-['Rajdhani'] uppercase tracking-wider font-bold text-lg text-[#84967E] hover:text-[#22C55E] transition-colors" href="#" style="">RESOURCES</a>
 </nav>
 <div class="flex items-center gap-4">
-<button class="material-symbols-outlined text-[#84967E] hover:text-[#1BFF3C] transition-all duration-75 ease-in-out active:scale-95" style="">help</button>
-<button class="material-symbols-outlined text-[#84967E] hover:text-[#1BFF3C] transition-all duration-75 ease-in-out active:scale-95" style="">settings</button>
+<button class="material-symbols-outlined text-[#84967E] hover:text-[#22C55E] transition-all duration-75 ease-in-out active:scale-95" style="">help</button>
+<button class="material-symbols-outlined text-[#84967E] hover:text-[#22C55E] transition-all duration-75 ease-in-out active:scale-95" style="">settings</button>
 </div>
 </header>
 <!-- Main Content Canvas -->
@@ -106,7 +188,7 @@
 <span class="font-mono text-xs text-primary-container tracking-widest uppercase" style=""><br></span>
 </div>
 <h1 class="text-6xl md:text-8xl font-headline font-bold text-on-background tracking-tighter uppercase leading-none" style="">
-                        CORTE <br> <span class="text-primary-container drop-shadow-[0_0_10px_rgba(27,255,60,0.4)]" style="">PLASMA</span>
+                        CORTE <br> <span class="text-primary-container drop-shadow-[0_0_10px_rgba(34,197,94,0.4)]" style="">PLASMA</span>
 </h1>
 </div>
 <!-- Description Card -->
@@ -143,22 +225,22 @@
 <!-- Bottom Navigation Shell -->
 <footer class="bg-[#1C1B1B] dark:bg-[#1C1B1B] fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-20 px-4 border-t border-[#3B4B37]/30 glow-primary">
 <!-- Previous Tab -->
-<button class="flex flex-col items-center justify-center text-[#84967E] px-6 py-2 hover:bg-[#2A2A2A] hover:text-[#1BFF3C] transition-all" style="">
+<button class="flex flex-col items-center justify-center text-[#84967E] px-6 py-2 hover:bg-[#2A2A2A] hover:text-[#22C55E] transition-all" style="">
 <span class="material-symbols-outlined" data-icon="arrow_back" style="">arrow_back</span>
 <span class="font-['JetBrains_Mono'] text-xs font-medium uppercase mt-1" style="">PREVIOUS</span>
 </button>
 <!-- Current Slide (Active) -->
-<button class="flex flex-col items-center justify-center text-[#1BFF3C] bg-[#1BFF3C]/10 px-8 py-2 border-t-2 border-[#1BFF3C] transition-all" style="">
+<button class="flex flex-col items-center justify-center text-[#22C55E] bg-[#22C55E]/10 px-8 py-2 border-t-2 border-[#22C55E] transition-all" style="">
 <span class="material-symbols-outlined" data-icon="numbers" style="">numbers</span>
 <span class="font-['JetBrains_Mono'] text-xs font-medium uppercase mt-1" style="">11</span>
 </button>
 <!-- Next Tab -->
-<button class="flex flex-col items-center justify-center text-[#84967E] px-6 py-2 hover:bg-[#2A2A2A] hover:text-[#1BFF3C] transition-all" style="">
+<button class="flex flex-col items-center justify-center text-[#84967E] px-6 py-2 hover:bg-[#2A2A2A] hover:text-[#22C55E] transition-all" style="">
 <span class="material-symbols-outlined" data-icon="arrow_forward" style="">arrow_forward</span>
 <span class="font-['JetBrains_Mono'] text-xs font-medium uppercase mt-1" style="">NEXT</span>
 </button>
 <!-- Home Tab -->
-<button class="flex flex-col items-center justify-center text-[#84967E] px-6 py-2 hover:bg-[#2A2A2A] hover:text-[#1BFF3C] transition-all" style="">
+<button class="flex flex-col items-center justify-center text-[#84967E] px-6 py-2 hover:bg-[#2A2A2A] hover:text-[#22C55E] transition-all" style="">
 <span class="material-symbols-outlined" data-icon="home" style="">home</span>
 <span class="font-['JetBrains_Mono'] text-xs font-medium uppercase mt-1" style="">HOME</span>
 </button>

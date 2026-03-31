@@ -24,7 +24,7 @@
                         "secondary-container": "#fed400",
                         "inverse-surface": "#e5e2e1",
                         "inverse-on-surface": "#313030",
-                        "surface-tint": "#00e631",
+                        "surface-tint": "#22C55E",
                         "surface-container-low": "#1c1b1b",
                         "secondary-fixed-dim": "#eac300",
                         "on-surface-variant": "#baccb2",
@@ -34,14 +34,14 @@
                         "tertiary": "#fff8f7",
                         "outline-variant": "#3b4b37",
                         "on-background": "#e5e2e1",
-                        "primary-container": "#1bff3c",
+                        "primary-container": "#22C55E",
                         "on-secondary-fixed-variant": "#554500",
                         "error-container": "#93000a",
                         "tertiary-fixed-dim": "#ffb4aa",
                         "on-error-container": "#ffdad6",
                         "surface-container": "#201f1f",
                         "on-primary-fixed-variant": "#00530a",
-                        "primary-fixed": "#74ff6d",
+                        "primary-fixed": "#22C55E",
                         "surface-dim": "#131313",
                         "secondary": "#fff3d3",
                         "outline": "#84967e",
@@ -49,7 +49,7 @@
                         "secondary-fixed": "#ffe174",
                         "surface-container-lowest": "#0e0e0e",
                         "on-primary": "#003a05",
-                        "primary-fixed-dim": "#00e631",
+                        "primary-fixed-dim": "#22C55E",
                         "on-secondary-container": "#6f5c00",
                         "inverse-primary": "#006e11",
                         "error": "#ffb4ab",
@@ -69,7 +69,7 @@
             },
         }
     </script>
-<style>
+    <style>
         .blueprint-grid {
             background-image: 
                 linear-gradient(to right, rgba(59, 75, 55, 0.1) 1px, transparent 1px),
@@ -77,86 +77,136 @@
             background-size: 40px 40px;
         }
         .glow-text {
-            text-shadow: 0px 0px 20px rgba(27, 255, 60, 0.4);
+            text-shadow: 0px 0px 20px rgba(34, 197, 94, 0.4);
         }
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
         @media (max-width: 1023px) {
             body, html { overflow-y: auto !important; overflow-x: hidden !important; height: auto !important; min-height: 100vh !important; }
-            * { box-sizing: border-box !important; }
-            main { height: auto !important; overflow: visible !important; display: flex !important; flex-direction: column !important; padding: 100px 16px 140px 16px !important; }
-            h2, .text-7xl, .md\:text-8xl { font-size: 3rem !important; line-height: 1.1 !important; word-wrap: break-word !important; }
-            .absolute.top-24, .absolute.bottom-32, .absolute.top-32, .fixed.bottom-24 { display: none !important; }
-            header.fixed { flex-wrap: wrap !important; height: auto !important; padding: 16px !important; gap: 12px !important; position: relative !important; }
-            nav.fixed { height: auto !important; padding: 12px !important; flex-wrap: wrap !important; justify-content: center !important; gap: 8px !important; position: fixed !important; bottom: 0 !important; width: 100% !important; z-index: 50 !important; }
-            nav.fixed button, nav.fixed div { flex: 1 1 20% !important; min-width: 60px !important; padding: 12px 4px !important; border: 1px solid rgba(27,255,60,0.1) !important; margin: 0 !important; }
+            #frame-container { 
+                transform: none !important; 
+                width: 100% !important; 
+                max-width: 100% !important; 
+                height: auto !important; 
+                position: relative !important;
+                display: flex !important;
+                flex-direction: column !important;
+            }
+            main { 
+                height: auto !important; 
+                min-height: 100vh !important;
+                overflow: visible !important; 
+                display: flex !important; 
+                flex-direction: column !important; 
+                padding: 80px 20px 140px 20px !important; 
+                justify-content: center !important;
+                align-items: center !important;
+            }
+            h2, .text-7xl, .md\:text-8xl { font-size: 2.8rem !important; line-height: 1.1 !important; word-wrap: break-word !important; }
+            .absolute.top-24, .absolute.bottom-32, .absolute.top-32, .fixed.bottom-24, .absolute.bottom-40, .absolute.left-8, .absolute.right-8, .absolute.left-12, .absolute.right-12 { display: none !important; }
+            header { 
+                flex-wrap: wrap !important; 
+                height: auto !important; 
+                padding: 16px !important; 
+                gap: 12px !important; 
+                position: relative !important; 
+                width: 100% !important;
+            }
+            nav { 
+                height: auto !important; 
+                padding: 12px !important; 
+                flex-wrap: wrap !important; 
+                justify-content: center !important; 
+                gap: 8px !important; 
+                position: fixed !important; 
+                bottom: 0 !important; 
+                width: 100% !important; 
+                z-index: 50 !important; 
+                flex-direction: row !important;
+            }
+            nav button, nav div { 
+                flex: 1 1 25% !important; 
+                min-width: 80px !important; 
+                padding: 10px 4px !important; 
+                border: 1px solid rgba(34,197,94,0.1) !important; 
+                margin: 0 !important; 
+                box-shadow: none !important;
+            }
+            
+            /* Specific text adjustments for very small screens */
+            @media (max-width: 350px) {
+                h2, .text-7xl, .md\:text-8xl { font-size: 2.2rem !important; }
+            }
         }
     </style>
 </head>
 <body class="bg-background text-on-surface font-body overflow-hidden selection:bg-primary-container selection:text-on-primary-container">
-<!-- Background Blueprint Layer -->
-<div class="fixed inset-0 blueprint-grid pointer-events-none"></div>
-<!-- Top Navigation Anchor -->
-<header class="bg-[#131313] flex justify-between items-center w-full px-6 py-4 fixed top-0 z-50">
-<div class="text-2xl font-black text-[#1BFF3C] tracking-widest font-['Rajdhani'] uppercase" style=""><span style="font-family: Rajdhani, sans-serif; letter-spacing: -1.2px;">WELD BEAR IEDU</span></div>
-</header>
-<!-- Main Content Canvas (Presentation Slide) -->
-<main class="relative h-screen flex flex-col items-center justify-center px-8 text-center">
-<!-- Technical Frame Corner Decor -->
-<div class="absolute top-24 left-8 w-16 h-16 border-t-2 border-l-2 border-outline-variant/30"></div>
-<div class="absolute top-24 right-8 w-16 h-16 border-t-2 border-r-2 border-outline-variant/30"></div>
-<div class="absolute bottom-32 left-8 w-16 h-16 border-b-2 border-l-2 border-outline-variant/30"></div>
-<div class="absolute bottom-32 right-8 w-16 h-16 border-b-2 border-r-2 border-outline-variant/30"></div>
-<!-- Metadata Annotations -->
-<div class="absolute top-32 left-12 font-label text-[10px] text-outline uppercase tracking-[0.2em] flex flex-col items-start gap-1">
-<span class="" style="">PROYECTO: IND-2024-ALPHA</span>
-<span class="" style="">UNIDAD: TEC-01</span>
-</div>
-<div class="absolute top-32 right-12 font-label text-[10px] text-outline uppercase tracking-[0.2em] flex flex-col items-end gap-1">
-<span class="" style="">STATUS: ACTIVE_TERMINAL</span>
-<span class="" style="">ENCRYPT: SECURE_WELD</span>
-</div>
-<!-- Slide Core Content -->
-<div class="max-w-5xl z-10 flex flex-col items-center">
-<div class="mb-6 flex items-center gap-4">
-<div class="h-[1px] w-20 bg-primary-container/40"></div>
-<span class="font-label text-sm text-primary-fixed tracking-[0.4em] uppercase" style=""><span style="color: rgb(27, 255, 60); font-family: Rajdhani, sans-serif; font-size: 24px; font-weight: 900; letter-spacing: -1.2px; text-align: start;">WELD BEAR IEDU</span></span>
-<div class="h-[1px] w-20 bg-primary-container/40"></div>
-</div>
-<h2 class="font-headline font-bold text-7xl md:text-8xl lg:text-9xl text-[#1BFF3C] leading-none glow-text uppercase tracking-tight mb-8" style="">POSICIONES DE SOLDADURA</h2>
+<div id="frame-container" class="min-h-screen flex flex-col">
+    <!-- Background Blueprint Layer -->
+    <div class="fixed inset-0 blueprint-grid pointer-events-none"></div>
+    <!-- Top Navigation Anchor -->
+    <header class="bg-[#131313] flex justify-between items-center w-full px-6 py-4 fixed top-0 z-50">
+    <div class="text-2xl font-black text-[#22C55E] tracking-widest font-['Rajdhani'] uppercase" style=""><span style="font-family: Rajdhani, sans-serif; letter-spacing: -1.2px;">WELD BEAR IEDU</span></div>
+    </header>
+    <!-- Main Content Canvas (Presentation Slide) -->
+    <main class="relative h-screen flex flex-col items-center justify-center px-8 text-center">
+    <!-- Technical Frame Corner Decor -->
+    <div class="absolute top-24 left-8 w-16 h-16 border-t-2 border-l-2 border-outline-variant/30"></div>
+    <div class="absolute top-24 right-8 w-16 h-16 border-t-2 border-r-2 border-outline-variant/30"></div>
+    <div class="absolute bottom-32 left-8 w-16 h-16 border-b-2 border-l-2 border-outline-variant/30"></div>
+    <div class="absolute bottom-32 right-8 w-16 h-16 border-b-2 border-r-2 border-outline-variant/30"></div>
+    <!-- Metadata Annotations -->
+    <div class="absolute top-32 left-12 font-label text-[10px] text-outline uppercase tracking-[0.2em] flex flex-col items-start gap-1">
+    <span class="" style="">PROYECTO: IND-2024-ALPHA</span>
+    <span class="" style="">UNIDAD: TEC-01</span>
+    </div>
+    <div class="absolute top-32 right-12 font-label text-[10px] text-outline uppercase tracking-[0.2em] flex flex-col items-end gap-1">
+    <span class="" style="">STATUS: ACTIVE_TERMINAL</span>
+    <span class="" style="">ENCRYPT: SECURE_WELD</span>
+    </div>
+    <!-- Slide Core Content -->
+    <div class="max-w-5xl z-10 flex flex-col items-center">
+    <div class="mb-6 flex items-center gap-4">
+    <div class="h-[1px] w-20 bg-primary-container/40"></div>
+    <span class="font-label text-sm text-primary-fixed tracking-[0.4em] uppercase" style=""><span style="color: rgb(34, 197, 94); font-family: Rajdhani, sans-serif; font-size: 24px; font-weight: 900; letter-spacing: -1.2px; text-align: start;">WELD BEAR IEDU</span></span>
+    <div class="h-[1px] w-20 bg-primary-container/40"></div>
+    </div>
+    <h2 class="font-headline font-bold text-7xl md:text-8xl lg:text-9xl text-[#22C55E] leading-none glow-text uppercase tracking-tight mb-8" style="">POSICIONES DE SOLDADURA</h2>
 
-</div>
-<!-- Visual Anchor Element -->
-<div class="absolute bottom-40 w-full flex justify-center opacity-20">
-<div class="w-[80%] h-[2px] bg-gradient-to-r from-transparent via-primary-container to-transparent"></div>
-</div>
-</main>
-<!-- Bottom Navigation Bar -->
-<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-between items-center px-10 py-4 bg-[#131313] border-t border-[#3B4B37]/20" style="box-shadow: 0px 0px 15px rgba(27,255,60,0.15);">
-<!-- Previous Action -->
-<button class="flex flex-col items-center justify-center text-[#84967E] px-8 py-2 hover:bg-[#1BFF3C]/20 hover:text-[#1BFF3C] transition-all duration-200 active:scale-90 group" style="">
-<span class="material-symbols-outlined mb-1" data-icon="arrow_back_ios" style="">arrow_back_ios</span>
-<span class="font-['JetBrains_Mono'] text-[12px] tracking-tight" style="">ANTERIOR</span>
-</button>
-<!-- Current Status / Slide Indicator -->
-<div class="flex flex-col items-center justify-center text-[#1BFF3C] border border-[#1BFF3C] bg-[#1BFF3C]/5 px-8 py-2 min-w-[140px]">
-<span class="material-symbols-outlined mb-1" data-icon="dialpad" style="">dialpad</span>
-<span class="font-['JetBrains_Mono'] text-[12px] tracking-tight" style=""><br></span>
-</div>
-<!-- Next Action -->
-<button class="flex flex-col items-center justify-center text-[#84967E] px-8 py-2 hover:bg-[#1BFF3C]/20 hover:text-[#1BFF3C] transition-all duration-200 active:scale-90 group" style="">
-<span class="material-symbols-outlined mb-1" data-icon="arrow_forward_ios" style="">arrow_forward_ios</span>
-<span class="font-['JetBrains_Mono'] text-[12px] tracking-tight" style="">SIGUIENTE</span>
-</button>
-</nav>
-<!-- Corner Coordinates for Blueprint feel -->
-<div class="fixed bottom-24 left-6 font-label text-[9px] text-outline/40 origin-left -rotate-90" style="">
-        LAT_COORDS: 40.4168° N, 3.7038° W
     </div>
-<div class="fixed bottom-24 right-6 font-label text-[9px] text-outline/40 origin-right rotate-90" style="">
-        SYS_VER: 4.0.1_STABLE
+    <!-- Visual Anchor Element -->
+    <div class="absolute bottom-40 w-full flex justify-center opacity-20">
+    <div class="w-[80%] h-[2px] bg-gradient-to-r from-transparent via-primary-container to-transparent"></div>
     </div>
+    </main>
+    <!-- Bottom Navigation Bar -->
+    <nav class="fixed bottom-0 left-0 w-full z-50 flex justify-between items-center px-10 py-4 bg-[#131313] border-t border-[#3B4B37]/20" style="box-shadow: 0px 0px 15px rgba(34,197,94,0.15);">
+    <!-- Previous Action -->
+    <button class="flex flex-col items-center justify-center text-[#84967E] px-8 py-2 hover:bg-[#22C55E]/20 hover:text-[#22C55E] transition-all duration-200 active:scale-90 group" style="">
+    <span class="material-symbols-outlined mb-1" data-icon="arrow_back_ios" style="">arrow_back_ios</span>
+    <span class="font-['JetBrains_Mono'] text-[12px] tracking-tight" style="">ANTERIOR</span>
+    </button>
+    <!-- Current Status / Slide Indicator -->
+    <div class="flex flex-col items-center justify-center text-[#22C55E] border border-[#22C55E] bg-[#22C55E]/5 px-8 py-2 min-w-[140px]">
+    <span class="material-symbols-outlined mb-1" data-icon="dialpad" style="">dialpad</span>
+    <span class="font-['JetBrains_Mono'] text-[12px] tracking-tight" style=""><br></span>
+    </div>
+    <!-- Next Action -->
+    <button class="flex flex-col items-center justify-center text-[#84967E] px-8 py-2 hover:bg-[#22C55E]/20 hover:text-[#22C55E] transition-all duration-200 active:scale-90 group" style="">
+    <span class="material-symbols-outlined mb-1" data-icon="arrow_forward_ios" style="">arrow_forward_ios</span>
+    <span class="font-['JetBrains_Mono'] text-[12px] tracking-tight" style="">SIGUIENTE</span>
+    </button>
+    </nav>
+    <!-- Corner Coordinates for Blueprint feel -->
+    <div class="fixed bottom-24 left-6 font-label text-[9px] text-outline/40 origin-left -rotate-90" style="">
+            LAT_COORDS: 40.4168° N, 3.7038° W
+        </div>
+    <div class="fixed bottom-24 right-6 font-label text-[9px] text-outline/40 origin-right rotate-90" style="">
+            SYS_VER: 4.0.1_STABLE
+        </div>
+</div>
+
 
 
 

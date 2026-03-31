@@ -26,7 +26,7 @@
                         "tertiary-container": "#ffd3cd",
                         "on-secondary-fixed-variant": "#554500",
                         "inverse-on-surface": "#313030",
-                        "primary-fixed-dim": "#00e631",
+                        "primary-fixed-dim": "#22C55E",
                         "on-primary-container": "#007112",
                         "on-secondary-container": "#6f5c00",
                         "error": "#ffb4ab",
@@ -35,8 +35,8 @@
                         "on-surface": "#e5e2e1",
                         "on-error": "#690005",
                         "on-primary-fixed-variant": "#00530a",
-                        "primary-fixed": "#74ff6d",
-                        "primary-container": "#1bff3c",
+                        "primary-fixed": "#22C55E",
+                        "primary-container": "#22C55E",
                         "on-secondary": "#3b2f00",
                         "surface-container-lowest": "#0e0e0e",
                         "inverse-surface": "#e5e2e1",
@@ -64,7 +64,7 @@
                         "on-background": "#e5e2e1",
                         "secondary": "#fff3d3",
                         "inverse-primary": "#006e11",
-                        "surface-tint": "#00e631",
+                        "surface-tint": "#22C55E",
                         "outline": "#84967e",
                         "tertiary-fixed": "#ffdad5",
                         "surface-variant": "#353534"
@@ -90,18 +90,111 @@
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
-        @media (max-width: 1023px) {
-            body, html { overflow-y: auto !important; overflow-x: hidden !important; height: auto !important; min-height: 100vh !important; }
+        /* ===== TRUE RESPONSIVE STRATEGY (Móvil, Tablet, Nest Hub, iPad Pro) ===== */
+        @media (max-width: 1366px), (max-height: 850px) {
+            body, html { 
+                overflow-y: auto !important; 
+                overflow-x: hidden !important; 
+                height: auto !important; 
+                min-height: 100vh !important; 
+                display: block !important; 
+                background-attachment: scroll !important;
+                transform: none !important;
+            }
             * { box-sizing: border-box !important; }
-            main { height: auto !important; overflow: visible !important; display: flex !important; flex-direction: column !important; padding: 40px 16px 140px 16px !important; }
-            h1 { font-size: 2.5rem !important; line-height: 1.1 !important; word-wrap: break-word !important; }
-            .text-5xl, .md\:text-7xl { font-size: 2.5rem !important; }
-            p, .text-xl, .text-2xl { font-size: 1.1rem !important; line-height: 1.4 !important; }
-            .lg\:col-span-8 { min-height: 250px !important; padding: 16px !important; }
-            .lg\:col-span-8 img { object-fit: contain !important; height: auto !important; max-height: 350px !important; }
-            .absolute.bottom-16 { display: none !important; }
-            nav.fixed { height: auto !important; padding: 12px !important; flex-wrap: wrap !important; justify-content: center !important; gap: 8px !important; position: fixed !important; bottom: 0 !important; width: 100% !important; z-index: 50 !important; }
-            nav.fixed button, nav.fixed div { flex: 1 1 20% !important; min-width: 60px !important; padding: 12px 4px !important; border: 1px solid rgba(27,255,60,0.1) !important; margin: 0 !important; }
+            
+            header { display: none !important; }
+            
+            main { 
+                height: auto !important; 
+                padding: 60px 16px 140px 16px !important; 
+                display: block !important;
+                transform: none !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                margin-bottom: 0 !important;
+            }
+
+            .w-full.max-w-7xl.-mt-4.-ml-10 { margin: 0 !important; }
+            
+            h1 { 
+                font-size: clamp(2rem, 8vw, 4.5rem) !important; 
+                line-height: 1 !important; 
+                word-wrap: break-word !important; 
+            }
+            
+            .grid.grid-cols-12 { 
+                display: flex !important; 
+                flex-direction: column !important; 
+                gap: 16px !important; 
+            }
+            
+            .col-span-12.lg\:col-span-4, .col-span-12.lg\:col-span-8 { width: 100% !important; }
+            
+            .col-span-12.lg\:col-span-8.bg-surface-container-low { 
+                height: 250px !important; 
+                min-height: 250px !important;
+                padding: 16px !important;
+            }
+            
+            .text-2xl { font-size: 1.1rem !important; line-height: 1.4 !important; }
+            .bg-surface-container-low.p-6 h3 { font-size: 1.8rem !important; }
+            
+            .mt-8.bg-surface-container-highest\/30 { 
+                margin-top: 24px !important; 
+                padding: 16px !important; 
+            }
+            .mt-8.bg-surface-container-highest\/30 .flex.gap-8 { gap: 16px !important; }
+            .mt-8.bg-surface-container-highest\/30 p { font-size: 1.1rem !important; }
+
+            nav.fixed { 
+                height: 64px !important; 
+                padding: 8px !important; 
+                flex-wrap: nowrap !important; 
+                justify-content: space-around !important; 
+                gap: 4px !important; 
+                position: fixed !important; 
+                bottom: 0 !important; 
+                width: 100% !important; 
+                z-index: 100 !important;
+                background: #1C1B1B !important;
+                display: flex !important;
+            }
+            
+            nav.fixed button, nav.fixed div { 
+                flex: 1 1 auto !important; 
+                min-width: 50px !important; 
+                height: 48px !important;
+                padding: 4px !important; 
+                border: none !important;
+                background: transparent !important;
+                margin: 0 !important;
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+            }
+            nav.fixed div { border: 1px solid rgba(34,197,94,0.3) !important; background: rgba(34,197,94,0.05) !important; }
+            nav.fixed button span.font-['JetBrains_Mono'], nav.fixed div span.font-['JetBrains_Mono'] { font-size: 9px !important; margin-top: 2px !important; }
+
+            .absolute.top-8.left-8, .absolute.top-8.right-8 { position: relative !important; top: auto !important; left: auto !important; right: auto !important; margin-bottom: 24px !important; }
+            .absolute.top-8.left-8 { margin-bottom: 8px !important; }
+            .absolute.top-8.right-8 { text-align: left !important; }
+
+            /* Tablet adjust */
+            @media (min-width: 768px) and (max-width: 1366px) {
+                .grid.grid-cols-12 { display: grid !important; grid-template-cols: repeat(12, 1fr) !important; gap: 24px !important; }
+                .col-span-12.lg\:col-span-4 { grid-column: span 5 / span 12 !important; }
+                .col-span-12.lg\:col-span-8 { grid-column: span 7 / span 12 !important; }
+                h1 { font-size: 4rem !important; }
+            }
+        }
+
+        /* Protect 4K/Desktop scale alignment */
+        @media (min-width: 1367px) and (min-height: 851px) {
+            body { 
+                height: 100vh !important; 
+                overflow: hidden !important; 
+                display: flex !important;
+            }
         }
     </style>
 </head>
@@ -114,7 +207,7 @@
         <div class="absolute top-8 left-8 flex items-center gap-4">
             <div class="h-px w-12 bg-primary-container/40"></div>
             <span class="font-label text-xs text-outline tracking-[0.2em] uppercase" style=""><span
-                    style="color: rgb(27, 255, 60); font-family: Rajdhani, sans-serif; font-size: 24px; font-weight: 700; letter-spacing: -1.2px;"
+                    style="color: rgb(34, 197, 94); font-family: Rajdhani, sans-serif; font-size: 24px; font-weight: 700; letter-spacing: -1.2px;"
                     class="">WELD BEAR IEDU</span></span>
         </div>
         <!-- Metadata Corner -->
@@ -141,7 +234,7 @@
                     <!-- Block 1: Arco -->
                     <div class="bg-surface-container-low p-6 border border-outline-variant/20 hover:border-primary-container/40 transition-all duration-300 group flex flex-col gap-2">
                         <div class="flex justify-between items-center">
-                            <h3 class="font-headline text-3xl font-bold tracking-wide text-[#1BFF3C] uppercase">Arco</h3>
+                            <h3 class="font-headline text-3xl font-bold tracking-wide text-[#22C55E] uppercase">Arco</h3>
                             <span class="font-label text-primary-container text-xs">01</span>
                         </div>
                         <p class="text-2xl font-medium text-on-surface leading-snug">Es la luz intensa y el calor visible entre el electrodo y la pieza.</p>
@@ -150,7 +243,7 @@
                     <!-- Block 2: Charco -->
                     <div class="bg-surface-container-low p-6 border border-outline-variant/20 hover:border-primary-container/40 transition-all duration-300 group flex flex-col gap-2">
                         <div class="flex justify-between items-center">
-                            <h3 class="font-headline text-3xl font-bold tracking-wide text-[#1BFF3C] uppercase">Charco</h3>
+                            <h3 class="font-headline text-3xl font-bold tracking-wide text-[#22C55E] uppercase">Charco</h3>
                             <span class="font-label text-primary-container text-xs">02</span>
                         </div>
                         <p class="text-2xl font-medium text-on-surface leading-snug">Es el metal líquido que se forma mientras se está soldando.</p>
@@ -159,7 +252,7 @@
                     <!-- Block 3: Cráter -->
                     <div class="bg-surface-container-low p-6 border border-outline-variant/20 hover:border-primary-container/40 transition-all duration-300 group flex flex-col gap-2">
                         <div class="flex justify-between items-center">
-                            <h3 class="font-headline text-3xl font-bold tracking-wide text-[#1BFF3C] uppercase">Cráter</h3>
+                            <h3 class="font-headline text-3xl font-bold tracking-wide text-[#22C55E] uppercase">Cráter</h3>
                             <span class="font-label text-primary-container text-xs">03</span>
                         </div>
                         <p class="text-2xl font-medium text-on-surface leading-snug">Es la cavidad que puede quedar al final del cordón si no se llena correctamente.</p>
@@ -168,7 +261,7 @@
 
                 <!-- Right: Large Image -->
                 <div class="col-span-12 lg:col-span-8 bg-surface-container-low border border-outline-variant/20 flex items-center justify-center relative overflow-hidden p-8 h-full">
-                    <img alt="Partes del proceso" class="w-full h-full object-contain rounded-sm glow-border" src="../partesdelproceso.png">
+                    <img alt="Partes del proceso" class="w-full h-full object-contain rounded-sm glow-border" src="../arcoelectrico3.jpg">
                     <!-- Tech Overlay -->
                     <div class="absolute top-4 right-4 flex gap-2">
                         <div class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></div>
@@ -201,20 +294,20 @@
         class="fixed bottom-0 left-0 w-full z-50 flex justify-between items-center px-12 h-16 bg-[#1C1B1B] border-t border-[#3B4B37]/30">
         <!-- Anterior -->
         <button
-            class="flex flex-col items-center justify-center text-[#84967E] px-8 py-2 hover:text-[#1BFF3C] hover:bg-[#2A2A2A] active:scale-95 transition-all duration-150"
+            class="flex flex-col items-center justify-center text-[#84967E] px-8 py-2 hover:text-[#22C55E] hover:bg-[#2A2A2A] active:scale-95 transition-all duration-150"
             style="">
             <span class="material-symbols-outlined mb-1" data-icon="arrow_back_ios" style="">arrow_back_ios</span>
             <span class="font-['JetBrains_Mono'] text-xs uppercase tracking-tighter" style="">ANTERIOR</span>
         </button>
         <!-- Current Status -->
         <div class="flex flex-col items-center justify-center px-12 py-2 h-full"
-            style="background-color: transparent; border: 1px solid #1BFF3C; color: #1BFF3C;">
+            style="background-color: transparent; border: 1px solid #22C55E; color: #22C55E;">
             <span class="material-symbols-outlined mb-1" data-icon="dialpad" style="">dialpad</span>
             <span class="font-['JetBrains_Mono'] text-xs uppercase tracking-tighter font-bold" style="">05</span>
         </div>
         <!-- Siguiente -->
         <button
-            class="flex flex-col items-center justify-center text-[#84967E] px-8 py-2 hover:text-[#1BFF3C] hover:bg-[#2A2A2A] active:scale-95 transition-all duration-150"
+            class="flex flex-col items-center justify-center text-[#84967E] px-8 py-2 hover:text-[#22C55E] hover:bg-[#2A2A2A] active:scale-95 transition-all duration-150"
             style="">
             <span class="material-symbols-outlined mb-1" data-icon="arrow_forward_ios" style="">arrow_forward_ios</span>
             <span class="font-['JetBrains_Mono'] text-xs uppercase tracking-tighter" style="">SIGUIENTE</span>

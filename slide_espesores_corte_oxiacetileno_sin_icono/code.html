@@ -15,16 +15,16 @@
                         "inverse-on-surface": "#313030",
                         "background": "#131313",
                         "surface-container-lowest": "#0e0e0e",
-                        "primary-fixed-dim": "#00e631",
+                        "primary-fixed-dim": "#22C55E",
                         "on-tertiary-fixed-variant": "#930005",
                         "on-primary-fixed": "#002202",
                         "surface-variant": "#353534",
                         "surface-container-highest": "#353534",
                         "on-primary-fixed-variant": "#00530a",
                         "surface-dim": "#131313",
-                        "surface-tint": "#00e631",
+                        "surface-tint": "#22C55E",
                         "inverse-primary": "#006e11",
-                        "primary-container": "#1bff3c",
+                        "primary-container": "#22C55E",
                         "surface-container": "#201f1f",
                         "surface": "#131313",
                         "on-secondary-fixed": "#221b00",
@@ -42,7 +42,7 @@
                         "on-error-container": "#ffdad6",
                         "outline": "#84967e",
                         "on-primary-container": "#007112",
-                        "primary-fixed": "#74ff6d",
+                        "primary-fixed": "#22C55E",
                         "secondary-fixed": "#ffe174",
                         "on-surface-variant": "#baccb2",
                         "on-secondary": "#3b2f00",
@@ -82,46 +82,146 @@
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
         .glow-primary {
-            box-shadow: 0px 0px 15px rgba(27, 255, 60, 0.15);
+            box-shadow: 0px 0px 15px rgba(34, 197, 94, 0.15);
         }
-        @media (max-width: 1023px) {
-            body, html { overflow-y: auto !important; overflow-x: hidden !important; height: auto !important; min-height: 100vh !important; }
+        /* ===== TRUE RESPONSIVE STRATEGY (Móvil, Tablet, Nest Hub, iPad Pro) ===== */
+        @media (max-width: 1366px), (max-height: 850px) {
+            body, html { 
+                overflow-y: auto !important; 
+                overflow-x: hidden !important; 
+                height: auto !important; 
+                min-height: 100vh !important; 
+                display: block !important; 
+                background-attachment: scroll !important;
+                transform: none !important;
+            }
             * { box-sizing: border-box !important; }
-            main { height: auto !important; padding: 100px 16px 140px 16px !important; }
-            h1 { font-size: 2.2rem !important; line-height: 1.1 !important; word-wrap: break-word !important; margin-bottom: 12px !important; }
+            
+            header { 
+                background: #131313 !important;
+                padding: 12px 16px !important;
+                position: relative !important;
+                height: auto !important;
+            }
+            header nav { display: none !important; }
+            
+            main { 
+                height: auto !important; 
+                padding: 20px 16px 140px 16px !important; 
+                display: block !important;
+                transform: none !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                margin-bottom: 0 !important;
+            }
+            
+            h1 { 
+                font-size: clamp(2rem, 8vw, 3.5rem) !important; 
+                line-height: 1.1 !important; 
+                word-wrap: break-word !important; 
+            }
+            
             p.text-xl { font-size: 1.1rem !important; line-height: 1.4 !important; }
+            
             .overflow-x-auto { overflow-x: visible !important; }
-            table, thead, tbody, th, td, tr { display: block !important; width: 100% !important; }
+            
+            table, thead, tbody, th, td, tr { display: block !important; width: 100% !important; border: none !important; }
             thead { display: none !important; }
-            tr { margin-bottom: 16px !important; border: 1px solid rgba(132, 150, 126, 0.3) !important; background: #1a1a1a !important; }
-            td { display: flex !important; justify-content: space-between !important; padding: 12px 16px !important; border: none !important; border-bottom: 1px dashed rgba(132, 150, 126, 0.2) !important; font-size: 1rem !important; text-align: right !important; }
+            
+            tr { 
+                margin-bottom: 24px !important; 
+                border: 1px solid rgba(132, 150, 126, 0.3) !important; 
+                background: #1a1a1a !important; 
+                padding: 8px !important;
+            }
+            
+            td { 
+                display: flex !important; 
+                justify-content: space-between !important; 
+                padding: 12px !important; 
+                border: none !important; 
+                border-bottom: 1px dashed rgba(132, 150, 126, 0.2) !important; 
+                font-size: 1.1rem !important; 
+                text-align: right !important; 
+            }
             td:last-child { border-bottom: none !important; }
+            
             td:nth-child(1)::before { content: "Boquilla:" !important; }
             td:nth-child(2)::before { content: "Espesor:" !important; }
             td:nth-child(3)::before { content: "Acetileno:" !important; }
             td:nth-child(4)::before { content: "Oxígeno:" !important; }
-            td::before { font-weight: bold !important; color: #84967E !important; font-size: 0.85rem !important; padding-right: 12px !important; display: flex !important; align-items: center !important; text-align: left !important; }
-            header { flex-wrap: wrap !important; padding: 16px !important; gap: 12px; }
-            nav { height: auto !important; padding: 12px !important; flex-wrap: wrap !important; justify-content: center !important; gap: 8px !important; position: fixed !important; bottom: 0 !important; }
-            nav button, nav div { flex: 1 1 20% !important; min-width: 60px !important; padding: 8px !important; }
+            
+            td::before { 
+                font-weight: bold !important; 
+                color: #84967E !important; 
+                font-size: 0.85rem !important; 
+                padding-right: 12px !important; 
+                display: flex !important; 
+                align-items: center !important; 
+                text-align: left !important; 
+                text-transform: uppercase !important;
+                letter-spacing: 0.05em !important;
+            }
+            
+            nav { 
+                height: 64px !important; 
+                padding: 8px !important; 
+                flex-wrap: nowrap !important; 
+                justify-content: space-around !important; 
+                gap: 4px !important; 
+                position: fixed !important; 
+                bottom: 0 !important; 
+                width: 100% !important; 
+                z-index: 100 !important;
+                background: #1C1B1B !important;
+            }
+            
+            nav button, nav div { 
+                flex: 1 1 auto !important; 
+                min-width: 50px !important; 
+                height: 48px !important;
+                padding: 4px !important; 
+            }
+            nav button span, nav div span { font-size: 18px !important; margin-bottom: 2px !important; }
+            nav button span:not(.material-symbols-outlined) { font-size: 9px !important; margin-top: 2px !important; }
+
+            /* Tablet fix */
+            @media (min-width: 768px) and (max-width: 1366px) {
+                table { display: table !important; }
+                thead { display: table-header-group !important; }
+                tbody { display: table-row-group !important; }
+                tr { display: table-row !important; }
+                td, th { display: table-cell !important; padding: 1.25rem !important; text-align: left !important; border: 1px solid rgba(132, 150, 126, 0.1) !important; }
+                td::before { display: none !important; }
+                tr.hover\:bg-\[\#22C55E\]\/5:hover { background-color: rgba(34, 197, 94, 0.05) !important; }
+            }
+        }
+
+        /* Protect 4K/Desktop scale alignment */
+        @media (min-width: 1367px) and (min-height: 851px) {
+            body { 
+                height: 100vh !important; 
+                overflow: hidden !important; 
+                display: flex !important;
+            }
         }
     </style>
 </head>
 <body class="text-on-background font-body min-h-screen flex flex-col">
 <!-- TopAppBar -->
 <header class="bg-[#131313] dark:bg-[#131313] docked full-width top-0 border-b border-[#3B4B37]/20 flex justify-between items-center w-full px-6 py-4 z-50">
-<div class="text-2xl font-black text-[#1BFF3C] tracking-tighter font-headline" style=""><span style="font-family: Rajdhani, sans-serif; letter-spacing: -1.2px; text-transform: uppercase;">WELD BEAR IEDU</span></div>
+<div class="text-2xl font-black text-[#22C55E] tracking-tighter font-headline" style=""><span style="font-family: Rajdhani, sans-serif; letter-spacing: -1.2px; text-transform: uppercase;">WELD BEAR IEDU</span></div>
 <nav class="hidden md:flex items-center space-x-8">
-<a class="font-headline uppercase tracking-wider font-bold text-lg text-[#1BFF3C] border-b-2 border-[#1BFF3C] pb-1" href="#" style="">MODULES</a>
-<a class="font-headline uppercase tracking-wider font-bold text-lg text-[#84967E] hover:text-[#1BFF3C] transition-colors" href="#" style="">SCHEMATICS</a>
-<a class="font-headline uppercase tracking-wider font-bold text-lg text-[#84967E] hover:text-[#1BFF3C] transition-colors" href="#" style="">SAFETY</a>
-<a class="font-headline uppercase tracking-wider font-bold text-lg text-[#84967E] hover:text-[#1BFF3C] transition-colors" href="#" style="">RESOURCES</a>
+<a class="font-headline uppercase tracking-wider font-bold text-lg text-[#22C55E] border-b-2 border-[#22C55E] pb-1" href="#" style="">MODULES</a>
+<a class="font-headline uppercase tracking-wider font-bold text-lg text-[#84967E] hover:text-[#22C55E] transition-colors" href="#" style="">SCHEMATICS</a>
+<a class="font-headline uppercase tracking-wider font-bold text-lg text-[#84967E] hover:text-[#22C55E] transition-colors" href="#" style="">SAFETY</a>
+<a class="font-headline uppercase tracking-wider font-bold text-lg text-[#84967E] hover:text-[#22C55E] transition-colors" href="#" style="">RESOURCES</a>
 </nav>
 <div class="flex items-center space-x-4">
-<button class="p-2 text-[#84967E] hover:bg-[#1BFF3C]/10 hover:text-[#1BFF3C] transition-all duration-75 ease-in-out active:scale-95" style="">
+<button class="p-2 text-[#84967E] hover:bg-[#22C55E]/10 hover:text-[#22C55E] transition-all duration-75 ease-in-out active:scale-95" style="">
 <span class="material-symbols-outlined" style="">settings</span>
 </button>
-<button class="p-2 text-[#84967E] hover:bg-[#1BFF3C]/10 hover:text-[#1BFF3C] transition-all duration-75 ease-in-out active:scale-95" style="">
+<button class="p-2 text-[#84967E] hover:bg-[#22C55E]/10 hover:text-[#22C55E] transition-all duration-75 ease-in-out active:scale-95" style="">
 <span class="material-symbols-outlined" style="">help</span>
 </button>
 </div>
@@ -129,8 +229,8 @@
 <!-- Main Content Canvas -->
 <main class="flex-grow container mx-auto px-6 py-12 mb-24">
 <!-- Header Section -->
-<div class="mb-12 border-l-4 border-[#1BFF3C] pl-6 py-2">
-<h1 class="font-headline text-5xl font-black uppercase tracking-tight text-[#1BFF3C] mb-2" style="">
+<div class="mb-12 border-l-4 border-[#22C55E] pl-6 py-2">
+<h1 class="font-headline text-5xl font-black uppercase tracking-tight text-[#22C55E] mb-2" style="">
                 ESPESORES DE CORTE OXIACETILENO
             </h1>
 <p class="text-[#84967E] font-medium text-xl uppercase tracking-widest" style="">
@@ -146,40 +246,40 @@
 <table class="w-full text-left border-collapse">
 <thead>
 <tr class="bg-surface-container-high border-b border-outline-variant">
-<th class="px-6 py-5 font-headline text-xl font-bold text-[#1BFF3C] uppercase tracking-wider border-r border-outline-variant/20" style="">Boquilla</th>
-<th class="px-6 py-5 font-headline text-xl font-bold text-[#1BFF3C] uppercase tracking-wider border-r border-outline-variant/20" style="">Espesor</th>
-<th class="px-6 py-5 font-headline text-xl font-bold text-[#1BFF3C] uppercase tracking-wider border-r border-outline-variant/20 text-center" style="">Acetileno (PSI)</th>
-<th class="px-6 py-5 font-headline text-xl font-bold text-[#1BFF3C] uppercase tracking-wider text-center" style="">Oxígeno (PSI)</th>
+<th class="px-6 py-5 font-headline text-xl font-bold text-[#22C55E] uppercase tracking-wider border-r border-outline-variant/20" style="">Boquilla</th>
+<th class="px-6 py-5 font-headline text-xl font-bold text-[#22C55E] uppercase tracking-wider border-r border-outline-variant/20" style="">Espesor</th>
+<th class="px-6 py-5 font-headline text-xl font-bold text-[#22C55E] uppercase tracking-wider border-r border-outline-variant/20 text-center" style="">Acetileno (PSI)</th>
+<th class="px-6 py-5 font-headline text-xl font-bold text-[#22C55E] uppercase tracking-wider text-center" style="">Oxígeno (PSI)</th>
 </tr>
 </thead>
 <tbody class="font-label text-lg">
 <!-- Row 1 -->
-<tr class="border-b border-outline-variant/10 hover:bg-[#1BFF3C]/5 transition-colors group">
+<tr class="border-b border-outline-variant/10 hover:bg-[#22C55E]/5 transition-colors group">
 <td class="px-6 py-6 font-bold text-on-surface uppercase border-r border-outline-variant/20" style="">&nbsp;pequeña</td>
 <td class="px-6 py-6 text-on-surface-variant border-r border-outline-variant/20" style="">1/8" a 1/4"</td>
-<td class="px-6 py-6 text-center text-[#1BFF3C] font-bold border-r border-outline-variant/20" style="">3 a 5 PSI</td>
-<td class="px-6 py-6 text-center text-[#1BFF3C] font-bold" style="">20 a 25 PSI</td>
+<td class="px-6 py-6 text-center text-[#22C55E] font-bold border-r border-outline-variant/20" style="">3 a 5 PSI</td>
+<td class="px-6 py-6 text-center text-[#22C55E] font-bold" style="">20 a 25 PSI</td>
 </tr>
 <!-- Row 2 -->
-<tr class="border-b border-outline-variant/10 hover:bg-[#1BFF3C]/5 transition-colors group">
+<tr class="border-b border-outline-variant/10 hover:bg-[#22C55E]/5 transition-colors group">
 <td class="px-6 py-6 font-bold text-on-surface uppercase border-r border-outline-variant/20" style="">&nbsp;mediana pequeña</td>
 <td class="px-6 py-6 text-on-surface-variant border-r border-outline-variant/20" style="">3/8" a 1/2"</td>
-<td class="px-6 py-6 text-center text-[#1BFF3C] font-bold border-r border-outline-variant/20" style="">4 a 5 PSI</td>
-<td class="px-6 py-6 text-center text-[#1BFF3C] font-bold" style="">25 a 30 PSI</td>
+<td class="px-6 py-6 text-center text-[#22C55E] font-bold border-r border-outline-variant/20" style="">4 a 5 PSI</td>
+<td class="px-6 py-6 text-center text-[#22C55E] font-bold" style="">25 a 30 PSI</td>
 </tr>
 <!-- Row 3 -->
-<tr class="border-b border-outline-variant/10 hover:bg-[#1BFF3C]/5 transition-colors group">
+<tr class="border-b border-outline-variant/10 hover:bg-[#22C55E]/5 transition-colors group">
 <td class="px-6 py-6 font-bold text-on-surface uppercase border-r border-outline-variant/20" style="">&nbsp;mediana</td>
 <td class="px-6 py-6 text-on-surface-variant border-r border-outline-variant/20" style="">5/8" a 1"</td>
-<td class="px-6 py-6 text-center text-[#1BFF3C] font-bold border-r border-outline-variant/20" style="">5 a 6 PSI</td>
-<td class="px-6 py-6 text-center text-[#1BFF3C] font-bold" style="">30 a 35 PSI</td>
+<td class="px-6 py-6 text-center text-[#22C55E] font-bold border-r border-outline-variant/20" style="">5 a 6 PSI</td>
+<td class="px-6 py-6 text-center text-[#22C55E] font-bold" style="">30 a 35 PSI</td>
 </tr>
 <!-- Row 4 -->
-<tr class="hover:bg-[#1BFF3C]/5 transition-colors group">
+<tr class="hover:bg-[#22C55E]/5 transition-colors group">
 <td class="px-6 py-6 font-bold text-on-surface uppercase border-r border-outline-variant/20" style="">&nbsp;grande</td>
 <td class="px-6 py-6 text-on-surface-variant border-r border-outline-variant/20" style="">1" a 2" o más</td>
-<td class="px-6 py-6 text-center text-[#1BFF3C] font-bold border-r border-outline-variant/20" style="">6 a 7 PSI</td>
-<td class="px-6 py-6 text-center text-[#1BFF3C] font-bold" style="">35 a 40 PSI</td>
+<td class="px-6 py-6 text-center text-[#22C55E] font-bold border-r border-outline-variant/20" style="">6 a 7 PSI</td>
+<td class="px-6 py-6 text-center text-[#22C55E] font-bold" style="">35 a 40 PSI</td>
 </tr>
 </tbody>
 </table>
@@ -198,22 +298,22 @@
 <!-- BottomNavBar -->
 <nav class="fixed bottom-0 left-0 w-full z-50 bg-[#1C1B1B] border-t border-[#3B4B37]/30 flex justify-around items-center h-20 px-4 glow-primary">
 <!-- PREVIOUS -->
-<button class="flex flex-col items-center justify-center text-[#84967E] px-6 py-2 hover:bg-[#2A2A2A] hover:text-[#1BFF3C] transition-all group active:border-t-2 active:border-[#1BFF3C]" style="">
+<button class="flex flex-col items-center justify-center text-[#84967E] px-6 py-2 hover:bg-[#2A2A2A] hover:text-[#22C55E] transition-all group active:border-t-2 active:border-[#22C55E]" style="">
 <span class="material-symbols-outlined mb-1" style="">arrow_back</span>
 <span class="font-label text-xs font-medium uppercase tracking-tighter" style="">PREVIOUS</span>
 </button>
 <!-- SLIDE TRACKER -->
-<div class="flex flex-col items-center justify-center text-[#1BFF3C] bg-[#1BFF3C]/10 px-8 py-2 border-t-2 border-[#1BFF3C]">
+<div class="flex flex-col items-center justify-center text-[#22C55E] bg-[#22C55E]/10 px-8 py-2 border-t-2 border-[#22C55E]">
 <span class="material-symbols-outlined mb-1" style="">numbers</span>
 <span class="font-label text-xs font-medium uppercase tracking-tighter" style="">07</span>
 </div>
 <!-- NEXT -->
-<button class="flex flex-col items-center justify-center text-[#84967E] px-6 py-2 hover:bg-[#2A2A2A] hover:text-[#1BFF3C] transition-all group active:border-t-2 active:border-[#1BFF3C]" style="">
+<button class="flex flex-col items-center justify-center text-[#84967E] px-6 py-2 hover:bg-[#2A2A2A] hover:text-[#22C55E] transition-all group active:border-t-2 active:border-[#22C55E]" style="">
 <span class="material-symbols-outlined mb-1" style="">arrow_forward</span>
 <span class="font-label text-xs font-medium uppercase tracking-tighter" style="">NEXT</span>
 </button>
 <!-- HOME -->
-<button class="flex flex-col items-center justify-center text-[#84967E] px-6 py-2 hover:bg-[#2A2A2A] hover:text-[#1BFF3C] transition-all group active:border-t-2 active:border-[#1BFF3C]" style="">
+<button class="flex flex-col items-center justify-center text-[#84967E] px-6 py-2 hover:bg-[#2A2A2A] hover:text-[#22C55E] transition-all group active:border-t-2 active:border-[#22C55E]" style="">
 <span class="material-symbols-outlined mb-1" style="">home</span>
 <span class="font-label text-xs font-medium uppercase tracking-tighter" style="">HOME</span>
 </button>
