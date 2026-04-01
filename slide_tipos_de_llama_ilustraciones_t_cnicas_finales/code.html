@@ -95,6 +95,130 @@
             border-color: #22C55E;
         }
     </style>
+
+    
+    
+    
+    <style id="weld-bear-nav-unified">
+    /* ===== NAV BAR UNIFICATION - DO NOT EDIT ===== */
+    @media (max-width: 1366px), (max-height: 850px) {
+        nav.fixed { 
+            height: 64px !important; 
+            padding: 8px !important; 
+            flex-wrap: nowrap !important; 
+            justify-content: space-around !important; 
+            gap: 4px !important; 
+            position: fixed !important; 
+            bottom: 0 !important; 
+            width: 100% !important; 
+            z-index: 100 !important;
+            background: #1C1B1B !important;
+            display: flex !important;
+            border-top: 1px solid rgba(59,75,55,0.3) !important;
+        }
+        
+        nav.fixed button, nav.fixed div { 
+            flex: 1 1 auto !important; 
+            min-width: 50px !important; 
+            height: 48px !important;
+            padding: 4px !important; 
+            border: none !important;
+            background: transparent !important;
+            margin: 0 !important;
+        }
+        nav.fixed div { border: 1px solid rgba(34,197,94,0.3) !important; background: rgba(34,197,94,0.05) !important; }
+        nav.fixed button span.font-['JetBrains_Mono'] { font-size: 9px !important; margin-top: 2px !important; }
+        
+        /* Hide decoration elements that could overlap */
+        .fixed.top-24, .fixed.bottom-24 { display: none !important; }
+    }
+    </style>
+
+    
+
+
+    <style id="weld-bear-mobile-nav-fix-ultimate">
+        /* ULTRA ROBUST MOBILE NAV FIX - No position fixed iOS bugs */
+        @media (max-width: 1024px), (pointer: coarse) {
+            body, html {
+                height: 100dvh !important;
+                width: 100vw !important;
+                overflow: hidden !important; 
+                display: flex !important;
+                flex-direction: column !important;
+                position: fixed !important; /* Locks viewport on iOS */
+                top: 0; left: 0; right: 0; bottom: 0;
+            }
+            
+            #frame-container {
+                flex: 1 1 auto !important;
+                height: auto !important;
+                min-height: 0 !important;
+                width: 100% !important;
+                overflow-y: auto !important;
+                overflow-x: hidden !important;
+                -webkit-overflow-scrolling: touch !important;
+                display: flex !important;
+                flex-direction: column !important;
+                transform: none !important;
+            }
+            
+            /* If no frame container exists, main must scroll */
+            body > main, #frame-container > main {
+                flex-grow: 1 !important;
+                height: auto !important;
+                overflow-y: auto !important;
+                overflow-x: hidden !important;
+                -webkit-overflow-scrolling: touch !important;
+                padding-bottom: 30px !important;
+                display: flex !important;
+                flex-direction: column !important;
+            }
+            
+            nav.fixed, nav { 
+                flex: 0 0 64px !important;
+                position: relative !important; /* Flex bottom element, not fixed! */
+                bottom: auto !important;
+                left: auto !important;
+                width: 100% !important; 
+                height: 64px !important; 
+                padding: 6px !important; 
+                display: flex !important;
+                flex-direction: row !important;
+                flex-wrap: nowrap !important; 
+                justify-content: space-evenly !important; 
+                align-items: center !important;
+                gap: 4px !important; 
+                z-index: 2147483647 !important;
+                background: #131313 !important;
+                border-top: 1px solid rgba(34,197,94,0.3) !important;
+                visibility: visible !important;
+                opacity: 1 !important;
+                pointer-events: auto !important;
+            }
+            
+            nav button, nav div { 
+                flex: 1 1 0 !important; 
+                height: 100% !important;
+                padding: 4px !important; 
+                border: none !important;
+                margin: 0 !important;
+                display: flex !important;
+                flex-direction: column !important;
+                justify-content: center !important;
+                align-items: center !important;
+                pointer-events: auto !important;
+                touch-action: manipulation !important;
+                visibility: visible !important;
+            }
+            
+            nav button:active { background: rgba(34,197,94,0.2) !important; }
+            
+            /* Remove any invisible overlays */
+            .fixed.top-24, .fixed.bottom-24, .fixed.left-6 { display: none !important; }
+        }
+    </style>
+
 </head>
 
 <body
@@ -204,24 +328,7 @@
         <!-- Metadata Hidden by Request -->
     </main>
     <!-- BottomNavBar -->
-    <nav
-        class="bg-[#1C1B1B] dark:bg-[#1C1B1B] fixed bottom-0 left-0 w-full z-50 flex justify-between items-center px-12 py-3 border-t border-[#3B4B37]/30 shadow-[0px_0px_15px_rgba(34,197,94,0.1)]">
-        <button
-            class="flex flex-col items-center justify-center text-[#84967E] px-8 py-2 font-['JetBrains_Mono'] text-xs tracking-widest hover:text-[#22C55E] hover:bg-[#2A2A2A] transition-all duration-200">
-            <span class="material-symbols-outlined mb-1">arrow_back</span>
-            <span>PREVIOUS</span>
-        </button>
-        <div
-            class="flex flex-col items-center justify-center border border-[#22C55E] text-[#22C55E] px-8 py-2 font-['JetBrains_Mono'] text-xs tracking-widest font-bold bg-[#22C55E]/5">
-            <span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">analytics</span>
-            <span>05</span>
-        </div>
-        <button
-            class="flex flex-col items-center justify-center text-[#84967E] px-8 py-2 font-['JetBrains_Mono'] text-xs tracking-widest hover:text-[#22C55E] hover:bg-[#2A2A2A] transition-all duration-200">
-            <span class="material-symbols-outlined mb-1">arrow_forward</span>
-            <span>NEXT</span>
-        </button>
-    </nav>
+    
 
 
 
@@ -232,42 +339,81 @@
 
 
 
-    <script id="weld-bear-sync">
-        setTimeout(() => {
-            const triggers = document.querySelectorAll('button, a');
-            triggers.forEach(el => {
-                const text = el.innerText.toUpperCase();
-                const isPrev = text.includes('PREV') || text.includes('ANTERIOR') || text.includes('BACK_IOS') || text.includes('ARROW_BACK');
-                const isNext = text.includes('NEXT') || text.includes('SIGUIENTE') || text.includes('SIGUE') || text.includes('CONTINUAR') || text.includes('ARROW_FORWARD');
-                const isHome = text.includes('HOME') || text.includes('INICIO');
-                const isFinish = text.includes('FINALIZAR') || text.includes('FINISH');
 
-                if (isPrev || isNext || isHome || isFinish) {
-                    el.onclick = (e) => {
-                        e.preventDefault();
-                        if (isPrev) window.parent.postMessage('PREV', '*');
-                        if (isNext) window.parent.postMessage('NEXT', '*');
-                        if (isHome) window.parent.postMessage('HOME', '*');
-                        if (isFinish) window.parent.postMessage('FINISH', '*');
-                    };
-                }
-            });
-        }, 500);
 
-        window.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ') {
-                e.preventDefault();
-                window.parent.postMessage('NEXT', '*');
-            } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
-                e.preventDefault();
-                window.parent.postMessage('PREV', '*');
+
+    
+
+
+
+
+
+
+
+
+
+
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-center gap-4 p-4 bg-[#131313] border-t border-[#3B4B37]/30">
+<!-- Previous Button -->
+<button class="flex flex-col items-center justify-center text-[#22C55E] border border-[#22C55E]/30 px-8 py-3 hover:bg-[#22C55E] hover:text-[#003A05] transition-all active:scale-95 duration-150">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+<span class="font-['JetBrains_Mono'] text-[12px] uppercase tracking-tighter mt-1">ANTERIOR</span>
+</button>
+<!-- Slide Index -->
+<div class="flex flex-col items-center justify-center px-8 py-3 min-w-[120px] bg-[#131313] border border-[#22C55E] text-[#22C55E]">
+<span class="material-symbols-outlined" data-icon="grid_view" style="font-variation-settings: 'FILL' 1;">grid_view</span>
+<span class="font-['JetBrains_Mono'] text-[12px] uppercase tracking-tighter mt-1">01</span>
+</div>
+<!-- Next Button -->
+<button class="flex flex-col items-center justify-center text-[#22C55E] border border-[#22C55E]/30 px-8 py-3 hover:bg-[#22C55E] hover:text-[#003A05] transition-all active:scale-95 duration-150">
+<span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+<span class="font-['JetBrains_Mono'] text-[12px] uppercase tracking-tighter mt-1">SIGUIENTE</span>
+</button>
+</nav>
+
+
+<script id="weld-bear-sync">
+    setTimeout(() => {
+        const triggers = document.querySelectorAll('button, a');
+        triggers.forEach(el => {
+            const text = el.innerText.toUpperCase();
+            const isPrev = text.includes('PREV') || text.includes('ANTERIOR') || text.includes('BACK_IOS') || text.includes('ARROW_BACK');
+            const isNext = text.includes('NEXT') || text.includes('SIGUIENTE') || text.includes('SIGUE') || text.includes('CONTINUAR') || text.includes('ARROW_FORWARD');
+            const isHome = text.includes('HOME') || text.includes('INICIO');
+            const isFinish = text.includes('FINALIZAR') || text.includes('FINISH');
+
+            if (isPrev || isNext || isHome || isFinish) {
+                el.onclick = (e) => {
+                    e.preventDefault();
+                    if (isPrev) window.parent.postMessage('PREV', '*');
+                    if (isNext) window.parent.postMessage('NEXT', '*');
+                    if (isHome) window.parent.postMessage('HOME', '*');
+                    if (isFinish) window.parent.postMessage('FINISH', '*');
+                };
             }
         });
+    }, 500);
 
-        window.addEventListener('load', () => {
-            window.parent.postMessage('LOADED', '*');
-        });
-    </script>
+    window.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ') {
+            e.preventDefault();
+            window.parent.postMessage('NEXT', '*');
+        } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+            e.preventDefault();
+            window.parent.postMessage('PREV', '*');
+        }
+    });
+
+    window.addEventListener('load', () => {
+        window.parent.postMessage('LOADED', '*');
+    });
+</script>
+
+
+
+
+
 
 </body>
 

@@ -113,6 +113,128 @@
           },
         }
     </script>
+
+
+    <style id="weld-bear-nav-unified">
+    /* ===== NAV BAR UNIFICATION - DO NOT EDIT ===== */
+    @media (max-width: 1366px), (max-height: 850px) {
+        nav.fixed { 
+            height: 64px !important; 
+            padding: 8px !important; 
+            flex-wrap: nowrap !important; 
+            justify-content: space-around !important; 
+            gap: 4px !important; 
+            position: fixed !important; 
+            bottom: 0 !important; 
+            width: 100% !important; 
+            z-index: 100 !important;
+            background: #1C1B1B !important;
+            display: flex !important;
+            border-top: 1px solid rgba(59,75,55,0.3) !important;
+        }
+        
+        nav.fixed button, nav.fixed div { 
+            flex: 1 1 auto !important; 
+            min-width: 50px !important; 
+            height: 48px !important;
+            padding: 4px !important; 
+            border: none !important;
+            background: transparent !important;
+            margin: 0 !important;
+        }
+        nav.fixed div { border: 1px solid rgba(34,197,94,0.3) !important; background: rgba(34,197,94,0.05) !important; }
+        nav.fixed button span.font-['JetBrains_Mono'] { font-size: 9px !important; margin-top: 2px !important; }
+        
+        /* Hide decoration elements that could overlap */
+        .fixed.top-24, .fixed.bottom-24 { display: none !important; }
+    }
+    </style>
+
+    
+
+
+    <style id="weld-bear-mobile-nav-fix-ultimate">
+        /* ULTRA ROBUST MOBILE NAV FIX - No position fixed iOS bugs */
+        @media (max-width: 1024px), (pointer: coarse) {
+            body, html {
+                height: 100dvh !important;
+                width: 100vw !important;
+                overflow: hidden !important; 
+                display: flex !important;
+                flex-direction: column !important;
+                position: fixed !important; /* Locks viewport on iOS */
+                top: 0; left: 0; right: 0; bottom: 0;
+            }
+            
+            #frame-container {
+                flex: 1 1 auto !important;
+                height: auto !important;
+                min-height: 0 !important;
+                width: 100% !important;
+                overflow-y: auto !important;
+                overflow-x: hidden !important;
+                -webkit-overflow-scrolling: touch !important;
+                display: flex !important;
+                flex-direction: column !important;
+                transform: none !important;
+            }
+            
+            /* If no frame container exists, main must scroll */
+            body > main, #frame-container > main {
+                flex-grow: 1 !important;
+                height: auto !important;
+                overflow-y: auto !important;
+                overflow-x: hidden !important;
+                -webkit-overflow-scrolling: touch !important;
+                padding-bottom: 30px !important;
+                display: flex !important;
+                flex-direction: column !important;
+            }
+            
+            nav.fixed, nav { 
+                flex: 0 0 64px !important;
+                position: relative !important; /* Flex bottom element, not fixed! */
+                bottom: auto !important;
+                left: auto !important;
+                width: 100% !important; 
+                height: 64px !important; 
+                padding: 6px !important; 
+                display: flex !important;
+                flex-direction: row !important;
+                flex-wrap: nowrap !important; 
+                justify-content: space-evenly !important; 
+                align-items: center !important;
+                gap: 4px !important; 
+                z-index: 2147483647 !important;
+                background: #131313 !important;
+                border-top: 1px solid rgba(34,197,94,0.3) !important;
+                visibility: visible !important;
+                opacity: 1 !important;
+                pointer-events: auto !important;
+            }
+            
+            nav button, nav div { 
+                flex: 1 1 0 !important; 
+                height: 100% !important;
+                padding: 4px !important; 
+                border: none !important;
+                margin: 0 !important;
+                display: flex !important;
+                flex-direction: column !important;
+                justify-content: center !important;
+                align-items: center !important;
+                pointer-events: auto !important;
+                touch-action: manipulation !important;
+                visibility: visible !important;
+            }
+            
+            nav button:active { background: rgba(34,197,94,0.2) !important; }
+            
+            /* Remove any invisible overlays */
+            .fixed.top-24, .fixed.bottom-24, .fixed.left-6 { display: none !important; }
+        }
+    </style>
+
 </head>
 <body class="min-h-screen text-on-surface font-body overflow-hidden flex flex-col">
 <!-- Top Navigation Anchor -->
@@ -133,7 +255,7 @@
 </div>
 </header>
 <!-- Main Presentation Canvas -->
-<main class="flex-grow p-8 flex flex-col md:grid md:grid-cols-12 gap-8 relative overflow-y-auto pb-24">
+<main class="flex-grow p-8 pt-16 md:pt-24 flex flex-col md:grid md:grid-cols-12 gap-8 relative overflow-y-auto pb-24">
 <!-- Background Technical Annotation -->
 <div class="absolute top-10 right-10 pointer-events-none select-none opacity-20 hidden lg:block">
 <pre class="font-label text-[10px] text-primary-container leading-tight">REF_ID: 009-AWS-SPEC
@@ -156,10 +278,7 @@ STATUS: ACTIVE_TERMINAL
 <div class="relative group overflow-hidden border border-outline-variant/30 aspect-video">
 <img alt="AWS industrial environment" class="w-full h-full object-cover grayscale brightness-50 group-hover:grayscale-0 transition-all duration-700" data-alt="industrial welding workspace with sparks and blue light, technical workshop with heavy machinery and precision tools" src="https://lh3.googleusercontent.com/aida-public/AB6AXuANwwPl_OzRDeYa1_H2q0eDapQXyBdxDgvUoq6tnPddgP4HK_DZ2-6SWmGnj00wmm2geSjF0ZAy_cd8XhuKonTCs0wnSFRVAMyvQ5zuq2s4I2ZrQV5aw7JxrVOb96tbmtp_k4lIwxRdXP2mT_v4BNPjfKjD_FGOrAipmlbPOjilTjb-OlRzIJLBmw4qw7C85xO2Wn4yOy_MQ8hRv_ZtsmaHe-iKA2xo2mVVpvi3LjBYrnl36vsg_-twhAVKxifCbooPv8U6lGgauRI" style=""/>
 <div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60"></div>
-<div class="absolute bottom-4 left-4 flex items-center gap-2">
-<span class="w-3 h-3 bg-primary-container animate-pulse"></span>
-<span class="font-label text-[10px] text-primary-container tracking-widest">LIVE_FEED_SEC_A</span>
-</div>
+
 </div>
 </div>
 <!-- Right Column: Technical Functions -->
@@ -228,33 +347,46 @@ STATUS: ACTIVE_TERMINAL
 </div>
 </main>
 <!-- Bottom Navigation Shell -->
-<footer class="fixed bottom-0 left-0 w-full h-14 flex justify-between items-stretch bg-[#1C1B1B] dark:bg-[#1C1B1B] z-50 border-t border-[#3B4B37]/30 no-shadows-0px-radius">
-<button class="flex items-center justify-center px-10 h-full border-[#3B4B37]/10 hover:bg-[#2A2A2A] hover:text-[#22C55E] transition-all active:brightness-125 group"><span class="font-label text-xs font-bold tracking-tighter text-[#22C55E]">PREVIOUS</span></button>
-<div class="flex-grow flex items-center justify-center gap-6 px-4">
-<div class="flex items-center gap-3">
-<span class="material-symbols-outlined text-primary-container text-sm">grid_view</span>
-<span class="font-label text-primary-container text-xs font-bold tracking-widest">03</span>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-center gap-4 p-4 bg-[#131313] border-t border-[#3B4B37]/30">
+<!-- Previous Button -->
+<button class="flex flex-col items-center justify-center text-[#22C55E] border border-[#22C55E]/30 px-8 py-3 hover:bg-[#22C55E] hover:text-[#003A05] transition-all active:scale-95 duration-150">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+<span class="font-['JetBrains_Mono'] text-[12px] uppercase tracking-tighter mt-1">ANTERIOR</span>
+</button>
+<!-- Slide Index -->
+<div class="flex flex-col items-center justify-center px-8 py-3 min-w-[120px] bg-[#131313] border border-[#22C55E] text-[#22C55E]">
+<span class="material-symbols-outlined" data-icon="grid_view" style="font-variation-settings: 'FILL' 1;">grid_view</span>
+<span class="font-['JetBrains_Mono'] text-[12px] uppercase tracking-tighter mt-1">12</span>
 </div>
-<div class="h-1 w-32 bg-surface-variant relative">
-<div class="absolute inset-0 bg-primary-container w-[15%]"></div>
-</div>
-<button class="hover:text-[#22C55E] transition-colors text-[#22C55E]"><span class="font-label text-xs font-bold tracking-tighter">NEXT</span></button>
-</div>
-<button class="flex items-center justify-center px-10 h-full transition-all active:brightness-125 group text-[#22C55E]"><span class="font-label text-xs font-bold tracking-tighter">NEXT</span></button>
-</footer>
-
-
-
-
-
-
-
-
-
-
-
-
-
+<!-- Next Button -->
+<button class="flex flex-col items-center justify-center text-[#22C55E] border border-[#22C55E]/30 px-8 py-3 hover:bg-[#22C55E] hover:text-[#003A05] transition-all active:scale-95 duration-150">
+<span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+<span class="font-['JetBrains_Mono'] text-[12px] uppercase tracking-tighter mt-1">SIGUIENTE</span>
+</button>
+</nav>
 <script id="weld-bear-sync">
     setTimeout(() => {
         const triggers = document.querySelectorAll('button, a');
@@ -291,5 +423,4 @@ STATUS: ACTIVE_TERMINAL
         window.parent.postMessage('LOADED', '*');
     });
 </script>
-
 </body></html>

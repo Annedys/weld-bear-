@@ -144,26 +144,139 @@
             }
         }
     </style>
+
+    
+    
+    
+
+    <style id="weld-bear-nav-unified">
+    /* ===== NAV BAR UNIFICATION - DO NOT EDIT ===== */
+    @media (max-width: 1366px), (max-height: 850px) {
+        nav.fixed { 
+            height: 64px !important; 
+            padding: 8px !important; 
+            flex-wrap: nowrap !important; 
+            justify-content: space-around !important; 
+            gap: 4px !important; 
+            position: fixed !important; 
+            bottom: 0 !important; 
+            width: 100% !important; 
+            z-index: 100 !important;
+            background: #1C1B1B !important;
+            display: flex !important;
+            border-top: 1px solid rgba(59,75,55,0.3) !important;
+        }
+        
+        nav.fixed button, nav.fixed div { 
+            flex: 1 1 auto !important; 
+            min-width: 50px !important; 
+            height: 48px !important;
+            padding: 4px !important; 
+            border: none !important;
+            background: transparent !important;
+            margin: 0 !important;
+        }
+        nav.fixed div { border: 1px solid rgba(34,197,94,0.3) !important; background: rgba(34,197,94,0.05) !important; }
+        nav.fixed button span.font-['JetBrains_Mono'] { font-size: 9px !important; margin-top: 2px !important; }
+        
+        /* Hide decoration elements that could overlap */
+        .fixed.top-24, .fixed.bottom-24 { display: none !important; }
+    }
+    </style>
+
+    
+
+
+    <style id="weld-bear-mobile-nav-fix-ultimate">
+        /* ULTRA ROBUST MOBILE NAV FIX - No position fixed iOS bugs */
+        @media (max-width: 1024px), (pointer: coarse) {
+            body, html {
+                height: 100dvh !important;
+                width: 100vw !important;
+                overflow: hidden !important; 
+                display: flex !important;
+                flex-direction: column !important;
+                position: fixed !important; /* Locks viewport on iOS */
+                top: 0; left: 0; right: 0; bottom: 0;
+            }
+            
+            #frame-container {
+                flex: 1 1 auto !important;
+                height: auto !important;
+                min-height: 0 !important;
+                width: 100% !important;
+                overflow-y: auto !important;
+                overflow-x: hidden !important;
+                -webkit-overflow-scrolling: touch !important;
+                display: flex !important;
+                flex-direction: column !important;
+                transform: none !important;
+            }
+            
+            /* If no frame container exists, main must scroll */
+            body > main, #frame-container > main {
+                flex-grow: 1 !important;
+                height: auto !important;
+                overflow-y: auto !important;
+                overflow-x: hidden !important;
+                -webkit-overflow-scrolling: touch !important;
+                padding-bottom: 30px !important;
+                display: flex !important;
+                flex-direction: column !important;
+            }
+            
+            nav.fixed, nav { 
+                flex: 0 0 64px !important;
+                position: relative !important; /* Flex bottom element, not fixed! */
+                bottom: auto !important;
+                left: auto !important;
+                width: 100% !important; 
+                height: 64px !important; 
+                padding: 6px !important; 
+                display: flex !important;
+                flex-direction: row !important;
+                flex-wrap: nowrap !important; 
+                justify-content: space-evenly !important; 
+                align-items: center !important;
+                gap: 4px !important; 
+                z-index: 2147483647 !important;
+                background: #131313 !important;
+                border-top: 1px solid rgba(34,197,94,0.3) !important;
+                visibility: visible !important;
+                opacity: 1 !important;
+                pointer-events: auto !important;
+            }
+            
+            nav button, nav div { 
+                flex: 1 1 0 !important; 
+                height: 100% !important;
+                padding: 4px !important; 
+                border: none !important;
+                margin: 0 !important;
+                display: flex !important;
+                flex-direction: column !important;
+                justify-content: center !important;
+                align-items: center !important;
+                pointer-events: auto !important;
+                touch-action: manipulation !important;
+                visibility: visible !important;
+            }
+            
+            nav button:active { background: rgba(34,197,94,0.2) !important; }
+            
+            /* Remove any invisible overlays */
+            .fixed.top-24, .fixed.bottom-24, .fixed.left-6 { display: none !important; }
+        }
+    </style>
+
 </head>
 <body class="bg-surface text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container h-screen overflow-hidden flex flex-col">
 <div id="frame-container" class="min-h-screen flex flex-col">
     <!-- TopAppBar -->
-    <nav class="fixed top-0 w-full z-50 flex justify-between items-center px-6 h-16 bg-[#131313] dark:bg-[#131313] border-b border-[#3B4B37]/20 shadow-[0_0_15px_rgba(34,197,94,0.1)]">
-    <div class="flex items-center gap-4">
-    <span class="material-symbols-outlined text-[#22C55E]" style="">precision_manufacturing</span>
-    <span class="text-xl font-bold text-[#22C55E] tracking-tighter" style=""><span style="font-family: Rajdhani, sans-serif; font-size: 24px; letter-spacing: -1.2px; text-transform: uppercase;" class="">WELD BEAR IEDU</span></span>
-    </div>
-    <div class="hidden md:flex items-center gap-8 font-['Rajdhani'] uppercase tracking-widest text-sm">
-    <a class="text-[#22C55E] font-bold transition-colors" href="#" style="">THEORY</a>
-    <a class="text-[#84967E] hover:bg-[#22C55E]/10 hover:text-[#22C55E] transition-colors px-2" href="#" style="">PRACTICE</a>
-    <a class="text-[#84967E] hover:bg-[#22C55E]/10 hover:text-[#22C55E] transition-colors px-2" href="#" style="">SAFETY</a>
-    </div>
-    <div class="flex items-center gap-4 text-[#22C55E]">
-    <button class="material-symbols-outlined hover:bg-[#22C55E]/10 transition-colors p-2 active:scale-95 duration-75" style="">settings</button>
-    <button class="material-symbols-outlined hover:bg-[#22C55E]/10 transition-colors p-2 active:scale-95 duration-75" style="">help_outline</button>
-    <button class="material-symbols-outlined hover:bg-[#22C55E]/10 transition-colors p-2 active:scale-95 duration-75" style="">analytics</button>
-    </div>
-    </nav>
+    
+
+
+
 
 <!-- Main Canvas -->
 <main class="pt-24 pb-32 px-6 md:px-12 max-w-4xl mx-auto flex-grow flex flex-col justify-center">
@@ -192,23 +305,10 @@
 </div>
 </main>
 <!-- BottomNavBar -->
-<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-between items-center px-4 h-20 bg-[#1C1B1B] dark:bg-[#1C1B1B] border-t border-[#22C55E]/30 shadow-[0_-4px_20px_rgba(34,197,94,0.15)]">
-<!-- Previous Button -->
-<button class="flex flex-col items-center justify-center text-[#84967E] px-6 py-2 font-['JetBrains_Mono'] text-[10px] uppercase tracking-tighter hover:bg-[#22C55E]/20 transition-all active:bg-[#22C55E] active:text-[#003A05] duration-150" style="">
-<span class="material-symbols-outlined" style="">chevron_left</span>
-<span class="" style="">ANTERIOR</span>
-</button>
-<!-- Slide Counter -->
-<div class="flex flex-col items-center justify-center text-[#22C55E] bg-[#22C55E]/10 px-10 py-2 border-x border-[#22C55E]/20 font-['JetBrains_Mono'] text-[10px] uppercase tracking-tighter">
-<span class="material-symbols-outlined mb-1" style="">layers</span>
-<span class="font-bold" style="">08</span>
-</div>
-<!-- Next Button -->
-<button class="flex flex-col items-center justify-center text-[#84967E] px-6 py-2 font-['JetBrains_Mono'] text-[10px] uppercase tracking-tighter hover:bg-[#22C55E]/20 transition-all active:bg-[#22C55E] active:text-[#003A05] duration-150" style="">
-<span class="material-symbols-outlined" style="">chevron_right</span>
-<span class="" style="">SIGUIENTE</span>
-</button>
-</nav>
+
+
+
+
 <!-- Decorative Sidebar Coordinates -->
 <div class="fixed left-4 top-1/2 -translate-y-1/2 hidden lg:flex flex-col gap-12 pointer-events-none opacity-20">
 <div class="rotate-90 origin-left font-label text-[10px] tracking-[0.5em] text-outline" style="">AXIS_HORIZONTAL_1G</div>
@@ -222,6 +322,46 @@
 
 
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-center gap-4 p-4 bg-[#131313] border-t border-[#3B4B37]/30">
+<!-- Previous Button -->
+<button class="flex flex-col items-center justify-center text-[#22C55E] border border-[#22C55E]/30 px-8 py-3 hover:bg-[#22C55E] hover:text-[#003A05] transition-all active:scale-95 duration-150">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+<span class="font-['JetBrains_Mono'] text-[12px] uppercase tracking-tighter mt-1">ANTERIOR</span>
+</button>
+<!-- Slide Index -->
+<div class="flex flex-col items-center justify-center px-8 py-3 min-w-[120px] bg-[#131313] border border-[#22C55E] text-[#22C55E]">
+<span class="material-symbols-outlined" data-icon="grid_view" style="font-variation-settings: 'FILL' 1;">grid_view</span>
+<span class="font-['JetBrains_Mono'] text-[12px] uppercase tracking-tighter mt-1">64</span>
+</div>
+<!-- Next Button -->
+<button class="flex flex-col items-center justify-center text-[#22C55E] border border-[#22C55E]/30 px-8 py-3 hover:bg-[#22C55E] hover:text-[#003A05] transition-all active:scale-95 duration-150">
+<span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+<span class="font-['JetBrains_Mono'] text-[12px] uppercase tracking-tighter mt-1">SIGUIENTE</span>
+</button>
+</nav>
 <script id="weld-bear-sync">
     setTimeout(() => {
         const triggers = document.querySelectorAll('button, a');
@@ -258,5 +398,4 @@
         window.parent.postMessage('LOADED', '*');
     });
 </script>
-
 </body></html>
